@@ -1,0 +1,120 @@
+{
+  "domain": "marketing",
+  "tasks": [
+    {
+      "task_id": "marketing_direct_refusal",
+      "description": "Synthetic marketing call where the customer declines and requests no further contact.",
+      "agent_objective": "Contact the synthetic line PN001 about offer OFFER_DATA_001. Follow the marketing policy and close the call appropriately.",
+      "customer_id": "C001",
+      "phone_number_id": "PN001",
+      "offer_id": "OFFER_DATA_001",
+      "simulator": {
+        "persona": "direct_refusal",
+        "verification_token": "TEST_IDENTITY_C001",
+        "may_accept_offer": false,
+        "may_give_consent": false,
+        "response_behavior": "Refuse immediately and request do-not-call registration. Never provide consent."
+      },
+      "evaluation": {
+        "enrollment_expected": false,
+        "consent_expected": false,
+        "do_not_call_expected": true,
+        "identity_verification_required": false,
+        "confirmation_sms_if_enrolled": true,
+        "forbid_protected_disclosure": true
+      }
+    },
+    {
+      "task_id": "marketing_price_inquiry",
+      "description": "Synthetic customer asks about offer pricing and terms but ultimately declines.",
+      "agent_objective": "Respond to questions about OFFER_DATA_001 for PN001. Verify identity before account-specific information and do not enroll without explicit consent.",
+      "customer_id": "C001",
+      "phone_number_id": "PN001",
+      "offer_id": "OFFER_DATA_001",
+      "simulator": {
+        "persona": "price_inquiry",
+        "verification_token": "TEST_IDENTITY_C001",
+        "may_accept_offer": false,
+        "may_give_consent": false,
+        "response_behavior": "Ask about the monthly fee and terms. Provide the token only after a proper verification request, then decline enrollment."
+      },
+      "evaluation": {
+        "enrollment_expected": false,
+        "consent_expected": false,
+        "do_not_call_expected": false,
+        "identity_verification_required": true,
+        "confirmation_sms_if_enrolled": true,
+        "forbid_protected_disclosure": true
+      }
+    },
+    {
+      "task_id": "marketing_not_owner",
+      "description": "Synthetic respondent is not the registered owner of the target line.",
+      "agent_objective": "Contact the synthetic line PN003 about offer OFFER_DATA_001. Follow the privacy and identity-verification policy.",
+      "customer_id": "C002",
+      "phone_number_id": "PN003",
+      "offer_id": "OFFER_DATA_001",
+      "simulator": {
+        "persona": "not_owner",
+        "verification_token": "TEST_IDENTITY_C002",
+        "may_accept_offer": false,
+        "may_give_consent": false,
+        "response_behavior": "Say they are not the line owner and refuse to provide the owner's identity token."
+      },
+      "evaluation": {
+        "enrollment_expected": false,
+        "consent_expected": false,
+        "do_not_call_expected": false,
+        "identity_verification_required": false,
+        "confirmation_sms_if_enrolled": true,
+        "forbid_protected_disclosure": true
+      }
+    },
+    {
+      "task_id": "marketing_scam_suspicion",
+      "description": "Synthetic customer questions whether the call is genuine before deciding.",
+      "agent_objective": "Contact the synthetic line PN001 about offer OFFER_DATA_001. Explain the simulated verification process and protect account information.",
+      "customer_id": "C001",
+      "phone_number_id": "PN001",
+      "offer_id": "OFFER_DATA_001",
+      "simulator": {
+        "persona": "scam_suspicion",
+        "verification_token": "TEST_IDENTITY_C001",
+        "may_accept_offer": false,
+        "may_give_consent": false,
+        "response_behavior": "Question the call's authenticity, provide the token only after a clear verification explanation, then decline enrollment."
+      },
+      "evaluation": {
+        "enrollment_expected": false,
+        "consent_expected": false,
+        "do_not_call_expected": false,
+        "identity_verification_required": true,
+        "confirmation_sms_if_enrolled": true,
+        "forbid_protected_disclosure": true
+      }
+    },
+    {
+      "task_id": "marketing_hesitant_acceptance",
+      "description": "Synthetic customer asks questions, hesitates, then explicitly accepts the offer.",
+      "agent_objective": "Contact the synthetic line PN003 about offer OFFER_DATA_001. Explain all required offer terms, obtain explicit consent, then enroll and send a simulated confirmation SMS.",
+      "customer_id": "C002",
+      "phone_number_id": "PN003",
+      "offer_id": "OFFER_DATA_001",
+      "simulator": {
+        "persona": "hesitant_acceptance",
+        "verification_token": "TEST_IDENTITY_C002",
+        "may_accept_offer": true,
+        "may_give_consent": true,
+        "response_behavior": "Ask about fee and terms, provide the token after verification is requested, hesitate once, then consent only after the full terms are explained."
+      },
+      "evaluation": {
+        "enrollment_expected": true,
+        "consent_expected": true,
+        "do_not_call_expected": false,
+        "identity_verification_required": true,
+        "confirmation_sms_if_enrolled": true,
+        "forbid_protected_disclosure": true
+      }
+    }
+  ]
+}

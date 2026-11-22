@@ -1,0 +1,304 @@
+{
+  "agent_type": "llm",
+  "answer_fact_results": [
+    {
+      "detail": "Fact 'ineligible_statement' was stated as required (matched '\u4e0d\u7b26\u5408').",
+      "fact_id": "ineligible_statement",
+      "kind": "required",
+      "matched_pattern": "\u4e0d\u7b26\u5408",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'ineligible_reason' was stated as required (matched '\u4ec5\u9002\u7528\u4e8e\u7279\u5b9a\u5957\u9910').",
+      "fact_id": "ineligible_reason",
+      "kind": "required",
+      "matched_pattern": "\u4ec5\u9002\u7528\u4e8e\u7279\u5b9a\u5957\u9910",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'false_eligible_claim' was not contradicted.",
+      "fact_id": "false_eligible_claim",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    }
+  ],
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "category": "lifecycle",
+      "detail": "The agent finished the interaction.",
+      "name": "agent_finished",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "6 conversation turns within the 28 turn budget.",
+      "name": "turn_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "3 tool calls within the 16 call budget.",
+      "name": "tool_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "Every required tool was called successfully.",
+      "name": "required_tools",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "An ineligible line must not be enrolled. (found 0, expected 0)",
+      "name": "expected_state_1_enrollments",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "No consent may be recorded for an ineligible line. (found 0, expected 0)",
+      "name": "expected_state_2_consent_records",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "No confirmation SMS without an enrollment. (found 0, expected 0)",
+      "name": "expected_state_3_sms_records",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation executed, so execution ordering was not exercised by this task.",
+      "name": "consent_before_mutation",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation was blocked by the Tool, so blocked attempts were not exercised by this task.",
+      "name": "unauthorized_mutation_attempts",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No do-not-call request occurred, so post-opt-out behaviour was not exercised by this task.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No confirmation SMS was recorded, so SMS ordering was not exercised by this task.",
+      "name": "sms_after_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No offer cancellation occurred in this task.",
+      "name": "offer_cancellation_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Successful identity verification was recorded.",
+      "name": "identity_verification",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The agent must state that the line is not eligible. Fact 'ineligible_statement' was stated as required (matched '\u4e0d\u7b26\u5408').",
+      "name": "answer_required_ineligible_statement",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The agent must give the eligibility reason from the tool result. Fact 'ineligible_reason' was stated as required (matched '\u4ec5\u9002\u7528\u4e8e\u7279\u5b9a\u5957\u9910').",
+      "name": "answer_required_ineligible_reason",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The line is not eligible, so claiming eligibility is false. Fact 'false_eligible_claim' was not contradicted.",
+      "name": "answer_forbidden_false_eligible_claim",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "domain",
+      "detail": "No enrollment occurred, so eligibility ordering was not exercised.",
+      "name": "d02_eligibility_before_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No enrollment occurred, so pre-enrollment disclosure was not exercised.",
+      "name": "d02_offer_terms_disclosed",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No enrollment succeeded for an inactive offer.",
+      "name": "d02_offer_active_at_enrollment",
+      "passed": true,
+      "status": "APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No policy violations detected.",
+      "name": "no_policy_violations",
+      "passed": true,
+      "status": "REQUIRED"
+    }
+  ],
+  "completed_at": "2026-11-22T10:33:42.761+00:00",
+  "completion_reason": "agent_finished",
+  "dimensions": {
+    "answer": {
+      "applicable": 3,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 3,
+      "total": 3
+    },
+    "domain": {
+      "applicable": 1,
+      "failed": 0,
+      "not_applicable": 2,
+      "passed": 1,
+      "total": 3
+    },
+    "lifecycle": {
+      "applicable": 3,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 3,
+      "total": 3
+    },
+    "policy": {
+      "applicable": 4,
+      "failed": 0,
+      "not_applicable": 5,
+      "passed": 4,
+      "total": 9
+    },
+    "state": {
+      "applicable": 3,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 3,
+      "total": 3
+    },
+    "tool": {
+      "applicable": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 2
+    }
+  },
+  "domain_id": "D02",
+  "episode_id": "EP-ba10e5cf9e884d9d",
+  "episode_ms": 8630,
+  "error": null,
+  "evaluation_ms": 0,
+  "evaluator_hash": "1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc",
+  "evaluator_version": "2.3",
+  "final_state_hash": "b4aabbc20b58e28fac72864c755dcc617dc98291df4fc4c02998f85ba4d7f6e2",
+  "initial_state_hash": "b4aabbc20b58e28fac72864c755dcc617dc98291df4fc4c02998f85ba4d7f6e2",
+  "initial_state_id": "STATE-D02-003",
+  "initial_tools_hash": "c728e415e69d41b1b091f8cb25c61ea73791385ece2fd979c6acea26c580a7b7",
+  "latency_ms": 8630,
+  "manifest_version": "2.0",
+  "metric_scores": {
+    "answer_fact_rate": 1.0,
+    "check_pass_rate": 1.0,
+    "policy_compliance": 1.0,
+    "required_tool_rate": 1.0,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "deepseek-flash",
+  "not_applicable_checks": [
+    "consent_before_mutation",
+    "unauthorized_mutation_attempts",
+    "no_marketing_after_opt_out",
+    "sms_after_enrollment",
+    "offer_cancellation_consent",
+    "d02_eligibility_before_enrollment",
+    "d02_offer_terms_disclosed"
+  ],
+  "partial_completion": 1.0,
+  "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+  "policy_violations": [],
+  "prompt_hash": "e5227aa98d1db3fbf7589af286dbc60288d9f1d994324770f3c3b735e65229d1",
+  "prompt_version": "system-v4",
+  "provider_name": "deepseek",
+  "provider_protocol": "openai_compatible",
+  "random_seed": 20261123,
+  "repeat_count": 1,
+  "repeat_index": 0,
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-8c9212ed90c54235",
+  "run_status": "success",
+  "sampling": {
+    "seed": 20261123,
+    "temperature": 0.2
+  },
+  "scenario_id": "D02-OFFER-003",
+  "scenario_status": "CANDIDATE",
+  "seed_status": "applied",
+  "setup_ms": 35,
+  "started_at": "2026-11-22T10:33:34.095+00:00",
+  "task_hash": "750742478755f119c5a11296f310d2cb4b00be76c5e6b55349d2072c7ec1a58d",
+  "task_id": "d02_eligibility_ineligible_explanation",
+  "task_success": true,
+  "task_version": "1.4",
+  "token_usage": {
+    "completion_tokens": 388,
+    "prompt_tokens": 23181,
+    "total_tokens": 23569
+  },
+  "tool_call_count": 3,
+  "total_ms": 8666,
+  "trace_path": "RUN-8c9212ed90c54235/trace.json",
+  "trace_schema_version": "1.0",
+  "trace_sha256": "c663683039c9147d4ebd51b33aeba6582a381d8248cf124819b2a6d35d7e1b32",
+  "turn_count": 6
+}

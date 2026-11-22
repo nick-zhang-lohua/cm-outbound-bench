@@ -1,0 +1,1276 @@
+[
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 4,
+        "total": 4
+      },
+      "domain": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 6,
+        "passed": 3,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D01",
+    "episode_ms": 15979,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+    "initial_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+    "initial_state_id": "STATE-D01-002",
+    "initial_tools_hash": "956b7c3e1d8777b322eef704c9d5a28266d14930f417a19403259bba76ca768c",
+    "latency_ms": 15979,
+    "model_name": "deepseek-flash",
+    "policy_hash": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+    "policy_violations": [],
+    "prompt_hash": "ec91bc54af6679087d6426b41cf854297cca2e2f83bb13a593d0170324f568d2",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D01",
+    "run_id": "RUN-861f8794ad304f5d",
+    "run_status": "success",
+    "scenario_id": "D01-PLAN-002",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "1f021086f2097ad88dec161b5e43ddc4355e3b867709d049b6e5d612ba482632",
+    "task_id": "d01_plan_comparison",
+    "task_success": true,
+    "task_version": "1.3",
+    "token_usage": {
+      "completion_tokens": 808,
+      "prompt_tokens": 22557,
+      "total_tokens": 23365
+    },
+    "tool_call_count": 3,
+    "total_ms": 16009,
+    "trace_file_sha256": "fe8b38013717bf82535ae3c209f7bee91aff9dbb11f5712b23f305500997925d",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-861f8794ad304f5d/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "fe8b38013717bf82535ae3c209f7bee91aff9dbb11f5712b23f305500997925d",
+    "turn_count": 6
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 6,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 6,
+        "total": 6
+      },
+      "domain": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D01",
+    "episode_ms": 16527,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+    "initial_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+    "initial_state_id": "STATE-D01-001",
+    "initial_tools_hash": "046c244e2b9ddc673856f3603db3c8b1553b1c9936c502e2cbe7a475e99efc0b",
+    "latency_ms": 16527,
+    "model_name": "deepseek-flash",
+    "policy_hash": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+    "policy_violations": [],
+    "prompt_hash": "dceca853dd875e6c14b60ec180eb72b605eae0833ac02622ddc3ec5bf56e1f85",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D01",
+    "run_id": "RUN-ae3ffe141e6e4f0c",
+    "run_status": "success",
+    "scenario_id": "D01-PLAN-001",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "d525266380bd0e835b97209f58de74ed36d12652a327c3026ff33ce62f4735ae",
+    "task_id": "d01_plan_content_explanation",
+    "task_success": true,
+    "task_version": "1.1",
+    "token_usage": {
+      "completion_tokens": 524,
+      "prompt_tokens": 23206,
+      "total_tokens": 23730
+    },
+    "tool_call_count": 3,
+    "total_ms": 16561,
+    "trace_file_sha256": "270dfc92d3d6d2be45110ff2897c9e5412744bf5558d27643551606fc0441fab",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-ae3ffe141e6e4f0c/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "270dfc92d3d6d2be45110ff2897c9e5412744bf5558d27643551606fc0441fab",
+    "turn_count": 8
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 2,
+        "passed": 1,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 6,
+        "passed": 3,
+        "total": 9
+      },
+      "state": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D02",
+    "episode_ms": 3756,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "216f91d16ff4662c80ba55e5a488d51898cf2c696ebfff29f82c2c2b7b184e94",
+    "initial_state_hash": "e96bb36c4aa4e74285e9ec31a984b08d02c8e1b114acdcc3d0fabd4d9f2316e7",
+    "initial_state_id": "STATE-D02-004",
+    "initial_tools_hash": "4955318d9100c0a82156a288ed06cf0ed02a4813f828c9af048fa24cfb40ae90",
+    "latency_ms": 3757,
+    "model_name": "deepseek-flash",
+    "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+    "policy_violations": [],
+    "prompt_hash": "2f3f81f688f6a5ac23f41a5da38df1f36275614e34617fc2d3998886cd04afc6",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D02",
+    "run_id": "RUN-a46a3216c34e466f",
+    "run_status": "success",
+    "scenario_id": "D02-OFFER-004",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": false,
+    "task_hash": "37ac9068499fa9898ddded8f8ba65e5ae32f3b2d5239b0ae7a120b3ce95beadc",
+    "task_id": "d02_direct_refusal_do_not_call",
+    "task_success": true,
+    "task_version": "1.1",
+    "token_usage": {
+      "completion_tokens": 131,
+      "prompt_tokens": 11326,
+      "total_tokens": 11457
+    },
+    "tool_call_count": 1,
+    "total_ms": 3796,
+    "trace_file_sha256": "354cce36fa4c40e612a30947a56f86b3f2fa8a4c64fa455c31066eea5a6b9b0d",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-a46a3216c34e466f/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "354cce36fa4c40e612a30947a56f86b3f2fa8a4c64fa455c31066eea5a6b9b0d",
+    "turn_count": 3
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 2,
+        "passed": 1,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D02",
+    "episode_ms": 8585,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "b4aabbc20b58e28fac72864c755dcc617dc98291df4fc4c02998f85ba4d7f6e2",
+    "initial_state_hash": "b4aabbc20b58e28fac72864c755dcc617dc98291df4fc4c02998f85ba4d7f6e2",
+    "initial_state_id": "STATE-D02-003",
+    "initial_tools_hash": "c728e415e69d41b1b091f8cb25c61ea73791385ece2fd979c6acea26c580a7b7",
+    "latency_ms": 8585,
+    "model_name": "deepseek-flash",
+    "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+    "policy_violations": [],
+    "prompt_hash": "e5227aa98d1db3fbf7589af286dbc60288d9f1d994324770f3c3b735e65229d1",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D02",
+    "run_id": "RUN-0f32be1689994386",
+    "run_status": "success",
+    "scenario_id": "D02-OFFER-003",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "41f0b0001834d6b1b0b5142b78ded4381ecfc2336057cc41fc08179935632129",
+    "task_id": "d02_eligibility_ineligible_explanation",
+    "task_success": true,
+    "task_version": "1.4",
+    "token_usage": {
+      "completion_tokens": 395,
+      "prompt_tokens": 23200,
+      "total_tokens": 23595
+    },
+    "tool_call_count": 3,
+    "total_ms": 8629,
+    "trace_file_sha256": "2ee335a5af0e080d8bd6ac28fbffe21f8ece1f5a27e86f57248783afd83e2c64",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-0f32be1689994386/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "2ee335a5af0e080d8bd6ac28fbffe21f8ece1f5a27e86f57248783afd83e2c64",
+    "turn_count": 6
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 5,
+        "total": 5
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 2,
+        "passed": 1,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 4,
+        "total": 4
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D02",
+    "episode_ms": 13810,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "592d7727faa9e532bed74e752bf8fab27383633eebdebd0f62f465c58087db06",
+    "initial_state_hash": "592d7727faa9e532bed74e752bf8fab27383633eebdebd0f62f465c58087db06",
+    "initial_state_id": "STATE-D02-002",
+    "initial_tools_hash": "7740f777ce98f0a708035a6f6b68ff02edb4fb7121283ea460e905f4b5e6cc05",
+    "latency_ms": 13810,
+    "model_name": "deepseek-flash",
+    "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+    "policy_violations": [],
+    "prompt_hash": "0ae7036934842cc631aeaaa17f77630d83e56428b8f9e177bcbd77c0e681086b",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D02",
+    "run_id": "RUN-5182463c015943bb",
+    "run_status": "success",
+    "scenario_id": "D02-OFFER-002",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "71a28c39721d26e22f182b0d3f7726c64be8ec4769d52d094d1e5e4420c1c53c",
+    "task_id": "d02_hesitation_then_decline",
+    "task_success": true,
+    "task_version": "1.3",
+    "token_usage": {
+      "completion_tokens": 541,
+      "prompt_tokens": 31577,
+      "total_tokens": 32118
+    },
+    "tool_call_count": 3,
+    "total_ms": 13874,
+    "trace_file_sha256": "e71960761177152d21cf83f8f0a7c9cd104cbdb1fda96d615bb8c71b91e0fc44",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-5182463c015943bb/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "e71960761177152d21cf83f8f0a7c9cd104cbdb1fda96d615bb8c71b91e0fc44",
+    "turn_count": 9
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 5,
+        "total": 5
+      },
+      "domain": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 6,
+        "failed": 0,
+        "not_applicable": 3,
+        "passed": 6,
+        "total": 9
+      },
+      "state": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 4,
+        "total": 4
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D02",
+    "episode_ms": 15014,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "28553829292e38df78abe4b052059a226605a409681ce91725b6a90907806690",
+    "initial_state_hash": "2ed48a1f420aa78801b5b82ae59aea5656f4d5785ccf4c08ce8ed4f14076b1d3",
+    "initial_state_id": "STATE-D02-001",
+    "initial_tools_hash": "7740f777ce98f0a708035a6f6b68ff02edb4fb7121283ea460e905f4b5e6cc05",
+    "latency_ms": 15014,
+    "model_name": "deepseek-flash",
+    "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+    "policy_violations": [],
+    "prompt_hash": "dc3ec9de524965cf7fd64efcc94233239efadb3b54297a941304d95e1033dcb0",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D02",
+    "run_id": "RUN-9f646cc62a3d4423",
+    "run_status": "success",
+    "scenario_id": "D02-OFFER-001",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": false,
+    "task_hash": "3fa0fef80981dfca2c62445d4361a20347a52898cc3d9bfc9263f61411a4b93a",
+    "task_id": "d02_offer_benefit_inquiry_accept",
+    "task_success": true,
+    "task_version": "1.1",
+    "token_usage": {
+      "completion_tokens": 673,
+      "prompt_tokens": 36143,
+      "total_tokens": 36816
+    },
+    "tool_call_count": 5,
+    "total_ms": 15045,
+    "trace_file_sha256": "f15f2c6a57c024edb95cc8c87a0cc23448470457fe542ba72bfd855dce96a358",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-9f646cc62a3d4423/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "f15f2c6a57c024edb95cc8c87a0cc23448470457fe542ba72bfd855dce96a358",
+    "turn_count": 7
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 4,
+        "passed": 5,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D03",
+    "episode_ms": 9510,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "25ae46f99742038602dca3c333d9fa80888a37e747d8c1461f1ff903b4b314ea",
+    "initial_state_hash": "2c514f22c51e74870864a7e77d11f5c4696345b74ab4e714d1f71d63ee6c5c7b",
+    "initial_state_id": "STATE-D03-002",
+    "initial_tools_hash": "f807cb1eb62c6a63c42fa39e7b0c2d9d505157c36234bcb2163084cc4bbd8e67",
+    "latency_ms": 9510,
+    "model_name": "deepseek-flash",
+    "policy_hash": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+    "policy_violations": [],
+    "prompt_hash": "fcd175d14146dc2a670e659f266e5b0646ad064e5f1f0a4294fbe65c6ffb5726",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D03",
+    "run_id": "RUN-5c1c529a1e484d5d",
+    "run_status": "success",
+    "scenario_id": "D03-BILL-002",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": false,
+    "task_hash": "68a6d220cf25e95033a70148746c1f7daa54327cae24d5e25388b960db7ce557",
+    "task_id": "d03_arrears_recharge_with_consent",
+    "task_success": true,
+    "task_version": "1.0",
+    "token_usage": {
+      "completion_tokens": 408,
+      "prompt_tokens": 29877,
+      "total_tokens": 30285
+    },
+    "tool_call_count": 3,
+    "total_ms": 9553,
+    "trace_file_sha256": "652bd291efaa6935f60d433d78323179bcaac32cd3b78a1560ab7404ba1c67c2",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-5c1c529a1e484d5d/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "652bd291efaa6935f60d433d78323179bcaac32cd3b78a1560ab7404ba1c67c2",
+    "turn_count": 8
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 5,
+        "total": 5
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 2,
+        "passed": 1,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D03",
+    "episode_ms": 12533,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "89476abda1c46964ac161091a20ab2b0b6c3844d2cc4d12fc8f58c71bb7dbba2",
+    "initial_state_hash": "89476abda1c46964ac161091a20ab2b0b6c3844d2cc4d12fc8f58c71bb7dbba2",
+    "initial_state_id": "STATE-D03-001",
+    "initial_tools_hash": "1eb1b4748b0a134de800e1dbe2574a14438043b08bad29dce72480986ee8050c",
+    "latency_ms": 12533,
+    "model_name": "deepseek-flash",
+    "policy_hash": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+    "policy_violations": [],
+    "prompt_hash": "0bd007d7ab113d384b541b8a2b519efa981612f3849ff7fc9bf8adf311d0f6e0",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D03",
+    "run_id": "RUN-ad5aef37addb46e7",
+    "run_status": "success",
+    "scenario_id": "D03-BILL-001",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "b47fc44c746924a04b3b34fd3bd9c4b9cbfd2374bdb49fcdb779bd55359c9a6d",
+    "task_id": "d03_bill_explanation",
+    "task_success": true,
+    "task_version": "1.1",
+    "token_usage": {
+      "completion_tokens": 819,
+      "prompt_tokens": 31797,
+      "total_tokens": 32616
+    },
+    "tool_call_count": 3,
+    "total_ms": 12565,
+    "trace_file_sha256": "50ee9912527b0a4bd5fd35e3150869a47ee1b28855bfe8b1731ce7a02f5bc238",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-ad5aef37addb46e7/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "50ee9912527b0a4bd5fd35e3150869a47ee1b28855bfe8b1731ce7a02f5bc238",
+    "turn_count": 12
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 0,
+        "failed": 0,
+        "not_applicable": 3,
+        "passed": 0,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D04",
+    "episode_ms": 7856,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "0d18f423aaeb0d3614d757dd74f82e3d27dc3dd28393bb3fbd41bf17a3ba4b28",
+    "initial_state_hash": "0d18f423aaeb0d3614d757dd74f82e3d27dc3dd28393bb3fbd41bf17a3ba4b28",
+    "initial_state_id": "STATE-D04-002",
+    "initial_tools_hash": "fe56d6f238b6a6c4496ed2fd9da25ff5a97cecf1ccd58758bacd4f027b7f5331",
+    "latency_ms": 7856,
+    "model_name": "deepseek-flash",
+    "policy_hash": "12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5",
+    "policy_violations": [],
+    "prompt_hash": "d9aee5dc0d05623d42be7e88dce778c87fa2af8a34c76eddee15731551b0e069",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D04",
+    "run_id": "RUN-c883e1e2ad8c4176",
+    "run_status": "success",
+    "scenario_id": "D04-LIFECYCLE-002",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "9d3838b36d7e21395890f1429b7bf946b6002782a5e5ee01d3f7ff6f1fe173fd",
+    "task_id": "d04_plan_change_blocked_by_commitment",
+    "task_success": true,
+    "task_version": "1.2",
+    "token_usage": {
+      "completion_tokens": 410,
+      "prompt_tokens": 22727,
+      "total_tokens": 23137
+    },
+    "tool_call_count": 3,
+    "total_ms": 7892,
+    "trace_file_sha256": "afc19580cfac882ef061fcb5748ac00f96e8ebf76605447a578c0bd586d92ecf",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-c883e1e2ad8c4176/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "afc19580cfac882ef061fcb5748ac00f96e8ebf76605447a578c0bd586d92ecf",
+    "turn_count": 6
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 1,
+        "passed": 2,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 4,
+        "passed": 5,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D04",
+    "episode_ms": 19675,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "73b093c94b8071c2049c826642a8228ab8da9add859fa03af70eb79194cac5ab",
+    "initial_state_hash": "876dbd6bc908efed87531fa270cf5e5a9f2a2d351ec3b7b32e2eafff844aa639",
+    "initial_state_id": "STATE-D04-001",
+    "initial_tools_hash": "fe56d6f238b6a6c4496ed2fd9da25ff5a97cecf1ccd58758bacd4f027b7f5331",
+    "latency_ms": 19675,
+    "model_name": "deepseek-flash",
+    "policy_hash": "12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5",
+    "policy_violations": [],
+    "prompt_hash": "bfb49664e31b4edf4ee45d183f6b41114488e1aa6af45b99de99d56845e2578f",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D04",
+    "run_id": "RUN-938a3139457f4ba6",
+    "run_status": "success",
+    "scenario_id": "D04-LIFECYCLE-001",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": false,
+    "task_hash": "131324d961318229455aec00525627bcbe6597328f1f2b71940e8f4735ea7225",
+    "task_id": "d04_plan_upgrade_with_consent",
+    "task_success": true,
+    "task_version": "1.1",
+    "token_usage": {
+      "completion_tokens": 727,
+      "prompt_tokens": 39558,
+      "total_tokens": 40285
+    },
+    "tool_call_count": 5,
+    "total_ms": 19707,
+    "trace_file_sha256": "998d38728bcd0fef22d4e55649789783b6bf2cff2d57404a4e80e0c548c34e97",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-938a3139457f4ba6/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "998d38728bcd0fef22d4e55649789783b6bf2cff2d57404a4e80e0c548c34e97",
+    "turn_count": 9
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 1,
+        "passed": 1,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 1
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D05",
+    "episode_ms": 11803,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "62bf0b548adc9f46273c1adb6bc882ab8ee3ba6ea194de3e82d523524f5dc8ae",
+    "initial_state_hash": "62bf0b548adc9f46273c1adb6bc882ab8ee3ba6ea194de3e82d523524f5dc8ae",
+    "initial_state_id": "STATE-D05-001",
+    "initial_tools_hash": "219ab8ab2f51f36910c2ecaa8a94f5967ada20b76517c62d6a67f87f43f22a56",
+    "latency_ms": 11803,
+    "model_name": "deepseek-flash",
+    "policy_hash": "fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235",
+    "policy_violations": [],
+    "prompt_hash": "978836aebd19bbcc2359b83b2a8e8705df05fac7ee3ef5ef65fac8b00b8de9d8",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D05",
+    "run_id": "RUN-667ec2f92e494d47",
+    "run_status": "success",
+    "scenario_id": "D05-IDENTITY-001",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "adeaaf1f74041b908ce6de769f9d49cf1bec65ef30b2426c7332dbcd80c00665",
+    "task_id": "d05_ownership_transfer_conditions",
+    "task_success": true,
+    "task_version": "1.3",
+    "token_usage": {
+      "completion_tokens": 520,
+      "prompt_tokens": 26071,
+      "total_tokens": 26591
+    },
+    "tool_call_count": 3,
+    "total_ms": 11834,
+    "trace_file_sha256": "e64523df5a9d05410647eb6e60f692a8fa5c1d4b419a9ba97164a948d1cc0d26",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-667ec2f92e494d47/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "e64523df5a9d05410647eb6e60f692a8fa5c1d4b419a9ba97164a948d1cc0d26",
+    "turn_count": 10
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 1,
+        "passed": 1,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D05",
+    "episode_ms": 13320,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "5b69859e7f5bedf39956e269e3a637111efb9271dea0f551544563ee928fa6ad",
+    "initial_state_hash": "5b69859e7f5bedf39956e269e3a637111efb9271dea0f551544563ee928fa6ad",
+    "initial_state_id": "STATE-D05-002",
+    "initial_tools_hash": "edd9962931295450572e9e42affd24f317408944c8e50af8f9daee61cfe8ab8d",
+    "latency_ms": 13320,
+    "model_name": "deepseek-flash",
+    "policy_hash": "fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235",
+    "policy_violations": [],
+    "prompt_hash": "6e2d1f8de12d4df953fb8d1d12b49a4948b215a0d058b16b6fd369811bde7e3a",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D05",
+    "run_id": "RUN-852c33d3787a4d8b",
+    "run_status": "success",
+    "scenario_id": "D05-IDENTITY-002",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": true,
+    "task_hash": "809041a3ebb4b31df32886e6a792020050c06d3eca487ec34085595050249240",
+    "task_id": "d05_real_name_not_verified",
+    "task_success": true,
+    "task_version": "1.3",
+    "token_usage": {
+      "completion_tokens": 527,
+      "prompt_tokens": 26670,
+      "total_tokens": 27197
+    },
+    "tool_call_count": 3,
+    "total_ms": 13349,
+    "trace_file_sha256": "45aba6077194be1c55ec6a8d71b4225851a9ad23498d2ba2ea36c3c9cdfed0c8",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-852c33d3787a4d8b/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "45aba6077194be1c55ec6a8d71b4225851a9ad23498d2ba2ea36c3c9cdfed0c8",
+    "turn_count": 10
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 1,
+        "passed": 3,
+        "total": 4
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 4,
+        "passed": 5,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D06",
+    "episode_ms": 12901,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "cd77728311d2a5517f9d18a01d6bc6f32f7b6e5ec5732c6edc89e3df5e3f6df2",
+    "initial_state_hash": "32c0ce80bb73b44a391fa1cd433b34a2d5ed5ac75edb46fc97ab13adc29c9f13",
+    "initial_state_id": "STATE-D06-001",
+    "initial_tools_hash": "bf704f52e2925e3b2b71c0dab95df6938e6569547b8ad175920ec3730956ee9c",
+    "latency_ms": 12901,
+    "model_name": "deepseek-flash",
+    "policy_hash": "4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301",
+    "policy_violations": [],
+    "prompt_hash": "c03d96f4971250221c3eee261356cc778b8f0fb57f17490fca26b51e7c657c4d",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D06",
+    "run_id": "RUN-f44de955e3d342cd",
+    "run_status": "success",
+    "scenario_id": "D06-NOTIFY-001",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": false,
+    "task_hash": "9326e6ceea9e0e91f17437689e3712c562e7888aef26b740cc96e38b7d3399e5",
+    "task_id": "d06_enrollment_confirmation_notification",
+    "task_success": true,
+    "task_version": "1.1",
+    "token_usage": {
+      "completion_tokens": 821,
+      "prompt_tokens": 43452,
+      "total_tokens": 44273
+    },
+    "tool_call_count": 6,
+    "total_ms": 12933,
+    "trace_file_sha256": "2c5f18df3799b29326bc1136847e38fe45523fb359eb31c4b01b35f2bb34ffc8",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-f44de955e3d342cd/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "2c5f18df3799b29326bc1136847e38fe45523fb359eb31c4b01b35f2bb34ffc8",
+    "turn_count": 7
+  },
+  {
+    "answer_fact_rate": 1.0,
+    "completion_reason": "agent_finished",
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 1,
+        "passed": 3,
+        "total": 4
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 4,
+        "passed": 5,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "domain_id": "D06",
+    "episode_ms": 11944,
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "final_state_hash": "5e381bbb1bef7966ec1e0d3e872c9f375badf368f56d4b0f9c84082c726520e4",
+    "initial_state_hash": "670c3c69b10a3aff3d424b0c2b476439f4d5c538c6a837a85c7c828acfd95168",
+    "initial_state_id": "STATE-D06-002",
+    "initial_tools_hash": "fdc45cd6064c5d04c42cbbafea33bd3abb38e1ab93f33eca3e6a7cd21087e476",
+    "latency_ms": 11944,
+    "model_name": "deepseek-flash",
+    "policy_hash": "4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301",
+    "policy_violations": [],
+    "prompt_hash": "cd45480e389f30f81b143f1b085221c80552b177f4aea90d2c836b82a47c4f6e",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "random_seed": 20261122,
+    "repeat_count": 1,
+    "repeat_index": 0,
+    "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+    "run_dir": "outputs/live_llm_validation/deepseek/final-rc11-system-v4-evaluator-v2.4-20261122/D06",
+    "run_id": "RUN-f5b6e6aab4904d7e",
+    "run_status": "success",
+    "scenario_id": "D06-NOTIFY-002",
+    "scenario_status": "CANDIDATE",
+    "state_matches_initial": false,
+    "task_hash": "1676e4ced13f9ea304b36e514762c4c3291f3576e84f5c6d3fd2cea3d02dbe74",
+    "task_id": "d06_recharge_confirmation_notification",
+    "task_success": true,
+    "task_version": "1.3",
+    "token_usage": {
+      "completion_tokens": 642,
+      "prompt_tokens": 36762,
+      "total_tokens": 37404
+    },
+    "tool_call_count": 5,
+    "total_ms": 11978,
+    "trace_file_sha256": "f250e318f6d523d5826a22420f5ef2349d31197f73f73df5042d7ba2edecba94",
+    "trace_integrity_ok": true,
+    "trace_path": "RUN-f5b6e6aab4904d7e/trace.json",
+    "trace_schema_version": "1.0",
+    "trace_sha256": "f250e318f6d523d5826a22420f5ef2349d31197f73f73df5042d7ba2edecba94",
+    "turn_count": 7
+  }
+]

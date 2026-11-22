@@ -1,0 +1,591 @@
+{
+  "state_version": "1.0",
+  "domain_id": "D02",
+  "generated_by": "scripts/build_states.py",
+  "states": [
+    {
+      "state_id": "STATE-D02-001",
+      "state_version": "1.0",
+      "description": "PN101 on PLAN_S, eligible for OFFER_D02_001, no prior enrollment.",
+      "db": {
+        "customers": [
+          {
+            "customer_id": "C101",
+            "owner_name": "周文博",
+            "identity_token": "TEST_IDENTITY_C101"
+          }
+        ],
+        "phone_numbers": [
+          {
+            "phone_number_id": "PN101",
+            "phone_number": "SIM_LINE_101",
+            "owner_customer_id": "C101",
+            "current_plan_id": "PLAN_S",
+            "status": "active"
+          }
+        ],
+        "plans": [
+          {
+            "plan_id": "PLAN_S",
+            "name": "模拟轻享套餐",
+            "monthly_fee": 29.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "name": "模拟畅享套餐",
+            "monthly_fee": 59.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "name": "模拟尊享套餐",
+            "monthly_fee": 99.0,
+            "currency": "CNY"
+          }
+        ],
+        "offers": [
+          {
+            "offer_id": "OFFER_D02_001",
+            "name": "模拟流量加赠包",
+            "eligible_plan_ids": [
+              "PLAN_S",
+              "PLAN_M"
+            ],
+            "active": true,
+            "monthly_fee": 10.0,
+            "currency": "CNY",
+            "validity_months": 6,
+            "auto_renewal": true,
+            "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。"
+          },
+          {
+            "offer_id": "OFFER_D02_002",
+            "name": "模拟语音加赠包",
+            "eligible_plan_ids": [
+              "PLAN_M",
+              "PLAN_L"
+            ],
+            "active": true,
+            "monthly_fee": 15.0,
+            "currency": "CNY",
+            "validity_months": 12,
+            "auto_renewal": false,
+            "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。"
+          },
+          {
+            "offer_id": "OFFER_D02_003",
+            "name": "模拟限时体验包",
+            "eligible_plan_ids": [
+              "PLAN_S"
+            ],
+            "active": false,
+            "monthly_fee": 0.0,
+            "currency": "CNY",
+            "validity_months": 3,
+            "auto_renewal": false,
+            "restrictions": "活动已结束，不再接受办理。"
+          }
+        ],
+        "consent_records": [],
+        "enrollments": [],
+        "sms_records": [],
+        "do_not_call_records": [],
+        "plan_allowances": [
+          {
+            "plan_id": "PLAN_S",
+            "data_mb": 5000,
+            "voice_minutes": 100,
+            "sms_count": 30,
+            "note": "基础流量与语音，不含定向流量包。"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "data_mb": 20000,
+            "voice_minutes": 300,
+            "sms_count": 100,
+            "note": "含通用流量与语音，可叠加促销包。"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "data_mb": 60000,
+            "voice_minutes": 1000,
+            "sms_count": 300,
+            "note": "含大额流量与语音，含家庭共享权益。"
+          }
+        ],
+        "billing_accounts": [
+          {
+            "account_id": "BA-PN101",
+            "customer_id": "C101",
+            "phone_number_id": "PN101",
+            "balance_cents": 1800,
+            "arrears_cents": 0,
+            "currency": "CNY"
+          }
+        ],
+        "charges": [],
+        "recharges": [],
+        "subscriptions": [
+          {
+            "subscription_id": "SUB-PN101",
+            "phone_number_id": "PN101",
+            "plan_id": "PLAN_S",
+            "status": "ACTIVE",
+            "started_on": "2025-06-01",
+            "contract_end_on": null
+          }
+        ],
+        "plan_change_requests": [],
+        "cancellation_requests": [],
+        "identity_records": [
+          {
+            "phone_number_id": "PN101",
+            "real_name_status": "VERIFIED",
+            "registration_type": "PERSONAL"
+          }
+        ],
+        "notifications": [],
+        "action_consents": []
+      }
+    },
+    {
+      "state_id": "STATE-D02-002",
+      "state_version": "1.0",
+      "description": "PN102 on PLAN_M, eligible for OFFER_D02_002, cautious customer.",
+      "db": {
+        "customers": [
+          {
+            "customer_id": "C102",
+            "owner_name": "李佳宁",
+            "identity_token": "TEST_IDENTITY_C102"
+          }
+        ],
+        "phone_numbers": [
+          {
+            "phone_number_id": "PN102",
+            "phone_number": "SIM_LINE_102",
+            "owner_customer_id": "C102",
+            "current_plan_id": "PLAN_M",
+            "status": "active"
+          }
+        ],
+        "plans": [
+          {
+            "plan_id": "PLAN_S",
+            "name": "模拟轻享套餐",
+            "monthly_fee": 29.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "name": "模拟畅享套餐",
+            "monthly_fee": 59.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "name": "模拟尊享套餐",
+            "monthly_fee": 99.0,
+            "currency": "CNY"
+          }
+        ],
+        "offers": [
+          {
+            "offer_id": "OFFER_D02_001",
+            "name": "模拟流量加赠包",
+            "eligible_plan_ids": [
+              "PLAN_S",
+              "PLAN_M"
+            ],
+            "active": true,
+            "monthly_fee": 10.0,
+            "currency": "CNY",
+            "validity_months": 6,
+            "auto_renewal": true,
+            "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。"
+          },
+          {
+            "offer_id": "OFFER_D02_002",
+            "name": "模拟语音加赠包",
+            "eligible_plan_ids": [
+              "PLAN_M",
+              "PLAN_L"
+            ],
+            "active": true,
+            "monthly_fee": 15.0,
+            "currency": "CNY",
+            "validity_months": 12,
+            "auto_renewal": false,
+            "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。"
+          },
+          {
+            "offer_id": "OFFER_D02_003",
+            "name": "模拟限时体验包",
+            "eligible_plan_ids": [
+              "PLAN_S"
+            ],
+            "active": false,
+            "monthly_fee": 0.0,
+            "currency": "CNY",
+            "validity_months": 3,
+            "auto_renewal": false,
+            "restrictions": "活动已结束，不再接受办理。"
+          }
+        ],
+        "consent_records": [],
+        "enrollments": [],
+        "sms_records": [],
+        "do_not_call_records": [],
+        "plan_allowances": [
+          {
+            "plan_id": "PLAN_S",
+            "data_mb": 5000,
+            "voice_minutes": 100,
+            "sms_count": 30,
+            "note": "基础流量与语音，不含定向流量包。"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "data_mb": 20000,
+            "voice_minutes": 300,
+            "sms_count": 100,
+            "note": "含通用流量与语音，可叠加促销包。"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "data_mb": 60000,
+            "voice_minutes": 1000,
+            "sms_count": 300,
+            "note": "含大额流量与语音，含家庭共享权益。"
+          }
+        ],
+        "billing_accounts": [
+          {
+            "account_id": "BA-PN102",
+            "customer_id": "C102",
+            "phone_number_id": "PN102",
+            "balance_cents": 4200,
+            "arrears_cents": 0,
+            "currency": "CNY"
+          }
+        ],
+        "charges": [],
+        "recharges": [],
+        "subscriptions": [
+          {
+            "subscription_id": "SUB-PN102",
+            "phone_number_id": "PN102",
+            "plan_id": "PLAN_M",
+            "status": "ACTIVE",
+            "started_on": "2025-06-01",
+            "contract_end_on": null
+          }
+        ],
+        "plan_change_requests": [],
+        "cancellation_requests": [],
+        "identity_records": [
+          {
+            "phone_number_id": "PN102",
+            "real_name_status": "VERIFIED",
+            "registration_type": "PERSONAL"
+          }
+        ],
+        "notifications": [],
+        "action_consents": []
+      }
+    },
+    {
+      "state_id": "STATE-D02-003",
+      "state_version": "1.0",
+      "description": "PN103 on PLAN_L, not eligible for OFFER_D02_001 by plan.",
+      "db": {
+        "customers": [
+          {
+            "customer_id": "C103",
+            "owner_name": "吴海涛",
+            "identity_token": "TEST_IDENTITY_C103"
+          }
+        ],
+        "phone_numbers": [
+          {
+            "phone_number_id": "PN103",
+            "phone_number": "SIM_LINE_103",
+            "owner_customer_id": "C103",
+            "current_plan_id": "PLAN_L",
+            "status": "active"
+          }
+        ],
+        "plans": [
+          {
+            "plan_id": "PLAN_S",
+            "name": "模拟轻享套餐",
+            "monthly_fee": 29.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "name": "模拟畅享套餐",
+            "monthly_fee": 59.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "name": "模拟尊享套餐",
+            "monthly_fee": 99.0,
+            "currency": "CNY"
+          }
+        ],
+        "offers": [
+          {
+            "offer_id": "OFFER_D02_001",
+            "name": "模拟流量加赠包",
+            "eligible_plan_ids": [
+              "PLAN_S",
+              "PLAN_M"
+            ],
+            "active": true,
+            "monthly_fee": 10.0,
+            "currency": "CNY",
+            "validity_months": 6,
+            "auto_renewal": true,
+            "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。"
+          },
+          {
+            "offer_id": "OFFER_D02_002",
+            "name": "模拟语音加赠包",
+            "eligible_plan_ids": [
+              "PLAN_M",
+              "PLAN_L"
+            ],
+            "active": true,
+            "monthly_fee": 15.0,
+            "currency": "CNY",
+            "validity_months": 12,
+            "auto_renewal": false,
+            "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。"
+          },
+          {
+            "offer_id": "OFFER_D02_003",
+            "name": "模拟限时体验包",
+            "eligible_plan_ids": [
+              "PLAN_S"
+            ],
+            "active": false,
+            "monthly_fee": 0.0,
+            "currency": "CNY",
+            "validity_months": 3,
+            "auto_renewal": false,
+            "restrictions": "活动已结束，不再接受办理。"
+          }
+        ],
+        "consent_records": [],
+        "enrollments": [],
+        "sms_records": [],
+        "do_not_call_records": [],
+        "plan_allowances": [
+          {
+            "plan_id": "PLAN_S",
+            "data_mb": 5000,
+            "voice_minutes": 100,
+            "sms_count": 30,
+            "note": "基础流量与语音，不含定向流量包。"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "data_mb": 20000,
+            "voice_minutes": 300,
+            "sms_count": 100,
+            "note": "含通用流量与语音，可叠加促销包。"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "data_mb": 60000,
+            "voice_minutes": 1000,
+            "sms_count": 300,
+            "note": "含大额流量与语音，含家庭共享权益。"
+          }
+        ],
+        "billing_accounts": [
+          {
+            "account_id": "BA-PN103",
+            "customer_id": "C103",
+            "phone_number_id": "PN103",
+            "balance_cents": 2600,
+            "arrears_cents": 0,
+            "currency": "CNY"
+          }
+        ],
+        "charges": [],
+        "recharges": [],
+        "subscriptions": [
+          {
+            "subscription_id": "SUB-PN103",
+            "phone_number_id": "PN103",
+            "plan_id": "PLAN_L",
+            "status": "ACTIVE",
+            "started_on": "2025-06-01",
+            "contract_end_on": null
+          }
+        ],
+        "plan_change_requests": [],
+        "cancellation_requests": [],
+        "identity_records": [
+          {
+            "phone_number_id": "PN103",
+            "real_name_status": "VERIFIED",
+            "registration_type": "PERSONAL"
+          }
+        ],
+        "notifications": [],
+        "action_consents": []
+      }
+    },
+    {
+      "state_id": "STATE-D02-004",
+      "state_version": "1.0",
+      "description": "PN105 on PLAN_S, customer refuses all marketing contact.",
+      "db": {
+        "customers": [
+          {
+            "customer_id": "C105",
+            "owner_name": "孙立群",
+            "identity_token": "TEST_IDENTITY_C105"
+          }
+        ],
+        "phone_numbers": [
+          {
+            "phone_number_id": "PN105",
+            "phone_number": "SIM_LINE_105",
+            "owner_customer_id": "C105",
+            "current_plan_id": "PLAN_S",
+            "status": "active"
+          }
+        ],
+        "plans": [
+          {
+            "plan_id": "PLAN_S",
+            "name": "模拟轻享套餐",
+            "monthly_fee": 29.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "name": "模拟畅享套餐",
+            "monthly_fee": 59.0,
+            "currency": "CNY"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "name": "模拟尊享套餐",
+            "monthly_fee": 99.0,
+            "currency": "CNY"
+          }
+        ],
+        "offers": [
+          {
+            "offer_id": "OFFER_D02_001",
+            "name": "模拟流量加赠包",
+            "eligible_plan_ids": [
+              "PLAN_S",
+              "PLAN_M"
+            ],
+            "active": true,
+            "monthly_fee": 10.0,
+            "currency": "CNY",
+            "validity_months": 6,
+            "auto_renewal": true,
+            "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。"
+          },
+          {
+            "offer_id": "OFFER_D02_002",
+            "name": "模拟语音加赠包",
+            "eligible_plan_ids": [
+              "PLAN_M",
+              "PLAN_L"
+            ],
+            "active": true,
+            "monthly_fee": 15.0,
+            "currency": "CNY",
+            "validity_months": 12,
+            "auto_renewal": false,
+            "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。"
+          },
+          {
+            "offer_id": "OFFER_D02_003",
+            "name": "模拟限时体验包",
+            "eligible_plan_ids": [
+              "PLAN_S"
+            ],
+            "active": false,
+            "monthly_fee": 0.0,
+            "currency": "CNY",
+            "validity_months": 3,
+            "auto_renewal": false,
+            "restrictions": "活动已结束，不再接受办理。"
+          }
+        ],
+        "consent_records": [],
+        "enrollments": [],
+        "sms_records": [],
+        "do_not_call_records": [],
+        "plan_allowances": [
+          {
+            "plan_id": "PLAN_S",
+            "data_mb": 5000,
+            "voice_minutes": 100,
+            "sms_count": 30,
+            "note": "基础流量与语音，不含定向流量包。"
+          },
+          {
+            "plan_id": "PLAN_M",
+            "data_mb": 20000,
+            "voice_minutes": 300,
+            "sms_count": 100,
+            "note": "含通用流量与语音，可叠加促销包。"
+          },
+          {
+            "plan_id": "PLAN_L",
+            "data_mb": 60000,
+            "voice_minutes": 1000,
+            "sms_count": 300,
+            "note": "含大额流量与语音，含家庭共享权益。"
+          }
+        ],
+        "billing_accounts": [
+          {
+            "account_id": "BA-PN105",
+            "customer_id": "C105",
+            "phone_number_id": "PN105",
+            "balance_cents": 900,
+            "arrears_cents": 0,
+            "currency": "CNY"
+          }
+        ],
+        "charges": [],
+        "recharges": [],
+        "subscriptions": [
+          {
+            "subscription_id": "SUB-PN105",
+            "phone_number_id": "PN105",
+            "plan_id": "PLAN_S",
+            "status": "ACTIVE",
+            "started_on": "2025-06-01",
+            "contract_end_on": null
+          }
+        ],
+        "plan_change_requests": [],
+        "cancellation_requests": [],
+        "identity_records": [
+          {
+            "phone_number_id": "PN105",
+            "real_name_status": "VERIFIED",
+            "registration_type": "PERSONAL"
+          }
+        ],
+        "notifications": [],
+        "action_consents": []
+      }
+    }
+  ]
+}

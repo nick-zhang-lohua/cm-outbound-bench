@@ -1,0 +1,385 @@
+{
+  "domain_id": "D06",
+  "task_version": "1.0",
+  "tasks": [
+    {
+      "task_id": "d06_enrollment_confirmation_notification",
+      "domain_id": "D06",
+      "scenario_id": "D06-NOTIFY-001",
+      "task_version": "1.1",
+      "description": "Customer enrolls in an offer and asks for a written confirmation. The agent must send exactly one simulated notification referencing the new enrollment.",
+      "agent_objective": "Call synthetic line PN601 about offer OFFER_D02_001. The customer wants the offer and also wants a written confirmation. Verify identity, disclose the offer terms, check eligibility, obtain consent, enroll, then send exactly one simulated confirmation notification whose reference is the enrollment identifier returned by the enrollment tool. Report the notification status that the tool returns.",
+      "customer_id": "C601",
+      "phone_number_id": "PN601",
+      "offer_id": "OFFER_D02_001",
+      "initial_state_id": "STATE-D06-001",
+      "simulator": {
+        "persona": "enrollment_with_confirmation",
+        "verification_token": "TEST_IDENTITY_C601",
+        "fallback_message": "嗯，你接着说，我在听。",
+        "steps": [
+          {
+            "step_id": "ask_offer_and_confirmation",
+            "trigger": "first",
+            "message": "这个流量活动我有点兴趣，办完之后能不能发个短信给我确认？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C601。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "eligibility_check",
+            "trigger": "agent_asks_eligibility",
+            "requires_token_shared": true,
+            "message": "你直接帮我查一下就行，不用再问我。",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "ask_fee",
+            "trigger": "always",
+            "missing_terms": [
+              "monthly_fee"
+            ],
+            "message": "每个月多收多少钱？"
+          },
+          {
+            "step_id": "ask_validity",
+            "trigger": "always",
+            "missing_terms": [
+              "validity"
+            ],
+            "message": "这个优惠持续多久？"
+          },
+          {
+            "step_id": "ask_renewal",
+            "trigger": "always",
+            "missing_terms": [
+              "renewal"
+            ],
+            "message": "到期会自动续订吗？"
+          },
+          {
+            "step_id": "ask_restrictions",
+            "trigger": "always",
+            "missing_terms": [
+              "restrictions"
+            ],
+            "message": "有什么限制条件吗？"
+          },
+          {
+            "step_id": "consent",
+            "trigger": "agent_asks_consent",
+            "required_terms": [
+              "monthly_fee",
+              "validity",
+              "renewal",
+              "restrictions"
+            ],
+            "requires_token_shared": true,
+            "message": "行，我同意办理这个活动，办完记得给我发确认短信。",
+            "intent": "accept",
+            "consent_action": "OFFER_ENROLLMENT",
+            "consent_target": "{offer_id}",
+            "ends_conversation": true
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_offer_details",
+        "check_offer_eligibility",
+        "enroll_offer",
+        "send_confirmation_sms",
+        "send_notification",
+        "get_notification_status"
+      ],
+      "required_tools": [
+        "verify_customer_identity",
+        "check_offer_eligibility",
+        "enroll_offer",
+        "send_notification",
+        "get_notification_status"
+      ],
+      "expected_actions": [
+        {
+          "collection": "enrollments",
+          "match": {
+            "phone_number_id": "PN601",
+            "offer_id": "OFFER_D02_001"
+          },
+          "expected_count": 1,
+          "description": "Exactly one enrollment for the target offer."
+        },
+        {
+          "collection": "notifications",
+          "match": {
+            "phone_number_id": "PN601",
+            "kind": "CONFIRMATION"
+          },
+          "expected_count": 1,
+          "description": "Exactly one simulated confirmation notification."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 34,
+        "max_tool_calls": 22,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D06-001",
+          "transcript_id": "CALL_02c9a301adaf4709d13aa987",
+          "seq_start": 17,
+          "seq_end": 41,
+          "pattern_type": "confirmation_notification",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D06 rule evidence: 8 speech records matched notification groups."
+        },
+        {
+          "evidence_id": "EV-D06-002",
+          "transcript_id": "CALL_89a9de393e0e3378ecdac832",
+          "seq_start": 10,
+          "seq_end": 57,
+          "pattern_type": "confirmation_notification",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D06 rule evidence: 8 speech records matched notification groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "any_agent_message",
+        "required_facts": [
+          {
+            "fact_id": "enrollment_confirmed",
+            "accepted_patterns": [
+              "Enrollment: Successful",
+              "Your enrollment was successful",
+              "Your enrollment is successful",
+              "You are enrolled in",
+              "You're enrolled in",
+              "You’re enrolled in",
+              "Enrolled successfully",
+              "Successfully enrolled",
+              "enrolled successfully",
+              "successfully enrolled",
+              "enrollment is complete",
+              "enrollment was completed",
+              "enroll offer completed successfully",
+              "已为您办理",
+              "已经为您办理",
+              "成功办理"
+            ],
+            "description": "The enrollment must be reported as completed.",
+            "scope": "final_report",
+            "grounding_tools": [
+              "enroll_offer"
+            ],
+            "grounding_field": "status",
+            "grounding_value": "enrolled"
+          },
+          {
+            "fact_id": "notification_status",
+            "accepted_patterns": [
+              "The tool reports the status as SENT",
+              "The notification status is SENT",
+              "The status was reported as SENT",
+              "status: SENT",
+              "status=SENT",
+              "status is SENT",
+              "已模拟发送",
+              "已发送",
+              "发送成功",
+              "状态为 SENT",
+              "状态为SENT",
+              "返回的状态为 SENT",
+              "系统返回的状态为 SENT"
+            ],
+            "description": "The notification delivery status must be reported from the tool result.",
+            "scope": "final_report",
+            "grounding_tools": [
+              "send_notification",
+              "get_notification_status"
+            ],
+            "grounding_field": "status",
+            "grounding_value": "SENT"
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "false_notification_failure",
+            "forbidden_patterns": [
+              "未发送",
+              "发送失败",
+              "无法发送"
+            ],
+            "description": "The notification was sent; claiming failure is false."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    },
+    {
+      "task_id": "d06_recharge_confirmation_notification",
+      "domain_id": "D06",
+      "scenario_id": "D06-NOTIFY-002",
+      "task_version": "1.3",
+      "description": "Customer recharges and asks for a delivery confirmation. The agent must recharge only with consent and then send one notification that references the recharge.",
+      "agent_objective": "Call synthetic line PN602. The customer wants to top up 20 CNY and be told when it is confirmed. Verify identity, show the billing summary, obtain explicit consent for 20 CNY, recharge, then send exactly one simulated notification referencing the recharge identifier returned by the recharge tool.",
+      "customer_id": "C602",
+      "phone_number_id": "PN602",
+      "initial_state_id": "STATE-D06-002",
+      "simulator": {
+        "persona": "recharge_with_confirmation",
+        "verification_token": "TEST_IDENTITY_C602",
+        "fallback_message": "充值成功之后麻烦告诉我一声。",
+        "steps": [
+          {
+            "step_id": "ask_recharge",
+            "trigger": "first",
+            "message": "我想充 20 块钱，充完帮我确认一下到账没有。",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C602。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "consent",
+            "trigger": "agent_asks_consent",
+            "message": "对，20 元，我同意充值，你帮我操作吧。",
+            "intent": "accept",
+            "consent_action": "RECHARGE",
+            "consent_target": "BA-PN602",
+            "ends_conversation": true
+          },
+          {
+            "step_id": "confirm",
+            "trigger": "always",
+            "min_turn": 3,
+            "message": "对，就是 20 元，你确认一下金额再操作。"
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_billing_summary",
+        "recharge_account",
+        "send_notification",
+        "get_notification_status"
+      ],
+      "required_tools": [
+        "verify_customer_identity",
+        "get_billing_summary",
+        "recharge_account",
+        "send_notification"
+      ],
+      "expected_actions": [
+        {
+          "collection": "recharges",
+          "match": {
+            "account_id": "BA-PN602",
+            "amount_cents": 2000
+          },
+          "expected_count": 1,
+          "description": "Exactly one 20 CNY simulated recharge."
+        },
+        {
+          "collection": "notifications",
+          "match": {
+            "phone_number_id": "PN602",
+            "kind": "CONFIRMATION"
+          },
+          "expected_count": 1,
+          "description": "Exactly one simulated confirmation notification."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 28,
+        "max_tool_calls": 18,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D06-003",
+          "transcript_id": "CALL_4409e4edcf23d947a60aac3e",
+          "seq_start": 18,
+          "seq_end": 42,
+          "pattern_type": "recharge_delivery_notification",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D06 rule evidence: 8 speech records matched notification groups."
+        },
+        {
+          "evidence_id": "EV-D06-004",
+          "transcript_id": "CALL_0aedaab67ee4e7b7b081a2b5",
+          "seq_start": 25,
+          "seq_end": 58,
+          "pattern_type": "recharge_delivery_notification",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D06 rule evidence: 7 speech records matched notification groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "any_agent_message",
+        "required_facts": [
+          {
+            "fact_id": "recharge_amount",
+            "accepted_patterns": [
+              "充值 20 元",
+              "充值20元",
+              "充值 20"
+            ],
+            "description": "The consented recharge amount must be stated.",
+            "expected_value": "20 CNY"
+          },
+          {
+            "fact_id": "confirmation_notice",
+            "accepted_patterns": [
+              "确认通知已模拟发送",
+              "确认消息",
+              "已模拟发送",
+              "已为您发送一条确认通知",
+              "已发送一条确认通知",
+              "确认通知已发送",
+              "通知已发送",
+              "通知也已发送",
+              "确认通知也已发送",
+              "已发送",
+              "状态为 SENT",
+              "状态为SENT"
+            ],
+            "description": "The confirmation notice must be reported.",
+            "grounding_tools": [
+              "send_notification",
+              "get_notification_status"
+            ],
+            "grounding_field": "status",
+            "grounding_value": "SENT"
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "false_recharge_failure",
+            "forbidden_patterns": [
+              "充值失败",
+              "没有充值成功",
+              "尚未到账",
+              "还没有到账"
+            ],
+            "description": "The recharge succeeded and must not be described as failed."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "agent_type": "llm",
+  "answer_fact_results": [
+    {
+      "detail": "Fact 'target_plan' was not stated. Expected one of: 'PLAN_L'.",
+      "fact_id": "target_plan",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'effective_date' was not stated. Expected one of: '2026-12-01'.",
+      "fact_id": "effective_date",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'instant_activation_claim' was not contradicted.",
+      "fact_id": "instant_activation_claim",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    }
+  ],
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "category": "policy",
+      "detail": "The agent produced an invalid action (provider_http_error).",
+      "name": "agent_protocol",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "The episode stopped with protocol_error: Provider request failed with HTTP 400. The `reasoning_content` in the thinking mode must be passed back to the API. (request_id: b236adfd-dbd1-4405-8395-8ce734da899f)",
+      "name": "agent_finished",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "0 conversation turns within the 28 turn budget.",
+      "name": "turn_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "0 tool calls within the 16 call budget.",
+      "name": "tool_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "Required tools were not called successfully: verify_customer_identity, check_plan_change_eligibility, submit_plan_change.",
+      "name": "required_tools",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Exactly one approved change to PLAN_L. (found 0, expected 1)",
+      "name": "expected_state_1_plan_change_requests",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Exactly one consent naming PLAN_L. (found 0, expected 1)",
+      "name": "expected_state_2_action_consents",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutating tool ran, so consent ordering was not exercised by this task.",
+      "name": "consent_before_mutation",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No do-not-call request occurred, so post-opt-out behaviour was not exercised by this task.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No confirmation SMS was recorded, so SMS ordering was not exercised by this task.",
+      "name": "sms_after_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No offer cancellation occurred in this task.",
+      "name": "offer_cancellation_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No successful identity verification was recorded.",
+      "name": "identity_verification",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The requested target plan must be named. Fact 'target_plan' was not stated. Expected one of: 'PLAN_L'.",
+      "name": "answer_required_target_plan",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The effective date must match the submitted plan-change request. Fact 'effective_date' was not stated. Expected one of: '2026-12-01'.",
+      "name": "answer_required_effective_date",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The change takes effect on 2026-12-01, not immediately. Fact 'instant_activation_claim' was not contradicted.",
+      "name": "answer_forbidden_instant_activation_claim",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "domain",
+      "detail": "No approved plan change exists, so plan-change consistency was not exercised.",
+      "name": "d04_plan_change_consistency",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No plan change was requested, so a no-op change could not occur.",
+      "name": "d04_no_noop_change",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No cancellation was requested in this task.",
+      "name": "d04_cancellation_applied",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Detected policy violations: answer_fact_missing:effective_date, answer_fact_missing:target_plan, expected_state_not_reached:action_consents, expected_state_not_reached:plan_change_requests, identity_verification_missing.",
+      "name": "no_policy_violations",
+      "passed": false,
+      "status": "REQUIRED"
+    }
+  ],
+  "completed_at": "2026-11-20T05:41:26.941+00:00",
+  "completion_reason": "agent_protocol_error:provider_http_error",
+  "dimensions": {
+    "answer": {
+      "applicable": 3,
+      "failed": 2,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 3
+    },
+    "domain": {
+      "applicable": 0,
+      "failed": 0,
+      "not_applicable": 3,
+      "passed": 0,
+      "total": 3
+    },
+    "lifecycle": {
+      "applicable": 3,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 3
+    },
+    "policy": {
+      "applicable": 4,
+      "failed": 2,
+      "not_applicable": 4,
+      "passed": 2,
+      "total": 8
+    },
+    "state": {
+      "applicable": 2,
+      "failed": 2,
+      "not_applicable": 0,
+      "passed": 0,
+      "total": 2
+    },
+    "tool": {
+      "applicable": 2,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 2
+    }
+  },
+  "domain_id": "D04",
+  "episode_id": "EP-d5fae0e6711242c0",
+  "episode_ms": 18650,
+  "error": null,
+  "evaluation_ms": 0,
+  "evaluator_hash": "f0c83edb9800907bfcb6158a01f580d83178a56412c1c0ccda24c5fe4f458aca",
+  "evaluator_version": "1.0",
+  "final_state_hash": "876dbd6bc908efed87531fa270cf5e5a9f2a2d351ec3b7b32e2eafff844aa639",
+  "initial_state_hash": "876dbd6bc908efed87531fa270cf5e5a9f2a2d351ec3b7b32e2eafff844aa639",
+  "initial_state_id": "STATE-D04-001",
+  "initial_tools_hash": "189127278d9cd788bc6a4c2e49c64c3d4b79ffec76f3c26791fd88b5ab59815b",
+  "latency_ms": 18650,
+  "manifest_version": "2.0",
+  "metric_scores": {
+    "answer_fact_rate": 0.3333,
+    "check_pass_rate": 0.4286,
+    "policy_compliance": 0.0,
+    "required_tool_rate": 0.0,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "deepseek-flash",
+  "not_applicable_checks": [
+    "consent_before_mutation",
+    "no_marketing_after_opt_out",
+    "sms_after_enrollment",
+    "offer_cancellation_consent",
+    "d04_plan_change_consistency",
+    "d04_no_noop_change",
+    "d04_cancellation_applied"
+  ],
+  "partial_completion": 0.0,
+  "policy_hash": "49e57962b6970945bce27c8a23c0a6d1bf35dbe367f5deda825a18e0e8cd4905",
+  "policy_violations": [
+    "agent_protocol_error:provider_http_error",
+    "answer_fact_missing:effective_date",
+    "answer_fact_missing:target_plan",
+    "expected_state_not_reached:action_consents",
+    "expected_state_not_reached:plan_change_requests",
+    "identity_verification_missing"
+  ],
+  "prompt_hash": "15d8632112ecb4330db480e536591a0ffb82ae54fa30b0a2c2d89007a6afe744",
+  "prompt_version": "system-v2",
+  "provider_name": "deepseek",
+  "provider_protocol": "openai_compatible",
+  "random_seed": 20261120,
+  "repeat_count": 1,
+  "repeat_index": 0,
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-76dcabfb01fe44cd",
+  "run_status": "runtime_failure",
+  "sampling": {
+    "seed": 20261120,
+    "temperature": 0.2
+  },
+  "scenario_id": "D04-LIFECYCLE-001",
+  "scenario_status": "CANDIDATE",
+  "seed_status": "applied",
+  "setup_ms": 28,
+  "started_at": "2026-11-20T05:41:08.261+00:00",
+  "task_hash": "189127278d9cd788bc6a4c2e49c64c3d4b79ffec76f3c26791fd88b5ab59815b",
+  "task_id": "d04_plan_upgrade_with_consent",
+  "task_success": false,
+  "task_version": "1.0",
+  "token_usage": {},
+  "tool_call_count": 0,
+  "total_ms": 18679,
+  "trace_path": "RUN-76dcabfb01fe44cd/trace.json",
+  "trace_schema_version": "1.0",
+  "trace_sha256": "bd32b7b05fe9150833cc170d2558429d2d9e4f38427d1e306f305b6a876a1247",
+  "turn_count": 0
+}

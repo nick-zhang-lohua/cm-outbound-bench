@@ -1,0 +1,522 @@
+{
+  "action_consent_events": [],
+  "actions": [
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "outcome": "simulated_reply",
+      "step": 1,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "outcome": "simulated_reply",
+      "step": 2,
+      "tool_name": ""
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C301",
+        "phone_number_id": "PN301"
+      },
+      "call_id": null,
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN301"
+      },
+      "call_id": null,
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 4,
+      "tool_name": "get_billing_summary"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN301"
+      },
+      "call_id": null,
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 5,
+      "tool_name": "list_charges"
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您当前余额 15.00 元，欠费 0.00 元。本期账单项：模拟月费 PLAN_M 59.00 元；模拟增值业务费 10.00 元。如需争议处理会有单独的流程。感谢接听，再见。",
+      "outcome": "simulated_reply",
+      "step": 6,
+      "tool_name": ""
+    },
+    {
+      "action_type": "finish",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "conversation closed",
+      "message": "",
+      "outcome": "episode_finished",
+      "step": 7,
+      "tool_name": ""
+    }
+  ],
+  "agent": {
+    "agent_type": "benchmark_demo",
+    "model_name": "",
+    "policy_hash": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+    "prompt_hash": "d68b72314643c31739e446cd0658fc1aab123443b92b215fe6cb4b261339ef1d",
+    "prompt_version": "scripted-v1",
+    "provider_name": "",
+    "provider_protocol": "",
+    "sampling": {},
+    "seed": null,
+    "seed_status": "",
+    "token_usage": {}
+  },
+  "allowed_tools": [
+    "get_billing_summary",
+    "get_customer_account",
+    "list_charges",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [
+    {
+      "content": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "role": "agent",
+      "step": 1
+    },
+    {
+      "content": "我这个月话费怎么比以前高？你帮我看看扣了什么钱。",
+      "role": "user",
+      "step": 1
+    },
+    {
+      "content": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "role": "agent",
+      "step": 2
+    },
+    {
+      "content": "行，我的测试身份令牌是 TEST_IDENTITY_C301。",
+      "role": "user",
+      "step": 2
+    },
+    {
+      "content": "您当前余额 15.00 元，欠费 0.00 元。本期账单项：模拟月费 PLAN_M 59.00 元；模拟增值业务费 10.00 元。如需争议处理会有单独的流程。感谢接听，再见。",
+      "role": "agent",
+      "step": 6
+    },
+    {
+      "content": "那个增值业务费我没办过啊，这个能退吗？",
+      "role": "user",
+      "step": 6
+    }
+  ],
+  "domain_id": "D03",
+  "episode_id": "EP-747ac5ea6fc845b7",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'plan_charge_amount' was stated as required (matched '59.00').",
+        "fact_id": "plan_charge_amount",
+        "kind": "required",
+        "matched_pattern": "59.00",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'value_added_charge' was stated as required (matched '增值业务费').",
+        "fact_id": "value_added_charge",
+        "kind": "required",
+        "matched_pattern": "增值业务费",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'arrears_state' was stated as required (matched '欠费 0.00').",
+        "fact_id": "arrears_state",
+        "kind": "required",
+        "matched_pattern": "欠费 0.00",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'refund_promise' was not contradicted.",
+        "fact_id": "refund_promise",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'false_reassurance' was not contradicted.",
+        "fact_id": "false_reassurance",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 5,
+        "total": 5
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 2,
+        "passed": 1,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "partial_completion": 1.0,
+    "policy_violations": [],
+    "success": true,
+    "summary": "PASS: 17 applicable checks passed; no policy violations."
+  },
+  "final": {
+    "completion_status": "completed",
+    "database": {
+      "action_consents": [],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN301",
+          "arrears_cents": 0,
+          "balance_cents": 1500,
+          "currency": "CNY",
+          "customer_id": "C301",
+          "phone_number_id": "PN301"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [
+        {
+          "account_id": "BA-PN301",
+          "amount_cents": 5900,
+          "billing_period": "2026-10",
+          "charge_id": "CHG-0001",
+          "description": "模拟月费 PLAN_M",
+          "status": "BILLED"
+        },
+        {
+          "account_id": "BA-PN301",
+          "amount_cents": 1000,
+          "billing_period": "2026-10",
+          "charge_id": "CHG-0002",
+          "description": "模拟增值业务费",
+          "status": "BILLED"
+        }
+      ],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C301",
+          "identity_token": "TEST_IDENTITY_C301",
+          "owner_name": "黄蕾"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN301",
+          "real_name_status": "VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_M",
+          "owner_customer_id": "C301",
+          "phone_number": "SIM_LINE_301",
+          "phone_number_id": "PN301",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN301",
+          "plan_id": "PLAN_M",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN301"
+        }
+      ]
+    },
+    "final_state_hash": "89476abda1c46964ac161091a20ab2b0b6c3844d2cc4d12fc8f58c71bb7dbba2"
+  },
+  "initial_state_hash": "89476abda1c46964ac161091a20ab2b0b6c3844d2cc4d12fc8f58c71bb7dbba2",
+  "initial_state_id": "STATE-D03-001",
+  "integrity": {
+    "created_at": "2026-11-22T11:29:24+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "ff2e073fa577adb1382e69e3667ac7242504b33ea11b4f345fe48ede1fcb35c5"
+  },
+  "required_tools": [
+    "get_billing_summary",
+    "list_charges"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-b98dafc2d048427c",
+  "scenario_id": "D03-BILL-001",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "我这个月话费怎么比以前高？你帮我看看扣了什么钱。",
+      "step": 1,
+      "step_id": "ask_bill"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "provide_identity",
+      "message": "行，我的测试身份令牌是 TEST_IDENTITY_C301。",
+      "step": 2,
+      "step_id": "provide_token"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "那个增值业务费我没办过啊，这个能退吗？",
+      "step": 6,
+      "step_id": "dispute"
+    }
+  ],
+  "stop": {
+    "customer_conversation_closed": false,
+    "episode_completed": true,
+    "error_code": "",
+    "error_message": "",
+    "error_stage": "",
+    "error_type": "",
+    "post_closure_actions": 0,
+    "steps_executed": 7,
+    "stop_reason": "agent_finished"
+  },
+  "task_id": "d03_bill_explanation",
+  "task_version": "1.1",
+  "tool_calls": [
+    {
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C301",
+        "phone_number_id": "PN301"
+      },
+      "call_id": null,
+      "result": {
+        "data": {
+          "phone_number_id": "PN301",
+          "verified": true
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN301"
+      },
+      "call_id": null,
+      "result": {
+        "data": {
+          "account_id": "BA-PN301",
+          "arrears_cents": 0,
+          "balance_cents": 1500,
+          "charge_count": 2,
+          "currency": "CNY",
+          "phone_number_id": "PN301",
+          "unpaid_cents": 6900
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 4,
+      "tool_name": "get_billing_summary"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN301"
+      },
+      "call_id": null,
+      "result": {
+        "data": {
+          "account_id": "BA-PN301",
+          "charges": [
+            {
+              "amount_cents": 5900,
+              "billing_period": "2026-10",
+              "charge_id": "CHG-0001",
+              "description": "模拟月费 PLAN_M",
+              "status": "BILLED"
+            },
+            {
+              "amount_cents": 1000,
+              "billing_period": "2026-10",
+              "charge_id": "CHG-0002",
+              "description": "模拟增值业务费",
+              "status": "BILLED"
+            }
+          ],
+          "currency": "CNY"
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 5,
+      "tool_name": "list_charges"
+    }
+  ],
+  "trace_schema_version": "1.0"
+}

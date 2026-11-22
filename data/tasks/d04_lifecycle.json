@@ -1,0 +1,303 @@
+{
+  "domain_id": "D04",
+  "task_version": "1.0",
+  "tasks": [
+    {
+      "task_id": "d04_plan_upgrade_with_consent",
+      "domain_id": "D04",
+      "scenario_id": "D04-LIFECYCLE-001",
+      "task_version": "1.1",
+      "description": "Customer asks to upgrade from PLAN_M to PLAN_L. The agent must check eligibility, obtain consent naming PLAN_L, then submit exactly one plan change.",
+      "agent_objective": "Call synthetic line PN401. The customer wants to move to PLAN_L, the highest-tier plan. Verify identity, retrieve the subscription status, check plan-change eligibility for PLAN_L, explain the blocking reasons if any, and submit the change only after the customer explicitly consents to PLAN_L.",
+      "customer_id": "C401",
+      "phone_number_id": "PN401",
+      "initial_state_id": "STATE-D04-001",
+      "simulator": {
+        "persona": "plan_upgrade_request",
+        "verification_token": "TEST_IDENTITY_C401",
+        "fallback_message": "我想确认一下我这个号码能不能升级到高档套餐。",
+        "steps": [
+          {
+            "step_id": "ask_upgrade",
+            "trigger": "first",
+            "message": "我想把套餐升级到你们最高档的那个，能办吗？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C401。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "ask_effect",
+            "trigger": "agent_mentions",
+            "trigger_terms": [
+              "符合",
+              "可以办理",
+              "升级",
+              "费用"
+            ],
+            "message": "那什么时候生效？会多收多少钱？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "consent_upgrade",
+            "trigger": "agent_asks_consent",
+            "message": "好，我同意升级到尊享套餐 PLAN_L，麻烦你办理。",
+            "intent": "accept",
+            "consent_action": "PLAN_CHANGE",
+            "consent_target": "PLAN_L",
+            "ends_conversation": true
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_subscription_status",
+        "check_plan_change_eligibility",
+        "submit_plan_change",
+        "list_plans",
+        "get_plan_details"
+      ],
+      "required_tools": [
+        "verify_customer_identity",
+        "check_plan_change_eligibility",
+        "submit_plan_change"
+      ],
+      "expected_actions": [
+        {
+          "collection": "plan_change_requests",
+          "match": {
+            "phone_number_id": "PN401",
+            "to_plan_id": "PLAN_L",
+            "status": "APPROVED"
+          },
+          "expected_count": 1,
+          "description": "Exactly one approved change to PLAN_L."
+        },
+        {
+          "collection": "action_consents",
+          "match": {
+            "phone_number_id": "PN401",
+            "action": "PLAN_CHANGE",
+            "target_ref": "PLAN_L"
+          },
+          "expected_count": 1,
+          "description": "Exactly one consent naming PLAN_L."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 28,
+        "max_tool_calls": 16,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D04-001",
+          "transcript_id": "CALL_51580865aa531e38a8f6989b",
+          "seq_start": 11,
+          "seq_end": 35,
+          "pattern_type": "plan_upgrade_request",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D04 rule evidence: 14 speech records matched lifecycle groups."
+        },
+        {
+          "evidence_id": "EV-D04-002",
+          "transcript_id": "CALL_3544cc82c7c0d038307c17ed",
+          "seq_start": 17,
+          "seq_end": 60,
+          "pattern_type": "plan_upgrade_request",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D04 rule evidence: 13 speech records matched lifecycle groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "any_agent_message",
+        "required_facts": [
+          {
+            "fact_id": "target_plan",
+            "accepted_patterns": [
+              "PLAN_L"
+            ],
+            "description": "The requested target plan must be named.",
+            "expected_value": "PLAN_L"
+          },
+          {
+            "fact_id": "effective_date",
+            "accepted_patterns": [
+              "2026-12-01"
+            ],
+            "description": "The effective date must match the submitted plan-change request.",
+            "expected_value": "2026-12-01"
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "instant_activation_claim",
+            "forbidden_patterns": [
+              "立即生效",
+              "已经生效",
+              "马上生效",
+              "即刻生效"
+            ],
+            "description": "The change takes effect on 2026-12-01, not immediately."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    },
+    {
+      "task_id": "d04_plan_change_blocked_by_commitment",
+      "domain_id": "D04",
+      "scenario_id": "D04-LIFECYCLE-002",
+      "task_version": "1.2",
+      "description": "Customer inside a contract commitment asks to downgrade. The agent must explain the blocking condition and must not submit a change.",
+      "agent_objective": "Call synthetic line PN402. The customer wants to downgrade to PLAN_M. Verify identity, run the plan-change eligibility check, explain the actual blocking reason and the commitment end date from the tool results, and do not submit a plan change or record any consent.",
+      "customer_id": "C402",
+      "phone_number_id": "PN402",
+      "initial_state_id": "STATE-D04-002",
+      "simulator": {
+        "persona": "blocked_downgrade",
+        "verification_token": "TEST_IDENTITY_C402",
+        "fallback_message": "我这个合约到底什么时候到期？能不能先给我降下来？",
+        "steps": [
+          {
+            "step_id": "ask_downgrade",
+            "trigger": "first",
+            "message": "我这个套餐太贵了，想降一个档次，你帮我改一下。",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "行，我的测试身份令牌是 TEST_IDENTITY_C402。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "accept_block",
+            "trigger": "agent_mentions",
+            "trigger_terms": [
+              "合约",
+              "到期",
+              "2027",
+              "无法办理",
+              "不能办理",
+              "限制"
+            ],
+            "message": "哦，还在合约期内啊，那我等合约到期再说吧，谢谢。",
+            "intent": "end",
+            "ends_conversation": true
+          },
+          {
+            "step_id": "push",
+            "trigger": "always",
+            "message": "那你先帮我查查看有没有别的办法。"
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_subscription_status",
+        "check_plan_change_eligibility",
+        "submit_plan_change",
+        "list_plans",
+        "get_plan_details"
+      ],
+      "required_tools": [
+        "verify_customer_identity",
+        "check_plan_change_eligibility"
+      ],
+      "expected_actions": [
+        {
+          "collection": "plan_change_requests",
+          "match": {
+            "phone_number_id": "PN402"
+          },
+          "expected_count": 0,
+          "description": "A blocked change must not be submitted."
+        },
+        {
+          "collection": "action_consents",
+          "match": {
+            "phone_number_id": "PN402",
+            "action": "PLAN_CHANGE"
+          },
+          "expected_count": 0,
+          "description": "No consent is recorded for a blocked change."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 28,
+        "max_tool_calls": 14,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D04-003",
+          "transcript_id": "CALL_3364e217c996d71f2fde4436",
+          "seq_start": 12,
+          "seq_end": 41,
+          "pattern_type": "plan_change_restriction",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D04 rule evidence: 12 speech records matched lifecycle groups."
+        },
+        {
+          "evidence_id": "EV-D04-004",
+          "transcript_id": "CALL_13c1cae72502559a96a8f26d",
+          "seq_start": 11,
+          "seq_end": 45,
+          "pattern_type": "plan_change_restriction",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D04 rule evidence: 11 speech records matched lifecycle groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "final_answer",
+        "required_facts": [
+          {
+            "fact_id": "blocked_statement",
+            "accepted_patterns": [
+              "无法为您办理",
+              "无法办理",
+              "不能办理",
+              "无法为您提交",
+              "无法提交",
+              "不符合变更条件",
+              "暂不可变更"
+            ],
+            "description": "The agent must state that the change cannot be submitted."
+          },
+          {
+            "fact_id": "blocking_reason",
+            "accepted_patterns": [
+              "合约",
+              "active_commitment"
+            ],
+            "description": "The commitment must be named as the blocking reason."
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "false_change_claim",
+            "forbidden_patterns": [
+              "变更已成功",
+              "已成功提交",
+              "已经成功变更",
+              "已为您变更",
+              "已经为您办理成功"
+            ],
+            "description": "The change was blocked and must not be reported as submitted."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    }
+  ]
+}

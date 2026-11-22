@@ -1,0 +1,335 @@
+{
+  "agent_type": "llm",
+  "answer_fact_results": [
+    {
+      "detail": "Fact 'offer_monthly_fee' was stated as required (matched '10 \u5143').",
+      "fact_id": "offer_monthly_fee",
+      "kind": "required",
+      "matched_pattern": "10 \u5143",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'offer_validity' was stated as required (matched '6 \u4e2a\u6708').",
+      "fact_id": "offer_validity",
+      "kind": "required",
+      "matched_pattern": "6 \u4e2a\u6708",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'offer_auto_renewal' was stated as required (matched '\u81ea\u52a8\u7eed\u8ba2').",
+      "fact_id": "offer_auto_renewal",
+      "kind": "required",
+      "matched_pattern": "\u81ea\u52a8\u7eed\u8ba2",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'false_no_renewal_claim' was not contradicted.",
+      "fact_id": "false_no_renewal_claim",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'free_offer_claim' was not contradicted.",
+      "fact_id": "free_offer_claim",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    }
+  ],
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "category": "lifecycle",
+      "detail": "The agent finished the interaction.",
+      "name": "agent_finished",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "14 conversation turns within the 32 turn budget.",
+      "name": "turn_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "3 tool calls within the 20 call budget.",
+      "name": "tool_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "Required tools were not called successfully: enroll_offer, send_confirmation_sms.",
+      "name": "required_tools",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Exactly one enrollment for the target line and offer. (found 0, expected 1)",
+      "name": "expected_state_1_enrollments",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Exactly one runner-recorded consent for the enrollment. (found 0, expected 1)",
+      "name": "expected_state_2_consent_records",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Exactly one simulated confirmation SMS. (found 0, expected 1)",
+      "name": "expected_state_3_sms_records",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "The customer never asked for do-not-call. (found 0, expected 0)",
+      "name": "expected_state_4_do_not_call_records",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutating tool ran, so consent ordering was not exercised by this task.",
+      "name": "consent_before_mutation",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No do-not-call request occurred, so post-opt-out behaviour was not exercised by this task.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No confirmation SMS was recorded, so SMS ordering was not exercised by this task.",
+      "name": "sms_after_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No offer cancellation occurred in this task.",
+      "name": "offer_cancellation_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Successful identity verification was recorded.",
+      "name": "identity_verification",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The offer's additional monthly fee must match the offer tool result. Fact 'offer_monthly_fee' was stated as required (matched '10 \u5143').",
+      "name": "answer_required_offer_monthly_fee",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The offer validity must match the offer tool result. Fact 'offer_validity' was stated as required (matched '6 \u4e2a\u6708').",
+      "name": "answer_required_offer_validity",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The automatic-renewal behaviour must be stated. Fact 'offer_auto_renewal' was stated as required (matched '\u81ea\u52a8\u7eed\u8ba2').",
+      "name": "answer_required_offer_auto_renewal",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The offer renews automatically; claiming otherwise is false. Fact 'false_no_renewal_claim' was not contradicted.",
+      "name": "answer_forbidden_false_no_renewal_claim",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The offer has a fee and must not be described as free. Fact 'free_offer_claim' was not contradicted.",
+      "name": "answer_forbidden_free_offer_claim",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "domain",
+      "detail": "No enrollment occurred, so eligibility ordering was not exercised.",
+      "name": "d02_eligibility_before_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No enrollment occurred, so pre-enrollment disclosure was not exercised.",
+      "name": "d02_offer_terms_disclosed",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No enrollment succeeded for an inactive offer.",
+      "name": "d02_offer_active_at_enrollment",
+      "passed": true,
+      "status": "APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Detected policy violations: expected_state_not_reached:consent_records, expected_state_not_reached:enrollments, expected_state_not_reached:sms_records.",
+      "name": "no_policy_violations",
+      "passed": false,
+      "status": "REQUIRED"
+    }
+  ],
+  "completed_at": "2026-11-20T13:10:20.333+00:00",
+  "completion_reason": "agent_finished",
+  "dimensions": {
+    "answer": {
+      "applicable": 5,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "domain": {
+      "applicable": 1,
+      "failed": 0,
+      "not_applicable": 2,
+      "passed": 1,
+      "total": 3
+    },
+    "lifecycle": {
+      "applicable": 3,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 3,
+      "total": 3
+    },
+    "policy": {
+      "applicable": 4,
+      "failed": 1,
+      "not_applicable": 4,
+      "passed": 3,
+      "total": 8
+    },
+    "state": {
+      "applicable": 4,
+      "failed": 3,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 4
+    },
+    "tool": {
+      "applicable": 2,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 2
+    }
+  },
+  "domain_id": "D02",
+  "episode_id": "EP-0bd07b3272e0457b",
+  "episode_ms": 13001,
+  "error": null,
+  "evaluation_ms": 1,
+  "evaluator_hash": "2692dbb5ce70a53609e5435d46d8d125ef74952fca9def1eaf93a2a00885f34b",
+  "evaluator_version": "1.0",
+  "final_state_hash": "2ed48a1f420aa78801b5b82ae59aea5656f4d5785ccf4c08ce8ed4f14076b1d3",
+  "initial_state_hash": "2ed48a1f420aa78801b5b82ae59aea5656f4d5785ccf4c08ce8ed4f14076b1d3",
+  "initial_state_id": "STATE-D02-001",
+  "initial_tools_hash": "8448feeb39e49147e57756946515c70ea1103cfdde3eff02562c8efeaba79a69",
+  "latency_ms": 13002,
+  "manifest_version": "2.0",
+  "metric_scores": {
+    "answer_fact_rate": 1.0,
+    "check_pass_rate": 0.7368,
+    "policy_compliance": 0.0,
+    "required_tool_rate": 0.6,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "deepseek-flash",
+  "not_applicable_checks": [
+    "consent_before_mutation",
+    "no_marketing_after_opt_out",
+    "sms_after_enrollment",
+    "offer_cancellation_consent",
+    "d02_eligibility_before_enrollment",
+    "d02_offer_terms_disclosed"
+  ],
+  "partial_completion": 0.7368,
+  "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+  "policy_violations": [
+    "expected_state_not_reached:consent_records",
+    "expected_state_not_reached:enrollments",
+    "expected_state_not_reached:sms_records"
+  ],
+  "prompt_hash": "24e260a8e88cf9fbaa6c3349ba6c02d8cbeaad5bbd0b9e5ca24d5e05d3d9ef69",
+  "prompt_version": "system-v3",
+  "provider_name": "deepseek",
+  "provider_protocol": "openai_compatible",
+  "random_seed": 20261120,
+  "repeat_count": 1,
+  "repeat_index": 0,
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-21e500865ce940db",
+  "run_status": "evaluation_failure",
+  "sampling": {
+    "seed": 20261120,
+    "temperature": 0.2
+  },
+  "scenario_id": "D02-OFFER-001",
+  "scenario_status": "CANDIDATE",
+  "seed_status": "applied",
+  "setup_ms": 58,
+  "started_at": "2026-11-20T13:10:07.271+00:00",
+  "task_hash": "8448feeb39e49147e57756946515c70ea1103cfdde3eff02562c8efeaba79a69",
+  "task_id": "d02_offer_benefit_inquiry_accept",
+  "task_success": false,
+  "task_version": "1.1",
+  "token_usage": {
+    "completion_tokens": 812,
+    "prompt_tokens": 35441,
+    "total_tokens": 36253
+  },
+  "tool_call_count": 3,
+  "total_ms": 13061,
+  "trace_path": "RUN-21e500865ce940db/trace.json",
+  "trace_schema_version": "1.0",
+  "trace_sha256": "3f163a1bfff61c5e9236309fc870869a6da858c6a3d2f81dc46298b2be3e3f20",
+  "turn_count": 14
+}

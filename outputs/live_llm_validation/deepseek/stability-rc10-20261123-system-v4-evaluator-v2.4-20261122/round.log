@@ -1,0 +1,115 @@
+== D01 start 18:56:56
+== D01 exit=1 18:58:54
+   d01_plan_content_explanation runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,identity_verification,answer_required_plan_monthly_fee,answer_required_plan_data_allowance,answer_required_plan_voice_allowance,answer_required_plan_sms_allowance,d01_plan_information_retrieved,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:plan_data_allowance,answer_fact_missing:plan_monthly_fee,answer_fact_missing:plan_sms_allowance,answer_fact_missing:plan_voice_allowance,d01_answer_without_plan_lookup,identity_verification_missing] seed=20261123
+      task_hash=d525266380bd0e835b97209f58de74ed36d12652a327c3026ff33ce62f4735ae
+      prompt_hash=dceca853dd875e6c14b60ec180eb72b605eae0833ac02622ddc3ec5bf56e1f85 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2
+      tokens={} latency_ms=85016
+   d01_plan_comparison runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,answer_required_plan_m_fee,answer_required_plan_l_fee,answer_required_fee_difference,d01_plan_information_retrieved,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:fee_difference,answer_fact_missing:plan_l_fee,answer_fact_missing:plan_m_fee,d01_answer_without_plan_lookup] seed=20261123
+      task_hash=1f021086f2097ad88dec161b5e43ddc4355e3b867709d049b6e5d612ba482632
+      prompt_hash=ec91bc54af6679087d6426b41cf854297cca2e2f83bb13a593d0170324f568d2 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2
+      tokens={} latency_ms=31535
+   AGGREGATE rate=0.0 manifests=2
+      D01: runs=2 success=0 rate=0.0
+== D01 stderr tail
+== D02 start 18:58:54
+== D02 exit=1 19:01:01
+   d02_offer_benefit_inquiry_accept runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,expected_state_1_enrollments,expected_state_2_consent_records,expected_state_3_sms_records,identity_verification,answer_required_offer_monthly_fee,answer_required_offer_validity,answer_required_offer_auto_renewal,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:offer_auto_renewal,answer_fact_missing:offer_monthly_fee,answer_fact_missing:offer_validity,expected_state_not_reached:consent_records,expected_state_not_reached:enrollments,expected_state_not_reached:sms_records,identity_verification_missing] seed=20261123
+      task_hash=3fa0fef80981dfca2c62445d4361a20347a52898cc3d9bfc9263f61411a4b93a
+      prompt_hash=dc3ec9de524965cf7fd64efcc94233239efadb3b54297a941304d95e1033dcb0 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={} latency_ms=31546
+   d02_hesitation_then_decline runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,identity_verification,answer_required_offer_monthly_fee,answer_required_offer_validity,answer_required_offer_no_auto_renewal,answer_required_decline_acknowledged,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:decline_acknowledged,answer_fact_missing:offer_monthly_fee,answer_fact_missing:offer_no_auto_renewal,answer_fact_missing:offer_validity,identity_verification_missing] seed=20261123
+      task_hash=71a28c39721d26e22f182b0d3f7726c64be8ec4769d52d094d1e5e4420c1c53c
+      prompt_hash=0ae7036934842cc631aeaaa17f77630d83e56428b8f9e177bcbd77c0e681086b v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={} latency_ms=31535
+   d02_eligibility_ineligible_explanation runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,identity_verification,answer_required_ineligible_statement,answer_required_ineligible_reason,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:ineligible_reason,answer_fact_missing:ineligible_statement,identity_verification_missing] seed=20261123
+      task_hash=41f0b0001834d6b1b0b5142b78ded4381ecfc2336057cc41fc08179935632129
+      prompt_hash=e5227aa98d1db3fbf7589af286dbc60288d9f1d994324770f3c3b735e65229d1 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={} latency_ms=31535
+   d02_direct_refusal_do_not_call runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,expected_state_1_do_not_call_records,answer_required_do_not_call_registered,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:do_not_call_registered,expected_state_not_reached:do_not_call_records] seed=20261123
+      task_hash=37ac9068499fa9898ddded8f8ba65e5ae32f3b2d5239b0ae7a120b3ce95beadc
+      prompt_hash=2f3f81f688f6a5ac23f41a5da38df1f36275614e34617fc2d3998886cd04afc6 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={} latency_ms=31536
+   AGGREGATE rate=0.0 manifests=4
+      D02: runs=4 success=0 rate=0.0
+== D02 stderr tail
+== D03 start 19:01:01
+== D03 exit=1 19:02:05
+   d03_bill_explanation runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,identity_verification,answer_required_plan_charge_amount,answer_required_value_added_charge,answer_required_arrears_state,d03_billing_information_retrieved,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:arrears_state,answer_fact_missing:plan_charge_amount,answer_fact_missing:value_added_charge,identity_verification_missing] seed=20261123
+      task_hash=b47fc44c746924a04b3b34fd3bd9c4b9cbfd2374bdb49fcdb779bd55359c9a6d
+      prompt_hash=0bd007d7ab113d384b541b8a2b519efa981612f3849ff7fc9bf8adf311d0f6e0 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b
+      tokens={} latency_ms=31549
+   d03_arrears_recharge_with_consent runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,expected_state_1_recharges,expected_state_2_action_consents,identity_verification,answer_required_recharge_amount,answer_required_arrears_state,d03_billing_information_retrieved,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:arrears_state,answer_fact_missing:recharge_amount,expected_state_not_reached:action_consents,expected_state_not_reached:recharges,identity_verification_missing] seed=20261123
+      task_hash=68a6d220cf25e95033a70148746c1f7daa54327cae24d5e25388b960db7ce557
+      prompt_hash=fcd175d14146dc2a670e659f266e5b0646ad064e5f1f0a4294fbe65c6ffb5726 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b
+      tokens={} latency_ms=31535
+   AGGREGATE rate=0.0 manifests=2
+      D03: runs=2 success=0 rate=0.0
+== D03 stderr tail
+== D04 start 19:02:05
+== D04 exit=1 19:03:10
+   d04_plan_upgrade_with_consent runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,expected_state_1_plan_change_requests,expected_state_2_action_consents,identity_verification,answer_required_target_plan,answer_required_effective_date,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:effective_date,answer_fact_missing:target_plan,expected_state_not_reached:action_consents,expected_state_not_reached:plan_change_requests,identity_verification_missing] seed=20261123
+      task_hash=131324d961318229455aec00525627bcbe6597328f1f2b71940e8f4735ea7225
+      prompt_hash=bfb49664e31b4edf4ee45d183f6b41114488e1aa6af45b99de99d56845e2578f v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5
+      tokens={} latency_ms=31542
+   d04_plan_change_blocked_by_commitment runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,identity_verification,answer_required_blocked_statement,answer_required_blocking_reason,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:blocked_statement,answer_fact_missing:blocking_reason,identity_verification_missing] seed=20261123
+      task_hash=9d3838b36d7e21395890f1429b7bf946b6002782a5e5ee01d3f7ff6f1fe173fd
+      prompt_hash=d9aee5dc0d05623d42be7e88dce778c87fa2af8a34c76eddee15731551b0e069 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5
+      tokens={} latency_ms=31534
+   AGGREGATE rate=0.0 manifests=2
+      D04: runs=2 success=0 rate=0.0
+== D04 stderr tail
+== D05 start 19:03:10
+== D05 exit=1 19:04:14
+   d05_ownership_transfer_conditions runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,identity_verification,answer_required_transfer_conditions_met,answer_required_separate_process_required,d05_identity_information_retrieved,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:separate_process_required,answer_fact_missing:transfer_conditions_met,identity_verification_missing] seed=20261123
+      task_hash=adeaaf1f74041b908ce6de769f9d49cf1bec65ef30b2426c7332dbcd80c00665
+      prompt_hash=978836aebd19bbcc2359b83b2a8e8705df05fac7ee3ef5ef65fac8b00b8de9d8 v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235
+      tokens={} latency_ms=31545
+   d05_real_name_not_verified runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,identity_verification,answer_required_real_name_state,answer_required_arrears_state,d05_identity_information_retrieved,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:arrears_state,answer_fact_missing:real_name_state,identity_verification_missing] seed=20261123
+      task_hash=809041a3ebb4b31df32886e6a792020050c06d3eca487ec34085595050249240
+      prompt_hash=6e2d1f8de12d4df953fb8d1d12b49a4948b215a0d058b16b6fd369811bde7e3a v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235
+      tokens={} latency_ms=31535
+   AGGREGATE rate=0.0 manifests=2
+      D05: runs=2 success=0 rate=0.0
+== D05 stderr tail
+== D06 start 19:04:14
+== D06 exit=1 19:05:18
+   d06_enrollment_confirmation_notification runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,expected_state_1_enrollments,expected_state_2_notifications,identity_verification,answer_required_enrollment_confirmed,answer_required_notification_status,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:enrollment_confirmed,answer_fact_missing:notification_status,expected_state_not_reached:enrollments,expected_state_not_reached:notifications,identity_verification_missing] seed=20261123
+      task_hash=9326e6ceea9e0e91f17437689e3712c562e7888aef26b740cc96e38b7d3399e5
+      prompt_hash=c03d96f4971250221c3eee261356cc778b8f0fb57f17490fca26b51e7c657c4d v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301
+      tokens={} latency_ms=31546
+   d06_recharge_confirmation_notification runtime_failure turns=0 tools=0 failed=[agent_protocol,agent_finished,required_tools,expected_state_1_recharges,expected_state_2_notifications,identity_verification,answer_required_recharge_amount,answer_required_confirmation_notice,no_policy_violations] violations=[agent_protocol_error:network_error,answer_fact_missing:confirmation_notice,answer_fact_missing:recharge_amount,expected_state_not_reached:notifications,expected_state_not_reached:recharges,identity_verification_missing] seed=20261123
+      task_hash=1676e4ced13f9ea304b36e514762c4c3291f3576e84f5c6d3fd2cea3d02dbe74
+      prompt_hash=cd45480e389f30f81b143f1b085221c80552b177f4aea90d2c836b82a47c4f6e v=system-v4
+      evaluator=2.4 a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2
+      policy_hash=4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301
+      tokens={} latency_ms=31535
+   AGGREGATE rate=0.0 manifests=2
+      D06: runs=2 success=0 rate=0.0
+== D06 stderr tail
+== round complete 19:05:18

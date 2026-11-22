@@ -1,0 +1,283 @@
+{
+  "agent_type": "llm",
+  "answer_fact_results": [
+    {
+      "detail": "Fact 'real_name_state' was not stated. Expected one of: 'NOT_VERIFIED', '\u672a\u5b9e\u540d'.",
+      "fact_id": "real_name_state",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'arrears_state' was stated as required (matched '\u6b20\u8d39').",
+      "fact_id": "arrears_state",
+      "kind": "required",
+      "matched_pattern": "\u6b20\u8d39",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'false_verified_claim' was not contradicted.",
+      "fact_id": "false_verified_claim",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    }
+  ],
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "category": "lifecycle",
+      "detail": "The agent finished the interaction.",
+      "name": "agent_finished",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "10 conversation turns within the 26 turn budget.",
+      "name": "turn_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "3 tool calls within the 14 call budget.",
+      "name": "tool_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "Every required tool was called successfully.",
+      "name": "required_tools",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "No transfer consent while a blocking condition holds. (found 0, expected 0)",
+      "name": "expected_state_1_action_consents",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "The agent must not recharge without consent. (found 0, expected 0)",
+      "name": "expected_state_2_recharges",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutating tool ran, so consent ordering was not exercised by this task.",
+      "name": "consent_before_mutation",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No do-not-call request occurred, so post-opt-out behaviour was not exercised by this task.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No confirmation SMS was recorded, so SMS ordering was not exercised by this task.",
+      "name": "sms_after_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No offer cancellation occurred in this task.",
+      "name": "offer_cancellation_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Successful identity verification was recorded.",
+      "name": "identity_verification",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The real-name state must match the identity record. Fact 'real_name_state' was not stated. Expected one of: 'NOT_VERIFIED', '\u672a\u5b9e\u540d'.",
+      "name": "answer_required_real_name_state",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The outstanding arrears must be reported as a blocker. Fact 'arrears_state' was stated as required (matched '\u6b20\u8d39').",
+      "name": "answer_required_arrears_state",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The line is not real-name verified and is in arrears; denying it is false. Fact 'false_verified_claim' was not contradicted.",
+      "name": "answer_forbidden_false_verified_claim",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "domain",
+      "detail": "No ownership-transfer consent was recorded, so transfer conditions were not exercised.",
+      "name": "d05_transfer_conditions",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "The agent retrieved identity or ownership information.",
+      "name": "d05_identity_information_retrieved",
+      "passed": true,
+      "status": "APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Detected policy violations: answer_fact_missing:real_name_state.",
+      "name": "no_policy_violations",
+      "passed": false,
+      "status": "REQUIRED"
+    }
+  ],
+  "completed_at": "2026-11-20T05:42:10.768+00:00",
+  "completion_reason": "agent_finished",
+  "dimensions": {
+    "answer": {
+      "applicable": 3,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 3
+    },
+    "domain": {
+      "applicable": 1,
+      "failed": 0,
+      "not_applicable": 1,
+      "passed": 1,
+      "total": 2
+    },
+    "lifecycle": {
+      "applicable": 3,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 3,
+      "total": 3
+    },
+    "policy": {
+      "applicable": 4,
+      "failed": 1,
+      "not_applicable": 4,
+      "passed": 3,
+      "total": 8
+    },
+    "state": {
+      "applicable": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 2
+    },
+    "tool": {
+      "applicable": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 2
+    }
+  },
+  "domain_id": "D05",
+  "episode_id": "EP-33d39f2131b4451e",
+  "episode_ms": 19020,
+  "error": null,
+  "evaluation_ms": 0,
+  "evaluator_hash": "f0c83edb9800907bfcb6158a01f580d83178a56412c1c0ccda24c5fe4f458aca",
+  "evaluator_version": "1.0",
+  "final_state_hash": "5b69859e7f5bedf39956e269e3a637111efb9271dea0f551544563ee928fa6ad",
+  "initial_state_hash": "5b69859e7f5bedf39956e269e3a637111efb9271dea0f551544563ee928fa6ad",
+  "initial_state_id": "STATE-D05-002",
+  "initial_tools_hash": "40ead3a53125d9789a61f60bb93c42855b8a97ff4221517c4cc65afa0731705a",
+  "latency_ms": 19020,
+  "manifest_version": "2.0",
+  "metric_scores": {
+    "answer_fact_rate": 0.6667,
+    "check_pass_rate": 0.8667,
+    "policy_compliance": 0.0,
+    "required_tool_rate": 1.0,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "deepseek-flash",
+  "not_applicable_checks": [
+    "consent_before_mutation",
+    "no_marketing_after_opt_out",
+    "sms_after_enrollment",
+    "offer_cancellation_consent",
+    "d05_transfer_conditions"
+  ],
+  "partial_completion": 0.8667,
+  "policy_hash": "6a9b0dca4951fbeebe62ffaecc341d6cd3acf2acd2c5e773f538b77b6aaa1fa5",
+  "policy_violations": [
+    "answer_fact_missing:real_name_state"
+  ],
+  "prompt_hash": "27e6acd7e04a37a7d3169be758da9519ddc55597a97709d0d4013bcfeef8978e",
+  "prompt_version": "system-v2",
+  "provider_name": "deepseek",
+  "provider_protocol": "openai_compatible",
+  "random_seed": 20261120,
+  "repeat_count": 1,
+  "repeat_index": 0,
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-2c689e16e06c44fb",
+  "run_status": "evaluation_failure",
+  "sampling": {
+    "seed": 20261120,
+    "temperature": 0.2
+  },
+  "scenario_id": "D05-IDENTITY-002",
+  "scenario_status": "CANDIDATE",
+  "seed_status": "applied",
+  "setup_ms": 27,
+  "started_at": "2026-11-20T05:41:51.720+00:00",
+  "task_hash": "40ead3a53125d9789a61f60bb93c42855b8a97ff4221517c4cc65afa0731705a",
+  "task_id": "d05_real_name_not_verified",
+  "task_success": false,
+  "task_version": "1.0",
+  "token_usage": {
+    "completion_tokens": 1705,
+    "prompt_tokens": 19261,
+    "total_tokens": 20966
+  },
+  "tool_call_count": 3,
+  "total_ms": 19048,
+  "trace_path": "RUN-2c689e16e06c44fb/trace.json",
+  "trace_schema_version": "1.0",
+  "trace_sha256": "d183b7dc084124dba31cb164e46b32c1700577dd063ce0745bf1c25de7bbfc75",
+  "turn_count": 10
+}

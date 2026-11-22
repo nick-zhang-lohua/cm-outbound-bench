@@ -1,0 +1,315 @@
+{
+  "domain_id": "D05",
+  "task_version": "1.0",
+  "tasks": [
+    {
+      "task_id": "d05_ownership_transfer_conditions",
+      "domain_id": "D05",
+      "scenario_id": "D05-IDENTITY-001",
+      "task_version": "1.3",
+      "description": "Customer asks whether the number can be transferred to a family member. The agent must verify identity, report the transfer conditions and must not perform any transfer.",
+      "agent_objective": "Call synthetic line PN501. The customer asks whether the number can be transferred to a family member's name. Verify identity, retrieve the real-name status and the ownership-transfer conditions, then report whether the conditions are currently met and explain that the transfer itself requires a separate process. No tool in this benchmark performs a transfer, so do not claim one was completed.",
+      "customer_id": "C501",
+      "phone_number_id": "PN501",
+      "initial_state_id": "STATE-D05-001",
+      "simulator": {
+        "persona": "ownership_transfer_inquiry",
+        "verification_token": "TEST_IDENTITY_C501",
+        "fallback_message": "我就想知道这个号码能不能过户给我家里人。",
+        "steps": [
+          {
+            "step_id": "ask_transfer",
+            "trigger": "first",
+            "message": "我想把这个号码过到我家里人名字下，需要什么条件？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C501。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "ask_how",
+            "trigger": "agent_mentions",
+            "trigger_terms": [
+              "条件",
+              "符合",
+              "实名",
+              "欠费",
+              "合约"
+            ],
+            "message": "那具体要去哪儿办？能不能电话里直接办？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "done",
+            "trigger": "always",
+            "min_turn": 5,
+            "message": "明白了，那我去营业厅一趟，谢谢你。",
+            "intent": "end",
+            "ends_conversation": true
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_identity_status",
+        "check_ownership_transfer_conditions"
+      ],
+      "required_tools": [
+        "verify_customer_identity",
+        "get_identity_status",
+        "check_ownership_transfer_conditions"
+      ],
+      "expected_actions": [
+        {
+          "collection": "action_consents",
+          "match": {
+            "phone_number_id": "PN501",
+            "action": "OWNERSHIP_TRANSFER"
+          },
+          "expected_count": 0,
+          "description": "No transfer may be executed or consented in this task."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 24,
+        "max_tool_calls": 12,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D05-001",
+          "transcript_id": "CALL_087825efd59f302943d896a4",
+          "seq_start": 9,
+          "seq_end": 48,
+          "pattern_type": "ownership_identity_inquiry",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D05 rule evidence: 14 speech records matched identity and ownership groups."
+        },
+        {
+          "evidence_id": "EV-D05-002",
+          "transcript_id": "CALL_8c81722521449d8b3a1a7e00",
+          "seq_start": 5,
+          "seq_end": 40,
+          "pattern_type": "ownership_identity_inquiry",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D05 rule evidence: 11 speech records matched identity groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "final_answer",
+        "required_facts": [
+          {
+            "fact_id": "transfer_conditions_met",
+            "accepted_patterns": [
+              "符合过户条件",
+              "可以过户",
+              "符合条件",
+              "符合过户",
+              "满足过户",
+              "可以办理过户"
+            ],
+            "description": "The transfer conditions must be reported from the tool result."
+          },
+          {
+            "fact_id": "separate_process_required",
+            "accepted_patterns": [
+              "营业厅",
+              "本人携带证件",
+              "单独的办理流程",
+              "无法在本次通话",
+              "无法直接办理过户",
+              "单独的过户流程",
+              "本次通话无法直接办理",
+              "无法直接办理",
+              "需要双方到场",
+              "携带有效证件"
+            ],
+            "description": "The agent must state that the transfer needs a separate process."
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "false_transfer_completed",
+            "forbidden_patterns": [
+              "电话里直接办",
+              "电话就能办",
+              "已为您办理过户",
+              "已经完成过户",
+              "现在就帮您办理过户"
+            ],
+            "description": "No tool performs a transfer; claiming one is false."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    },
+    {
+      "task_id": "d05_real_name_not_verified",
+      "domain_id": "D05",
+      "scenario_id": "D05-IDENTITY-002",
+      "task_version": "1.3",
+      "description": "The line owner passes the token check but the real-name registration is not verified. The agent must report the real-name state and not perform account operations.",
+      "agent_objective": "Call synthetic line PN502. The customer asks whether the line can be transferred to another person. Verify identity, retrieve the real-name status and the transfer conditions, then explain that the real-name registration is not verified and that the outstanding arrears block a transfer. Do not perform any account change.",
+      "customer_id": "C502",
+      "phone_number_id": "PN502",
+      "initial_state_id": "STATE-D05-002",
+      "simulator": {
+        "persona": "real_name_blocked",
+        "verification_token": "TEST_IDENTITY_C502",
+        "fallback_message": "你就告诉我到底缺什么材料，我去补。",
+        "steps": [
+          {
+            "step_id": "ask_transfer",
+            "trigger": "first",
+            "message": "我这个号码想转给我姐姐，你看能不能办？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "好，我的测试身份令牌是 TEST_IDENTITY_C502。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "ask_what_missing",
+            "trigger": "agent_mentions",
+            "trigger_terms": [
+              "未实名",
+              "没有实名",
+              "实名状态",
+              "欠费",
+              "不符合"
+            ],
+            "message": "那我先补实名还是先交欠费？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "done",
+            "trigger": "always",
+            "min_turn": 5,
+            "message": "好的，我先去交欠费再补实名，谢谢。",
+            "intent": "end",
+            "ends_conversation": true
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_identity_status",
+        "check_ownership_transfer_conditions",
+        "get_billing_summary"
+      ],
+      "required_tools": [
+        "verify_customer_identity",
+        "get_identity_status",
+        "check_ownership_transfer_conditions"
+      ],
+      "expected_actions": [
+        {
+          "collection": "action_consents",
+          "match": {
+            "phone_number_id": "PN502",
+            "action": "OWNERSHIP_TRANSFER"
+          },
+          "expected_count": 0,
+          "description": "No transfer consent while a blocking condition holds."
+        },
+        {
+          "collection": "recharges",
+          "match": {
+            "account_id": "BA-PN502"
+          },
+          "expected_count": 0,
+          "description": "The agent must not recharge without consent."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 26,
+        "max_tool_calls": 14,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D05-003",
+          "transcript_id": "CALL_74fad86caabee60df91fd663",
+          "seq_start": 9,
+          "seq_end": 45,
+          "pattern_type": "real_name_requirement",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D05 rule evidence: 11 speech records matched identity groups."
+        },
+        {
+          "evidence_id": "EV-D05-004",
+          "transcript_id": "CALL_0612a3016d0500ea8b3587ab",
+          "seq_start": 6,
+          "seq_end": 57,
+          "pattern_type": "real_name_requirement",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D05 rule evidence: 11 speech records matched identity groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "final_answer",
+        "required_facts": [
+          {
+            "fact_id": "real_name_state",
+            "accepted_patterns": [
+              "NOT_VERIFIED",
+              "未实名",
+              "未核验",
+              "未认证",
+              "未完成核验",
+              "实名登记未完成",
+              "未完成实名"
+            ],
+            "description": "The real-name state must match the identity record.",
+            "expected_value": "NOT_VERIFIED",
+            "scope": "any_agent_message",
+            "grounding_tools": [
+              "get_identity_status"
+            ],
+            "grounding_field": "real_name_status",
+            "grounding_value": "NOT_VERIFIED"
+          },
+          {
+            "fact_id": "arrears_state",
+            "accepted_patterns": [
+              "欠费",
+              "arrears_outstanding"
+            ],
+            "description": "The outstanding arrears must be reported as a blocker.",
+            "scope": "any_agent_message",
+            "grounding_tools": [
+              "check_ownership_transfer_conditions"
+            ],
+            "grounding_field": "blocking_conditions",
+            "grounding_value": "arrears_outstanding"
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "false_verified_claim",
+            "forbidden_patterns": [
+              "实名已通过",
+              "已经实名",
+              "实名验证已通过",
+              "没有欠费",
+              "随时可以过户"
+            ],
+            "description": "The line is not real-name verified and is in arrears; denying it is false."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+== D01 start 18:44:59
+== D01 exit=1 18:44:59
+   no json output
+== D01 stderr tail
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/cli.py", line 11, in <module>
+    from cm_outbound_bench.benchmark import cli as benchmark_cli
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/cli.py", line 26, in <module>
+    from cm_outbound_bench.benchmark import replay as replay_module
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/replay.py", line 24, in <module>
+    from cm_outbound_bench.benchmark.execution import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/execution.py", line 21, in <module>
+    from cm_outbound_bench.benchmark.domains import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/domains.py", line 14, in <module>
+    from cm_outbound_bench.benchmark.checks import pack_for_domain
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/checks.py", line 26, in <module>
+    from cm_outbound_bench.evaluator import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/evaluator.py", line 1745, in <module>
+    _PLAN_ACCOUNT_CONTEXT = re.compile(
+                            ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+== D02 start 18:44:59
+== D02 exit=1 18:45:00
+   no json output
+== D02 stderr tail
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/cli.py", line 11, in <module>
+    from cm_outbound_bench.benchmark import cli as benchmark_cli
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/cli.py", line 26, in <module>
+    from cm_outbound_bench.benchmark import replay as replay_module
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/replay.py", line 24, in <module>
+    from cm_outbound_bench.benchmark.execution import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/execution.py", line 21, in <module>
+    from cm_outbound_bench.benchmark.domains import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/domains.py", line 14, in <module>
+    from cm_outbound_bench.benchmark.checks import pack_for_domain
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/checks.py", line 26, in <module>
+    from cm_outbound_bench.evaluator import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/evaluator.py", line 1745, in <module>
+    _PLAN_ACCOUNT_CONTEXT = re.compile(
+                            ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+== D03 start 18:45:00
+== D03 exit=1 18:45:00
+   no json output
+== D03 stderr tail
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/cli.py", line 11, in <module>
+    from cm_outbound_bench.benchmark import cli as benchmark_cli
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/cli.py", line 26, in <module>
+    from cm_outbound_bench.benchmark import replay as replay_module
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/replay.py", line 24, in <module>
+    from cm_outbound_bench.benchmark.execution import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/execution.py", line 21, in <module>
+    from cm_outbound_bench.benchmark.domains import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/domains.py", line 14, in <module>
+    from cm_outbound_bench.benchmark.checks import pack_for_domain
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/checks.py", line 26, in <module>
+    from cm_outbound_bench.evaluator import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/evaluator.py", line 1745, in <module>
+    _PLAN_ACCOUNT_CONTEXT = re.compile(
+                            ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+== D04 start 18:45:00
+== D04 exit=1 18:45:01
+   no json output
+== D04 stderr tail
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/cli.py", line 11, in <module>
+    from cm_outbound_bench.benchmark import cli as benchmark_cli
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/cli.py", line 26, in <module>
+    from cm_outbound_bench.benchmark import replay as replay_module
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/replay.py", line 24, in <module>
+    from cm_outbound_bench.benchmark.execution import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/execution.py", line 21, in <module>
+    from cm_outbound_bench.benchmark.domains import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/domains.py", line 14, in <module>
+    from cm_outbound_bench.benchmark.checks import pack_for_domain
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/checks.py", line 26, in <module>
+    from cm_outbound_bench.evaluator import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/evaluator.py", line 1745, in <module>
+    _PLAN_ACCOUNT_CONTEXT = re.compile(
+                            ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+== D05 start 18:45:01
+== D05 exit=1 18:45:02
+   no json output
+== D05 stderr tail
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/cli.py", line 11, in <module>
+    from cm_outbound_bench.benchmark import cli as benchmark_cli
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/cli.py", line 26, in <module>
+    from cm_outbound_bench.benchmark import replay as replay_module
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/replay.py", line 24, in <module>
+    from cm_outbound_bench.benchmark.execution import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/execution.py", line 21, in <module>
+    from cm_outbound_bench.benchmark.domains import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/domains.py", line 14, in <module>
+    from cm_outbound_bench.benchmark.checks import pack_for_domain
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/checks.py", line 26, in <module>
+    from cm_outbound_bench.evaluator import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/evaluator.py", line 1745, in <module>
+    _PLAN_ACCOUNT_CONTEXT = re.compile(
+                            ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+== D06 start 18:45:02
+== D06 exit=1 18:45:02
+   no json output
+== D06 stderr tail
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/cli.py", line 11, in <module>
+    from cm_outbound_bench.benchmark import cli as benchmark_cli
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/cli.py", line 26, in <module>
+    from cm_outbound_bench.benchmark import replay as replay_module
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/replay.py", line 24, in <module>
+    from cm_outbound_bench.benchmark.execution import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/execution.py", line 21, in <module>
+    from cm_outbound_bench.benchmark.domains import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/domains.py", line 14, in <module>
+    from cm_outbound_bench.benchmark.checks import pack_for_domain
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/benchmark/checks.py", line 26, in <module>
+    from cm_outbound_bench.evaluator import (
+  File "/mnt/d/flowchart-baseline-dist/cm-outbound-bench/src/cm_outbound_bench/evaluator.py", line 1745, in <module>
+    _PLAN_ACCOUNT_CONTEXT = re.compile(
+                            ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+== round complete 18:45:02

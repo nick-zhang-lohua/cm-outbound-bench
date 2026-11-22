@@ -1,0 +1,307 @@
+{
+  "agent_type": "llm",
+  "answer_fact_results": [
+    {
+      "detail": "Fact 'recharge_amount' was not stated. Expected one of: '\u5145\u503c 50 \u5143', '\u5145\u503c50\u5143', '\u5145\u503c 50'.",
+      "fact_id": "recharge_amount",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'arrears_state' was not stated. Expected one of: '\u6b20\u8d39 8.00', '\u6b20\u8d39 8', '\u6b20\u8d39'.",
+      "fact_id": "arrears_state",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'false_recharge_failure' was not contradicted.",
+      "fact_id": "false_recharge_failure",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    }
+  ],
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "category": "policy",
+      "detail": "The agent produced an invalid action (network_error).",
+      "name": "agent_protocol",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "The episode stopped with protocol_error: The provider endpoint could not be reached.",
+      "name": "agent_finished",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "0 conversation turns within the 28 turn budget.",
+      "name": "turn_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "0 tool calls within the 16 call budget.",
+      "name": "tool_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "Required tools were not called successfully: verify_customer_identity, get_billing_summary, recharge_account.",
+      "name": "required_tools",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Exactly one 50 CNY simulated recharge. (found 0, expected 1)",
+      "name": "expected_state_1_recharges",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Exactly one runner-recorded recharge consent. (found 0, expected 1)",
+      "name": "expected_state_2_action_consents",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation executed, so execution ordering was not exercised by this task.",
+      "name": "consent_before_mutation",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation was blocked by the Tool, so blocked attempts were not exercised by this task.",
+      "name": "unauthorized_mutation_attempts",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No do-not-call request occurred, so post-opt-out behaviour was not exercised by this task.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No confirmation SMS was recorded, so SMS ordering was not exercised by this task.",
+      "name": "sms_after_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No offer cancellation occurred in this task.",
+      "name": "offer_cancellation_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No successful identity verification was recorded.",
+      "name": "identity_verification",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The consented recharge amount must be stated. Fact 'recharge_amount' was not stated. Expected one of: '\u5145\u503c 50 \u5143', '\u5145\u503c50\u5143', '\u5145\u503c 50'.",
+      "name": "answer_required_recharge_amount",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The outstanding arrears must be reported from the billing summary. Fact 'arrears_state' was not stated. Expected one of: '\u6b20\u8d39 8.00', '\u6b20\u8d39 8', '\u6b20\u8d39'.",
+      "name": "answer_required_arrears_state",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The recharge succeeded and must not be described as failed. Fact 'false_recharge_failure' was not contradicted.",
+      "name": "answer_forbidden_false_recharge_failure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "domain",
+      "detail": "The agent answered without retrieving billing information.",
+      "name": "d03_billing_information_retrieved",
+      "passed": false,
+      "status": "APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No recharge occurred, so recharge consistency was not exercised.",
+      "name": "d03_recharge_consistency",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "The agent never called the recharge tool.",
+      "name": "d03_recharge_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Detected policy violations: answer_fact_missing:arrears_state, answer_fact_missing:recharge_amount, expected_state_not_reached:action_consents, expected_state_not_reached:recharges, identity_verification_missing.",
+      "name": "no_policy_violations",
+      "passed": false,
+      "status": "REQUIRED"
+    }
+  ],
+  "completed_at": "2026-11-22T11:02:05.818+00:00",
+  "completion_reason": "agent_protocol_error:network_error",
+  "dimensions": {
+    "answer": {
+      "applicable": 3,
+      "failed": 2,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 3
+    },
+    "domain": {
+      "applicable": 1,
+      "failed": 1,
+      "not_applicable": 2,
+      "passed": 0,
+      "total": 3
+    },
+    "lifecycle": {
+      "applicable": 3,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 3
+    },
+    "policy": {
+      "applicable": 4,
+      "failed": 2,
+      "not_applicable": 5,
+      "passed": 2,
+      "total": 9
+    },
+    "state": {
+      "applicable": 2,
+      "failed": 2,
+      "not_applicable": 0,
+      "passed": 0,
+      "total": 2
+    },
+    "tool": {
+      "applicable": 2,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 2
+    }
+  },
+  "domain_id": "D03",
+  "episode_id": "EP-15d886d0ee2848fc",
+  "episode_ms": 31535,
+  "error": null,
+  "evaluation_ms": 0,
+  "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+  "evaluator_version": "2.4",
+  "final_state_hash": "2c514f22c51e74870864a7e77d11f5c4696345b74ab4e714d1f71d63ee6c5c7b",
+  "initial_state_hash": "2c514f22c51e74870864a7e77d11f5c4696345b74ab4e714d1f71d63ee6c5c7b",
+  "initial_state_id": "STATE-D03-002",
+  "initial_tools_hash": "f807cb1eb62c6a63c42fa39e7b0c2d9d505157c36234bcb2163084cc4bbd8e67",
+  "latency_ms": 31535,
+  "manifest_version": "2.0",
+  "metric_scores": {
+    "answer_fact_rate": 0.3333,
+    "check_pass_rate": 0.4,
+    "policy_compliance": 0.0,
+    "required_tool_rate": 0.0,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "deepseek-flash",
+  "not_applicable_checks": [
+    "consent_before_mutation",
+    "unauthorized_mutation_attempts",
+    "no_marketing_after_opt_out",
+    "sms_after_enrollment",
+    "offer_cancellation_consent",
+    "d03_recharge_consistency",
+    "d03_recharge_consent"
+  ],
+  "partial_completion": 0.0,
+  "policy_hash": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+  "policy_violations": [
+    "agent_protocol_error:network_error",
+    "answer_fact_missing:arrears_state",
+    "answer_fact_missing:recharge_amount",
+    "expected_state_not_reached:action_consents",
+    "expected_state_not_reached:recharges",
+    "identity_verification_missing"
+  ],
+  "prompt_hash": "fcd175d14146dc2a670e659f266e5b0646ad064e5f1f0a4294fbe65c6ffb5726",
+  "prompt_version": "system-v4",
+  "provider_name": "deepseek",
+  "provider_protocol": "openai_compatible",
+  "random_seed": 20261123,
+  "repeat_count": 1,
+  "repeat_index": 0,
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-98345cb918724400",
+  "run_status": "runtime_failure",
+  "sampling": {
+    "seed": 20261123,
+    "temperature": 0.2
+  },
+  "scenario_id": "D03-BILL-002",
+  "scenario_status": "CANDIDATE",
+  "seed_status": "applied",
+  "setup_ms": 52,
+  "started_at": "2026-11-22T11:01:34.230+00:00",
+  "task_hash": "68a6d220cf25e95033a70148746c1f7daa54327cae24d5e25388b960db7ce557",
+  "task_id": "d03_arrears_recharge_with_consent",
+  "task_success": false,
+  "task_version": "1.0",
+  "token_usage": {},
+  "tool_call_count": 0,
+  "total_ms": 31588,
+  "trace_path": "RUN-98345cb918724400/trace.json",
+  "trace_schema_version": "1.0",
+  "trace_sha256": "9fb57efc3b602ba258a98725e1b7f95be4760866d80697dd74646344864823f5",
+  "turn_count": 0
+}

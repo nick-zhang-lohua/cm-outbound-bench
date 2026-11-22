@@ -1,0 +1,418 @@
+{
+  "benchmark_version": "1.0.0",
+  "domain_count": 6,
+  "domain_ids": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06"
+  ],
+  "domain_policy_hashes": {
+    "D01": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+    "D02": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+    "D03": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+    "D04": "12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5",
+    "D05": "fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235",
+    "D06": "4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301"
+  },
+  "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+  "evaluator_version": "2.4",
+  "manifest_schema_version": "2.0",
+  "prompt_version": "system-v4",
+  "provider": {
+    "config_present": true,
+    "profiles": {
+      "deepseek": {
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "api_protocol": "openai_compatible",
+        "extra_params": {
+          "temperature": 0.2,
+          "thinking": {
+            "type": "disabled"
+          }
+        },
+        "max_retries": 2,
+        "model": "deepseek-flash",
+        "timeout": 60,
+        "tool_mode": "function_calling"
+      }
+    }
+  },
+  "runtime": {
+    "platform": "linux",
+    "python": "3.12.16"
+  },
+  "task_count": 14,
+  "tasks": [
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "list_plans",
+        "get_plan_details"
+      ],
+      "domain_id": "D01",
+      "initial_state_id": "STATE-D01-001",
+      "initial_tools_hash": "046c244e2b9ddc673856f3603db3c8b1553b1c9936c502e2cbe7a475e99efc0b",
+      "policy_hash": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+      "prompt_hash": "dceca853dd875e6c14b60ec180eb72b605eae0833ac02622ddc3ec5bf56e1f85",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "get_customer_account",
+        "get_plan_details"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D01-PLAN-001",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "d525266380bd0e835b97209f58de74ed36d12652a327c3026ff33ce62f4735ae",
+      "task_id": "d01_plan_content_explanation",
+      "task_version": "1.1"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "list_plans",
+        "get_plan_details",
+        "compare_plans"
+      ],
+      "domain_id": "D01",
+      "initial_state_id": "STATE-D01-002",
+      "initial_tools_hash": "956b7c3e1d8777b322eef704c9d5a28266d14930f417a19403259bba76ca768c",
+      "policy_hash": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+      "prompt_hash": "ec91bc54af6679087d6426b41cf854297cca2e2f83bb13a593d0170324f568d2",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "compare_plans"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D01-PLAN-002",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "1f021086f2097ad88dec161b5e43ddc4355e3b867709d049b6e5d612ba482632",
+      "task_id": "d01_plan_comparison",
+      "task_version": "1.3"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_offer_details",
+        "check_offer_eligibility",
+        "enroll_offer",
+        "send_confirmation_sms"
+      ],
+      "domain_id": "D02",
+      "initial_state_id": "STATE-D02-001",
+      "initial_tools_hash": "7740f777ce98f0a708035a6f6b68ff02edb4fb7121283ea460e905f4b5e6cc05",
+      "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+      "prompt_hash": "dc3ec9de524965cf7fd64efcc94233239efadb3b54297a941304d95e1033dcb0",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "get_offer_details",
+        "check_offer_eligibility",
+        "enroll_offer",
+        "send_confirmation_sms"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D02-OFFER-001",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "3fa0fef80981dfca2c62445d4361a20347a52898cc3d9bfc9263f61411a4b93a",
+      "task_id": "d02_offer_benefit_inquiry_accept",
+      "task_version": "1.1"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_offer_details",
+        "check_offer_eligibility",
+        "enroll_offer",
+        "send_confirmation_sms"
+      ],
+      "domain_id": "D02",
+      "initial_state_id": "STATE-D02-002",
+      "initial_tools_hash": "7740f777ce98f0a708035a6f6b68ff02edb4fb7121283ea460e905f4b5e6cc05",
+      "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+      "prompt_hash": "0ae7036934842cc631aeaaa17f77630d83e56428b8f9e177bcbd77c0e681086b",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "get_offer_details",
+        "check_offer_eligibility"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D02-OFFER-002",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "71a28c39721d26e22f182b0d3f7726c64be8ec4769d52d094d1e5e4420c1c53c",
+      "task_id": "d02_hesitation_then_decline",
+      "task_version": "1.3"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_offer_details",
+        "check_offer_eligibility",
+        "enroll_offer"
+      ],
+      "domain_id": "D02",
+      "initial_state_id": "STATE-D02-003",
+      "initial_tools_hash": "c728e415e69d41b1b091f8cb25c61ea73791385ece2fd979c6acea26c580a7b7",
+      "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+      "prompt_hash": "e5227aa98d1db3fbf7589af286dbc60288d9f1d994324770f3c3b735e65229d1",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "get_offer_details",
+        "check_offer_eligibility"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D02-OFFER-003",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "41f0b0001834d6b1b0b5142b78ded4381ecfc2336057cc41fc08179935632129",
+      "task_id": "d02_eligibility_ineligible_explanation",
+      "task_version": "1.4"
+    },
+    {
+      "allowed_tools": [
+        "register_do_not_call",
+        "get_offer_details",
+        "verify_customer_identity"
+      ],
+      "domain_id": "D02",
+      "initial_state_id": "STATE-D02-004",
+      "initial_tools_hash": "4955318d9100c0a82156a288ed06cf0ed02a4813f828c9af048fa24cfb40ae90",
+      "policy_hash": "f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d",
+      "prompt_hash": "2f3f81f688f6a5ac23f41a5da38df1f36275614e34617fc2d3998886cd04afc6",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "register_do_not_call"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D02-OFFER-004",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "37ac9068499fa9898ddded8f8ba65e5ae32f3b2d5239b0ae7a120b3ce95beadc",
+      "task_id": "d02_direct_refusal_do_not_call",
+      "task_version": "1.1"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_billing_summary",
+        "list_charges"
+      ],
+      "domain_id": "D03",
+      "initial_state_id": "STATE-D03-001",
+      "initial_tools_hash": "1eb1b4748b0a134de800e1dbe2574a14438043b08bad29dce72480986ee8050c",
+      "policy_hash": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+      "prompt_hash": "0bd007d7ab113d384b541b8a2b519efa981612f3849ff7fc9bf8adf311d0f6e0",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "get_billing_summary",
+        "list_charges"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D03-BILL-001",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "b47fc44c746924a04b3b34fd3bd9c4b9cbfd2374bdb49fcdb779bd55359c9a6d",
+      "task_id": "d03_bill_explanation",
+      "task_version": "1.1"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_billing_summary",
+        "list_charges",
+        "recharge_account"
+      ],
+      "domain_id": "D03",
+      "initial_state_id": "STATE-D03-002",
+      "initial_tools_hash": "f807cb1eb62c6a63c42fa39e7b0c2d9d505157c36234bcb2163084cc4bbd8e67",
+      "policy_hash": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+      "prompt_hash": "fcd175d14146dc2a670e659f266e5b0646ad064e5f1f0a4294fbe65c6ffb5726",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "get_billing_summary",
+        "recharge_account"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D03-BILL-002",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "68a6d220cf25e95033a70148746c1f7daa54327cae24d5e25388b960db7ce557",
+      "task_id": "d03_arrears_recharge_with_consent",
+      "task_version": "1.0"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_subscription_status",
+        "check_plan_change_eligibility",
+        "submit_plan_change",
+        "list_plans",
+        "get_plan_details"
+      ],
+      "domain_id": "D04",
+      "initial_state_id": "STATE-D04-001",
+      "initial_tools_hash": "fe56d6f238b6a6c4496ed2fd9da25ff5a97cecf1ccd58758bacd4f027b7f5331",
+      "policy_hash": "12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5",
+      "prompt_hash": "bfb49664e31b4edf4ee45d183f6b41114488e1aa6af45b99de99d56845e2578f",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "check_plan_change_eligibility",
+        "submit_plan_change"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D04-LIFECYCLE-001",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "131324d961318229455aec00525627bcbe6597328f1f2b71940e8f4735ea7225",
+      "task_id": "d04_plan_upgrade_with_consent",
+      "task_version": "1.1"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_subscription_status",
+        "check_plan_change_eligibility",
+        "submit_plan_change",
+        "list_plans",
+        "get_plan_details"
+      ],
+      "domain_id": "D04",
+      "initial_state_id": "STATE-D04-002",
+      "initial_tools_hash": "fe56d6f238b6a6c4496ed2fd9da25ff5a97cecf1ccd58758bacd4f027b7f5331",
+      "policy_hash": "12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5",
+      "prompt_hash": "d9aee5dc0d05623d42be7e88dce778c87fa2af8a34c76eddee15731551b0e069",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "check_plan_change_eligibility"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D04-LIFECYCLE-002",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "9d3838b36d7e21395890f1429b7bf946b6002782a5e5ee01d3f7ff6f1fe173fd",
+      "task_id": "d04_plan_change_blocked_by_commitment",
+      "task_version": "1.2"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_identity_status",
+        "check_ownership_transfer_conditions"
+      ],
+      "domain_id": "D05",
+      "initial_state_id": "STATE-D05-001",
+      "initial_tools_hash": "219ab8ab2f51f36910c2ecaa8a94f5967ada20b76517c62d6a67f87f43f22a56",
+      "policy_hash": "fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235",
+      "prompt_hash": "978836aebd19bbcc2359b83b2a8e8705df05fac7ee3ef5ef65fac8b00b8de9d8",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "get_identity_status",
+        "check_ownership_transfer_conditions"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D05-IDENTITY-001",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "adeaaf1f74041b908ce6de769f9d49cf1bec65ef30b2426c7332dbcd80c00665",
+      "task_id": "d05_ownership_transfer_conditions",
+      "task_version": "1.3"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_identity_status",
+        "check_ownership_transfer_conditions",
+        "get_billing_summary"
+      ],
+      "domain_id": "D05",
+      "initial_state_id": "STATE-D05-002",
+      "initial_tools_hash": "edd9962931295450572e9e42affd24f317408944c8e50af8f9daee61cfe8ab8d",
+      "policy_hash": "fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235",
+      "prompt_hash": "6e2d1f8de12d4df953fb8d1d12b49a4948b215a0d058b16b6fd369811bde7e3a",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "get_identity_status",
+        "check_ownership_transfer_conditions"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D05-IDENTITY-002",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "809041a3ebb4b31df32886e6a792020050c06d3eca487ec34085595050249240",
+      "task_id": "d05_real_name_not_verified",
+      "task_version": "1.3"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_offer_details",
+        "check_offer_eligibility",
+        "enroll_offer",
+        "send_confirmation_sms",
+        "send_notification",
+        "get_notification_status"
+      ],
+      "domain_id": "D06",
+      "initial_state_id": "STATE-D06-001",
+      "initial_tools_hash": "bf704f52e2925e3b2b71c0dab95df6938e6569547b8ad175920ec3730956ee9c",
+      "policy_hash": "4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301",
+      "prompt_hash": "c03d96f4971250221c3eee261356cc778b8f0fb57f17490fca26b51e7c657c4d",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "check_offer_eligibility",
+        "enroll_offer",
+        "send_notification",
+        "get_notification_status"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D06-NOTIFY-001",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "9326e6ceea9e0e91f17437689e3712c562e7888aef26b740cc96e38b7d3399e5",
+      "task_id": "d06_enrollment_confirmation_notification",
+      "task_version": "1.1"
+    },
+    {
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_billing_summary",
+        "recharge_account",
+        "send_notification",
+        "get_notification_status"
+      ],
+      "domain_id": "D06",
+      "initial_state_id": "STATE-D06-002",
+      "initial_tools_hash": "fdc45cd6064c5d04c42cbbafea33bd3abb38e1ab93f33eca3e6a7cd21087e476",
+      "policy_hash": "4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301",
+      "prompt_hash": "cd45480e389f30f81b143f1b085221c80552b177f4aea90d2c836b82a47c4f6e",
+      "prompt_version": "system-v4",
+      "required_tools": [
+        "verify_customer_identity",
+        "get_billing_summary",
+        "recharge_account",
+        "send_notification"
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "scenario_id": "D06-NOTIFY-002",
+      "scenario_status": "CANDIDATE",
+      "task_hash": "1676e4ced13f9ea304b36e514762c4c3291f3576e84f5c6d3fd2cea3d02dbe74",
+      "task_id": "d06_recharge_confirmation_notification",
+      "task_version": "1.3"
+    }
+  ],
+  "trace_schema_version": "1.0"
+}

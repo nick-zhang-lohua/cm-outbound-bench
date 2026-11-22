@@ -1,0 +1,298 @@
+{
+  "action_consent_events": [],
+  "actions": [],
+  "agent": {
+    "agent_type": "llm",
+    "model_name": "deepseek-flash",
+    "policy_hash": "fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235",
+    "prompt_hash": "978836aebd19bbcc2359b83b2a8e8705df05fac7ee3ef5ef65fac8b00b8de9d8",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "provider_protocol": "openai_compatible",
+    "sampling": {
+      "seed": 20261123,
+      "temperature": 0.2
+    },
+    "seed": 20261123,
+    "seed_status": "applied",
+    "token_usage": {}
+  },
+  "allowed_tools": [
+    "check_ownership_transfer_conditions",
+    "get_customer_account",
+    "get_identity_status",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [],
+  "domain_id": "D05",
+  "episode_id": "EP-cdece89a1e5c4796",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'transfer_conditions_met' was not stated. Expected one of: '符合过户条件', '可以过户', '符合条件', '符合过户', '满足过户', '可以办理过户'.",
+        "fact_id": "transfer_conditions_met",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'separate_process_required' was not stated. Expected one of: '营业厅', '本人携带证件', '单独的办理流程', '无法在本次通话', '无法直接办理过户', '单独的过户流程', '本次通话无法直接办理', '无法直接办理', '需要双方到场', '携带有效证件'.",
+        "fact_id": "separate_process_required",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'false_transfer_completed' was not contradicted.",
+        "fact_id": "false_transfer_completed",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 2,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 1,
+        "not_applicable": 1,
+        "passed": 0,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 1,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 2,
+        "not_applicable": 5,
+        "passed": 2,
+        "total": 9
+      },
+      "state": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 1
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 1,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [
+      "agent_protocol",
+      "agent_finished",
+      "required_tools",
+      "identity_verification",
+      "answer_required_transfer_conditions_met",
+      "answer_required_separate_process_required",
+      "d05_identity_information_retrieved",
+      "no_policy_violations"
+    ],
+    "partial_completion": 0.0,
+    "policy_violations": [
+      "agent_protocol_error:network_error",
+      "answer_fact_missing:separate_process_required",
+      "answer_fact_missing:transfer_conditions_met",
+      "identity_verification_missing"
+    ],
+    "success": false,
+    "summary": "FAIL: the agent produced a protocol-invalid action (network_error); no episode was executed."
+  },
+  "final": {
+    "completion_status": "incomplete",
+    "database": {
+      "action_consents": [],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN501",
+          "arrears_cents": 0,
+          "balance_cents": 2000,
+          "currency": "CNY",
+          "customer_id": "C501",
+          "phone_number_id": "PN501"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C501",
+          "identity_token": "TEST_IDENTITY_C501",
+          "owner_name": "唐颖"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN501",
+          "real_name_status": "VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_M",
+          "owner_customer_id": "C501",
+          "phone_number": "SIM_LINE_501",
+          "phone_number_id": "PN501",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN501",
+          "plan_id": "PLAN_M",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN501"
+        }
+      ]
+    },
+    "final_state_hash": "62bf0b548adc9f46273c1adb6bc882ab8ee3ba6ea194de3e82d523524f5dc8ae"
+  },
+  "initial_state_hash": "62bf0b548adc9f46273c1adb6bc882ab8ee3ba6ea194de3e82d523524f5dc8ae",
+  "initial_state_id": "STATE-D05-001",
+  "integrity": {
+    "created_at": "2026-11-22T11:03:42+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "c1264ee98bad4a76a4591d6d2ac2b2c83f025ce6401583b759ebe3cc84bd0c6f"
+  },
+  "required_tools": [
+    "verify_customer_identity",
+    "get_identity_status",
+    "check_ownership_transfer_conditions"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-95ac8bd176874773",
+  "scenario_id": "D05-IDENTITY-001",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [],
+  "stop": {
+    "customer_conversation_closed": false,
+    "episode_completed": false,
+    "error_code": "agent_protocol_error:network_error",
+    "error_message": "The provider endpoint could not be reached.",
+    "error_stage": "agent_protocol",
+    "error_type": "ProviderError",
+    "post_closure_actions": 0,
+    "steps_executed": 0,
+    "stop_reason": "protocol_error"
+  },
+  "task_id": "d05_ownership_transfer_conditions",
+  "task_version": "1.3",
+  "tool_calls": [],
+  "trace_schema_version": "1.0"
+}

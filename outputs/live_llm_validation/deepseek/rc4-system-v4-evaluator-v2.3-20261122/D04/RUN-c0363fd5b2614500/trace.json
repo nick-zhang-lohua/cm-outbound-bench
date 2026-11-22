@@ -1,0 +1,639 @@
+{
+  "action_consent_events": [
+    {
+      "action": "PLAN_CHANGE",
+      "consent_id": "ACONSENT-0001",
+      "step": 7,
+      "target_ref": "PLAN_L"
+    }
+  ],
+  "actions": [
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您好，我是中国移动客服。关于您想办理的套餐变更，我需要先核实您的身份。请提供您的身份验证令牌，好吗？",
+      "outcome": "simulated_reply",
+      "step": 1,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您好，可以的。不过为了核实您的身份，我需要您提供身份验证令牌，请告诉我您的令牌，我核实后再为您查询和办理。",
+      "outcome": "simulated_reply",
+      "step": 2,
+      "tool_name": ""
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C401",
+        "phone_number_id": "PN401"
+      },
+      "call_id": "call_00_72YWUypUNHSzFmLgSRhY6717",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN401"
+      },
+      "call_id": "call_00_HJjyUMXK4hg0OBRLJjBq7221",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 4,
+      "tool_name": "get_subscription_status"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {},
+      "call_id": "call_00_9kXqpPouDcEccVklYLQl5440",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 5,
+      "tool_name": "list_plans"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN401",
+        "to_plan_id": "PLAN_L"
+      },
+      "call_id": "call_00_JCkTM2nFFwO4T4eJiC220066",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 6,
+      "tool_name": "check_plan_change_eligibility"
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "身份已核实。您当前使用的是「模拟畅享套餐」（PLAN_M，月费 59 元），状态正常，无合约限制。\n\n最高档套餐是「模拟尊享套餐」（PLAN_L）：\n- 月费：99 元\n- 流量：60000 MB\n- 语音：1000 分钟\n- 短信：300 条\n- 含家庭共享权益\n\n我已为您查询过，PN401 这个号码可以变更到 PLAN_L，没有阻碍原因。\n\n请问您是否确认将 PN401 的套餐变更为「模拟尊享套餐」（PLAN_L，月费 99 元）？您确认后我再提交。",
+      "outcome": "simulated_reply",
+      "step": 7,
+      "tool_name": ""
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN401",
+        "to_plan_id": "PLAN_L"
+      },
+      "call_id": "call_00_5YLsDB3QZzddVzdigPzZ3465",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed_post_conversation",
+      "step": 8,
+      "tool_name": "submit_plan_change"
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "已为您办理成功：\n\n- 号码：PN401\n- 变更内容：模拟畅享套餐（PLAN_M）→ 模拟尊享套餐（PLAN_L，月费 99 元）\n- 申请单号：PCR-0001\n- 状态：已批准\n- 生效日期：2026-12-01\n\n请问还有其他需要帮忙的吗？",
+      "outcome": "post_conversation_message",
+      "step": 9,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您的套餐变更已办理完成，生效日期为 2026-12-01。如无其他问题，本次通话就到这里，感谢您的来电。",
+      "outcome": "post_conversation_message",
+      "step": 10,
+      "tool_name": ""
+    },
+    {
+      "action_type": "finish",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "provider requested finish",
+      "message": "",
+      "outcome": "episode_finished",
+      "step": 11,
+      "tool_name": ""
+    }
+  ],
+  "agent": {
+    "agent_type": "llm",
+    "model_name": "deepseek-flash",
+    "policy_hash": "12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5",
+    "prompt_hash": "bfb49664e31b4edf4ee45d183f6b41114488e1aa6af45b99de99d56845e2578f",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "provider_protocol": "openai_compatible",
+    "sampling": {
+      "seed": 20261122,
+      "temperature": 0.2
+    },
+    "seed": 20261122,
+    "seed_status": "applied",
+    "token_usage": {
+      "completion_tokens": 597,
+      "prompt_tokens": 39403,
+      "total_tokens": 40000
+    }
+  },
+  "allowed_tools": [
+    "check_plan_change_eligibility",
+    "get_customer_account",
+    "get_plan_details",
+    "get_subscription_status",
+    "list_plans",
+    "submit_plan_change",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [
+    {
+      "content": "您好，我是中国移动客服。关于您想办理的套餐变更，我需要先核实您的身份。请提供您的身份验证令牌，好吗？",
+      "role": "agent",
+      "step": 1
+    },
+    {
+      "content": "我想把套餐升级到你们最高档的那个，能办吗？",
+      "role": "user",
+      "step": 1
+    },
+    {
+      "content": "您好，可以的。不过为了核实您的身份，我需要您提供身份验证令牌，请告诉我您的令牌，我核实后再为您查询和办理。",
+      "role": "agent",
+      "step": 2
+    },
+    {
+      "content": "可以，我的测试身份令牌是 TEST_IDENTITY_C401。",
+      "role": "user",
+      "step": 2
+    },
+    {
+      "content": "身份已核实。您当前使用的是「模拟畅享套餐」（PLAN_M，月费 59 元），状态正常，无合约限制。\n\n最高档套餐是「模拟尊享套餐」（PLAN_L）：\n- 月费：99 元\n- 流量：60000 MB\n- 语音：1000 分钟\n- 短信：300 条\n- 含家庭共享权益\n\n我已为您查询过，PN401 这个号码可以变更到 PLAN_L，没有阻碍原因。\n\n请问您是否确认将 PN401 的套餐变更为「模拟尊享套餐」（PLAN_L，月费 99 元）？您确认后我再提交。",
+      "role": "agent",
+      "step": 7
+    },
+    {
+      "content": "好，我同意升级到尊享套餐 PLAN_L，麻烦你办理。",
+      "role": "user",
+      "step": 7
+    },
+    {
+      "content": "已为您办理成功：\n\n- 号码：PN401\n- 变更内容：模拟畅享套餐（PLAN_M）→ 模拟尊享套餐（PLAN_L，月费 99 元）\n- 申请单号：PCR-0001\n- 状态：已批准\n- 生效日期：2026-12-01\n\n请问还有其他需要帮忙的吗？",
+      "role": "agent",
+      "step": 9
+    },
+    {
+      "content": "您的套餐变更已办理完成，生效日期为 2026-12-01。如无其他问题，本次通话就到这里，感谢您的来电。",
+      "role": "agent",
+      "step": 10
+    }
+  ],
+  "domain_id": "D04",
+  "episode_id": "EP-636b012c1f224c5b",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'target_plan' was stated as required (matched 'PLAN_L').",
+        "fact_id": "target_plan",
+        "kind": "required",
+        "matched_pattern": "PLAN_L",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'effective_date' was stated as required (matched '2026-12-01').",
+        "fact_id": "effective_date",
+        "kind": "required",
+        "matched_pattern": "2026-12-01",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'instant_activation_claim' was not contradicted.",
+        "fact_id": "instant_activation_claim",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 1,
+        "passed": 2,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 5,
+        "failed": 0,
+        "not_applicable": 4,
+        "passed": 5,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc",
+    "evaluator_version": "2.3",
+    "failed_checks": [],
+    "partial_completion": 1.0,
+    "policy_violations": [],
+    "success": true,
+    "summary": "PASS: 17 applicable checks passed; no policy violations."
+  },
+  "final": {
+    "completion_status": "completed",
+    "database": {
+      "action_consents": [
+        {
+          "action": "PLAN_CHANGE",
+          "consent_id": "ACONSENT-0001",
+          "customer_id": "C401",
+          "phone_number_id": "PN401",
+          "source": "user_simulator",
+          "target_ref": "PLAN_L"
+        }
+      ],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN401",
+          "arrears_cents": 0,
+          "balance_cents": 3300,
+          "currency": "CNY",
+          "customer_id": "C401",
+          "phone_number_id": "PN401"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C401",
+          "identity_token": "TEST_IDENTITY_C401",
+          "owner_name": "许安"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN401",
+          "real_name_status": "VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_L",
+          "owner_customer_id": "C401",
+          "phone_number": "SIM_LINE_401",
+          "phone_number_id": "PN401",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [
+        {
+          "effective_on": "2026-12-01",
+          "from_plan_id": "PLAN_M",
+          "phone_number_id": "PN401",
+          "request_id": "PCR-0001",
+          "status": "APPROVED",
+          "to_plan_id": "PLAN_L"
+        }
+      ],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN401",
+          "plan_id": "PLAN_L",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN401"
+        }
+      ]
+    },
+    "final_state_hash": "73b093c94b8071c2049c826642a8228ab8da9add859fa03af70eb79194cac5ab"
+  },
+  "initial_state_hash": "876dbd6bc908efed87531fa270cf5e5a9f2a2d351ec3b7b32e2eafff844aa639",
+  "initial_state_id": "STATE-D04-001",
+  "integrity": {
+    "created_at": "2026-11-21T17:37:45+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "22d5dac8528587282f6bbc583f77d88a70a03a520ea3c4ef7c18ac9845fe9521"
+  },
+  "required_tools": [
+    "verify_customer_identity",
+    "check_plan_change_eligibility",
+    "submit_plan_change"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-c0363fd5b2614500",
+  "scenario_id": "D04-LIFECYCLE-001",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "我想把套餐升级到你们最高档的那个，能办吗？",
+      "step": 1,
+      "step_id": "ask_upgrade"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "provide_identity",
+      "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C401。",
+      "step": 2,
+      "step_id": "provide_token"
+    },
+    {
+      "consent_action": "PLAN_CHANGE",
+      "consent_granted": true,
+      "consent_target": "PLAN_L",
+      "ends_conversation": true,
+      "intent": "accept",
+      "message": "好，我同意升级到尊享套餐 PLAN_L，麻烦你办理。",
+      "step": 7,
+      "step_id": "consent_upgrade"
+    }
+  ],
+  "stop": {
+    "customer_conversation_closed": true,
+    "episode_completed": true,
+    "error_code": "",
+    "error_message": "",
+    "error_stage": "",
+    "error_type": "",
+    "post_closure_actions": 3,
+    "steps_executed": 11,
+    "stop_reason": "agent_finished"
+  },
+  "task_id": "d04_plan_upgrade_with_consent",
+  "task_version": "1.1",
+  "tool_calls": [
+    {
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C401",
+        "phone_number_id": "PN401"
+      },
+      "call_id": "call_00_72YWUypUNHSzFmLgSRhY6717",
+      "result": {
+        "data": {
+          "phone_number_id": "PN401",
+          "verified": true
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN401"
+      },
+      "call_id": "call_00_HJjyUMXK4hg0OBRLJjBq7221",
+      "result": {
+        "data": {
+          "contract_end_on": null,
+          "phone_number_id": "PN401",
+          "plan_id": "PLAN_M",
+          "plan_name": "模拟畅享套餐",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN401"
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 4,
+      "tool_name": "get_subscription_status"
+    },
+    {
+      "arguments": {},
+      "call_id": "call_00_9kXqpPouDcEccVklYLQl5440",
+      "result": {
+        "data": {
+          "plans": [
+            {
+              "allowance": {
+                "data_mb": 5000,
+                "note": "基础流量与语音，不含定向流量包。",
+                "sms_count": 30,
+                "voice_minutes": 100
+              },
+              "currency": "CNY",
+              "monthly_fee": 29.0,
+              "name": "模拟轻享套餐",
+              "plan_id": "PLAN_S"
+            },
+            {
+              "allowance": {
+                "data_mb": 20000,
+                "note": "含通用流量与语音，可叠加促销包。",
+                "sms_count": 100,
+                "voice_minutes": 300
+              },
+              "currency": "CNY",
+              "monthly_fee": 59.0,
+              "name": "模拟畅享套餐",
+              "plan_id": "PLAN_M"
+            },
+            {
+              "allowance": {
+                "data_mb": 60000,
+                "note": "含大额流量与语音，含家庭共享权益。",
+                "sms_count": 300,
+                "voice_minutes": 1000
+              },
+              "currency": "CNY",
+              "monthly_fee": 99.0,
+              "name": "模拟尊享套餐",
+              "plan_id": "PLAN_L"
+            }
+          ]
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 5,
+      "tool_name": "list_plans"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN401",
+        "to_plan_id": "PLAN_L"
+      },
+      "call_id": "call_00_JCkTM2nFFwO4T4eJiC220066",
+      "result": {
+        "data": {
+          "eligible": true,
+          "phone_number_id": "PN401",
+          "reasons": [],
+          "to_plan_id": "PLAN_L"
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 6,
+      "tool_name": "check_plan_change_eligibility"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN401",
+        "to_plan_id": "PLAN_L"
+      },
+      "call_id": "call_00_5YLsDB3QZzddVzdigPzZ3465",
+      "result": {
+        "data": {
+          "effective_on": "2026-12-01",
+          "from_plan_id": "PLAN_M",
+          "phone_number_id": "PN401",
+          "request_id": "PCR-0001",
+          "status": "APPROVED",
+          "to_plan_id": "PLAN_L"
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 8,
+      "tool_name": "submit_plan_change"
+    }
+  ],
+  "trace_schema_version": "1.0"
+}

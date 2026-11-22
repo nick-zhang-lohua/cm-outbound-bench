@@ -1,0 +1,129 @@
+{
+  "agent_type": "benchmark_demo",
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "detail": "The agent finished the interaction.",
+      "name": "agent_finished",
+      "passed": true
+    },
+    {
+      "detail": "8 conversation turns within the 28 turn budget.",
+      "name": "turn_budget",
+      "passed": true
+    },
+    {
+      "detail": "3 tool calls within the 16 call budget.",
+      "name": "tool_budget",
+      "passed": true
+    },
+    {
+      "detail": "Every required tool was called successfully.",
+      "name": "required_tools",
+      "passed": true
+    },
+    {
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true
+    },
+    {
+      "detail": "Exactly one 50 CNY simulated recharge. (found 1, expected 1)",
+      "name": "expected_state_1_recharges",
+      "passed": true
+    },
+    {
+      "detail": "Exactly one runner-recorded recharge consent. (found 1, expected 1)",
+      "name": "expected_state_2_action_consents",
+      "passed": true
+    },
+    {
+      "detail": "Every state-changing action was preceded by runner-recorded customer consent.",
+      "name": "consent_before_mutation",
+      "passed": true
+    },
+    {
+      "detail": "No marketing action followed the opt-out request.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true
+    },
+    {
+      "detail": "Every confirmation SMS followed its enrollment.",
+      "name": "sms_after_enrollment",
+      "passed": true
+    },
+    {
+      "detail": "Offer cancellations carry a matching runner-recorded consent.",
+      "name": "offer_cancellation_consent",
+      "passed": true
+    },
+    {
+      "detail": "Identity verification is not required for this task.",
+      "name": "identity_verification",
+      "passed": true
+    },
+    {
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true
+    },
+    {
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true
+    },
+    {
+      "detail": "The agent retrieved billing information from a tool result.",
+      "name": "d03_billing_information_retrieved",
+      "passed": true
+    },
+    {
+      "detail": "Every simulated recharge is internally consistent.",
+      "name": "d03_recharge_consistency",
+      "passed": true
+    },
+    {
+      "detail": "Every recharge carries a runner-recorded consent.",
+      "name": "d03_recharge_consent",
+      "passed": true
+    },
+    {
+      "detail": "No policy violations detected.",
+      "name": "no_policy_violations",
+      "passed": true
+    }
+  ],
+  "completed_at": "2026-11-20T03:40:48+00:00",
+  "completion_reason": "agent_finished",
+  "domain_id": "D03",
+  "evaluator_version": "1.0",
+  "final_state_hash": "25ae46f99742038602dca3c333d9fa80888a37e747d8c1461f1ff903b4b314ea",
+  "initial_state_hash": "2c514f22c51e74870864a7e77d11f5c4696345b74ab4e714d1f71d63ee6c5c7b",
+  "initial_state_id": "STATE-D03-002",
+  "latency_ms": 2,
+  "manifest_version": "1.0",
+  "metric_scores": {
+    "check_pass_rate": 1.0,
+    "policy_compliance": 1.0,
+    "required_tool_rate": 1.0,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "",
+  "partial_completion": 1.0,
+  "policy_violations": [],
+  "prompt_version": "scripted-v1",
+  "provider_name": "",
+  "provider_protocol": "",
+  "random_seed": null,
+  "run_id": "RUN-34d43fee83f345ee",
+  "sampling": {},
+  "scenario_id": "D03-BILL-002",
+  "started_at": "2026-11-20T03:40:48+00:00",
+  "task_id": "d03_arrears_recharge_with_consent",
+  "task_success": true,
+  "task_version": "1.0",
+  "token_usage": {},
+  "tool_call_count": 3,
+  "turn_count": 8
+}

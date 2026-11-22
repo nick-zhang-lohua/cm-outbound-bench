@@ -1,0 +1,546 @@
+{
+  "action_consent_events": [],
+  "actions": [
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "I'll start by greeting the customer and requesting their identity token.\n\nHello, this is China Mobile calling about a promotional offer. Before we discuss anything account-specific, could you please provide your identity token so I can verify you as the account owner?",
+      "outcome": "simulated_reply",
+      "step": 1,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "I understand you'd like to hear about the offer, but I'm not able to share any account-specific details until I've verified you as the account owner. Could you please provide your identity token so I can verify you first?",
+      "outcome": "simulated_reply",
+      "step": 2,
+      "tool_name": ""
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C102",
+        "phone_number_id": "PN102"
+      },
+      "call_id": "call_00_fLLqwByk7Uj3xfEDangE9133",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "offer_id": "OFFER_D02_002"
+      },
+      "call_id": "call_00_IvEw34Ag2GuqmPDHWTN99076",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 4,
+      "tool_name": "get_offer_details"
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "Thank you, you're verified. Here are the details of the offer:\n\n- **Offer name:** 模拟语音加赠包 (Simulated Voice Bonus Pack)\n- **Additional monthly fee:** 15.00 CNY\n- **Validity:** 12 months\n- **Auto-renewal:** No — it does not renew automatically after the 12-month period\n- **Restrictions:** Only available for the primary card of a family plan; each number can only join once.\n\nWould you like me to check whether your line is eligible for this offer?",
+      "outcome": "simulated_reply",
+      "step": 5,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "The additional monthly fee is **15.00 CNY** per month, valid for 12 months, and it does not renew automatically after that period.\n\nWould you like me to check whether your line is eligible for this offer?",
+      "outcome": "simulated_reply",
+      "step": 6,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "That's all the key terms — 15.00 CNY per month, 12 months validity, no auto-renewal, and it's limited to the primary card of a family plan with one enrollment per number.\n\nNo problem at all — take your time. Would you like me to check your eligibility, or shall we leave it here for now?",
+      "outcome": "simulated_reply",
+      "step": 7,
+      "tool_name": ""
+    },
+    {
+      "action_type": "finish",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "provider requested finish",
+      "message": "",
+      "outcome": "episode_finished",
+      "step": 8,
+      "tool_name": ""
+    }
+  ],
+  "agent": {
+    "agent_type": "llm",
+    "model_name": "deepseek-flash",
+    "policy_hash": "9319a53c1e4f604fce32fb2e834bd1522db0dfc9da49341cf27e2ccc0f5b57f2",
+    "prompt_hash": "3413f1ed76e9cd7b7d1a72b7c46703392199cc1b92a83a764845b4eeadd1c7ff",
+    "prompt_version": "system-v2",
+    "provider_name": "deepseek",
+    "provider_protocol": "openai_compatible",
+    "sampling": {
+      "seed": 20261120,
+      "temperature": 0.2
+    },
+    "seed": 20261120,
+    "seed_status": "applied",
+    "token_usage": {
+      "completion_tokens": 518,
+      "prompt_tokens": 21677,
+      "total_tokens": 22195
+    }
+  },
+  "allowed_tools": [
+    "check_offer_eligibility",
+    "enroll_offer",
+    "get_customer_account",
+    "get_offer_details",
+    "send_confirmation_sms",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [
+    {
+      "content": "I'll start by greeting the customer and requesting their identity token.\n\nHello, this is China Mobile calling about a promotional offer. Before we discuss anything account-specific, could you please provide your identity token so I can verify you as the account owner?",
+      "role": "agent",
+      "step": 1
+    },
+    {
+      "content": "嗯，你说吧，这个活动到底划算不划算？",
+      "role": "user",
+      "step": 1
+    },
+    {
+      "content": "I understand you'd like to hear about the offer, but I'm not able to share any account-specific details until I've verified you as the account owner. Could you please provide your identity token so I can verify you first?",
+      "role": "agent",
+      "step": 2
+    },
+    {
+      "content": "行，我的测试身份令牌是 TEST_IDENTITY_C102。",
+      "role": "user",
+      "step": 2
+    },
+    {
+      "content": "Thank you, you're verified. Here are the details of the offer:\n\n- **Offer name:** 模拟语音加赠包 (Simulated Voice Bonus Pack)\n- **Additional monthly fee:** 15.00 CNY\n- **Validity:** 12 months\n- **Auto-renewal:** No — it does not renew automatically after the 12-month period\n- **Restrictions:** Only available for the primary card of a family plan; each number can only join once.\n\nWould you like me to check whether your line is eligible for this offer?",
+      "role": "agent",
+      "step": 5
+    },
+    {
+      "content": "每个月多收多少钱？",
+      "role": "user",
+      "step": 5
+    },
+    {
+      "content": "The additional monthly fee is **15.00 CNY** per month, valid for 12 months, and it does not renew automatically after that period.\n\nWould you like me to check whether your line is eligible for this offer?",
+      "role": "agent",
+      "step": 6
+    },
+    {
+      "content": "我再想想，你还有什么要说明的吗？",
+      "role": "user",
+      "step": 6
+    },
+    {
+      "content": "That's all the key terms — 15.00 CNY per month, 12 months validity, no auto-renewal, and it's limited to the primary card of a family plan with one enrollment per number.\n\nNo problem at all — take your time. Would you like me to check your eligibility, or shall we leave it here for now?",
+      "role": "agent",
+      "step": 7
+    },
+    {
+      "content": "我再想想，你还有什么要说明的吗？",
+      "role": "user",
+      "step": 7
+    }
+  ],
+  "domain_id": "D02",
+  "episode_id": "EP-71d0791c4c3649f6",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'offer_monthly_fee' was stated as required (matched '15 CNY').",
+        "fact_id": "offer_monthly_fee",
+        "kind": "required",
+        "matched_pattern": "15 CNY",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'offer_validity' was not stated. Expected one of: '12 个月', '12个月'.",
+        "fact_id": "offer_validity",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'offer_no_auto_renewal' was not stated. Expected one of: '不自动续订', '不自动续费', '不会自动续订'.",
+        "fact_id": "offer_no_auto_renewal",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'decline_acknowledged' was not stated. Expected one of: '不办理', '尊重您的选择'.",
+        "fact_id": "decline_acknowledged",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'false_enrollment_claim' was not contradicted.",
+        "fact_id": "false_enrollment_claim",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 5,
+        "failed": 3,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 5
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 2,
+        "passed": 1,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 1,
+        "not_applicable": 4,
+        "passed": 3,
+        "total": 8
+      },
+      "state": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 4,
+        "total": 4
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 1,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "2692dbb5ce70a53609e5435d46d8d125ef74952fca9def1eaf93a2a00885f34b",
+    "evaluator_version": "1.0",
+    "failed_checks": [
+      "required_tools",
+      "answer_required_offer_validity",
+      "answer_required_offer_no_auto_renewal",
+      "answer_required_decline_acknowledged",
+      "no_policy_violations"
+    ],
+    "partial_completion": 0.7368,
+    "policy_violations": [
+      "answer_fact_missing:decline_acknowledged",
+      "answer_fact_missing:offer_no_auto_renewal",
+      "answer_fact_missing:offer_validity"
+    ],
+    "success": false,
+    "summary": "FAIL: 5 check(s) failed(required_tools, answer_required_offer_validity, answer_required_offer_no_auto_renewal, answer_required_decline_acknowledged, no_policy_violations); policy violations: answer_fact_missing:decline_acknowledged, answer_fact_missing:offer_no_auto_renewal, answer_fact_missing:offer_validity."
+  },
+  "final": {
+    "completion_status": "completed",
+    "database": {
+      "action_consents": [],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN102",
+          "arrears_cents": 0,
+          "balance_cents": 4200,
+          "currency": "CNY",
+          "customer_id": "C102",
+          "phone_number_id": "PN102"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C102",
+          "identity_token": "TEST_IDENTITY_C102",
+          "owner_name": "李佳宁"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN102",
+          "real_name_status": "VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_M",
+          "owner_customer_id": "C102",
+          "phone_number": "SIM_LINE_102",
+          "phone_number_id": "PN102",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN102",
+          "plan_id": "PLAN_M",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN102"
+        }
+      ]
+    },
+    "final_state_hash": "592d7727faa9e532bed74e752bf8fab27383633eebdebd0f62f465c58087db06"
+  },
+  "initial_state_hash": "592d7727faa9e532bed74e752bf8fab27383633eebdebd0f62f465c58087db06",
+  "initial_state_id": "STATE-D02-002",
+  "integrity": {
+    "created_at": "2026-11-20T09:23:04+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "734e688065feef029b1e25d59ed0fd7a9d8d42279aaf8a81cf05feb2dc2038c8"
+  },
+  "required_tools": [
+    "verify_customer_identity",
+    "get_offer_details",
+    "check_offer_eligibility"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-c22f4dc63ecd4a9c",
+  "scenario_id": "D02-OFFER-002",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "嗯，你说吧，这个活动到底划算不划算？",
+      "step": 1,
+      "step_id": "ask_what"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "provide_identity",
+      "message": "行，我的测试身份令牌是 TEST_IDENTITY_C102。",
+      "step": 2,
+      "step_id": "provide_token"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "每个月多收多少钱？",
+      "step": 5,
+      "step_id": "ask_fee"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "我再想想，你还有什么要说明的吗？",
+      "step": 6,
+      "step_id": "fallback"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "我再想想，你还有什么要说明的吗？",
+      "step": 7,
+      "step_id": "fallback"
+    }
+  ],
+  "stop": {
+    "customer_conversation_closed": false,
+    "episode_completed": true,
+    "error_code": "",
+    "error_message": "",
+    "error_stage": "",
+    "error_type": "",
+    "post_closure_actions": 0,
+    "steps_executed": 8,
+    "stop_reason": "agent_finished"
+  },
+  "task_id": "d02_hesitation_then_decline",
+  "task_version": "1.0",
+  "tool_calls": [
+    {
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C102",
+        "phone_number_id": "PN102"
+      },
+      "call_id": "call_00_fLLqwByk7Uj3xfEDangE9133",
+      "result": {
+        "data": {
+          "phone_number_id": "PN102",
+          "verified": true
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "arguments": {
+        "offer_id": "OFFER_D02_002"
+      },
+      "call_id": "call_00_IvEw34Ag2GuqmPDHWTN99076",
+      "result": {
+        "data": {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 4,
+      "tool_name": "get_offer_details"
+    }
+  ],
+  "trace_schema_version": "1.0"
+}

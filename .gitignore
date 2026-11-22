@@ -1,0 +1,53 @@
+# Python environments
+.venv/
+__pycache__/
+*.py[cod]
+
+# Python tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local secrets -- never commit
+.env
+.env.*
+!.env.example
+providers.toml
+*.key
+*.pem
+
+# Sensitive corpus data -- never commit
+data/raw/
+data/interim/
+data/private/
+data/entity_maps/
+data/secure/
+*.enc
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+cm_outbound_corpus.sqlite
+
+# Local runtime scratch. The release evidence under outputs/ IS tracked,
+# so only per-machine working directories are ignored here.
+logs/
+/*.log
+outputs/tmp/
+outputs/local/
+outputs/review/
+
+# OS and editor metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.tmp

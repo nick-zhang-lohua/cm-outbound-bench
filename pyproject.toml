@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cm-outbound-bench"
+version = "1.0.0"
+description = "Standalone synthetic China Mobile outbound calling benchmark"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "pydantic>=2.10,<3",
+]
+
+[project.scripts]
+cm-outbound = "cm_outbound_bench.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "ruff>=0.9.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cm_outbound_bench"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"data/synthetic" = "cm_outbound_bench/data/synthetic"
+"data/tasks" = "cm_outbound_bench/data/tasks"
+"data/policy" = "cm_outbound_bench/data/policy"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+# ``src`` and ``tests`` are both source roots so that the shared test helpers in
+# ``tests/corpus_support.py`` are classified as first-party imports.
+src = ["src", "tests"]
+# ``data_pipeline/`` is the protected de-identification pipeline. It is not part
+# of the benchmark runtime, it must not be modified by benchmark work, and it
+# carries two pre-existing lint findings recorded in ``docs/CHANGELOG.md``.
+# Linting scope is therefore explicit rather than silently "fixed".
+extend-exclude = ["data_pipeline"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

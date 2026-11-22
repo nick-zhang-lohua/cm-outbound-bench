@@ -1,0 +1,312 @@
+{
+  "domain_id": "D03",
+  "task_version": "1.0",
+  "tasks": [
+    {
+      "task_id": "d03_bill_explanation",
+      "domain_id": "D03",
+      "scenario_id": "D03-BILL-001",
+      "task_version": "1.1",
+      "description": "Customer asks why this month's bill is higher. The agent must retrieve the billing summary and the charge lines and explain them without inventing a refund.",
+      "agent_objective": "Call synthetic line PN301. The customer asks why the bill looks higher than usual. Verify identity, retrieve the billing summary and list the charges, then explain the balance, the arrears state and each charge line from the tool results. Do not promise a refund and do not change any billing state.",
+      "customer_id": "C301",
+      "phone_number_id": "PN301",
+      "initial_state_id": "STATE-D03-001",
+      "simulator": {
+        "persona": "bill_explanation_inquiry",
+        "verification_token": "TEST_IDENTITY_C301",
+        "fallback_message": "那你帮我看看这个月到底扣了什么钱。",
+        "steps": [
+          {
+            "step_id": "ask_bill",
+            "trigger": "first",
+            "message": "我这个月话费怎么比以前高？你帮我看看扣了什么钱。",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "行，我的测试身份令牌是 TEST_IDENTITY_C301。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "dispute",
+            "trigger": "agent_mentions",
+            "trigger_terms": [
+              "增值业务",
+              "业务费",
+              "两项",
+              "月费",
+              "扣费"
+            ],
+            "message": "那个增值业务费我没办过啊，这个能退吗？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "done",
+            "trigger": "always",
+            "min_turn": 6,
+            "message": "好吧，我知道了，那我自己再核实一下。",
+            "intent": "end",
+            "ends_conversation": true
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_billing_summary",
+        "list_charges"
+      ],
+      "required_tools": [
+        "get_billing_summary",
+        "list_charges"
+      ],
+      "expected_actions": [
+        {
+          "collection": "recharges",
+          "match": {
+            "account_id": "BA-PN301"
+          },
+          "expected_count": 0,
+          "description": "Explaining a bill must not recharge the account."
+        },
+        {
+          "collection": "notifications",
+          "match": {
+            "phone_number_id": "PN301"
+          },
+          "expected_count": 0,
+          "description": "A billing explanation needs no notification."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 28,
+        "max_tool_calls": 14,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D03-001",
+          "transcript_id": "CALL_36411b482e86d627e45835e1",
+          "seq_start": 12,
+          "seq_end": 63,
+          "pattern_type": "billing_explanation",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D03 rule evidence: 12 speech records matched billing groups."
+        },
+        {
+          "evidence_id": "EV-D03-002",
+          "transcript_id": "CALL_fa00b6fd9a5725a2fd752db0",
+          "seq_start": 27,
+          "seq_end": 91,
+          "pattern_type": "billing_explanation",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D03 rule evidence: 11 speech records matched billing groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "final_answer",
+        "required_facts": [
+          {
+            "fact_id": "plan_charge_amount",
+            "accepted_patterns": [
+              "59.00",
+              "59 元",
+              "59元"
+            ],
+            "description": "The plan charge must match the charge list.",
+            "expected_value": "59.00 CNY"
+          },
+          {
+            "fact_id": "value_added_charge",
+            "accepted_patterns": [
+              "增值业务费"
+            ],
+            "description": "The additional service charge must be named."
+          },
+          {
+            "fact_id": "arrears_state",
+            "accepted_patterns": [
+              "欠费 0.00",
+              "欠费 0",
+              "没有欠费",
+              "无欠费",
+              "欠费金额:0",
+              "欠费金额0"
+            ],
+            "description": "The arrears state must match the billing summary.",
+            "expected_value": "0.00 CNY arrears"
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "refund_promise",
+            "forbidden_patterns": [
+              "给您退款",
+              "为您退款",
+              "帮您退",
+              "退还给您",
+              "可以退"
+            ],
+            "description": "The agent must not promise a refund."
+          },
+          {
+            "fact_id": "false_reassurance",
+            "forbidden_patterns": [
+              "账单完全正常",
+              "没有任何额外费用",
+              "没有任何扣费",
+              "没有扣费"
+            ],
+            "description": "The bill contains an additional charge; denying it is false."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    },
+    {
+      "task_id": "d03_arrears_recharge_with_consent",
+      "domain_id": "D03",
+      "scenario_id": "D03-BILL-002",
+      "task_version": "1.0",
+      "description": "A line in arrears asks for a 50 CNY top-up. The agent must confirm the amount, obtain explicit consent and only then recharge.",
+      "agent_objective": "Call synthetic line PN302. The line is in arrears and the customer wants to pay 50 CNY. Verify identity, show the balance and arrears from the billing summary, confirm the exact amount with the customer, and recharge only after the customer explicitly consents to 50 CNY.",
+      "customer_id": "C302",
+      "phone_number_id": "PN302",
+      "initial_state_id": "STATE-D03-002",
+      "simulator": {
+        "persona": "arrears_recharge",
+        "verification_token": "TEST_IDENTITY_C302",
+        "fallback_message": "我这号码欠费了，我想充50块钱，你看怎么弄。",
+        "steps": [
+          {
+            "step_id": "ask_recharge",
+            "trigger": "first",
+            "message": "我这号码好像欠费了，我想充 50 块钱，能办吗？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C302。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "consent_recharge",
+            "trigger": "agent_asks_consent",
+            "message": "对，就是 50 块，我同意充值 50 元，麻烦你操作吧。",
+            "intent": "accept",
+            "consent_action": "RECHARGE",
+            "consent_target": "BA-PN302",
+            "ends_conversation": true
+          },
+          {
+            "step_id": "confirm_amount",
+            "trigger": "always",
+            "min_turn": 3,
+            "message": "对，50 元，你操作前跟我确认一下金额。"
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "get_billing_summary",
+        "list_charges",
+        "recharge_account"
+      ],
+      "required_tools": [
+        "verify_customer_identity",
+        "get_billing_summary",
+        "recharge_account"
+      ],
+      "expected_actions": [
+        {
+          "collection": "recharges",
+          "match": {
+            "account_id": "BA-PN302",
+            "amount_cents": 5000
+          },
+          "expected_count": 1,
+          "description": "Exactly one 50 CNY simulated recharge."
+        },
+        {
+          "collection": "action_consents",
+          "match": {
+            "phone_number_id": "PN302",
+            "action": "RECHARGE"
+          },
+          "expected_count": 1,
+          "description": "Exactly one runner-recorded recharge consent."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 28,
+        "max_tool_calls": 16,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D03-003",
+          "transcript_id": "CALL_ab345c0e3cc85024dc10172d",
+          "seq_start": 14,
+          "seq_end": 57,
+          "pattern_type": "arrears_recharge_request",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D03 rule evidence: 9 speech records matched billing and recharge groups."
+        },
+        {
+          "evidence_id": "EV-D03-004",
+          "transcript_id": "CALL_9d215d937b3eeb0676cca8d0",
+          "seq_start": 14,
+          "seq_end": 59,
+          "pattern_type": "arrears_recharge_request",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D03 rule evidence: 9 speech records matched billing groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "any_agent_message",
+        "required_facts": [
+          {
+            "fact_id": "recharge_amount",
+            "accepted_patterns": [
+              "充值 50 元",
+              "充值50元",
+              "充值 50"
+            ],
+            "description": "The consented recharge amount must be stated.",
+            "expected_value": "50 CNY"
+          },
+          {
+            "fact_id": "arrears_state",
+            "accepted_patterns": [
+              "欠费 8.00",
+              "欠费 8",
+              "欠费"
+            ],
+            "description": "The outstanding arrears must be reported from the billing summary."
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "false_recharge_failure",
+            "forbidden_patterns": [
+              "充值失败",
+              "没有充值成功",
+              "尚未到账",
+              "还没有到账"
+            ],
+            "description": "The recharge succeeded and must not be described as failed."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    }
+  ]
+}

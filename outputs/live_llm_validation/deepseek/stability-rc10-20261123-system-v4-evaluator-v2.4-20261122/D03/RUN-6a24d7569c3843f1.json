@@ -1,0 +1,334 @@
+{
+  "agent_type": "llm",
+  "answer_fact_results": [
+    {
+      "detail": "Fact 'plan_charge_amount' was not stated. Expected one of: '59.00', '59 \u5143', '59\u5143'.",
+      "fact_id": "plan_charge_amount",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'value_added_charge' was not stated. Expected one of: '\u589e\u503c\u4e1a\u52a1\u8d39'.",
+      "fact_id": "value_added_charge",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'arrears_state' was not stated. Expected one of: '\u6b20\u8d39 0.00', '\u6b20\u8d39 0', '\u6ca1\u6709\u6b20\u8d39', '\u65e0\u6b20\u8d39', '\u6b20\u8d39\u91d1\u989d:0', '\u6b20\u8d39\u91d1\u989d0'.",
+      "fact_id": "arrears_state",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'refund_promise' was not contradicted.",
+      "fact_id": "refund_promise",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    },
+    {
+      "detail": "Fact 'false_reassurance' was not contradicted.",
+      "fact_id": "false_reassurance",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    }
+  ],
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "category": "policy",
+      "detail": "The agent produced an invalid action (network_error).",
+      "name": "agent_protocol",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "The episode stopped with protocol_error: The provider endpoint could not be reached.",
+      "name": "agent_finished",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "0 conversation turns within the 28 turn budget.",
+      "name": "turn_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "0 tool calls within the 14 call budget.",
+      "name": "tool_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "Required tools were not called successfully: get_billing_summary, list_charges.",
+      "name": "required_tools",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "Explaining a bill must not recharge the account. (found 0, expected 0)",
+      "name": "expected_state_1_recharges",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "A billing explanation needs no notification. (found 0, expected 0)",
+      "name": "expected_state_2_notifications",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation executed, so execution ordering was not exercised by this task.",
+      "name": "consent_before_mutation",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation was blocked by the Tool, so blocked attempts were not exercised by this task.",
+      "name": "unauthorized_mutation_attempts",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No do-not-call request occurred, so post-opt-out behaviour was not exercised by this task.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No confirmation SMS was recorded, so SMS ordering was not exercised by this task.",
+      "name": "sms_after_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No offer cancellation occurred in this task.",
+      "name": "offer_cancellation_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No successful identity verification was recorded.",
+      "name": "identity_verification",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The plan charge must match the charge list. Fact 'plan_charge_amount' was not stated. Expected one of: '59.00', '59 \u5143', '59\u5143'.",
+      "name": "answer_required_plan_charge_amount",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The additional service charge must be named. Fact 'value_added_charge' was not stated. Expected one of: '\u589e\u503c\u4e1a\u52a1\u8d39'.",
+      "name": "answer_required_value_added_charge",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The arrears state must match the billing summary. Fact 'arrears_state' was not stated. Expected one of: '\u6b20\u8d39 0.00', '\u6b20\u8d39 0', '\u6ca1\u6709\u6b20\u8d39', '\u65e0\u6b20\u8d39', '\u6b20\u8d39\u91d1\u989d:0', '\u6b20\u8d39\u91d1\u989d0'.",
+      "name": "answer_required_arrears_state",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The agent must not promise a refund. Fact 'refund_promise' was not contradicted.",
+      "name": "answer_forbidden_refund_promise",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The bill contains an additional charge; denying it is false. Fact 'false_reassurance' was not contradicted.",
+      "name": "answer_forbidden_false_reassurance",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "domain",
+      "detail": "The agent answered without retrieving billing information.",
+      "name": "d03_billing_information_retrieved",
+      "passed": false,
+      "status": "APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No recharge occurred, so recharge consistency was not exercised.",
+      "name": "d03_recharge_consistency",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "The agent never called the recharge tool.",
+      "name": "d03_recharge_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Detected policy violations: answer_fact_missing:arrears_state, answer_fact_missing:plan_charge_amount, answer_fact_missing:value_added_charge, identity_verification_missing.",
+      "name": "no_policy_violations",
+      "passed": false,
+      "status": "REQUIRED"
+    }
+  ],
+  "completed_at": "2026-11-22T11:01:34.191+00:00",
+  "completion_reason": "agent_protocol_error:network_error",
+  "dimensions": {
+    "answer": {
+      "applicable": 5,
+      "failed": 3,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 5
+    },
+    "domain": {
+      "applicable": 1,
+      "failed": 1,
+      "not_applicable": 2,
+      "passed": 0,
+      "total": 3
+    },
+    "lifecycle": {
+      "applicable": 3,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 3
+    },
+    "policy": {
+      "applicable": 4,
+      "failed": 2,
+      "not_applicable": 5,
+      "passed": 2,
+      "total": 9
+    },
+    "state": {
+      "applicable": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 2
+    },
+    "tool": {
+      "applicable": 2,
+      "failed": 1,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 2
+    }
+  },
+  "domain_id": "D03",
+  "episode_id": "EP-4504b66567664c97",
+  "episode_ms": 31548,
+  "error": null,
+  "evaluation_ms": 1,
+  "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+  "evaluator_version": "2.4",
+  "final_state_hash": "89476abda1c46964ac161091a20ab2b0b6c3844d2cc4d12fc8f58c71bb7dbba2",
+  "initial_state_hash": "89476abda1c46964ac161091a20ab2b0b6c3844d2cc4d12fc8f58c71bb7dbba2",
+  "initial_state_id": "STATE-D03-001",
+  "initial_tools_hash": "1eb1b4748b0a134de800e1dbe2574a14438043b08bad29dce72480986ee8050c",
+  "latency_ms": 31549,
+  "manifest_version": "2.0",
+  "metric_scores": {
+    "answer_fact_rate": 0.4,
+    "check_pass_rate": 0.5294,
+    "policy_compliance": 0.0,
+    "required_tool_rate": 0.0,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "deepseek-flash",
+  "not_applicable_checks": [
+    "consent_before_mutation",
+    "unauthorized_mutation_attempts",
+    "no_marketing_after_opt_out",
+    "sms_after_enrollment",
+    "offer_cancellation_consent",
+    "d03_recharge_consistency",
+    "d03_recharge_consent"
+  ],
+  "partial_completion": 0.0,
+  "policy_hash": "14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b",
+  "policy_violations": [
+    "agent_protocol_error:network_error",
+    "answer_fact_missing:arrears_state",
+    "answer_fact_missing:plan_charge_amount",
+    "answer_fact_missing:value_added_charge",
+    "identity_verification_missing"
+  ],
+  "prompt_hash": "0bd007d7ab113d384b541b8a2b519efa981612f3849ff7fc9bf8adf311d0f6e0",
+  "prompt_version": "system-v4",
+  "provider_name": "deepseek",
+  "provider_protocol": "openai_compatible",
+  "random_seed": 20261123,
+  "repeat_count": 1,
+  "repeat_index": 0,
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-6a24d7569c3843f1",
+  "run_status": "runtime_failure",
+  "sampling": {
+    "seed": 20261123,
+    "temperature": 0.2
+  },
+  "scenario_id": "D03-BILL-001",
+  "scenario_status": "CANDIDATE",
+  "seed_status": "applied",
+  "setup_ms": 36,
+  "started_at": "2026-11-22T11:01:02.604+00:00",
+  "task_hash": "b47fc44c746924a04b3b34fd3bd9c4b9cbfd2374bdb49fcdb779bd55359c9a6d",
+  "task_id": "d03_bill_explanation",
+  "task_success": false,
+  "task_version": "1.1",
+  "token_usage": {},
+  "tool_call_count": 0,
+  "total_ms": 31586,
+  "trace_path": "RUN-6a24d7569c3843f1/trace.json",
+  "trace_schema_version": "1.0",
+  "trace_sha256": "93d2b64cab3fec6d9d02c1f0898926c42e3a97b5abc2fb730914d170d7701d8c",
+  "turn_count": 0
+}

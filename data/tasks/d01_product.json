@@ -1,0 +1,314 @@
+{
+  "domain_id": "D01",
+  "task_version": "1.0",
+  "tasks": [
+    {
+      "task_id": "d01_plan_content_explanation",
+      "domain_id": "D01",
+      "scenario_id": "D01-PLAN-001",
+      "task_version": "1.1",
+      "description": "Customer asks what their current plan actually contains and what it costs. The answer must come from the customer's account and the plan details, and must not change any state.",
+      "agent_objective": "Call synthetic line PN201. Verify the customer's identity, then retrieve the customer's current account and plan with get_customer_account. Use the plan identifier returned by that tool to retrieve the plan's details with get_plan_details. Explain the monthly fee, the data allowance, the voice allowance and the SMS allowance from the tool results. This is a read-only inquiry: do not change any plan, subscription, balance or offer.",
+      "customer_id": "C201",
+      "phone_number_id": "PN201",
+      "initial_state_id": "STATE-D01-001",
+      "simulator": {
+        "persona": "plan_content_inquiry",
+        "verification_token": "TEST_IDENTITY_C201",
+        "fallback_message": "那这个套餐到底包含什么，你再说清楚一点。",
+        "steps": [
+          {
+            "step_id": "ask_content",
+            "trigger": "first",
+            "message": "我想确认一下我现在这个套餐到底包含什么，每个月多少钱？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C201。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "done",
+            "trigger": "always",
+            "min_turn": 4,
+            "message": "好的，听明白了，谢谢你解释。",
+            "intent": "end",
+            "ends_conversation": true
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "list_plans",
+        "get_plan_details"
+      ],
+      "required_tools": [
+        "get_customer_account",
+        "get_plan_details"
+      ],
+      "expected_actions": [
+        {
+          "collection": "plan_change_requests",
+          "match": {
+            "phone_number_id": "PN201"
+          },
+          "expected_count": 0,
+          "description": "A product inquiry must not request a plan change."
+        },
+        {
+          "collection": "recharges",
+          "match": {
+            "account_id": "BA-PN201"
+          },
+          "expected_count": 0,
+          "description": "A product inquiry must not recharge the account."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 24,
+        "max_tool_calls": 12,
+        "require_finish": true
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D01-001",
+          "transcript_id": "CALL_3f2d02504bcc7c08a1c4c456",
+          "seq_start": 10,
+          "seq_end": 47,
+          "pattern_type": "plan_content_explanation",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D01 rule evidence: 19 speech records matched plan and allowance groups."
+        },
+        {
+          "evidence_id": "EV-D01-002",
+          "transcript_id": "CALL_47a8089d187689f1953251fc",
+          "seq_start": 10,
+          "seq_end": 44,
+          "pattern_type": "plan_content_explanation",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D01 rule evidence: 18 speech records matched plan and allowance groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "final_answer",
+        "required_facts": [
+          {
+            "fact_id": "plan_monthly_fee",
+            "accepted_patterns": [
+              "29 CNY",
+              "29 元",
+              "29元",
+              "CNY 29"
+            ],
+            "description": "The plan's monthly fee must match the plan catalogue.",
+            "expected_value": "29 CNY"
+          },
+          {
+            "fact_id": "plan_data_allowance",
+            "accepted_patterns": [
+              "5000"
+            ],
+            "description": "The data allowance must match the plan catalogue.",
+            "expected_value": "5000 MB"
+          },
+          {
+            "fact_id": "plan_voice_allowance",
+            "accepted_patterns": [
+              "100 分钟",
+              "100分钟"
+            ],
+            "description": "The voice allowance must match the plan catalogue.",
+            "expected_value": "100 minutes"
+          },
+          {
+            "fact_id": "plan_sms_allowance",
+            "accepted_patterns": [
+              "30 条",
+              "30条"
+            ],
+            "description": "The SMS allowance must match the plan catalogue.",
+            "expected_value": "30 SMS"
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "unlimited_allowance_claim",
+            "forbidden_patterns": [
+              "无限流量",
+              "无限通话",
+              "不限量"
+            ],
+            "description": "The plan has finite allowances; it must not be described as unlimited."
+          },
+          {
+            "fact_id": "wrong_price_claim",
+            "forbidden_patterns": [
+              "月费 1 元",
+              "月费只要 1",
+              "1 元月费",
+              "免费使用",
+              "月费 0 元"
+            ],
+            "description": "The fee must not be understated."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    },
+    {
+      "task_id": "d01_plan_comparison",
+      "domain_id": "D01",
+      "scenario_id": "D01-PLAN-002",
+      "task_version": "1.3",
+      "description": "Customer compares two plans and asks what the monthly difference buys. The comparison must come from a comparison tool and remain read-only.",
+      "agent_objective": "Call synthetic line PN201. The customer is deciding between PLAN_M and PLAN_L and asks which is better value. Use compare_plans and explain the monthly fee difference and the allowance difference. Do not change the customer's plan; a plan change is a separate action requiring its own eligibility check and consent.",
+      "customer_id": "C201",
+      "phone_number_id": "PN201",
+      "initial_state_id": "STATE-D01-002",
+      "simulator": {
+        "persona": "plan_comparison_inquiry",
+        "verification_token": "TEST_IDENTITY_C201",
+        "fallback_message": "那这两个套餐差在哪儿？你直接比较一下。",
+        "steps": [
+          {
+            "step_id": "ask_compare",
+            "trigger": "first",
+            "message": "我在看你们的中档和高档套餐，这两个差在哪儿？哪个更划算？",
+            "intent": "ask_question"
+          },
+          {
+            "step_id": "provide_token",
+            "trigger": "agent_asks_identity",
+            "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C201。",
+            "intent": "provide_identity"
+          },
+          {
+            "step_id": "decline_change",
+            "trigger": "agent_asks_consent",
+            "message": "先不换套餐，我只是想比较一下，谢谢。",
+            "intent": "refusal",
+            "ends_conversation": true
+          },
+          {
+            "step_id": "done",
+            "trigger": "always",
+            "min_turn": 3,
+            "message": "好，那我再想想，谢谢你。",
+            "intent": "end",
+            "ends_conversation": true
+          }
+        ]
+      },
+      "allowed_tools": [
+        "verify_customer_identity",
+        "get_customer_account",
+        "list_plans",
+        "get_plan_details",
+        "compare_plans"
+      ],
+      "required_tools": [
+        "compare_plans"
+      ],
+      "expected_actions": [
+        {
+          "collection": "plan_change_requests",
+          "match": {
+            "phone_number_id": "PN201"
+          },
+          "expected_count": 0,
+          "description": "The customer only compares plans."
+        },
+        {
+          "collection": "action_consents",
+          "match": {
+            "phone_number_id": "PN201",
+            "action": "PLAN_CHANGE"
+          },
+          "expected_count": 0,
+          "description": "No plan-change consent in a comparison inquiry."
+        }
+      ],
+      "forbidden_actions": [],
+      "success_criteria": {
+        "max_turns": 24,
+        "max_tool_calls": 14,
+        "require_finish": true,
+        "require_identity_verification": false
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "EV-D01-003",
+          "transcript_id": "CALL_0493bc7de696b74ccb9772e5",
+          "seq_start": 16,
+          "seq_end": 51,
+          "pattern_type": "plan_comparison",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D01 rule evidence: 17 speech records matched plan groups."
+        },
+        {
+          "evidence_id": "EV-D01-004",
+          "transcript_id": "CALL_8245494baf953de3a52cd2b6",
+          "seq_start": 4,
+          "seq_end": 49,
+          "pattern_type": "plan_comparison",
+          "provenance_status": "OBSERVED_PATTERN",
+          "note": "Aggregate D01 rule evidence: 17 speech records matched plan groups."
+        }
+      ],
+      "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+      "answer_assertions": {
+        "scope": "any_agent_message",
+        "required_facts": [
+          {
+            "fact_id": "plan_m_fee",
+            "accepted_patterns": [
+              "59 元",
+              "59元",
+              "59 CNY"
+            ],
+            "description": "PLAN_M monthly fee must match the comparison tool result.",
+            "expected_value": "59 CNY"
+          },
+          {
+            "fact_id": "plan_l_fee",
+            "accepted_patterns": [
+              "99 元",
+              "99元",
+              "99 CNY"
+            ],
+            "description": "PLAN_L monthly fee must match the comparison tool result.",
+            "expected_value": "99 CNY"
+          },
+          {
+            "fact_id": "fee_difference",
+            "accepted_patterns": [
+              "40 元",
+              "40元",
+              "相差 40"
+            ],
+            "description": "The monthly fee difference must match the comparison tool result.",
+            "expected_value": "40 CNY"
+          }
+        ],
+        "forbidden_facts": [
+          {
+            "fact_id": "unrequested_change_claim",
+            "forbidden_patterns": [
+              "已为您办理",
+              "已变更套餐",
+              "已提交变更",
+              "变更成功"
+            ],
+            "description": "A comparison inquiry must not claim the plan was changed."
+          }
+        ]
+      },
+      "scenario_status": "CANDIDATE"
+    }
+  ]
+}

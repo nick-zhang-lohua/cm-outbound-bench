@@ -1,0 +1,89 @@
+{
+  "customers": [
+    {
+      "customer_id": "C001",
+      "owner_name": "林启明",
+      "identity_token": "TEST_IDENTITY_C001"
+    },
+    {
+      "customer_id": "C002",
+      "owner_name": "陈雅文",
+      "identity_token": "TEST_IDENTITY_C002"
+    }
+  ],
+  "phone_numbers": [
+    {
+      "phone_number_id": "PN001",
+      "phone_number": "SIM_LINE_0001",
+      "owner_customer_id": "C001",
+      "current_plan_id": "PLAN_BASIC",
+      "status": "active"
+    },
+    {
+      "phone_number_id": "PN002",
+      "phone_number": "SIM_LINE_0002",
+      "owner_customer_id": "C001",
+      "current_plan_id": "PLAN_FAMILY",
+      "status": "suspended"
+    },
+    {
+      "phone_number_id": "PN003",
+      "phone_number": "SIM_LINE_0003",
+      "owner_customer_id": "C002",
+      "current_plan_id": "PLAN_BASIC",
+      "status": "active"
+    }
+  ],
+  "plans": [
+    {
+      "plan_id": "PLAN_BASIC",
+      "name": "模拟基础套餐",
+      "monthly_fee": 39.0,
+      "currency": "CNY"
+    },
+    {
+      "plan_id": "PLAN_FAMILY",
+      "name": "模拟家庭套餐",
+      "monthly_fee": 59.0,
+      "currency": "CNY"
+    },
+    {
+      "plan_id": "PLAN_PREMIUM",
+      "name": "模拟高级套餐",
+      "monthly_fee": 99.0,
+      "currency": "CNY"
+    }
+  ],
+  "offers": [
+    {
+      "offer_id": "OFFER_DATA_001",
+      "name": "模拟流量优惠活动",
+      "eligible_plan_ids": [
+        "PLAN_BASIC"
+      ],
+      "active": true,
+      "monthly_fee": 10.0,
+      "currency": "CNY",
+      "validity_months": 6,
+      "auto_renewal": true,
+      "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。"
+    },
+    {
+      "offer_id": "OFFER_FAMILY_001",
+      "name": "模拟家庭套餐活动",
+      "eligible_plan_ids": [
+        "PLAN_FAMILY"
+      ],
+      "active": true,
+      "monthly_fee": 20.0,
+      "currency": "CNY",
+      "validity_months": 12,
+      "auto_renewal": false,
+      "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。"
+    }
+  ],
+  "consent_records": [],
+  "enrollments": [],
+  "sms_records": [],
+  "do_not_call_records": []
+}

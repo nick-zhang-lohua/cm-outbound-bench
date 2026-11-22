@@ -1,0 +1,304 @@
+{
+  "action_consent_events": [],
+  "actions": [],
+  "agent": {
+    "agent_type": "llm",
+    "model_name": "deepseek-flash",
+    "policy_hash": "49e57962b6970945bce27c8a23c0a6d1bf35dbe367f5deda825a18e0e8cd4905",
+    "prompt_hash": "15d8632112ecb4330db480e536591a0ffb82ae54fa30b0a2c2d89007a6afe744",
+    "prompt_version": "system-v2",
+    "provider_name": "deepseek",
+    "provider_protocol": "openai_compatible",
+    "sampling": {
+      "seed": 20261120,
+      "temperature": 0.2
+    },
+    "seed": 20261120,
+    "seed_status": "applied",
+    "token_usage": {}
+  },
+  "allowed_tools": [
+    "check_plan_change_eligibility",
+    "get_customer_account",
+    "get_plan_details",
+    "get_subscription_status",
+    "list_plans",
+    "submit_plan_change",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [],
+  "domain_id": "D04",
+  "episode_id": "EP-d5fae0e6711242c0",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'target_plan' was not stated. Expected one of: 'PLAN_L'.",
+        "fact_id": "target_plan",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'effective_date' was not stated. Expected one of: '2026-12-01'.",
+        "fact_id": "effective_date",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'instant_activation_claim' was not contradicted.",
+        "fact_id": "instant_activation_claim",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 2,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 0,
+        "failed": 0,
+        "not_applicable": 3,
+        "passed": 0,
+        "total": 3
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 1,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 2,
+        "not_applicable": 4,
+        "passed": 2,
+        "total": 8
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 2,
+        "not_applicable": 0,
+        "passed": 0,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 1,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "f0c83edb9800907bfcb6158a01f580d83178a56412c1c0ccda24c5fe4f458aca",
+    "evaluator_version": "1.0",
+    "failed_checks": [
+      "agent_protocol",
+      "agent_finished",
+      "required_tools",
+      "expected_state_1_plan_change_requests",
+      "expected_state_2_action_consents",
+      "identity_verification",
+      "answer_required_target_plan",
+      "answer_required_effective_date",
+      "no_policy_violations"
+    ],
+    "partial_completion": 0.0,
+    "policy_violations": [
+      "agent_protocol_error:provider_http_error",
+      "answer_fact_missing:effective_date",
+      "answer_fact_missing:target_plan",
+      "expected_state_not_reached:action_consents",
+      "expected_state_not_reached:plan_change_requests",
+      "identity_verification_missing"
+    ],
+    "success": false,
+    "summary": "FAIL: the agent produced a protocol-invalid action (provider_http_error); no episode was executed."
+  },
+  "final": {
+    "completion_status": "incomplete",
+    "database": {
+      "action_consents": [],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN401",
+          "arrears_cents": 0,
+          "balance_cents": 3300,
+          "currency": "CNY",
+          "customer_id": "C401",
+          "phone_number_id": "PN401"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C401",
+          "identity_token": "TEST_IDENTITY_C401",
+          "owner_name": "许安"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN401",
+          "real_name_status": "VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_M",
+          "owner_customer_id": "C401",
+          "phone_number": "SIM_LINE_401",
+          "phone_number_id": "PN401",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN401",
+          "plan_id": "PLAN_M",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN401"
+        }
+      ]
+    },
+    "final_state_hash": "876dbd6bc908efed87531fa270cf5e5a9f2a2d351ec3b7b32e2eafff844aa639"
+  },
+  "initial_state_hash": "876dbd6bc908efed87531fa270cf5e5a9f2a2d351ec3b7b32e2eafff844aa639",
+  "initial_state_id": "STATE-D04-001",
+  "integrity": {
+    "created_at": "2026-11-20T05:41:26+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "13f5bde887ac0974c0a93e864417d1a1019c831e92a3a9e33ead00324601ea23"
+  },
+  "required_tools": [
+    "verify_customer_identity",
+    "check_plan_change_eligibility",
+    "submit_plan_change"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-76dcabfb01fe44cd",
+  "scenario_id": "D04-LIFECYCLE-001",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [],
+  "stop": {
+    "customer_conversation_closed": false,
+    "episode_completed": false,
+    "error_code": "agent_protocol_error:provider_http_error",
+    "error_message": "Provider request failed with HTTP 400. The `reasoning_content` in the thinking mode must be passed back to the API. (request_id: b236adfd-dbd1-4405-8395-8ce734da899f)",
+    "error_stage": "agent_protocol",
+    "error_type": "ProviderError",
+    "post_closure_actions": 0,
+    "steps_executed": 0,
+    "stop_reason": "protocol_error"
+  },
+  "task_id": "d04_plan_upgrade_with_consent",
+  "task_version": "1.0",
+  "tool_calls": [],
+  "trace_schema_version": "1.0"
+}

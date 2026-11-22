@@ -1,0 +1,477 @@
+{
+  "action_consent_events": [],
+  "actions": [
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "outcome": "simulated_reply",
+      "step": 1,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "outcome": "simulated_reply",
+      "step": 2,
+      "tool_name": ""
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C502",
+        "phone_number_id": "PN502"
+      },
+      "call_id": null,
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN502"
+      },
+      "call_id": null,
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 4,
+      "tool_name": "get_identity_status"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN502"
+      },
+      "call_id": null,
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 5,
+      "tool_name": "check_ownership_transfer_conditions"
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您的实名状态是 NOT_VERIFIED，目前暂不符合过户条件：未实名（real_name_not_verified）、欠费未缴清（arrears_outstanding）。请先处理这些条件，再到营业厅办理过户。感谢接听，再见。",
+      "outcome": "simulated_reply",
+      "step": 6,
+      "tool_name": ""
+    },
+    {
+      "action_type": "finish",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "conversation closed",
+      "message": "",
+      "outcome": "episode_finished",
+      "step": 7,
+      "tool_name": ""
+    }
+  ],
+  "agent": {
+    "agent_type": "benchmark_demo",
+    "model_name": "",
+    "policy_hash": "fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235",
+    "prompt_hash": "d68b72314643c31739e446cd0658fc1aab123443b92b215fe6cb4b261339ef1d",
+    "prompt_version": "scripted-v1",
+    "provider_name": "",
+    "provider_protocol": "",
+    "sampling": {},
+    "seed": null,
+    "seed_status": "",
+    "token_usage": {}
+  },
+  "allowed_tools": [
+    "check_ownership_transfer_conditions",
+    "get_billing_summary",
+    "get_customer_account",
+    "get_identity_status",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [
+    {
+      "content": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "role": "agent",
+      "step": 1
+    },
+    {
+      "content": "我这个号码想转给我姐姐，你看能不能办？",
+      "role": "user",
+      "step": 1
+    },
+    {
+      "content": "为了核对机主身份，请提供您的测试身份令牌（TEST_IDENTITY_ 开头）。",
+      "role": "agent",
+      "step": 2
+    },
+    {
+      "content": "好，我的测试身份令牌是 TEST_IDENTITY_C502。",
+      "role": "user",
+      "step": 2
+    },
+    {
+      "content": "您的实名状态是 NOT_VERIFIED，目前暂不符合过户条件：未实名（real_name_not_verified）、欠费未缴清（arrears_outstanding）。请先处理这些条件，再到营业厅办理过户。感谢接听，再见。",
+      "role": "agent",
+      "step": 6
+    },
+    {
+      "content": "那我先补实名还是先交欠费？",
+      "role": "user",
+      "step": 6
+    }
+  ],
+  "domain_id": "D05",
+  "episode_id": "EP-500577f9ca204f44",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'real_name_state' was stated as required (matched 'NOT_VERIFIED').",
+        "fact_id": "real_name_state",
+        "kind": "required",
+        "matched_pattern": "NOT_VERIFIED",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'arrears_state' was stated as required (matched '欠费').",
+        "fact_id": "arrears_state",
+        "kind": "required",
+        "matched_pattern": "欠费",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'false_verified_claim' was not contradicted.",
+        "fact_id": "false_verified_claim",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "domain": {
+        "applicable": 1,
+        "failed": 0,
+        "not_applicable": 1,
+        "passed": 1,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "partial_completion": 1.0,
+    "policy_violations": [],
+    "success": true,
+    "summary": "PASS: 15 applicable checks passed; no policy violations."
+  },
+  "final": {
+    "completion_status": "completed",
+    "database": {
+      "action_consents": [],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN502",
+          "arrears_cents": 500,
+          "balance_cents": -500,
+          "currency": "CNY",
+          "customer_id": "C502",
+          "phone_number_id": "PN502"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C502",
+          "identity_token": "TEST_IDENTITY_C502",
+          "owner_name": "冯磊"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN502",
+          "real_name_status": "NOT_VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_S",
+          "owner_customer_id": "C502",
+          "phone_number": "SIM_LINE_502",
+          "phone_number_id": "PN502",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN502",
+          "plan_id": "PLAN_S",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN502"
+        }
+      ]
+    },
+    "final_state_hash": "5b69859e7f5bedf39956e269e3a637111efb9271dea0f551544563ee928fa6ad"
+  },
+  "initial_state_hash": "5b69859e7f5bedf39956e269e3a637111efb9271dea0f551544563ee928fa6ad",
+  "initial_state_id": "STATE-D05-002",
+  "integrity": {
+    "created_at": "2026-11-22T11:22:15+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "d348186eb63cd06569983a3e58aa1fee451aae1432cfab0cf3698c10132747d0"
+  },
+  "required_tools": [
+    "verify_customer_identity",
+    "get_identity_status",
+    "check_ownership_transfer_conditions"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-3a20e8dc1c6a4bf0",
+  "scenario_id": "D05-IDENTITY-002",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "我这个号码想转给我姐姐，你看能不能办？",
+      "step": 1,
+      "step_id": "ask_transfer"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "provide_identity",
+      "message": "好，我的测试身份令牌是 TEST_IDENTITY_C502。",
+      "step": 2,
+      "step_id": "provide_token"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "那我先补实名还是先交欠费？",
+      "step": 6,
+      "step_id": "ask_what_missing"
+    }
+  ],
+  "stop": {
+    "customer_conversation_closed": false,
+    "episode_completed": true,
+    "error_code": "",
+    "error_message": "",
+    "error_stage": "",
+    "error_type": "",
+    "post_closure_actions": 0,
+    "steps_executed": 7,
+    "stop_reason": "agent_finished"
+  },
+  "task_id": "d05_real_name_not_verified",
+  "task_version": "1.3",
+  "tool_calls": [
+    {
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C502",
+        "phone_number_id": "PN502"
+      },
+      "call_id": null,
+      "result": {
+        "data": {
+          "phone_number_id": "PN502",
+          "verified": true
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN502"
+      },
+      "call_id": null,
+      "result": {
+        "data": {
+          "phone_number_id": "PN502",
+          "real_name_status": "NOT_VERIFIED",
+          "registration_type": "PERSONAL"
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 4,
+      "tool_name": "get_identity_status"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN502"
+      },
+      "call_id": null,
+      "result": {
+        "data": {
+          "blocking_conditions": [
+            "real_name_not_verified",
+            "arrears_outstanding"
+          ],
+          "phone_number_id": "PN502",
+          "transferable": false
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 5,
+      "tool_name": "check_ownership_transfer_conditions"
+    }
+  ],
+  "trace_schema_version": "1.0"
+}

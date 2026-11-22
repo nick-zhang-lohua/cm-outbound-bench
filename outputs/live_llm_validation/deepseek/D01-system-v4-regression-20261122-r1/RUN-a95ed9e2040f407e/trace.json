@@ -1,0 +1,538 @@
+{
+  "action_consent_events": [],
+  "actions": [
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您好，我是中国移动客服，本次来电是关于您正在考虑的套餐选择。为了核实身份，请您提供身份验证码，谢谢。",
+      "outcome": "simulated_reply",
+      "step": 1,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您好，套餐对比属于账户相关信息，需要先完成身份验证。请您提供身份验证码，我核实后马上为您详细对比。",
+      "outcome": "simulated_reply",
+      "step": 2,
+      "tool_name": ""
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C201",
+        "phone_number_id": "PN201"
+      },
+      "call_id": "call_00_1RFIQCklAe2QD28dN8f27316",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "plan_id_a": "PLAN_M",
+        "plan_id_b": "PLAN_L"
+      },
+      "call_id": "call_00_U8RxGFx6euiR8BiOAhLS0019",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 4,
+      "tool_name": "compare_plans"
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "身份验证已通过，为您对比这两个套餐：\n\n**模拟畅享套餐（PLAN_M）**\n- 月费：59 元\n- 流量：20000 MB（20 GB）\n- 语音：300 分钟\n- 短信：100 条\n\n**模拟尊享套餐（PLAN_L）**\n- 月费：99 元\n- 流量：60000 MB（60 GB）\n- 语音：1000 分钟\n- 短信：300 条\n\n**差异：** 畅享套餐更便宜，每月少 40 元。多花这 40 元，尊享套餐每月多给 40 GB 流量、700 分钟语音和 200 条短信，另外还含家庭共享权益。\n\n**哪个更划算：** 如果您每月流量和通话用量较大（比如经常看视频、通话超过 300 分钟），尊享套餐多出的额度远超 40 元的价值，更划算；如果用量不大，畅享套餐更省钱。\n\n需要提醒的是，本次只是为您介绍套餐，没有为您办理任何变更。如需更换套餐，需要另行做资格核验并征得您明确同意。",
+      "outcome": "simulated_reply",
+      "step": 5,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "两个套餐的对比结果如下：\n\n| 项目 | 模拟畅享套餐（PLAN_M） | 模拟尊享套餐（PLAN_L） |\n|---|---|---|\n| 月费 | 59 元 | 99 元 |\n| 流量 | 20000 MB（20 GB） | 60000 MB（60 GB） |\n| 语音 | 300 分钟 | 1000 分钟 |\n| 短信 | 100 条 | 300 条 |\n\n**核心差异：**\n- **月费**：畅享套餐便宜 40 元/月。\n- **流量**：尊享套餐多 40000 MB（40 GB）。\n- **语音**：尊享套餐多 700 分钟。\n- **短信**：尊享套餐多 200 条。\n- **其他**：尊享套餐含家庭共享权益。\n\n也就是说，每月多花 40 元，换来的是 40 GB 流量、700 分钟语音和 200 条短信，以及家庭共享权益。用量大选尊享更划算，用量小选畅享更省钱。\n\n本次仅为介绍，未为您办理任何套餐变更。",
+      "outcome": "simulated_reply",
+      "step": 6,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "好的，您慢慢考虑，本次没有为您办理任何套餐变更。感谢您的来电，祝您生活愉快！",
+      "outcome": "post_conversation_message",
+      "step": 7,
+      "tool_name": ""
+    },
+    {
+      "action_type": "finish",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "provider requested finish",
+      "message": "",
+      "outcome": "episode_finished",
+      "step": 8,
+      "tool_name": ""
+    }
+  ],
+  "agent": {
+    "agent_type": "llm",
+    "model_name": "deepseek-flash",
+    "policy_hash": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+    "prompt_hash": "ec91bc54af6679087d6426b41cf854297cca2e2f83bb13a593d0170324f568d2",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "provider_protocol": "openai_compatible",
+    "sampling": {
+      "seed": 20261122,
+      "temperature": 0.2
+    },
+    "seed": 20261122,
+    "seed_status": "applied",
+    "token_usage": {
+      "completion_tokens": 720,
+      "prompt_tokens": 24947,
+      "total_tokens": 25667
+    }
+  },
+  "allowed_tools": [
+    "compare_plans",
+    "get_customer_account",
+    "get_plan_details",
+    "list_plans",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [
+    {
+      "content": "您好，我是中国移动客服，本次来电是关于您正在考虑的套餐选择。为了核实身份，请您提供身份验证码，谢谢。",
+      "role": "agent",
+      "step": 1
+    },
+    {
+      "content": "我在看你们的中档和高档套餐，这两个差在哪儿？哪个更划算？",
+      "role": "user",
+      "step": 1
+    },
+    {
+      "content": "您好，套餐对比属于账户相关信息，需要先完成身份验证。请您提供身份验证码，我核实后马上为您详细对比。",
+      "role": "agent",
+      "step": 2
+    },
+    {
+      "content": "可以，我的测试身份令牌是 TEST_IDENTITY_C201。",
+      "role": "user",
+      "step": 2
+    },
+    {
+      "content": "身份验证已通过，为您对比这两个套餐：\n\n**模拟畅享套餐（PLAN_M）**\n- 月费：59 元\n- 流量：20000 MB（20 GB）\n- 语音：300 分钟\n- 短信：100 条\n\n**模拟尊享套餐（PLAN_L）**\n- 月费：99 元\n- 流量：60000 MB（60 GB）\n- 语音：1000 分钟\n- 短信：300 条\n\n**差异：** 畅享套餐更便宜，每月少 40 元。多花这 40 元，尊享套餐每月多给 40 GB 流量、700 分钟语音和 200 条短信，另外还含家庭共享权益。\n\n**哪个更划算：** 如果您每月流量和通话用量较大（比如经常看视频、通话超过 300 分钟），尊享套餐多出的额度远超 40 元的价值，更划算；如果用量不大，畅享套餐更省钱。\n\n需要提醒的是，本次只是为您介绍套餐，没有为您办理任何变更。如需更换套餐，需要另行做资格核验并征得您明确同意。",
+      "role": "agent",
+      "step": 5
+    },
+    {
+      "content": "那这两个套餐差在哪儿？你直接比较一下。",
+      "role": "user",
+      "step": 5
+    },
+    {
+      "content": "两个套餐的对比结果如下：\n\n| 项目 | 模拟畅享套餐（PLAN_M） | 模拟尊享套餐（PLAN_L） |\n|---|---|---|\n| 月费 | 59 元 | 99 元 |\n| 流量 | 20000 MB（20 GB） | 60000 MB（60 GB） |\n| 语音 | 300 分钟 | 1000 分钟 |\n| 短信 | 100 条 | 300 条 |\n\n**核心差异：**\n- **月费**：畅享套餐便宜 40 元/月。\n- **流量**：尊享套餐多 40000 MB（40 GB）。\n- **语音**：尊享套餐多 700 分钟。\n- **短信**：尊享套餐多 200 条。\n- **其他**：尊享套餐含家庭共享权益。\n\n也就是说，每月多花 40 元，换来的是 40 GB 流量、700 分钟语音和 200 条短信，以及家庭共享权益。用量大选尊享更划算，用量小选畅享更省钱。\n\n本次仅为介绍，未为您办理任何套餐变更。",
+      "role": "agent",
+      "step": 6
+    },
+    {
+      "content": "好，那我再想想，谢谢你。",
+      "role": "user",
+      "step": 6
+    },
+    {
+      "content": "好的，您慢慢考虑，本次没有为您办理任何套餐变更。感谢您的来电，祝您生活愉快！",
+      "role": "agent",
+      "step": 7
+    }
+  ],
+  "domain_id": "D01",
+  "episode_id": "EP-b16939cef90942c1",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'plan_m_fee' was not stated. Expected one of: '59 元', '59元', '59 CNY'.",
+        "fact_id": "plan_m_fee",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'plan_l_fee' was not stated. Expected one of: '99 元', '99元', '99 CNY'.",
+        "fact_id": "plan_l_fee",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'fee_difference' was not stated. Expected one of: '40 元', '40元', '相差 40'.",
+        "fact_id": "fee_difference",
+        "kind": "required",
+        "matched_pattern": "",
+        "passed": false
+      },
+      {
+        "detail": "Fact 'unrequested_change_claim' was not contradicted.",
+        "fact_id": "unrequested_change_claim",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 4,
+        "failed": 3,
+        "not_applicable": 0,
+        "passed": 1,
+        "total": 4
+      },
+      "domain": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 1,
+        "not_applicable": 5,
+        "passed": 3,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "4d79e92c624421204a72e4ff52ebeb7202c60b90001dae69991db45f0376d8ff",
+    "evaluator_version": "2.1",
+    "failed_checks": [
+      "answer_required_plan_m_fee",
+      "answer_required_plan_l_fee",
+      "answer_required_fee_difference",
+      "no_policy_violations"
+    ],
+    "partial_completion": 0.7647,
+    "policy_violations": [
+      "answer_fact_missing:fee_difference",
+      "answer_fact_missing:plan_l_fee",
+      "answer_fact_missing:plan_m_fee"
+    ],
+    "success": false,
+    "summary": "FAIL: 4 check(s) failed(answer_required_plan_m_fee, answer_required_plan_l_fee, answer_required_fee_difference, no_policy_violations); policy violations: answer_fact_missing:fee_difference, answer_fact_missing:plan_l_fee, answer_fact_missing:plan_m_fee."
+  },
+  "final": {
+    "completion_status": "completed",
+    "database": {
+      "action_consents": [],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN201",
+          "arrears_cents": 0,
+          "balance_cents": 1100,
+          "currency": "CNY",
+          "customer_id": "C201",
+          "phone_number_id": "PN201"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C201",
+          "identity_token": "TEST_IDENTITY_C201",
+          "owner_name": "林可"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN201",
+          "real_name_status": "VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_S",
+          "owner_customer_id": "C201",
+          "phone_number": "SIM_LINE_201",
+          "phone_number_id": "PN201",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN201",
+          "plan_id": "PLAN_S",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN201"
+        }
+      ]
+    },
+    "final_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f"
+  },
+  "initial_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+  "initial_state_id": "STATE-D01-002",
+  "integrity": {
+    "created_at": "2026-11-21T16:11:52+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "71c00bd1808c6d6e490e16f39a6b84215d032e1e832a1a2c6b976db4668ddf89"
+  },
+  "required_tools": [
+    "compare_plans"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-a95ed9e2040f407e",
+  "scenario_id": "D01-PLAN-002",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "我在看你们的中档和高档套餐，这两个差在哪儿？哪个更划算？",
+      "step": 1,
+      "step_id": "ask_compare"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "provide_identity",
+      "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C201。",
+      "step": 2,
+      "step_id": "provide_token"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "那这两个套餐差在哪儿？你直接比较一下。",
+      "step": 5,
+      "step_id": "fallback"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": true,
+      "intent": "end",
+      "message": "好，那我再想想，谢谢你。",
+      "step": 6,
+      "step_id": "done"
+    }
+  ],
+  "stop": {
+    "customer_conversation_closed": true,
+    "episode_completed": true,
+    "error_code": "",
+    "error_message": "",
+    "error_stage": "",
+    "error_type": "",
+    "post_closure_actions": 1,
+    "steps_executed": 8,
+    "stop_reason": "agent_finished"
+  },
+  "task_id": "d01_plan_comparison",
+  "task_version": "1.0",
+  "tool_calls": [
+    {
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C201",
+        "phone_number_id": "PN201"
+      },
+      "call_id": "call_00_1RFIQCklAe2QD28dN8f27316",
+      "result": {
+        "data": {
+          "phone_number_id": "PN201",
+          "verified": true
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "arguments": {
+        "plan_id_a": "PLAN_M",
+        "plan_id_b": "PLAN_L"
+      },
+      "call_id": "call_00_U8RxGFx6euiR8BiOAhLS0019",
+      "result": {
+        "data": {
+          "currency": "CNY",
+          "monthly_fee_delta": 40.0,
+          "plans": [
+            {
+              "allowance": {
+                "data_mb": 20000,
+                "note": "含通用流量与语音，可叠加促销包。",
+                "sms_count": 100,
+                "voice_minutes": 300
+              },
+              "currency": "CNY",
+              "monthly_fee": 59.0,
+              "name": "模拟畅享套餐",
+              "plan_id": "PLAN_M"
+            },
+            {
+              "allowance": {
+                "data_mb": 60000,
+                "note": "含大额流量与语音，含家庭共享权益。",
+                "sms_count": 300,
+                "voice_minutes": 1000
+              },
+              "currency": "CNY",
+              "monthly_fee": 99.0,
+              "name": "模拟尊享套餐",
+              "plan_id": "PLAN_L"
+            }
+          ]
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 4,
+      "tool_name": "compare_plans"
+    }
+  ],
+  "trace_schema_version": "1.0"
+}

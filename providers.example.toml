@@ -1,0 +1,65 @@
+# CM Outbound provider profiles
+#
+# Copy this file to a local, git-ignored providers.toml and fill in env-var
+# names. Never put API keys or header values in this file.
+#
+# The CLI resolves the profile selected by --provider. Profile labels and
+# endpoint hosts are arbitrary; there is no vendor allowlist.
+#
+# Default lookup path: $CM_OUTBOUND_PROVIDER_CONFIG, then ./providers.toml.
+# Override with --provider-config /path/to/providers.toml.
+
+[providers.deepseek]
+api_protocol = "openai_compatible"
+base_url = "https://api.deepseek.com/v1"
+api_key_env = "DEEPSEEK_API_KEY"
+model = "deepseek-chat"
+timeout = 60
+max_retries = 2
+tool_mode = "function_calling"
+
+[providers.deepseek.extra_params]
+temperature = 0.2
+
+[providers.deepseek.extra_params.thinking]
+type = "disabled"
+
+# A generic relay or gateway. The base URL may be the API root or a full
+# /chat/completions endpoint. Custom header values are read from the named
+# environment variables.
+[providers.my-relay]
+api_protocol = "openai_compatible"
+base_url = "https://relay.example.net/v1"
+api_key_env = "MY_RELAY_API_KEY"
+model = "my-model"
+timeout = 60
+max_retries = 2
+tool_mode = "function_calling"
+
+[providers.my-relay.headers_env]
+"X-Organization" = "MY_RELAY_ORG"
+
+[providers.my-relay.extra_params]
+temperature = 0.1
+
+# Providers without native function calling can use the generic adapter's
+# JSON structured-action fallback. No provider SDK is required.
+[providers.my-json-provider]
+api_protocol = "openai_compatible"
+base_url = "https://api.example.net/v1"
+api_key_env = "MY_JSON_PROVIDER_KEY"
+model = "my-json-model"
+tool_mode = "json"
+timeout = 90
+max_retries = 1
+
+# A native adapter is added through register_provider_factory() in Python and
+# then selected by its arbitrary api_protocol identifier:
+#
+# [providers.my-native-api]
+# api_protocol = "my_native_protocol"
+# base_url = "https://native.example.net"
+# api_key_env = "MY_NATIVE_KEY"
+# model = "my-native-model"
+# timeout = 60
+# max_retries = 1

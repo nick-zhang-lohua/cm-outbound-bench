@@ -1,0 +1,545 @@
+{
+  "action_consent_events": [],
+  "actions": [
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您好，我是中国移动客服。请问您方便提供一下身份验证令牌吗？我需要先核实您的身份，才能为您查询账户信息。",
+      "outcome": "simulated_reply",
+      "step": 1,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "您好，为了保护您的账户信息安全，我需要先核实您的身份。请您提供一下身份验证令牌，我核实后马上为您查询当前套餐的月费和包含内容。",
+      "outcome": "simulated_reply",
+      "step": 2,
+      "tool_name": ""
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C201",
+        "phone_number_id": "PN201"
+      },
+      "call_id": "call_00_w4FaMnOVQju8SL2WFkRM4957",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "phone_number_id": "PN201"
+      },
+      "call_id": "call_00_i75GfoLXJgo0MqBS3T4t6947",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 4,
+      "tool_name": "get_customer_account"
+    },
+    {
+      "action_type": "call_tool",
+      "arguments": {
+        "plan_id": "PLAN_S"
+      },
+      "call_id": "call_00_NScy2fFdrZvROEMGvhDA8965",
+      "finish_reason": "",
+      "message": "",
+      "outcome": "executed",
+      "step": 5,
+      "tool_name": "get_plan_details"
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "林可您好，身份已核实。您当前使用的是**模拟轻享套餐（PLAN_S）**，具体内容如下：\n\n- **月费**：29.0 元/月\n- **流量**：5000 MB（约 5 GB）\n- **语音**：100 分钟\n- **短信**：30 条\n- **套餐说明**：基础流量与语音，不含定向流量包。\n\n以上信息仅供您查询参考，本次未对您的套餐或账户做任何变更。请问还有其他需要了解的吗？",
+      "outcome": "simulated_reply",
+      "step": 6,
+      "tool_name": ""
+    },
+    {
+      "action_type": "say",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "",
+      "message": "好的，我再为您详细说明一下您当前的**模拟轻享套餐（PLAN_S）**：\n\n- **月费**：29.0 元/月\n- **流量额度**：5000 MB（约 5 GB）\n- **语音额度**：100 分钟\n- **短信额度**：30 条\n- **套餐说明**：包含基础流量与语音，不含定向流量包。\n\n也就是说，每月固定扣 29 元，可用约 5 GB 通用流量、100 分钟通话和 30 条短信；定向流量包不在此套餐范围内。\n\n以上均为查询结果，本次未对您的套餐或账户做任何变更。请问还有其他需要了解的吗？",
+      "outcome": "simulated_reply",
+      "step": 7,
+      "tool_name": ""
+    },
+    {
+      "action_type": "finish",
+      "arguments": {},
+      "call_id": null,
+      "finish_reason": "provider requested finish",
+      "message": "",
+      "outcome": "episode_finished",
+      "step": 8,
+      "tool_name": ""
+    }
+  ],
+  "agent": {
+    "agent_type": "llm",
+    "model_name": "deepseek-flash",
+    "policy_hash": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+    "prompt_hash": "dceca853dd875e6c14b60ec180eb72b605eae0833ac02622ddc3ec5bf56e1f85",
+    "prompt_version": "system-v4",
+    "provider_name": "deepseek",
+    "provider_protocol": "openai_compatible",
+    "sampling": {
+      "seed": 20261122,
+      "temperature": 0.2
+    },
+    "seed": 20261122,
+    "seed_status": "applied",
+    "token_usage": {
+      "completion_tokens": 524,
+      "prompt_tokens": 23206,
+      "total_tokens": 23730
+    }
+  },
+  "allowed_tools": [
+    "get_customer_account",
+    "get_plan_details",
+    "list_plans",
+    "verify_customer_identity"
+  ],
+  "benchmark_version": "1.0.0",
+  "consent_events": [],
+  "conversation": [
+    {
+      "content": "您好，我是中国移动客服。请问您方便提供一下身份验证令牌吗？我需要先核实您的身份，才能为您查询账户信息。",
+      "role": "agent",
+      "step": 1
+    },
+    {
+      "content": "我想确认一下我现在这个套餐到底包含什么，每个月多少钱？",
+      "role": "user",
+      "step": 1
+    },
+    {
+      "content": "您好，为了保护您的账户信息安全，我需要先核实您的身份。请您提供一下身份验证令牌，我核实后马上为您查询当前套餐的月费和包含内容。",
+      "role": "agent",
+      "step": 2
+    },
+    {
+      "content": "可以，我的测试身份令牌是 TEST_IDENTITY_C201。",
+      "role": "user",
+      "step": 2
+    },
+    {
+      "content": "林可您好，身份已核实。您当前使用的是**模拟轻享套餐（PLAN_S）**，具体内容如下：\n\n- **月费**：29.0 元/月\n- **流量**：5000 MB（约 5 GB）\n- **语音**：100 分钟\n- **短信**：30 条\n- **套餐说明**：基础流量与语音，不含定向流量包。\n\n以上信息仅供您查询参考，本次未对您的套餐或账户做任何变更。请问还有其他需要了解的吗？",
+      "role": "agent",
+      "step": 6
+    },
+    {
+      "content": "那这个套餐到底包含什么，你再说清楚一点。",
+      "role": "user",
+      "step": 6
+    },
+    {
+      "content": "好的，我再为您详细说明一下您当前的**模拟轻享套餐（PLAN_S）**：\n\n- **月费**：29.0 元/月\n- **流量额度**：5000 MB（约 5 GB）\n- **语音额度**：100 分钟\n- **短信额度**：30 条\n- **套餐说明**：包含基础流量与语音，不含定向流量包。\n\n也就是说，每月固定扣 29 元，可用约 5 GB 通用流量、100 分钟通话和 30 条短信；定向流量包不在此套餐范围内。\n\n以上均为查询结果，本次未对您的套餐或账户做任何变更。请问还有其他需要了解的吗？",
+      "role": "agent",
+      "step": 7
+    },
+    {
+      "content": "好的，听明白了，谢谢你解释。",
+      "role": "user",
+      "step": 7
+    }
+  ],
+  "domain_id": "D01",
+  "episode_id": "EP-9c73a7ad819a40a7",
+  "evaluation": {
+    "answer_fact_results": [
+      {
+        "detail": "Fact 'plan_monthly_fee' was stated as required (matched '29 元').",
+        "fact_id": "plan_monthly_fee",
+        "kind": "required",
+        "matched_pattern": "29 元",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'plan_data_allowance' was stated as required (matched '5000').",
+        "fact_id": "plan_data_allowance",
+        "kind": "required",
+        "matched_pattern": "5000",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'plan_voice_allowance' was stated as required (matched '100 分钟').",
+        "fact_id": "plan_voice_allowance",
+        "kind": "required",
+        "matched_pattern": "100 分钟",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'plan_sms_allowance' was stated as required (matched '30 条').",
+        "fact_id": "plan_sms_allowance",
+        "kind": "required",
+        "matched_pattern": "30 条",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'unlimited_allowance_claim' was not contradicted.",
+        "fact_id": "unlimited_allowance_claim",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      },
+      {
+        "detail": "Fact 'wrong_price_claim' was not contradicted.",
+        "fact_id": "wrong_price_claim",
+        "kind": "forbidden",
+        "matched_pattern": "",
+        "passed": true
+      }
+    ],
+    "dimensions": {
+      "answer": {
+        "applicable": 6,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 6,
+        "total": 6
+      },
+      "domain": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "lifecycle": {
+        "applicable": 3,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 3,
+        "total": 3
+      },
+      "policy": {
+        "applicable": 4,
+        "failed": 0,
+        "not_applicable": 5,
+        "passed": 4,
+        "total": 9
+      },
+      "state": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "tool": {
+        "applicable": 2,
+        "failed": 0,
+        "not_applicable": 0,
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "evaluator_hash": "a12c74abb8a5747e83d7aab070fc441a0a213fa2ff732ae607d60ae0d12eaae2",
+    "evaluator_version": "2.4",
+    "failed_checks": [],
+    "partial_completion": 1.0,
+    "policy_violations": [],
+    "success": true,
+    "summary": "PASS: 19 applicable checks passed; no policy violations."
+  },
+  "final": {
+    "completion_status": "completed",
+    "database": {
+      "action_consents": [],
+      "billing_accounts": [
+        {
+          "account_id": "BA-PN201",
+          "arrears_cents": 0,
+          "balance_cents": 1100,
+          "currency": "CNY",
+          "customer_id": "C201",
+          "phone_number_id": "PN201"
+        }
+      ],
+      "cancellation_requests": [],
+      "charges": [],
+      "consent_records": [],
+      "customers": [
+        {
+          "customer_id": "C201",
+          "identity_token": "TEST_IDENTITY_C201",
+          "owner_name": "林可"
+        }
+      ],
+      "do_not_call_records": [],
+      "enrollments": [],
+      "identity_records": [
+        {
+          "phone_number_id": "PN201",
+          "real_name_status": "VERIFIED",
+          "registration_type": "PERSONAL"
+        }
+      ],
+      "notifications": [],
+      "offers": [
+        {
+          "active": true,
+          "auto_renewal": true,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S",
+            "PLAN_M"
+          ],
+          "monthly_fee": 10.0,
+          "name": "模拟流量加赠包",
+          "offer_id": "OFFER_D02_001",
+          "restrictions": "仅限主卡使用；优惠期内可取消，取消后按标准资费执行。",
+          "validity_months": 6
+        },
+        {
+          "active": true,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_M",
+            "PLAN_L"
+          ],
+          "monthly_fee": 15.0,
+          "name": "模拟语音加赠包",
+          "offer_id": "OFFER_D02_002",
+          "restrictions": "仅限家庭套餐主卡；同一号码只能参加一次。",
+          "validity_months": 12
+        },
+        {
+          "active": false,
+          "auto_renewal": false,
+          "currency": "CNY",
+          "eligible_plan_ids": [
+            "PLAN_S"
+          ],
+          "monthly_fee": 0.0,
+          "name": "模拟限时体验包",
+          "offer_id": "OFFER_D02_003",
+          "restrictions": "活动已结束，不再接受办理。",
+          "validity_months": 3
+        }
+      ],
+      "phone_numbers": [
+        {
+          "current_plan_id": "PLAN_S",
+          "owner_customer_id": "C201",
+          "phone_number": "SIM_LINE_201",
+          "phone_number_id": "PN201",
+          "status": "active"
+        }
+      ],
+      "plan_allowances": [
+        {
+          "data_mb": 5000,
+          "note": "基础流量与语音，不含定向流量包。",
+          "plan_id": "PLAN_S",
+          "sms_count": 30,
+          "voice_minutes": 100
+        },
+        {
+          "data_mb": 20000,
+          "note": "含通用流量与语音，可叠加促销包。",
+          "plan_id": "PLAN_M",
+          "sms_count": 100,
+          "voice_minutes": 300
+        },
+        {
+          "data_mb": 60000,
+          "note": "含大额流量与语音，含家庭共享权益。",
+          "plan_id": "PLAN_L",
+          "sms_count": 300,
+          "voice_minutes": 1000
+        }
+      ],
+      "plan_change_requests": [],
+      "plans": [
+        {
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 59.0,
+          "name": "模拟畅享套餐",
+          "plan_id": "PLAN_M"
+        },
+        {
+          "currency": "CNY",
+          "monthly_fee": 99.0,
+          "name": "模拟尊享套餐",
+          "plan_id": "PLAN_L"
+        }
+      ],
+      "recharges": [],
+      "sms_records": [],
+      "subscriptions": [
+        {
+          "contract_end_on": null,
+          "phone_number_id": "PN201",
+          "plan_id": "PLAN_S",
+          "started_on": "2025-06-01",
+          "status": "ACTIVE",
+          "subscription_id": "SUB-PN201"
+        }
+      ]
+    },
+    "final_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f"
+  },
+  "initial_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+  "initial_state_id": "STATE-D01-001",
+  "integrity": {
+    "created_at": "2026-11-22T11:20:48+00:00",
+    "schema_version": "1.0",
+    "trace_hash": "c3378234f26fa5253b8ac70b99f639c6bf9b53714bd588f2452d71e434c9c23f"
+  },
+  "required_tools": [
+    "get_customer_account",
+    "get_plan_details"
+  ],
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-ae3ffe141e6e4f0c",
+  "scenario_id": "D01-PLAN-001",
+  "scenario_status": "CANDIDATE",
+  "simulator_events": [
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "我想确认一下我现在这个套餐到底包含什么，每个月多少钱？",
+      "step": 1,
+      "step_id": "ask_content"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "provide_identity",
+      "message": "可以，我的测试身份令牌是 TEST_IDENTITY_C201。",
+      "step": 2,
+      "step_id": "provide_token"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": false,
+      "intent": "ask_question",
+      "message": "那这个套餐到底包含什么，你再说清楚一点。",
+      "step": 6,
+      "step_id": "fallback"
+    },
+    {
+      "consent_action": null,
+      "consent_granted": false,
+      "consent_target": "",
+      "ends_conversation": true,
+      "intent": "end",
+      "message": "好的，听明白了，谢谢你解释。",
+      "step": 7,
+      "step_id": "done"
+    }
+  ],
+  "stop": {
+    "customer_conversation_closed": true,
+    "episode_completed": true,
+    "error_code": "",
+    "error_message": "",
+    "error_stage": "",
+    "error_type": "",
+    "post_closure_actions": 0,
+    "steps_executed": 8,
+    "stop_reason": "agent_finished"
+  },
+  "task_id": "d01_plan_content_explanation",
+  "task_version": "1.1",
+  "tool_calls": [
+    {
+      "arguments": {
+        "identity_token": "TEST_IDENTITY_C201",
+        "phone_number_id": "PN201"
+      },
+      "call_id": "call_00_w4FaMnOVQju8SL2WFkRM4957",
+      "result": {
+        "data": {
+          "phone_number_id": "PN201",
+          "verified": true
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 3,
+      "tool_name": "verify_customer_identity"
+    },
+    {
+      "arguments": {
+        "phone_number_id": "PN201"
+      },
+      "call_id": "call_00_i75GfoLXJgo0MqBS3T4t6947",
+      "result": {
+        "data": {
+          "current_plan": {
+            "currency": "CNY",
+            "monthly_fee": 29.0,
+            "name": "模拟轻享套餐",
+            "plan_id": "PLAN_S"
+          },
+          "customer_id": "C201",
+          "owner_name": "林可",
+          "phone_number": "SIM_LINE_201",
+          "phone_number_id": "PN201",
+          "status": "active"
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 4,
+      "tool_name": "get_customer_account"
+    },
+    {
+      "arguments": {
+        "plan_id": "PLAN_S"
+      },
+      "call_id": "call_00_NScy2fFdrZvROEMGvhDA8965",
+      "result": {
+        "data": {
+          "allowance": {
+            "data_mb": 5000,
+            "note": "基础流量与语音，不含定向流量包。",
+            "sms_count": 30,
+            "voice_minutes": 100
+          },
+          "currency": "CNY",
+          "monthly_fee": 29.0,
+          "name": "模拟轻享套餐",
+          "plan_id": "PLAN_S"
+        },
+        "error": null,
+        "ok": true
+      },
+      "step": 5,
+      "tool_name": "get_plan_details"
+    }
+  ],
+  "trace_schema_version": "1.0"
+}

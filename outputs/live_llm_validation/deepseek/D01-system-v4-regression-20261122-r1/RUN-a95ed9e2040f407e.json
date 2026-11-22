@@ -1,0 +1,306 @@
+{
+  "agent_type": "llm",
+  "answer_fact_results": [
+    {
+      "detail": "Fact 'plan_m_fee' was not stated. Expected one of: '59 \u5143', '59\u5143', '59 CNY'.",
+      "fact_id": "plan_m_fee",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'plan_l_fee' was not stated. Expected one of: '99 \u5143', '99\u5143', '99 CNY'.",
+      "fact_id": "plan_l_fee",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'fee_difference' was not stated. Expected one of: '40 \u5143', '40\u5143', '\u76f8\u5dee 40'.",
+      "fact_id": "fee_difference",
+      "kind": "required",
+      "matched_pattern": "",
+      "passed": false
+    },
+    {
+      "detail": "Fact 'unrequested_change_claim' was not contradicted.",
+      "fact_id": "unrequested_change_claim",
+      "kind": "forbidden",
+      "matched_pattern": "",
+      "passed": true
+    }
+  ],
+  "benchmark_version": "1.0.0",
+  "check_results": [
+    {
+      "category": "lifecycle",
+      "detail": "The agent finished the interaction.",
+      "name": "agent_finished",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "9 conversation turns within the 24 turn budget.",
+      "name": "turn_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "lifecycle",
+      "detail": "2 tool calls within the 14 call budget.",
+      "name": "tool_budget",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "Every required tool was called successfully.",
+      "name": "required_tools",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "tool",
+      "detail": "No tool outside the task allow-list was attempted.",
+      "name": "no_disallowed_tool_calls",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "The customer only compares plans. (found 0, expected 0)",
+      "name": "expected_state_1_plan_change_requests",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "state",
+      "detail": "No plan-change consent in a comparison inquiry. (found 0, expected 0)",
+      "name": "expected_state_2_action_consents",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation executed, so execution ordering was not exercised by this task.",
+      "name": "consent_before_mutation",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No consent-gated mutation was blocked by the Tool, so blocked attempts were not exercised by this task.",
+      "name": "unauthorized_mutation_attempts",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No do-not-call request occurred, so post-opt-out behaviour was not exercised by this task.",
+      "name": "no_marketing_after_opt_out",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No confirmation SMS was recorded, so SMS ordering was not exercised by this task.",
+      "name": "sms_after_enrollment",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "No offer cancellation occurred in this task.",
+      "name": "offer_cancellation_consent",
+      "passed": true,
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Successful identity verification was recorded.",
+      "name": "identity_verification",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected account access occurred before verification.",
+      "name": "protected_account_access",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "policy",
+      "detail": "No protected customer identifier was disclosed before verification.",
+      "name": "protected_disclosure",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "PLAN_M monthly fee must match the comparison tool result. Fact 'plan_m_fee' was not stated. Expected one of: '59 \u5143', '59\u5143', '59 CNY'.",
+      "name": "answer_required_plan_m_fee",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "PLAN_L monthly fee must match the comparison tool result. Fact 'plan_l_fee' was not stated. Expected one of: '99 \u5143', '99\u5143', '99 CNY'.",
+      "name": "answer_required_plan_l_fee",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "The monthly fee difference must match the comparison tool result. Fact 'fee_difference' was not stated. Expected one of: '40 \u5143', '40\u5143', '\u76f8\u5dee 40'.",
+      "name": "answer_required_fee_difference",
+      "passed": false,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "answer",
+      "detail": "A comparison inquiry must not claim the plan was changed. Fact 'unrequested_change_claim' was not contradicted.",
+      "name": "answer_forbidden_unrequested_change_claim",
+      "passed": true,
+      "status": "REQUIRED"
+    },
+    {
+      "category": "domain",
+      "detail": "The agent retrieved plan information from a tool result.",
+      "name": "d01_plan_information_retrieved",
+      "passed": true,
+      "status": "APPLICABLE"
+    },
+    {
+      "category": "domain",
+      "detail": "No operational state was changed during a product inquiry.",
+      "name": "d01_read_only_domain",
+      "passed": true,
+      "status": "APPLICABLE"
+    },
+    {
+      "category": "policy",
+      "detail": "Detected policy violations: answer_fact_missing:fee_difference, answer_fact_missing:plan_l_fee, answer_fact_missing:plan_m_fee.",
+      "name": "no_policy_violations",
+      "passed": false,
+      "status": "REQUIRED"
+    }
+  ],
+  "completed_at": "2026-11-21T16:11:52.558+00:00",
+  "completion_reason": "agent_finished",
+  "dimensions": {
+    "answer": {
+      "applicable": 4,
+      "failed": 3,
+      "not_applicable": 0,
+      "passed": 1,
+      "total": 4
+    },
+    "domain": {
+      "applicable": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 2
+    },
+    "lifecycle": {
+      "applicable": 3,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 3,
+      "total": 3
+    },
+    "policy": {
+      "applicable": 4,
+      "failed": 1,
+      "not_applicable": 5,
+      "passed": 3,
+      "total": 9
+    },
+    "state": {
+      "applicable": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 2
+    },
+    "tool": {
+      "applicable": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "passed": 2,
+      "total": 2
+    }
+  },
+  "domain_id": "D01",
+  "episode_id": "EP-b16939cef90942c1",
+  "episode_ms": 8009,
+  "error": null,
+  "evaluation_ms": 0,
+  "evaluator_hash": "4d79e92c624421204a72e4ff52ebeb7202c60b90001dae69991db45f0376d8ff",
+  "evaluator_version": "2.1",
+  "final_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+  "initial_state_hash": "e520532024f34e53082d62df68c9fea3a1dc498c8621faff29c5223581ce673f",
+  "initial_state_id": "STATE-D01-002",
+  "initial_tools_hash": "1cc1a70e272df07a6b94d59893fc6618f6941e3dfa70a30e412b7015d2745a76",
+  "latency_ms": 8009,
+  "manifest_version": "2.0",
+  "metric_scores": {
+    "answer_fact_rate": 0.25,
+    "check_pass_rate": 0.7647,
+    "policy_compliance": 0.0,
+    "required_tool_rate": 1.0,
+    "tool_efficiency": 1.0,
+    "turn_efficiency": 1.0
+  },
+  "model_name": "deepseek-flash",
+  "not_applicable_checks": [
+    "consent_before_mutation",
+    "unauthorized_mutation_attempts",
+    "no_marketing_after_opt_out",
+    "sms_after_enrollment",
+    "offer_cancellation_consent"
+  ],
+  "partial_completion": 0.7647,
+  "policy_hash": "61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2",
+  "policy_violations": [
+    "answer_fact_missing:fee_difference",
+    "answer_fact_missing:plan_l_fee",
+    "answer_fact_missing:plan_m_fee"
+  ],
+  "prompt_hash": "ec91bc54af6679087d6426b41cf854297cca2e2f83bb13a593d0170324f568d2",
+  "prompt_version": "system-v4",
+  "provider_name": "deepseek",
+  "provider_protocol": "openai_compatible",
+  "random_seed": 20261122,
+  "repeat_count": 1,
+  "repeat_index": 0,
+  "rule_provenance_status": "SYNTHETIC_BENCHMARK_ASSUMPTION",
+  "run_id": "RUN-a95ed9e2040f407e",
+  "run_status": "evaluation_failure",
+  "sampling": {
+    "seed": 20261122,
+    "temperature": 0.2
+  },
+  "scenario_id": "D01-PLAN-002",
+  "scenario_status": "CANDIDATE",
+  "seed_status": "applied",
+  "setup_ms": 49,
+  "started_at": "2026-11-21T16:11:44.498+00:00",
+  "task_hash": "1cc1a70e272df07a6b94d59893fc6618f6941e3dfa70a30e412b7015d2745a76",
+  "task_id": "d01_plan_comparison",
+  "task_success": false,
+  "task_version": "1.0",
+  "token_usage": {
+    "completion_tokens": 720,
+    "prompt_tokens": 24947,
+    "total_tokens": 25667
+  },
+  "tool_call_count": 2,
+  "total_ms": 8060,
+  "trace_path": "RUN-a95ed9e2040f407e/trace.json",
+  "trace_schema_version": "1.0",
+  "trace_sha256": "b6a26191173dadea356699507c7f7360a0c3d7d85d16fbf454ed7be200810e1a",
+  "turn_count": 9
+}

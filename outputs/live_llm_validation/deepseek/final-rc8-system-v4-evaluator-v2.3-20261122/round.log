@@ -1,0 +1,109 @@
+== D01 start 18:29:30
+== D01 exit=0 18:30:00
+   d01_plan_content_explanation success turns=8 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=7f4fcb115b6848eac616fa7680f2988973b2d6ee7ecda296333b240728bc342c
+      prompt_hash=dceca853dd875e6c14b60ec180eb72b605eae0833ac02622ddc3ec5bf56e1f85 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2
+      tokens={'completion_tokens': 528, 'prompt_tokens': 23209, 'total_tokens': 23737} latency_ms=12114
+   d01_plan_comparison success turns=7 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=32005a93a32e5949754c9b28fc6f80f214f70336b32fd37994821f654ba68edb
+      prompt_hash=ec91bc54af6679087d6426b41cf854297cca2e2f83bb13a593d0170324f568d2 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=61b1cc2a69524193770f2095303554167c0fc922f7e32d858f3a6bfc0adeb1d2
+      tokens={'completion_tokens': 825, 'prompt_tokens': 26460, 'total_tokens': 27285} latency_ms=17673
+   AGGREGATE rate=1.0 manifests=2
+      D01: runs=2 success=2 rate=1.0
+== D02 start 18:30:00
+== D02 exit=0 18:30:40
+   d02_offer_benefit_inquiry_accept success turns=7 tools=5 failed=[] violations=[] seed=20261122
+      task_hash=2a03d05465fdb361de28513305e8fa40f7443775218e3ec8df4b62d0ed71ba1d
+      prompt_hash=dc3ec9de524965cf7fd64efcc94233239efadb3b54297a941304d95e1033dcb0 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={'completion_tokens': 670, 'prompt_tokens': 36089, 'total_tokens': 36759} latency_ms=13324
+   d02_hesitation_then_decline success turns=9 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=b1a31884c5be24eaf3ff2a288ed4134e06c2824bc711465f748f2ae97802362f
+      prompt_hash=0ae7036934842cc631aeaaa17f77630d83e56428b8f9e177bcbd77c0e681086b v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={'completion_tokens': 607, 'prompt_tokens': 31771, 'total_tokens': 32378} latency_ms=12334
+   d02_eligibility_ineligible_explanation success turns=6 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=750742478755f119c5a11296f310d2cb4b00be76c5e6b55349d2072c7ec1a58d
+      prompt_hash=e5227aa98d1db3fbf7589af286dbc60288d9f1d994324770f3c3b735e65229d1 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={'completion_tokens': 408, 'prompt_tokens': 23254, 'total_tokens': 23662} latency_ms=8361
+   d02_direct_refusal_do_not_call success turns=3 tools=1 failed=[] violations=[] seed=20261122
+      task_hash=d399d46ec7715525e06ceb2236196dc44ab1c4760ed9416c7382cdae551d4d23
+      prompt_hash=2f3f81f688f6a5ac23f41a5da38df1f36275614e34617fc2d3998886cd04afc6 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=f7a996f82289d9c44212d945a238b0dee109e849d1744ee0d900f4236ebb5f1d
+      tokens={'completion_tokens': 110, 'prompt_tokens': 11287, 'total_tokens': 11397} latency_ms=4202
+   AGGREGATE rate=1.0 manifests=4
+      D02: runs=4 success=4 rate=1.0
+== D03 start 18:30:40
+== D03 exit=0 18:31:07
+   d03_bill_explanation success turns=12 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=cf7d61645e39e947ff980b6d167f011431759e0eff558e780581d5e4f15a83da
+      prompt_hash=0bd007d7ab113d384b541b8a2b519efa981612f3849ff7fc9bf8adf311d0f6e0 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b
+      tokens={'completion_tokens': 745, 'prompt_tokens': 31613, 'total_tokens': 32358} latency_ms=15422
+   d03_arrears_recharge_with_consent success turns=7 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=9fa105f56720dd4097bfc431acef597df42314cba9d9dc68b4b2ca789fe4b61e
+      prompt_hash=fcd175d14146dc2a670e659f266e5b0646ad064e5f1f0a4294fbe65c6ffb5726 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=14b6236fa83dfb18f1779118cb1f52ddf8af341511bb3c68c16f9d6626ae814b
+      tokens={'completion_tokens': 383, 'prompt_tokens': 26230, 'total_tokens': 26613} latency_ms=9346
+   AGGREGATE rate=1.0 manifests=2
+      D03: runs=2 success=2 rate=1.0
+== D04 start 18:31:07
+== D04 exit=0 18:31:28
+   d04_plan_upgrade_with_consent success turns=8 tools=5 failed=[] violations=[] seed=20261122
+      task_hash=ef346eee3c48b80a5c08baec623e17521adb2b035da177e7f9190345ee28c65b
+      prompt_hash=bfb49664e31b4edf4ee45d183f6b41114488e1aa6af45b99de99d56845e2578f v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5
+      tokens={'completion_tokens': 586, 'prompt_tokens': 39403, 'total_tokens': 39989} latency_ms=12644
+   d04_plan_change_blocked_by_commitment success turns=6 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=98e082cb35db9816790d5aaef88502eba17375cc6f79245e6c6ccb0a9881cf21
+      prompt_hash=d9aee5dc0d05623d42be7e88dce778c87fa2af8a34c76eddee15731551b0e069 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=12cf91d209562a7236d003a7991efb34bc7889b1f5b6882d5571adc2537a62e5
+      tokens={'completion_tokens': 413, 'prompt_tokens': 22745, 'total_tokens': 23158} latency_ms=7880
+   AGGREGATE rate=1.0 manifests=2
+      D04: runs=2 success=2 rate=1.0
+== D05 start 18:31:28
+== D05 exit=0 18:31:54
+   d05_ownership_transfer_conditions success turns=10 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=a611fff2d43984e9bfe2050f2e0e1a062ab3e3305627ca1bbd1b637e884d5aef
+      prompt_hash=978836aebd19bbcc2359b83b2a8e8705df05fac7ee3ef5ef65fac8b00b8de9d8 v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235
+      tokens={'completion_tokens': 532, 'prompt_tokens': 26148, 'total_tokens': 26680} latency_ms=14167
+   d05_real_name_not_verified success turns=10 tools=3 failed=[] violations=[] seed=20261122
+      task_hash=2fd97882ab163567ffc53467cf6dd2d2927ec5239bfc5f08b6c23f62fce1c14c
+      prompt_hash=6e2d1f8de12d4df953fb8d1d12b49a4948b215a0d058b16b6fd369811bde7e3a v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=fa681a435a87457c632dffc8495b28cd47ebb7a83b5d3b35db5d150bd6557235
+      tokens={'completion_tokens': 492, 'prompt_tokens': 26673, 'total_tokens': 27165} latency_ms=10764
+   AGGREGATE rate=1.0 manifests=2
+      D05: runs=2 success=2 rate=1.0
+== D06 start 18:31:54
+== D06 exit=0 18:32:21
+   d06_enrollment_confirmation_notification success turns=7 tools=6 failed=[] violations=[] seed=20261122
+      task_hash=27356892d57db9cf918c5e6677e8c9ceb738f92d62646d2062aa3426c2d13495
+      prompt_hash=c03d96f4971250221c3eee261356cc778b8f0fb57f17490fca26b51e7c657c4d v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301
+      tokens={'completion_tokens': 793, 'prompt_tokens': 43034, 'total_tokens': 43827} latency_ms=14370
+   d06_recharge_confirmation_notification success turns=7 tools=5 failed=[] violations=[] seed=20261122
+      task_hash=dd41dd074e5cb9f2dc25740f63a90aa442fc1ee358fd1d58fe22e15e2673ece5
+      prompt_hash=cd45480e389f30f81b143f1b085221c80552b177f4aea90d2c836b82a47c4f6e v=system-v4
+      evaluator=2.3 1e2338c5353887033ca44fc3cf46ebd89c95ce25afd893e1f0e444006d8df7dc
+      policy_hash=4c5053792e8051b8d6cc1890d0a0afd2891134da6f0e41415e0f0085a5bcc301
+      tokens={'completion_tokens': 610, 'prompt_tokens': 36686, 'total_tokens': 37296} latency_ms=11805
+   AGGREGATE rate=1.0 manifests=2
+      D06: runs=2 success=2 rate=1.0
+== round complete 18:32:21
