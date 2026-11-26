@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-060142d462a744bf",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_3a87f5e95f5ecf778cee",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:18+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "eb342725879495e6e11bd526b6b17694adf1601313e6015cd6ce3834a5812f8c",
+  "input_bytes": 3421,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，您放心，这个夜间流量包两个月到期后会自动帮您取消，不需要您自己操作。那这边就先给您登记办理这个免费体验活动了，可以吗？",
+    "next_action": "确认客户同意办理两个月免费夜间流量包，并告知到期自动取消",
+    "required_information": [
+      "客户是否确认同意办理该免费夜间流量包"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍飞享58套餐，客户表示流量用处不大、平时消费四十多元；客服随后推荐免费两个月20元5G省内夜间流量包，称到期自动取消；客户要求一定要免费取消，客服确认会自动取消，客户表示年纪大容易忘记。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_3a87f5e95f5ecf778cee",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1768,
+      "token_usage": {
+        "prompt_tokens": 817,
+        "completion_tokens": 169,
+        "total_tokens": 986
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 30,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1768,
+  "token_usage": {
+    "prompt_tokens": 817,
+    "completion_tokens": 169,
+    "total_tokens": 986
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

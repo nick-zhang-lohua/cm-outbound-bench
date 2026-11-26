@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-2b56573a8ccd4ba7",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_de9d20c4bcea06c00d5b",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:46+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "36572da85718dac1ad39288d2d7266f8a9e1925889883497106896c75a9f10a2",
+  "input_bytes": 2232,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "先生，销户需要您本人携带身份证到移动营业厅办理，我这边无法直接为您操作。您看您方便的时候去就近的营业厅处理一下可以吗？",
+    "next_action": "告知客户销户须本人持身份证到营业厅办理，无法电话代办，并引导其前往营业厅",
+    "required_information": [
+      "客户是否接受前往营业厅办理销户",
+      "客户预计何时方便办理"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证名下登记号码<PHONE>已欠费未使用，需到营业厅销户；客户表示人在外地，要求客服代为销户。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_de9d20c4bcea06c00d5b",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1342,
+      "token_usage": {
+        "prompt_tokens": 510,
+        "completion_tokens": 144,
+        "total_tokens": 654
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0132,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 8,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1342,
+  "token_usage": {
+    "prompt_tokens": 510,
+    "completion_tokens": 144,
+    "total_tokens": 654
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

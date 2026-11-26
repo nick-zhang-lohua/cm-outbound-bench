@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-724bd910686c4fbc",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_a17444452b938ba0bd46",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:08+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "05959e80f0750258dab06c005cc1c6dcb2374b45e5f05210871b83a39dd1a14f",
+  "input_bytes": 2155,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，为避免欠费号码继续产生费用并影响您后续办理业务，建议您携带本人身份证到移动营业厅办理销户。请问您方便什么时候去办理呢？",
+    "next_action": "引导客户确认前往营业厅办理销户的时间",
+    "required_information": [
+      "客户是否愿意前往营业厅办理销户",
+      "客户预计办理时间"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已核实客户为吴张严，并告知其名下另一移动号码已欠费停用、需携带身份证到营业厅办理销户；客户回应“哦哦哦”，尚未明确是否办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_a17444452b938ba0bd46",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1324,
+      "token_usage": {
+        "prompt_tokens": 485,
+        "completion_tokens": 138,
+        "total_tokens": 623
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0698,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 7,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1324,
+  "token_usage": {
+    "prompt_tokens": 485,
+    "completion_tokens": 138,
+    "total_tokens": 623
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

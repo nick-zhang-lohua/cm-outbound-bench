@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-583c283a4b9a44d3",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_85204a4f0b05d6957c28",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:52:19+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "bc6aa69e1f278c4762eaf6312c2e8122d16485690af8a6c9b0b8263cb8799558",
+  "input_bytes": 1875,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，感谢您确认。请问您方便现在花一两分钟时间，我这边有一个移动的优惠活动想跟您简单介绍一下吗？",
+    "next_action": "确认客户身份后，询问客户是否方便继续接听并介绍活动",
+    "required_information": [
+      "客户是否方便继续接听",
+      "客户对活动介绍是否有兴趣"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服核实号码<PHONE>是否为客户本人使用，客户回答“嗯，对呀”，身份已确认，通话可继续。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_85204a4f0b05d6957c28",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1306,
+      "token_usage": {
+        "prompt_tokens": 419,
+        "completion_tokens": 118,
+        "total_tokens": 537
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 3,
+        "hidden_speech_turn_count": 7,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1306,
+  "token_usage": {
+    "prompt_tokens": 419,
+    "completion_tokens": 118,
+    "total_tokens": 537
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

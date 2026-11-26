@@ -1,0 +1,196 @@
+{
+  "manifest_schema_version": "1.0",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "created_at": "2026-11-25T15:54:50+00:00",
+  "completed_at": "2026-11-25T15:55:09+00:00",
+  "agent_label": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "base_url_host": "api.deepseek.com",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "agent_version": "0.1.0",
+  "split_manifest_sha256": "c74e00ed9f9d8c3639a0b4b18fbfeb73140b0fc7b9d4300ddac3b5aa43795de6",
+  "tasks_artifact_sha256": "e0d40ef6825904a56fc8be7a2d733cf227fb95eb4c3587146da7ebb793ee9fdf",
+  "tasks_requested": 12,
+  "tasks_executed": 12,
+  "tasks_failed": 0,
+  "aggregate": {
+    "tasks_total": 12,
+    "execution_status_counts": {
+      "success": 12
+    },
+    "technical": {
+      "request_success_rate": 1.0,
+      "valid_output_rate": 1.0,
+      "timeout_rate": 0.0,
+      "latency_ms_p50": 1530.0,
+      "latency_ms_p90": 1837.0,
+      "tasks_with_token_usage": 12.0,
+      "total_tokens": 8479.0
+    },
+    "scoring_status_counts": {
+      "unscored": 12
+    },
+    "scored_tasks": 0,
+    "unscored_tasks": 12,
+    "candidate_tasks": 0,
+    "invalid_tasks": 0,
+    "scored_fraction": 0.0,
+    "business_metrics": {
+      "decision_success": null,
+      "branch_decision_accuracy": null,
+      "required_step_recall": null,
+      "required_step_precision": null
+    },
+    "business_metric_denominators": {
+      "decision_success": 0,
+      "branch_decision_accuracy": 0,
+      "required_step_recall": 0,
+      "required_step_precision": 0
+    },
+    "unavailable_metrics": {
+      "policy_compliance": "unavailable_no_verified_policy_reference",
+      "tool_intent_accuracy": "unavailable_no_business_tool_definitions",
+      "response_quality": "unavailable_no_reviewed_quality_rubric"
+    },
+    "notes": [
+      "decision_success_rate is not available: zero tasks have a verified reference. Unscored tasks are excluded from every business denominator, and the historical agent response is not treated as ground truth.",
+      "No business backend is executed in this milestone, so business task completion and real tool execution success are out of scope."
+    ]
+  },
+  "entries": [
+    {
+      "run_id": "RUN-bed7254113f74e48",
+      "task_id": "TASK_007e2987fb58b4756e53",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1904,
+      "total_tokens": 881,
+      "trace_file": "RUN-bed7254113f74e48.json"
+    },
+    {
+      "run_id": "RUN-5062d173ae8b422e",
+      "task_id": "TASK_00823e3f297087b7e882",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1631,
+      "total_tokens": 692,
+      "trace_file": "RUN-5062d173ae8b422e.json"
+    },
+    {
+      "run_id": "RUN-ff9a66030ec24f21",
+      "task_id": "TASK_00a29ac04513715c5a15",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1736,
+      "total_tokens": 548,
+      "trace_file": "RUN-ff9a66030ec24f21.json"
+    },
+    {
+      "run_id": "RUN-4e69407daf304875",
+      "task_id": "TASK_00d4656a51de4ad102f0",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1324,
+      "total_tokens": 487,
+      "trace_file": "RUN-4e69407daf304875.json"
+    },
+    {
+      "run_id": "RUN-bab1d25ffc9b4733",
+      "task_id": "TASK_00da8bad11ded1a26319",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1633,
+      "total_tokens": 853,
+      "trace_file": "RUN-bab1d25ffc9b4733.json"
+    },
+    {
+      "run_id": "RUN-7cb03d83f8a44649",
+      "task_id": "TASK_01118ef3ded499665a02",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1837,
+      "total_tokens": 841,
+      "trace_file": "RUN-7cb03d83f8a44649.json"
+    },
+    {
+      "run_id": "RUN-ef27d95a97994c01",
+      "task_id": "TASK_01211693bc0c878530b1",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1428,
+      "total_tokens": 742,
+      "trace_file": "RUN-ef27d95a97994c01.json"
+    },
+    {
+      "run_id": "RUN-5e10f431a8344d0e",
+      "task_id": "TASK_0139e474b9b44086499a",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1324,
+      "total_tokens": 872,
+      "trace_file": "RUN-5e10f431a8344d0e.json"
+    },
+    {
+      "run_id": "RUN-eed4a6b281d44b79",
+      "task_id": "TASK_01513cc19040a23a5e5d",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1218,
+      "total_tokens": 573,
+      "trace_file": "RUN-eed4a6b281d44b79.json"
+    },
+    {
+      "run_id": "RUN-c5572a9306bd40a3",
+      "task_id": "TASK_01a1fd0a856e8898694f",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1428,
+      "total_tokens": 497,
+      "trace_file": "RUN-c5572a9306bd40a3.json"
+    },
+    {
+      "run_id": "RUN-09ba4cdb6788416d",
+      "task_id": "TASK_01b57fdf7894247fc6ee",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1530,
+      "total_tokens": 620,
+      "trace_file": "RUN-09ba4cdb6788416d.json"
+    },
+    {
+      "run_id": "RUN-c678ec02eb104be4",
+      "task_id": "TASK_01f60adf98e0c449cf45",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1424,
+      "total_tokens": 873,
+      "trace_file": "RUN-c678ec02eb104be4.json"
+    }
+  ],
+  "notes": [
+    "decision_success_rate is not available: zero tasks have a verified reference. Unscored tasks are excluded from every business denominator, and the historical agent response is not treated as ground truth.",
+    "No business backend is executed in this milestone, so business task completion and real tool execution success are out of scope."
+  ]
+}

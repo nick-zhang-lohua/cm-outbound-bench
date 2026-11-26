@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-1cd1f3c80d414339",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_f8a86c8282d76414cfe9",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:01+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "84714cc34bfe181a1e3e45c4a5ab2a1838617805b1b2103e5cf00c69b6a7d247",
+  "input_bytes": 2399,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那我稍后把活动信息通过短信发送给您，您方便的时候再看，祝您工作顺利，再见。",
+    "next_action": "结束当前通话，并按客户要求将活动信息以短信形式发送至客户号码",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户明确表示不需要改全球通套餐，称现在忙，之后再说，并主动要求短信发给我；客服已回应好的。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_f8a86c8282d76414cfe9",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1721,
+      "token_usage": {
+        "prompt_tokens": 560,
+        "completion_tokens": 117,
+        "total_tokens": 677
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 13,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1721,
+  "token_usage": {
+    "prompt_tokens": 560,
+    "completion_tokens": 117,
+    "total_tokens": 677
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

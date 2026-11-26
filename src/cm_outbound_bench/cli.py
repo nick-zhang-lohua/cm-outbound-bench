@@ -10,6 +10,7 @@ from pathlib import Path
 from cm_outbound_bench.agent import Agent, DemoAgent
 from cm_outbound_bench.benchmark import cli as benchmark_cli
 from cm_outbound_bench.corpus import cli as corpus_cli
+from cm_outbound_bench.decisions import cli as decision_cli
 from cm_outbound_bench.domain.data_model import CmOutboundDB
 from cm_outbound_bench.evaluator import EvaluationResult, evaluate_task
 from cm_outbound_bench.llm_agent import LLMBackedAgent
@@ -37,6 +38,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         return corpus_cli.dispatch(args)
     if args.command == "benchmark":
         return benchmark_cli.dispatch(args)
+    if args.command == "decision":
+        return decision_cli.dispatch(args)
     try:
         db = CmOutboundDB.load(data_path("synthetic", "db.json"))
         tasks = load_marketing_tasks(db)
@@ -88,6 +91,7 @@ def _build_parser() -> argparse.ArgumentParser:
 
     corpus_cli.add_parser(subparsers)
     benchmark_cli.add_parser(subparsers)
+    decision_cli.add_parser(subparsers)
 
     subparsers.add_parser(
         "list-tasks",

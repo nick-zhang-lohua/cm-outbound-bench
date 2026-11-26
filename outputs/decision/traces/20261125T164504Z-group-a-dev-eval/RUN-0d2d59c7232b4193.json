@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-0d2d59c7232b4193",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_a7f325c3e36b3a3512ea",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:54:19+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "6b938c79c7e0b61c2985d131176abb544b6310aaf39b252d0d5f97fae60cf7dd",
+  "input_bytes": 2763,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那请问机主本人什么时候方便接听呢？我这边可以稍后再联系他。",
+    "next_action": "确认机主本人在场时间，约定后续联系时间",
+    "required_information": [
+      "机主本人方便接听电话的时间"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服向客户推介全球通飞享18元套餐并询问是否办理，客户回复“哦他人不在”，表明当前接听者非机主本人。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_a7f325c3e36b3a3512ea",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1219,
+      "token_usage": {
+        "prompt_tokens": 639,
+        "completion_tokens": 122,
+        "total_tokens": 761
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 13,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1219,
+  "token_usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 122,
+    "total_tokens": 761
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

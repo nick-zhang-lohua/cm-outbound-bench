@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-5c59298960fa4340",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_8b66e846b148634d37aa",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:25+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "3dd915e7087257ff137fad51fe19c3bb728d4ffcad05d29bd71cdfa64d258ecf",
+  "input_bytes": 3766,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，刘先生，您的地址和联系方式我已经登记好了，后续备卡成功会有短信通知您，请您注意查收快递，感谢您的配合，再见。",
+    "next_action": "确认地址与姓名信息已登记完整，结束通话并记录工单",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户确认号码本人在用，同意免费更换4G卡并接受6G省内流量赠送；已提供收件地址为福建省龙岩市新罗区铁山镇富溪村中铁四局，姓名为刘章龙，当前使用安卓手机；客服已告知备卡成功会短信通知并安排寄送。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_8b66e846b148634d37aa",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1585,
+      "token_usage": {
+        "prompt_tokens": 944,
+        "completion_tokens": 164,
+        "total_tokens": 1108
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 44,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1585,
+  "token_usage": {
+    "prompt_tokens": 944,
+    "completion_tokens": 164,
+    "total_tokens": 1108
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

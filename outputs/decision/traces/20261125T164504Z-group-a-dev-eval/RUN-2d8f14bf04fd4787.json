@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-2d8f14bf04fd4787",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_0fc0850575275199f2f7",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:08+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "d13043615d4d65f7339eded9cd97bf191ab073e04bdf6cf77351069b09b2f50b",
+  "input_bytes": 2294,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "是的，需要您本人带身份证到移动营业厅办理销户。",
+    "next_action": "确认客户是否知晓需本人携带身份证前往营业厅办理销户，并等待客户回应",
+    "required_information": [
+      "客户是否清楚需本人携带身份证到营业厅办理销户",
+      "客户计划何时前往营业厅办理"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证登记的移动号码已欠费未用，需到移动营业厅办理销户；客户复述确认是否为移动公司销户。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_0fc0850575275199f2f7",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1532,
+      "token_usage": {
+        "prompt_tokens": 535,
+        "completion_tokens": 121,
+        "total_tokens": 656
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.1556,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 13,
+        "hidden_speech_turn_count": 6,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1532,
+  "token_usage": {
+    "prompt_tokens": 535,
+    "completion_tokens": 121,
+    "total_tokens": 656
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

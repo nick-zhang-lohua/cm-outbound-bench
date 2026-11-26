@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-65419132ed7d4394",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_fb4c0951e6897939d179",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:52:58+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "7e74565163a37279d8e829c0bd3932c17befeed0020e3843eb2b16e4f93577dc",
+  "input_bytes": 2137,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，您是通过电话办理的，我这边帮您核实一下办理情况。请问您办理时登记的是这个<PHONE>号码吗？",
+    "next_action": "核实客户电话办理宽带包年业务的具体情况",
+    "required_information": [
+      "客户办理时登记的联系号码",
+      "办理的具体业务内容及时间"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服确认客户为号码机主，询问是否到营业厅办理宽带包年业务，客户表示没有去营业厅，是通过电话办理的。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_fb4c0951e6897939d179",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1572,
+      "token_usage": {
+        "prompt_tokens": 482,
+        "completion_tokens": 126,
+        "total_tokens": 608
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 7,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1572,
+  "token_usage": {
+    "prompt_tokens": 482,
+    "completion_tokens": 126,
+    "total_tokens": 608
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

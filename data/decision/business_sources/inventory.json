@@ -1,0 +1,461 @@
+{
+  "inventory_version": "1.0",
+  "sources": [
+    {
+      "source_id": "SRC-77a9b34f0d80",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "data/analysis/annotation_batch_01.json",
+      "version": "",
+      "authority_level": "recovered_partial",
+      "applicable_topics": [
+        "identity",
+        "package",
+        "promotion",
+        "analysis_artifact"
+      ],
+      "content_hash": "f79386629ad5d3ba1cf15f93b0c6fcb77d0597992610ddc7d1cc1f8bd1111c36",
+      "notes": "recovered analysis artifact, not a complete annotation set and not a business rule source"
+    },
+    {
+      "source_id": "SRC-18926f545c9f",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "data/analysis/annotation_batch_02.json",
+      "version": "",
+      "authority_level": "recovered_partial",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification",
+        "analysis_artifact"
+      ],
+      "content_hash": "da8f1268ab4a12cee031c8058657fe4d9c69768ac701a294d352d50e32dd5195",
+      "notes": "recovered analysis artifact, not a complete annotation set and not a business rule source"
+    },
+    {
+      "source_id": "SRC-3514c825f7c2",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/core.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "75a7c49fdf0fb39a3c8eadeb6c4bc0cfbc5acf647a7c0232a5164768722bd7be",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-d36aa52d73be",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/d01_product.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "identity",
+        "package",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "6216ced4430810ebf0da0aa81140e71ad182dfbf71b7cd2a86364370340f18b2",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-dd6991d717e2",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/d02_promotion.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "identity",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "64294b7be7142abd8a8413223f8b78dc47c42bf8e04864b663136cac17328c77",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-bc5a1f5fa756",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/d03_billing.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package"
+      ],
+      "content_hash": "1e472bc7344d91fed0fa9643e038165e8494a68304337a787e957bbf633644a0",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-ccf2036c313d",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/d04_lifecycle.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "package",
+        "promotion"
+      ],
+      "content_hash": "0552d95c27aa499d15ec4a4108cf3e692cc3f7f398906fb49cd1c1c543f857b4",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-072e1cd176dc",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/d05_identity.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "identity"
+      ],
+      "content_hash": "be7355521f892af2f06824043545cfe1496fe1b3727175b838842ca21104d5f1",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-7a5299b969c9",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/d06_notification.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "identity",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "5cd5595da4919e5568a0c8ad95d4aecec9424faa7d0890fc9422e79df18162a2",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-a87cb9c0c46e",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/data/policy/marketing.md",
+      "version": "",
+      "authority_level": "synthetic",
+      "applicable_topics": [
+        "identity",
+        "package",
+        "promotion",
+        "notification",
+        "privacy"
+      ],
+      "content_hash": "97e6c3f3f75fb13cd59ffb7a4740778cadc3aae8cacc09d6eb87fa8dd517442c",
+      "notes": "legacy synthetic benchmark policy; it is not a China Mobile rule document"
+    },
+    {
+      "source_id": "SRC-4390cf930f0a",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/CHANGELOG.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification",
+        "privacy"
+      ],
+      "content_hash": "00e4bce1709ad4e4a4c149eabb4322cf4ba27d9a2ce40210c49f65ab3a7509b1",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-61cf88aaa141",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/architecture.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "package",
+        "promotion",
+        "privacy"
+      ],
+      "content_hash": "730e8da074927b84e4943ce430d94464195b2f93df449215bb2465b6b4d84604",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-d1f47b997c2b",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/benchmark_execution.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "package",
+        "promotion"
+      ],
+      "content_hash": "c00c04dad0297ee6fbc3db577c5e98b144c7de7264ad4fa9a08d9c754db9baf2",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-71e5933d4bc3",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/corpus_database.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "package",
+        "privacy"
+      ],
+      "content_hash": "a569302a1ca4744f5c5ce56c39da087294d9388d571315f40c8734df26db2ca8",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-80279be3cba9",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/data_privacy.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "package",
+        "privacy"
+      ],
+      "content_hash": "4de70804491895e184f0e32935d7eba0c7ea195daff9adebb52ff892eda91cb6",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-dfc17f072a51",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/decision_benchmark.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "package",
+        "privacy"
+      ],
+      "content_hash": "c486c4309f266094b89772e30f2a73e851b9f453c24038cb5283ca0b8c5c9977",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-795b8bb9fc53",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/domain_catalog.md",
+      "version": "cross-cutting capabilities. The taxonomy is versioned (`1.0`) and seeded into",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "468764687af8d0bc7534eca8e6b1e8d7f923045c21df0cec89755bf7d30a891a",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-51db0ca11110",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/release_readiness_report.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification",
+        "privacy"
+      ],
+      "content_hash": "a20bd231a284d9bfa372d6405e70e0b7bd9dd2b2899e2528a625f4655933975d",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-d4c825681df5",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/reports/decision_milestone_1_report.md",
+      "version": "| Benchmark version | `0.1.0` |",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "package",
+        "privacy"
+      ],
+      "content_hash": "66357b22f7f3b36884cc1fef8b36a7adc20d63c5ed9d21ac01d5118029f7af60",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-7ae76c910e89",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/reports/validation_matrix_final.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "billing",
+        "package",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "e8b6aa841cf34d6c8d3483c17a1b2a04f7c341d454207398b6132c76d8962f3f",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-a84b4a5b8be0",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/runtime_database.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "745172af567cf90e12566d9b912dbd7e19ac63b313d665fe229d6d95fc9b25d2",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-5d2bc50eaefa",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/scenario_catalog.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "8d0ad4118a2239d76da9d9fa936096da96fbf037463daf95300b2f730cc15848",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-10a5dd1a1bf3",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "cm-outbound-bench/docs/task_authoring.md",
+      "version": "\"task_version\": \"1.0\",",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification"
+      ],
+      "content_hash": "4cd952cb69a4cf453387f8afc7619410851fb58e987850ecb53b7d32c47e3d6e",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-4c614af622c1",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/CM_OUTBOUND_V1_第二阶段只读审计报告.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "privacy"
+      ],
+      "content_hash": "26fd9ea55d75ae79205cf746bd614e15fb3803188949fbe61c5902e41252e089",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-7a3555ef1a6f",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/CM_OUTBOUND_V1_脱敏处理报告.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "notification",
+        "privacy"
+      ],
+      "content_hash": "8b29f67ce23e753648f9d2c6faecf0ed99404d86e2a6f5e44c28a7dabf41d7ba",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-b467e9250434",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/TXT原始数据格式只读审计报告.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package",
+        "promotion",
+        "notification",
+        "privacy"
+      ],
+      "content_hash": "e58e6f7d00e6be3a4f9cb9078a95ebdc70ba9b7e53d9fa536a1e46e65497fccb",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-dca8cfaef84f",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/environment_audit_report.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "package",
+        "promotion"
+      ],
+      "content_hash": "34b088cfb0ee81803758cd6c94227fd8c46e3723edd0c19d83467f9c1ac634be",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-661f1cc44856",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/llm_deepseek_integration_audit.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "package"
+      ],
+      "content_hash": "87dd4910dc210587f0ee74ed877bafa96777e032b29f033b2a6975d72f3213cb",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-740d07f859d5",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/tau2_rsi.md",
+      "version": "- **held-out**：完整 test 40 个。只由 `heldout` 命令评测初始版本和最终版本，结果不进入 state、history 或",
+      "authority_level": "unverified",
+      "applicable_topics": [],
+      "content_hash": "97287c45a5a98bf20e042bd383d13712a4b227ba7677cd40e83f9c988d2c0ece",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-05cd8f9be037",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/tau2_schema.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "billing",
+        "package"
+      ],
+      "content_hash": "58ffa1e3f2adc1ea13238b151aed4c122c117233dcad657003bd3ac543c8f1ac",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    },
+    {
+      "source_id": "SRC-663d49f7d339",
+      "source_type": "project_or_synthetic_documentation",
+      "source_path": "docs/tau2_v1_status.md",
+      "version": "",
+      "authority_level": "unverified",
+      "applicable_topics": [
+        "identity",
+        "package"
+      ],
+      "content_hash": "2601da425fcf751979e687ee876485dedca339564afdfd336bc01f2b00e70c43",
+      "notes": "project documentation or audit material; it describes the data and the benchmark, not the business rules"
+    }
+  ],
+  "counts_by_authority": {
+    "recovered_partial": 2,
+    "synthetic": 8,
+    "unverified": 21
+  },
+  "authoritative_sources": 0,
+  "policy_verification_supported": false,
+  "statement": "No authoritative China Mobile business policy or verified operation record exists in this workspace. policy_verified_decision_success_rate is therefore unavailable, and no business rule was invented.",
+  "raw_transcript_export_read": false
+}

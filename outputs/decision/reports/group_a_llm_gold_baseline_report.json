@@ -1,0 +1,100 @@
+{
+  "metrics": {
+    "executed_tasks": 400,
+    "scored_tasks": 391,
+    "unscorable_tasks": 9,
+    "scored_task_coverage": 0.9775,
+    "outcome_counts": {
+      "fully_correct": 326,
+      "incorrect": 9,
+      "partially_correct": 56,
+      "unscorable": 9
+    },
+    "llm_gold_decision_success_rate": 0.83376,
+    "decision_acceptance_rate": 0.976982,
+    "partial_decision_rate": 0.143223,
+    "incorrect_decision_rate": 0.023018,
+    "critical_error_rate": 0.023018,
+    "critical_error_tasks": 9,
+    "appropriate_clarification_rate": 0.15,
+    "appropriate_clarification_denominator": 40,
+    "required_step_recall": 0.07289,
+    "required_step_recall_denominator": 391,
+    "required_step_precision": null,
+    "required_step_precision_reason": "frozen_gold_records_steps_as_actions_not_an_information_set",
+    "required_step_precision_lexical_diagnostic": 0.001279,
+    "required_step_precision_lexical_denominator": 391,
+    "branch_decision_accuracy": 0.104478,
+    "branch_decision_denominator": 268,
+    "secondary_metric_method": "lexical_substring_surrogate",
+    "secondary_metric_note": "Clarification, required-step and branch metrics are lexical substring surrogates over free-text Chinese. They understate semantic compliance (a paraphrase scores zero) and are reported as lower-bound diagnostics, not as semantic accuracy.",
+    "response_quality": null,
+    "response_quality_reason": "no_reviewed_human_quality_rubric",
+    "policy_verified_decision_success_rate": null,
+    "policy_verified_reason": "no_authoritative_china_mobile_source",
+    "denominator_note": "Only scored tasks enter business denominators; unscorable tasks are excluded, and partially correct outputs are reported separately from the DSR numerator."
+  },
+  "statistics": {
+    "executed_tasks": 400,
+    "scored_tasks": 391,
+    "excluded_tasks": 9,
+    "scored_fraction": 0.9775,
+    "bootstrap_procedure": "conversation-unit-level percentile bootstrap; each Dev sample task comes from a distinct conversation unit, so the effective sampling unit equals the number of independent conversations",
+    "bootstrap_replications": 2000,
+    "bootstrap_seed": 20261126,
+    "independent_sampling_unit": "conversation_unit",
+    "confidence_intervals": {
+      "dsr": {
+        "ci_lower": 0.795918,
+        "ci_upper": 0.868687,
+        "level": 0.95,
+        "method": "percentile",
+        "replications": 2000,
+        "seed": 20261126
+      },
+      "dar": {
+        "ci_lower": 0.961637,
+        "ci_upper": 0.989796,
+        "level": 0.95,
+        "method": "percentile",
+        "replications": 2000,
+        "seed": 20261126
+      },
+      "idr": {
+        "ci_lower": 0.007692,
+        "ci_upper": 0.038363,
+        "level": 0.95,
+        "method": "percentile",
+        "replications": 2000,
+        "seed": 20261126
+      },
+      "pdr": {
+        "ci_lower": 0.109974,
+        "ci_upper": 0.178117,
+        "level": 0.95,
+        "method": "percentile",
+        "replications": 2000,
+        "seed": 20261126
+      }
+    },
+    "limitation": "Confidence intervals measure sampling uncertainty only; they do not capture systematic error of the LLM-generated Ground Truth or of the LLM judge."
+  },
+  "scorer_stats": {
+    "tasks_with_judge_outcome": 391,
+    "tasks_with_unscored_gold_reference": 9,
+    "scorer_agreement_rate": 0.9463,
+    "scorer_disagreements": 21,
+    "scoring_adjudication_rate": 0.0537,
+    "final_outcome_distribution": {
+      "fully_correct": 326,
+      "incorrect": 9,
+      "partially_correct": 56,
+      "unscorable": 9
+    },
+    "critical_error_distribution": {
+      "contradicts_explicit_customer_information": 4,
+      "unjustified_completion_claim": 2,
+      "unsupported_pricing_claim": 3
+    }
+  }
+}

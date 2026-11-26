@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-4c78ed7ed1ad43f0",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_c6221572dde9091cc75f",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:09+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "5fc77de944e1fd77382ef556196de19e42498dc4c303aab08f0cfa1117b3a88b",
+  "input_bytes": 4405,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那这边就为您登记办理新飞享八八套餐，十二月一号生效。办理成功后幺零零八六会给您下发短信通知，到时候您注意查收短信就可以了，好吗？",
+    "next_action": "确认客户同意后，登记办理新飞享八八套餐，生效时间为十二月一号，并告知客户办理成功后将由幺零零八六下发短信通知",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服推荐新飞享八八套餐（含1200分钟通话、5G流量、来电显示及全国接听免费、无捆绑期限），客户询问流量和通话范围后表示同意更改，并要求马上改；客服说明新业务十二月一号生效、本月58元套餐费已扣不会重复扣费，客户回应好。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_c6221572dde9091cc75f",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2222,
+      "token_usage": {
+        "prompt_tokens": 1025,
+        "completion_tokens": 183,
+        "total_tokens": 1208
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 39,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2222,
+  "token_usage": {
+    "prompt_tokens": 1025,
+    "completion_tokens": 183,
+    "total_tokens": 1208
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

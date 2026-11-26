@@ -1,0 +1,67 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-e2b33b243d2649ee",
+  "run_set_id": "20261125T155431Z-scripted-smoke",
+  "task_id": "TASK_00da8bad11ded1a26319",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:54:31+00:00",
+  "model_provider": "scripted",
+  "model_name": "none",
+  "model_parameters": {},
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "fc24b20e1c71fe07f2de8e5ae4bfdbcb520d8b48631a700a61764241d4424889",
+  "input_bytes": 3216,
+  "config_hash": "",
+  "agent_output": {
+    "customer_response": "（脚本代理占位输出，仅用于管线自检，不是真实基线结果）",
+    "next_action": "scripted_smoke_test_only",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": "scripted agent, no business decision was made",
+    "evidence_summary": "scripted placeholder; no evidence was assessed"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_00da8bad11ded1a26319",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 0,
+      "token_usage": {},
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 21,
+        "hidden_speech_turn_count": 1
+      }
+    }
+  },
+  "latency_ms": 0,
+  "token_usage": {},
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

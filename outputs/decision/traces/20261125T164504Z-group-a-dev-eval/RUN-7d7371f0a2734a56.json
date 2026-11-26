@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-7d7371f0a2734a56",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_d30dc50fd725b7080ce0",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:31+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "c1f05c501959722775f9f60d3b735e16072885e031c447f8b9fa6304c287e4cc",
+  "input_bytes": 3540,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "对，后面送您的两个G是通用省内流量，二十四小时都能用；夜间五个G是另外赠送的，也完全免费。这些赠送流量到期后会自动取消，不会额外扣费。",
+    "next_action": "确认客户对赠送流量使用范围和自动取消规则的理解，并结束本次外呼说明。",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服说明客户已更换58元套餐，三个月后继续使用可每月获赠2G省内流量，另有夜间流量赠送，均免费且到期自动取消；客户询问是否夜间流量，客服已澄清后续赠送的2G非夜间流量、二十四小时可用。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_d30dc50fd725b7080ce0",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1506,
+      "token_usage": {
+        "prompt_tokens": 895,
+        "completion_tokens": 164,
+        "total_tokens": 1059
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 38,
+        "hidden_speech_turn_count": 5,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1506,
+  "token_usage": {
+    "prompt_tokens": 895,
+    "completion_tokens": 164,
+    "total_tokens": 1059
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

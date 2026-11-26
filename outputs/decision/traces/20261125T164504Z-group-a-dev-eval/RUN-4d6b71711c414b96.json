@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-4d6b71711c414b96",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_ea40b7c9b619e9c0b2d4",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:08+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "4a543b539ed955415d3192ba44596c7be763dcceacc5b91387abaae76d876d6a",
+  "input_bytes": 2709,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那稍后我把这个欠费号码的短信发到您手机上，您注意查收，尽快到营业厅办理销户。",
+    "next_action": "确认客户已知悉后，将欠费号码信息以短信形式发送至客户手机",
+    "required_information": [
+      "客户接收短信的手机号码"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户名下另有一个2014年1月31日起停机欠费的移动号码，需到营业厅销户，并称稍后将该欠费号码短信发到客户手机上，客户回复“啊好”“嗯”。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_ea40b7c9b619e9c0b2d4",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2045,
+      "token_usage": {
+        "prompt_tokens": 630,
+        "completion_tokens": 141,
+        "total_tokens": 771
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 14,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2045,
+  "token_usage": {
+    "prompt_tokens": 630,
+    "completion_tokens": 141,
+    "total_tokens": 771
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

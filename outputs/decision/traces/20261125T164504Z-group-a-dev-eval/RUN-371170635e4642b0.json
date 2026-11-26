@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-371170635e4642b0",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_af650070434c57c5115d",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:49:28+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "a52bc09a29d126e31922a032a342fad027d6203b14525de907c29fed27840ad1",
+  "input_bytes": 2891,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "先生，我理解您说这个号码很久没用了。为了核实清楚，麻烦您提供一下您的身份证号码，我帮您查询确认一下这个号码是否登记在您名下，可以吗？",
+    "next_action": "核实客户身份信息并查询号码登记情况",
+    "required_information": [
+      "客户身份证号码",
+      "客户是否曾办理过该移动号码"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证登记了移动号码<PHONE>，该号码已欠费成空号；客户否认办理过该号码，称客服找错人，并询问来电目的。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_af650070434c57c5115d",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1979,
+      "token_usage": {
+        "prompt_tokens": 694,
+        "completion_tokens": 152,
+        "total_tokens": 846
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.011,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 25,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1979,
+  "token_usage": {
+    "prompt_tokens": 694,
+    "completion_tokens": 152,
+    "total_tokens": 846
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

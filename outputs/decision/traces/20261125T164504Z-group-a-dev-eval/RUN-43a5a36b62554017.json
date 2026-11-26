@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-43a5a36b62554017",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_40adbc5e56c7cb0a3ccc",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:23+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "684e7e814e95a84f7d3175dcf5cfa1271ad7ab8e64f9ffcd9479de3b3fbc5e81",
+  "input_bytes": 2903,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那这个活动我就帮您登记办理了，您下个月开始就能享受七十块钱三个g的全国流量，每个月还送二十块，您自己不用多花钱，还是跟原来一样就行，好吗？",
+    "next_action": "确认客户同意后，为客户登记办理流量升级活动",
+    "required_information": [
+      "客户是否明确同意办理该流量升级活动"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍了50元1G流量可升级为70元3G、活动三个月每月送20元、全国流量、费用不增加、期间不能取消过户销户话费不累计积分到期自动留底；客户询问外地使用和费用是否增加，客服已答复全国流量且不增加费用，客户回应嗯。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_40adbc5e56c7cb0a3ccc",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1826,
+      "token_usage": {
+        "prompt_tokens": 686,
+        "completion_tokens": 186,
+        "total_tokens": 872
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 21,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1826,
+  "token_usage": {
+    "prompt_tokens": 686,
+    "completion_tokens": 186,
+    "total_tokens": 872
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

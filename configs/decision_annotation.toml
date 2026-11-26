@@ -1,0 +1,55 @@
+# DeepSeek V4 Pro — Ground Truth Generator and Evaluation Judge.
+#
+# This file configures the dedicated annotator/judge. It is deliberately separate
+# from `configs/baseline_agent.toml` (the frozen Group A agent, deepseek-flash):
+# the two roles must never share a configuration or a model identity.
+#
+# The file contains NO credential. `api_key_env` names the environment variable
+# that holds the key. Optional custom headers are declared in `[provider.headers_env]`
+# as header name -> environment variable name.
+#
+# Environment overrides (all optional):
+#   CM_JUDGE_API_BASE, CM_JUDGE_API_KEY, CM_JUDGE_MODEL, CM_JUDGE_TIMEOUT,
+#   CM_JUDGE_MAX_RETRIES, CM_JUDGE_TEMPERATURE, CM_JUDGE_MAX_OUTPUT_TOKENS,
+#   CM_JUDGE_HEADER_ENVS (JSON: {"Header-Name": "ENV_VAR_NAME"}),
+#   CM_JUDGE_ANNOTATION_PROMPT_VERSION, CM_JUDGE_EVALUATION_PROMPT_VERSION
+#
+# `extra_params` is forwarded verbatim into the chat-completions request body.
+# The verified deepseek-v4-pro endpoint supports `thinking = { type = "disabled" }`
+# and `response_format = { type = "json_object" }`.
+
+[provider]
+label = "deepseek-v4-pro-judge"
+base_url = "https://api.deepseek.com/v1"
+api_key_env = "DEEPSEEK_API_KEY"
+# Actual API model identifier verified against the endpoint's model list
+# (GET /v1/models -> "deepseek-flash", "deepseek-v4-pro"). This is the exact
+# identifier, not a human-readable alias.
+model = "deepseek-v4-pro"
+timeout = 120.0
+max_retries = 3
+extra_params = { thinking = { type = "disabled" }, response_format = { type = "json_object" } }
+
+[provider.headers_env]
+# "X-Example-Header" = "EXAMPLE_HEADER_VALUE"
+
+[generation]
+temperature = 0.0
+max_output_tokens = 6000
+seed = 20261126
+
+[annotation]
+prompt_version = "v1"
+guideline_version = "annotation-guidelines-v1"
+concurrency = 4
+batch_size = 20
+
+[evaluation]
+prompt_version = "v1"
+concurrency = 4
+batch_size = 20
+
+[retry]
+max_attempts = 4
+backoff_base_seconds = 1.0
+backoff_factor = 2.0

@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-53eb5152f26643ff",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_99001b1835d0d7fe1e7d",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:50+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "ccbea500e2601c63e9430ccbdbc8fc4a8196ebcfef88c6be9611e9d37bcd4b93",
+  "input_bytes": 4252,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您先了解一下，有需要可以到西碑路营业厅铁通专柜或移动代办点办理续费，也可以再咨询具体优惠。祝您生活愉快，再见！",
+    "next_action": "礼貌结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户表示会再了解一下，客服已告知续费渠道和到期停用提醒，客户未提出其他问题。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_99001b1835d0d7fe1e7d",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1644,
+      "token_usage": {
+        "prompt_tokens": 1033,
+        "completion_tokens": 115,
+        "total_tokens": 1148
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0303,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 45,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1644,
+  "token_usage": {
+    "prompt_tokens": 1033,
+    "completion_tokens": 115,
+    "total_tokens": 1148
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

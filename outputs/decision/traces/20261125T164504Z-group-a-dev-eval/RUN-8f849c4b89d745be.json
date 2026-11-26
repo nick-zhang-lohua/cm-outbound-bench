@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-8f849c4b89d745be",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_86d668ae64cdaa73dddd",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:20+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "195deff0f7f2a4409cf629d691eb8a500f42659575a596fb9a9523727aa4702e",
+  "input_bytes": 2463,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "这个飞享二十八套餐每月是28元，包含100分钟本地拨打全国分钟数和300兆流量，前半年还会额外赠送100分钟，来电显示也不再扣费，全国接听免费。您看需要帮您登记办理吗？",
+    "next_action": "向客户说明飞享28套餐月费并确认是否办理",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已介绍飞享28套餐包含100分钟通话、300兆流量、前半年多送100分钟、来电显示不扣费、全国接听免费；客户询问要多少钱。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_86d668ae64cdaa73dddd",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1531,
+      "token_usage": {
+        "prompt_tokens": 565,
+        "completion_tokens": 149,
+        "total_tokens": 714
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0127,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 11,
+        "hidden_speech_turn_count": 8,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1531,
+  "token_usage": {
+    "prompt_tokens": 565,
+    "completion_tokens": 149,
+    "total_tokens": 714
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

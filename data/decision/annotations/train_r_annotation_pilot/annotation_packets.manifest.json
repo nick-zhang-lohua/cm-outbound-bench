@@ -1,0 +1,17 @@
+{
+  "packets": 100,
+  "guideline_version": "annotation-guidelines-v1",
+  "sample_purpose": "train_r_annotation_pilot",
+  "split": "train_r",
+  "sampling_plan_id": "SAMPLE-43a7c204de7dbc6d",
+  "sampling_plan_sha256": "218e9208ab29ca29cf7f99b93bc3b13314a85f696d738a29af0098ea5dedf0ea",
+  "packet_sha256": "976d46f5e7a2fa6c3e9ca6627ff0c45c90af90459c85cdab669da69c49fd737e",
+  "generated_at": "2026-11-25T16:44:13+00:00",
+  "forbidden_key_check": true,
+  "hidden_continuation_exported": false,
+  "reference_material_status": "no_approved_authoritative_material",
+  "notes": [
+    "Every packet contains only the agent-visible prefix, the task instruction and blank annotation fields.",
+    "No historical continuation, hidden segment id, call id or label is present in any packet."
+  ]
+}

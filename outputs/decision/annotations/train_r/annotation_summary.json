@@ -1,0 +1,9 @@
+{
+  "split": "train_r",
+  "path": "outputs\\decision\\annotations\\train_r\\final_references.jsonl",
+  "tasks": 400,
+  "scored": 393,
+  "unscored": 7,
+  "sha256": "03d2e23bed2e8d771284d3b2a79b88d1f792e5d6fbecff642360f0112c4c4bdd",
+  "problems": []
+}

@@ -1,0 +1,29 @@
+# Dataset and artifact configuration for the decision-point benchmark.
+#
+# The de-identified corpus is confidential research material and lives outside
+# version control. Resolution order for its location:
+#   1. --corpus on the command line
+#   2. CM_OUTBOUND_CORPUS_DIR
+#   3. corpus_dir below (relative paths resolve against the project root)
+#   4. the shared data root: ../data/deidentified/cm_outbound_v2
+
+# corpus_dir = "../data/deidentified/cm_outbound_v2"
+
+# Generated artifacts are project-local and git-ignored.
+artifact_root = "data/decision"
+outputs_root = "outputs/decision"
+
+# Exact and highly similar duplicate calls must never cross a split boundary.
+# 0 disables near-duplicate grouping and keeps exact duplicates only.
+near_duplicate_max_hamming = 3
+
+[task_construction]
+# Maximum decision points kept per call. Several tasks per call are allowed, but
+# a call may not dominate the dataset.
+max_tasks_per_call = 3
+# Shortest agent-visible prefix (speech turns).
+min_visible_turns = 2
+# Minimum speech turns between two cutoffs of the same call.
+min_cutoff_gap = 4
+# "even_spread" spreads cutoffs across the call; "earliest" takes the first ones.
+selection = "even_spread"

@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-acd78d02ccf04036",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_aed225639708d19c9a3a",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:49:23+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "f6281238a588b3a2d4f40dc7aca516bfb3c1a454db307cde3f1c5cf5c46d97e5",
+  "input_bytes": 3435,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您放心，这个套餐是二十八块，比您现在每个月花的钱还少，不会多收您的钱。",
+    "next_action": "针对客户对费用的顾虑，明确说明新套餐月费为28元且低于其当前月均消费，消除客户对多花钱的担忧，再确认是否同意升级。",
+    "required_information": [
+      "客户当前套餐的实际月费金额及是否确为26元左右",
+      "客户当前套餐是否确实已到期"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍旧套餐已到期并推荐28元飞享套餐，客户表示自己年纪大不会操作且担心费用，称钱少可以接受、钱多就不要这张卡；客服已说明无需客户操作且28元比其平常三十多元花费更少。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_aed225639708d19c9a3a",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2454,
+      "token_usage": {
+        "prompt_tokens": 812,
+        "completion_tokens": 190,
+        "total_tokens": 1002
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 23,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2454,
+  "token_usage": {
+    "prompt_tokens": 812,
+    "completion_tokens": 190,
+    "total_tokens": 1002
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-43b91de5b4504963",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_353b85b80f7703ef6126",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:11+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "1a1e4f18e52f8f400ea1e7a541166f5e5cc0670afba7e0fef73b4fe305b8026a",
+  "input_bytes": 2220,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，能听清楚吗？我这边是移动公司的客服代表，想跟您确认一下您目前使用的是神州行大众卡老套餐，月租二十元，加来电显示六元，共二十六元，请问您了解这个情况吗？",
+    "next_action": "确认客户是否能听清并核实套餐信息",
+    "required_information": [
+      "客户是否能听清通话内容",
+      "客户是否确认当前套餐为神州行大众卡老套餐及月租费用"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服自报移动客服身份并询问机主身份，随后介绍神州行大众卡老套餐月租二十元加来电显示六元共二十六元，客户表示听不清楚，客服重复套餐信息后客户仅回应喂。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_353b85b80f7703ef6126",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1940,
+      "token_usage": {
+        "prompt_tokens": 505,
+        "completion_tokens": 181,
+        "total_tokens": 686
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 9,
+        "hidden_speech_turn_count": 9,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1940,
+  "token_usage": {
+    "prompt_tokens": 505,
+    "completion_tokens": 181,
+    "total_tokens": 686
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

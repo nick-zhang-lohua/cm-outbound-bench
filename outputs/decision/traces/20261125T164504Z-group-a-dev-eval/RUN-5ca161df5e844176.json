@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-5ca161df5e844176",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_478cad75fb893919ca86",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:43+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "80fb6f3d1ee30555917cef60264ac12e6f3d91c02491d43e3c485e560c9a5902",
+  "input_bytes": 2755,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "是的，免费赠送的夜间流量是六个月，每个月1个G的省内夜间流量，到期会自动取消。",
+    "next_action": "确认客户对夜间流量的疑问，并继续推进活动办理确认",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍了花10元获得70元2G全国流量、优惠期6个月，并赠送6个月每月1G省内夜间流量；客户询问是否有夜间流量。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_478cad75fb893919ca86",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1549,
+      "token_usage": {
+        "prompt_tokens": 636,
+        "completion_tokens": 119,
+        "total_tokens": 755
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0351,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 16,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1549,
+  "token_usage": {
+    "prompt_tokens": 636,
+    "completion_tokens": 119,
+    "total_tokens": 755
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

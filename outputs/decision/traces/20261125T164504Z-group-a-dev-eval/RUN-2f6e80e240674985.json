@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-2f6e80e240674985",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_446bbdfbb84fd02fee84",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:31+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "86dac24b3723e0553345182495c69f7cd681ce93ac4dc203fe8576c3d61fe812",
+  "input_bytes": 2187,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，我理解您平时主要用手机接打电话，流量用得不多。刚才提到的十元赠送七十兆流量活动，从下个月开始连续三个月每月先送二十元话费，您看需要我帮您保留这个活动吗？",
+    "next_action": "确认客户对流量赠送活动的办理意愿",
+    "required_information": [
+      "客户是否愿意保留或办理十元赠送七十兆流量活动"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已确认客户为机主本人，并告知十元赠送七十兆流量及连续三个月每月先送二十元话费的活动；客户表示不会用流量，手机主要用于接打电话。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_446bbdfbb84fd02fee84",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1826,
+      "token_usage": {
+        "prompt_tokens": 501,
+        "completion_tokens": 164,
+        "total_tokens": 665
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0303,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 8,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1826,
+  "token_usage": {
+    "prompt_tokens": 501,
+    "completion_tokens": 164,
+    "total_tokens": 665
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

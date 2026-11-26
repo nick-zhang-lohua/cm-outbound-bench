@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-d7c9ec0422bb4f88",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_05f8c0c903d607dca774",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:18+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "796142ca4539105979cc8f06ea1c44f5637c34d778e00d0d725376594c89e491",
+  "input_bytes": 2211,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那我这边为您登记办理这个免费一年的省内流量宝活动，您看方便提供一下验证码吗？",
+    "next_action": "确认客户办理意愿并引导客户提供验证码以完成业务登记",
+    "required_information": [
+      "客户是否确认办理",
+      "办理所需的验证码"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍免费一年省内流量宝活动（每月1G、到期自动取消、费用先送后扣等于免费），客户回应“嗯嗯嗯，好”，未明确确认办理也未提供验证码。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_05f8c0c903d607dca774",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1304,
+      "token_usage": {
+        "prompt_tokens": 505,
+        "completion_tokens": 139,
+        "total_tokens": 644
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 8,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1304,
+  "token_usage": {
+    "prompt_tokens": 505,
+    "completion_tokens": 139,
+    "total_tokens": 644
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

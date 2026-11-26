@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-f1fcb1c52b514cb8",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_13688e405cfb9052f1d9",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:29+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "3450755def12e60982da489871ca8f470869037b25a6bac0a94316eca24f9cb4",
+  "input_bytes": 3042,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，感谢您的认可。那您这个每月80元的套餐，平时主要用来上网还是打电话比较多呢？",
+    "next_action": "确认客户套餐使用偏好，为后续业务推荐或满意度记录做准备",
+    "required_information": [
+      "客户每月80元套餐的具体内容或名称",
+      "客户主要使用需求（上网/通话）"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户确认号码本人使用，在龙岩市区营业厅购买，每月话费约80元，选择联通原因是资费便宜、信号好。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_13688e405cfb9052f1d9",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1614,
+      "token_usage": {
+        "prompt_tokens": 731,
+        "completion_tokens": 141,
+        "total_tokens": 872
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0294,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 24,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1614,
+  "token_usage": {
+    "prompt_tokens": 731,
+    "completion_tokens": 141,
+    "total_tokens": 872
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

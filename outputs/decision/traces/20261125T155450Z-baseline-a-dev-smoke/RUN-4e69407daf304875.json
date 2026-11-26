@@ -1,0 +1,81 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-4e69407daf304875",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "task_id": "TASK_00d4656a51de4ad102f0",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:54:57+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "58d186fb6f54898c73b362d7ddbcf740119a99b7c2c1cc113e43854e24de6304",
+  "input_bytes": 1777,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，我是中国移动客服代表，请问您现在方便接听电话吗？",
+    "next_action": "确认客户身份并说明来电目的，询问客户是否方便继续通话",
+    "required_information": [
+      "客户是否方便接听电话",
+      "客户身份确认信息"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "通话记录显示此前无人接听，客户随后应答“您好”，客服尚未说明身份和来电目的。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_00d4656a51de4ad102f0",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1324,
+      "token_usage": {
+        "prompt_tokens": 391,
+        "completion_tokens": 96,
+        "total_tokens": 487
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.1842,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 2,
+        "hidden_speech_turn_count": 10
+      }
+    }
+  },
+  "latency_ms": 1324,
+  "token_usage": {
+    "prompt_tokens": 391,
+    "completion_tokens": 96,
+    "total_tokens": 487
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

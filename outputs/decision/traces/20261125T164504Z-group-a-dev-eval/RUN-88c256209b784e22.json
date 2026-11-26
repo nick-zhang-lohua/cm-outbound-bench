@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-88c256209b784e22",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_861138abe58f2a744dfd",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:05+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "9010e1cd286f747a3b5b98931d70b35fbb1e7207aa5c5b78ea894703d23d9a5d",
+  "input_bytes": 1982,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，这边是莆田移动公司的，想跟您确认一下，您是郑文志本人吗？",
+    "next_action": "确认接听人是否为机主本人",
+    "required_information": [
+      "接听人是否为郑文志本人"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已自报为莆田移动公司并询问是否为郑文志，客户仅回应“有啊”，尚未明确确认是否本人接听。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_861138abe58f2a744dfd",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1269,
+      "token_usage": {
+        "prompt_tokens": 450,
+        "completion_tokens": 102,
+        "total_tokens": 552
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0286,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 6,
+        "hidden_speech_turn_count": 8,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1269,
+  "token_usage": {
+    "prompt_tokens": 450,
+    "completion_tokens": 102,
+    "total_tokens": 552
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

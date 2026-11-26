@@ -1,0 +1,78 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-5e10f431a8344d0e",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "task_id": "TASK_0139e474b9b44086499a",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:55:03+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "5014b645f95a3c2cd6e1a1c4222cf0badbe651a89cdaf0eb2efd77d9f0607691",
+  "input_bytes": 2914,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，已为您登记新罗区新民路市政府宿舍十八号楼201室，稍后我们会安排宽带安装，请您保持电话畅通。",
+    "next_action": "确认并登记客户宽带安装详细地址，提交安装申请",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户确认机主身份，原宽带安装因地址不详细未成功；通话中客户逐步提供地址为龙岩新罗区新民路市政府宿舍十八号楼201室，客服已复述并获客户确认。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_0139e474b9b44086499a",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1324,
+      "token_usage": {
+        "prompt_tokens": 738,
+        "completion_tokens": 134,
+        "total_tokens": 872
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0217,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 33,
+        "hidden_speech_turn_count": 5
+      }
+    }
+  },
+  "latency_ms": 1324,
+  "token_usage": {
+    "prompt_tokens": 738,
+    "completion_tokens": 134,
+    "total_tokens": 872
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-36f0aa2684764a8e",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_44051e65b823bb8a727b",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:29+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "20aa274658580227fef2080fd99d973e3694dadd2d3b35be60a56176c6141bae",
+  "input_bytes": 3161,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您需要携带本人身份证前往移动营业厅办理该号码的销户，我这边无法直接为您销户。",
+    "next_action": "告知客户销户需本人到营业厅办理，并结束本次外呼",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户名下另一移动号码已欠费未用，需尽快销户，否则影响信用相关业务；客户要求客服直接销掉，客服已说明无法代为销户，需客户自行办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_44051e65b823bb8a727b",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1326,
+      "token_usage": {
+        "prompt_tokens": 748,
+        "completion_tokens": 131,
+        "total_tokens": 879
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 26,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1326,
+  "token_usage": {
+    "prompt_tokens": 748,
+    "completion_tokens": 131,
+    "total_tokens": 879
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

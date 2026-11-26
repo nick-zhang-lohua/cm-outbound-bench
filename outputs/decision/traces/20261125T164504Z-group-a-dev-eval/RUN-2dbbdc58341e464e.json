@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-2dbbdc58341e464e",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_5735d63ab4e1aa3bb4f3",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:48+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "c630abe050ee3a79993a4dbbcecba14032d5f184f78fd6293b040e450ae9ea8c",
+  "input_bytes": 2585,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您之前可能没有使用过这个套餐，不过您放心，这个活动是专门为您这样的老客户提供的，从下个月开始连续三个月每月赠送20元话费，用来抵扣30元500兆流量套餐费，活动期间您还是只花原来的10元，就能多享受430兆流量。您看这样可以吗？",
+    "next_action": "向客户解释活动内容并确认是否同意办理",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍客户有10元70兆流量套餐，从下月起连续三个月每月赠送20元话费抵扣30元500兆套餐费，客户表示以前用过但没用过这个套餐。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_5735d63ab4e1aa3bb4f3",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1502,
+      "token_usage": {
+        "prompt_tokens": 601,
+        "completion_tokens": 165,
+        "total_tokens": 766
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 11,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1502,
+  "token_usage": {
+    "prompt_tokens": 601,
+    "completion_tokens": 165,
+    "total_tokens": 766
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

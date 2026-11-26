@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-16dc986b3aed41da",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_438b981c112be022c3a3",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:26+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "acb513da14ff3ea28f81ac12047041095a30661c84fbc430d01c52da24eddadc",
+  "input_bytes": 3162,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，感谢您的确认，办理成功后会短信通知您，请您留意下个月一号起使用。",
+    "next_action": "确认客户同意办理并结束通话，后续按流程提交办理并发送短信通知",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已介绍流量包活动内容、费用、赠送话费、流量使用及取消规则，客户多次回复“嗯好”“知道了”，表示知悉并同意。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_438b981c112be022c3a3",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1558,
+      "token_usage": {
+        "prompt_tokens": 736,
+        "completion_tokens": 120,
+        "total_tokens": 856
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0476,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 17,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1558,
+  "token_usage": {
+    "prompt_tokens": 736,
+    "completion_tokens": 120,
+    "total_tokens": 856
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

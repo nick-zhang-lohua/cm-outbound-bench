@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-1f29d2bc5edb476e",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_e1441c028c1986ea0b68",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:51+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "2fde2c60cdce51dcb1b0290808faee528fe04c4bfb6ee296884bed6384a03576",
+  "input_bytes": 4352,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "那您看这样，我先帮您登记下个月升级到三十八元套餐，这个月还是用您原来的十八元套餐，从十二月一号开始生效，您用一个月试试，好用就继续用，不好用随时可以改回来，您看可以吗？",
+    "next_action": "征得客户明确同意后，登记下个月套餐升级为38元新飞享套餐",
+    "required_information": [
+      "客户是否明确同意办理下个月38元套餐升级"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍了38元新飞享套餐含300分钟通话和1524兆流量，说明下月生效、原18元套餐自动取消、可随时改回；客户询问18元能否取消及生效时间，客服解释本月仍用18元、12月1日起固定38元，客户以“嗯”回应但未明确同意办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_e1441c028c1986ea0b68",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1920,
+      "token_usage": {
+        "prompt_tokens": 1005,
+        "completion_tokens": 211,
+        "total_tokens": 1216
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0177,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 29,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1920,
+  "token_usage": {
+    "prompt_tokens": 1005,
+    "completion_tokens": 211,
+    "total_tokens": 1216
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

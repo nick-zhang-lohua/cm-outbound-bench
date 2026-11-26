@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-3aad07ae572d4ccb",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_468f56045d0655028fed",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:38+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "cba27e8b5510f1b451d60e3ac384d39fe5ede396d5a3de1e6ffb2d51b6fe7f4d",
+  "input_bytes": 2228,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那我先不打扰您上课了。您看方便的时候我再跟您简单说一下这个赠送活动，可以吗？",
+    "next_action": "客户表示正在上课，先礼貌结束当前沟通，约定合适时间再联系",
+    "required_information": [
+      "客户方便再次接听电话的时间"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍从下个月起连续三个月每月提前赠送30元话费用于抵扣30元500兆流量套餐费，活动期间客户无需自付；客户回复“等下上课了哈”，表明当前不便继续沟通。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_468f56045d0655028fed",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1884,
+      "token_usage": {
+        "prompt_tokens": 506,
+        "completion_tokens": 128,
+        "total_tokens": 634
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0357,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 8,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1884,
+  "token_usage": {
+    "prompt_tokens": 506,
+    "completion_tokens": 128,
+    "total_tokens": 634
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

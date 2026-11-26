@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-a01abb36b89349fe",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_2184ba9d3eb07ec772c6",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:52+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "45df4ea1a0b57e92c394f063ca9e476ab105841d10e1880dc60e923bbcce115a",
+  "input_bytes": 2568,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您先了解下，如果之后有需要可以再联系我们，祝您生活愉快，再见。",
+    "next_action": "结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍新飞享58套餐赠送夜间流量及省内流量宝活动，客户明确表示“我们不要”，客服解释包含在套餐内后客户仅回应“哦”，未表示同意办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_2184ba9d3eb07ec772c6",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1321,
+      "token_usage": {
+        "prompt_tokens": 593,
+        "completion_tokens": 113,
+        "total_tokens": 706
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 14,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1321,
+  "token_usage": {
+    "prompt_tokens": 593,
+    "completion_tokens": 113,
+    "total_tokens": 706
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

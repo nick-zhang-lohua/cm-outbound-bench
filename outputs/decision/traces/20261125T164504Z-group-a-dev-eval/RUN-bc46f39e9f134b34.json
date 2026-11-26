@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-bc46f39e9f134b34",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_03af3fb049d3a9235bba",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:06+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "e0ef6000ba36892166b74213232aed5b0b8f3f643fd46e32a2ebeacf466d5d47",
+  "input_bytes": 2538,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您问的是这个套餐是哪里的，对吧？这是中国移动的全球通飞享18套餐，下个月免费帮您从现在的神州行本地老套餐升级过去，包含每月100分钟本地拨打全国通话、100兆国内流量，来电显示和全国接听免费，另外活动期还额外赠送100分钟，连续送六个月。您看可以吗？",
+    "next_action": "解释套餐归属及内容，确认客户是否同意办理",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已确认客户为机主，告知客户现用神州行本地老套餐，下月免费办理全球通飞享18套餐，含100分钟本地拨打全国通话、100兆国内流量、来电显示和全国接听免费，并额外赠送100分钟连续六个月；客户询问“在哪里的？”。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_03af3fb049d3a9235bba",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1555,
+      "token_usage": {
+        "prompt_tokens": 584,
+        "completion_tokens": 199,
+        "total_tokens": 783
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 12,
+        "hidden_speech_turn_count": 10,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1555,
+  "token_usage": {
+    "prompt_tokens": 584,
+    "completion_tokens": 199,
+    "total_tokens": 783
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-e4c0a0ac9e5147dc",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_e03460aa3280021d8144",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:49+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "d0fa83ae426007c29e137c87737edfcad43c91a8bdc28ffca91d729897375d3d",
+  "input_bytes": 3570,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那稍后我会把需要销户的号码通过短信发到您现在使用的手机上，您注意查收。您凭这条短信，可以自己到福建省内正规的中国移动前台办理销户，也可以委托在莆田的家人朋友凭短信去营业厅代办。建议您尽快办理，避免欠费时间长了产生更多违约金。",
+    "next_action": "确认客户已理解销户办理方式，并告知稍后发送包含待销户号码的短信",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户确认身份后代青山；客服告知其名下另一移动号码欠费36.41元需销户，否则会产生违约金；客户询问外地能否销户，客服说明福建省内正规移动前台均可办理，也可委托莆田家人朋友代办；客户询问待销户号码，客服表示稍后短信发送到现用手机。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_e03460aa3280021d8144",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1917,
+      "token_usage": {
+        "prompt_tokens": 852,
+        "completion_tokens": 210,
+        "total_tokens": 1062
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 30,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1917,
+  "token_usage": {
+    "prompt_tokens": 852,
+    "completion_tokens": 210,
+    "total_tokens": 1062
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

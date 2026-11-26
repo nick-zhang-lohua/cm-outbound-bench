@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-2a6a36367b5c41c6",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_f8addf3856daf7260617",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:03+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "ef67a883c365a8d95a7c233dbaedac6cfa557e6ea9c7d9f9ce4a91db622d1ceb",
+  "input_bytes": 2271,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那麻烦您等刘桂英回来后转告她，她身份证名下登记了两个移动号码，需要她本人处理一下。您方便记一下这两个号码吗？",
+    "next_action": "请接听人转告机主刘桂英，其身份证名下登记的两个移动号码需由本人处理，并确认接听人是否能转达或提供其他联系方式",
+    "required_information": [
+      "接听人与刘桂英的关系及是否能转告",
+      "刘桂英本人可联系的时间或方式"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服核实接听人非刘桂英本人，得知其为家人；客服告知刘桂英身份证名下登记了两个移动号码（182开头及另一号码），请其转告；客户表示刘桂英未回家，无法当场转达。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_f8addf3856daf7260617",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1732,
+      "token_usage": {
+        "prompt_tokens": 528,
+        "completion_tokens": 177,
+        "total_tokens": 705
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 10,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1732,
+  "token_usage": {
+    "prompt_tokens": 528,
+    "completion_tokens": 177,
+    "total_tokens": 705
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

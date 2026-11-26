@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-9ef58ce3c40847bf",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_8032f7a22de28ccc3734",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:11+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "b8b5e2f84a84b4e4ebe2de4959b76331b46021f8b18a6d948293152ea9b848a0",
+  "input_bytes": 2500,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您记得携带本人身份证，在福建省内正规营业厅都可以办理销户。稍后我会把营业厅地址短信发送到您这个号码上，请您留意查收。",
+    "next_action": "向客户确认已了解销户办理方式，并发送包含营业厅地址的短信",
+    "required_information": [
+      "客户是否确认将前往营业厅办理销户",
+      "用于接收短信的号码是否为当前通话号码"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证名下另一移动号码已欠费停用，需到福建省内正规营业厅办理销户，否则影响个人信用度；客户询问到哪个营业厅，客服说明省内正规营业厅均可，并表示会发送地址短信，客户回应“好”“行”。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_8032f7a22de28ccc3734",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1728,
+      "token_usage": {
+        "prompt_tokens": 583,
+        "completion_tokens": 179,
+        "total_tokens": 762
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0353,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 17,
+        "hidden_speech_turn_count": 5,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1728,
+  "token_usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 179,
+    "total_tokens": 762
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

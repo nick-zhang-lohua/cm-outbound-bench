@@ -1,0 +1,66 @@
+{
+  "run_id": "annotation-20261126T1553070000",
+  "split": "dev",
+  "stage": "main",
+  "sample_plan": "SAMPLE-76037752d53b162d",
+  "sample_selection_sha256": "76037752d53b162d02d262fcbd8cac19edeff5c344ad49fbced42f4905f0171d",
+  "model": "deepseek-v4-pro",
+  "provider": "deepseek-v4-pro-judge",
+  "annotation_prompt_version": "v1",
+  "annotation_config_hash": "a30cc8e984365fd7104cf5717f52354e3925115968733adebcd79a2729373ca2",
+  "temperature": 0.0,
+  "max_output_tokens": 6000,
+  "requested_at": "2026-11-26T15:53:07+00:00",
+  "summary": {
+    "split": "dev",
+    "stage": "main",
+    "tasks_expected": 400,
+    "tasks_finalized": 400,
+    "tasks_missing": [],
+    "scored": 391,
+    "unscored": 9,
+    "unscored_rate": 0.0225,
+    "answerability_distribution": {
+      "ambiguous": 2,
+      "clarification_required": 40,
+      "insufficient_context": 6,
+      "not_a_valid_business_decision_point": 1,
+      "sufficient_for_action": 351
+    },
+    "primary_category_distribution": {
+      "acknowledge": 113,
+      "answer": 9,
+      "clarify": 62,
+      "close_conversation": 98,
+      "confirm": 74,
+      "defer_pending_information": 2,
+      "explain": 8,
+      "handle_objection": 22,
+      "verify_information": 3
+    },
+    "confidence_distribution": {
+      "high": 382,
+      "low": 8,
+      "medium": 10
+    },
+    "pass_comparison_distribution": {
+      "acceptable_alternatives": 8,
+      "agreement": 15,
+      "both_unscored": 9,
+      "major_disagreement": 96,
+      "minor_disagreement": 272
+    },
+    "adjudication_outcome_distribution": {
+      "accept_both": 347,
+      "accept_pass_a": 16,
+      "accept_pass_b": 4,
+      "consensus": 1
+    },
+    "adjudication_rate": 0.92,
+    "external_policy_dependency_tasks": 15,
+    "policy_verified_tasks": 0,
+    "api_records_with_usage": 1168,
+    "total_tokens": 2640226,
+    "total_annotation_calls": 800
+  }
+}

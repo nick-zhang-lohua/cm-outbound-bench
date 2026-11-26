@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-a5741e745ed54759",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_c4ccae5700706dd2afb7",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:54:32+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "beb16cc03ea6f5316ece96361616e0e1c4084e8b72dcaf5e2319419217dcd5ef",
+  "input_bytes": 2579,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您看这个新飞享八八套餐，88元包含5G流量和1200分钟通话，第四个月起如果套餐没取消，再送2G省内流量宝送六个月，相当于有7G流量和1200分钟通话，现在申请就可以用，您看可以帮您申请吗？",
+    "next_action": "确认客户是否同意办理新飞享88元套餐，并引导客户明确答复",
+    "required_information": [
+      "客户是否同意办理新飞享88元套餐"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已介绍新飞享88元套餐含5G流量和1200分钟通话，并说明第四个月起未取消套餐可获赠2G省内流量宝六个月；客户询问价格后客服答复88元，客户回复“那肯定”但未明确表示办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_c4ccae5700706dd2afb7",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2046,
+      "token_usage": {
+        "prompt_tokens": 581,
+        "completion_tokens": 201,
+        "total_tokens": 782
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 9,
+        "hidden_speech_turn_count": 5,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2046,
+  "token_usage": {
+    "prompt_tokens": 581,
+    "completion_tokens": 201,
+    "total_tokens": 782
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-6f2ba6f415bf4097",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_c077818aeea8f055bfda",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:01+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "4f87a565cf64bdfd41c4e4b8ef6163f56b067ae03b0bf4cff9e64410a19e3f7b",
+  "input_bytes": 3085,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "是的，您到汽车站那边的移动营业厅就可以办理注销。您记得带上身份证，把欠费八十五块四毛一结清后办理销户。",
+    "next_action": "确认客户可就近前往汽车站营业厅办理销户，并提醒携带身份证、结清欠费",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服通知客户张新武其名下登记号码已欠费停用，需到移动营业厅办理销户，欠费为85.41元；客户询问是否到汽车站营业厅办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_c077818aeea8f055bfda",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1643,
+      "token_usage": {
+        "prompt_tokens": 739,
+        "completion_tokens": 147,
+        "total_tokens": 886
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0678,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 23,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1643,
+  "token_usage": {
+    "prompt_tokens": 739,
+    "completion_tokens": 147,
+    "total_tokens": 886
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-c3e659cf04504acb",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_77e984367c78408c32cc",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:47:54+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "ee7e1588454f30ac9e0869182c2a8b83bb4251fc2fec18c30d6f20100696633a",
+  "input_bytes": 4282,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，不客气，那您就到户口所在地的永定区公证处去办理，再见。",
+    "next_action": "结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户咨询赴台探亲亲属关系公证所需材料及办理地点；客服已告知需带姐姐台湾身份证复印件、户籍誊本、本人身份证户口本及关系证明，一人到场办理即可；因客户户口在永定，客服告知应到永定区公证处办理，客户表示理解并致谢。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_77e984367c78408c32cc",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1463,
+      "token_usage": {
+        "prompt_tokens": 1079,
+        "completion_tokens": 138,
+        "total_tokens": 1217
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 52,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1463,
+  "token_usage": {
+    "prompt_tokens": 1079,
+    "completion_tokens": 138,
+    "total_tokens": 1217
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

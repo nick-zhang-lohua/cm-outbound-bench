@@ -1,0 +1,631 @@
+{
+  "audit_version": "1.0",
+  "corpus": {
+    "units": 4527,
+    "records": 137178,
+    "corpus": "cm_outbound_v2",
+    "corpus_schema_version": "1.0",
+    "channel_record_counts_source": "reconstructed from the de-identified corpus"
+  },
+  "channels": [
+    {
+      "channel_id": 1,
+      "role": "historical_agent",
+      "semantics_status": "confirmed_by_research_protocol",
+      "records": 104790,
+      "record_pct": 76.3898,
+      "units_containing": 4526,
+      "units_with_speech": 0,
+      "units_with_event": 0,
+      "speech_records": 66387,
+      "event_records": 38403,
+      "non_empty_text_records": 63345,
+      "empty_text_records": 3042,
+      "truncated_records": 9344,
+      "records_overlapping_previous": 0,
+      "first_record_in_unit": 4519,
+      "last_record_in_unit": 3979,
+      "record_type_distribution": {
+        "speech": 66387,
+        "event": 38403
+      },
+      "event_distribution": {
+        "SYSTEM": 16501,
+        "ENS": 11067,
+        "DTMF": 5591,
+        "UNCLASSIFIED": 2524,
+        "MUSIC": 2053,
+        "SONANT": 605,
+        "LAUGH": 62
+      },
+      "asr_flag_distribution": {
+        "empty_after_mask": 3042,
+        "yen_token": 920,
+        "short_unclassified_digit_masked": 208,
+        "phone_split_merged": 184,
+        "phone_embedded_long_run": 130,
+        "account_long_run_masked": 55,
+        "id_pattern_masked": 14,
+        "long_digit_run_masked": 2,
+        "event_spelling_variant": 1
+      },
+      "redaction_flag_distribution": {
+        "PHONE": 4681,
+        "ACCOUNT": 269,
+        "ADDRESS": 104,
+        "NAME": 88,
+        "ID_NO": 18,
+        "CARD_NO": 6,
+        "PASSWORD": 1
+      },
+      "previous_channel_distribution": {
+        "1": 73097,
+        "2": 26869,
+        "3": 160,
+        "4": 145
+      },
+      "next_channel_distribution": {
+        "1": 73097,
+        "2": 27402,
+        "3": 161,
+        "4": 151
+      },
+      "position_quantiles": {
+        "p10": 0.0544,
+        "p50": 0.5139,
+        "p90": 0.9285
+      },
+      "start_ms_quantiles": {
+        "p10": 4839,
+        "p50": 47605,
+        "p90": 107544
+      },
+      "text_length": {
+        "min": 1,
+        "median": 19,
+        "max": 85
+      },
+      "structural_homogeneity": "mixed_speech_and_event",
+      "human_review_required": false,
+      "approved_mapping": "none"
+    },
+    {
+      "channel_id": 2,
+      "role": "customer",
+      "semantics_status": "confirmed_by_research_protocol",
+      "records": 31867,
+      "record_pct": 23.2304,
+      "units_containing": 4444,
+      "units_with_speech": 0,
+      "units_with_event": 0,
+      "speech_records": 27648,
+      "event_records": 4219,
+      "non_empty_text_records": 27363,
+      "empty_text_records": 285,
+      "truncated_records": 2363,
+      "records_overlapping_previous": 0,
+      "first_record_in_unit": 6,
+      "last_record_in_unit": 533,
+      "record_type_distribution": {
+        "speech": 27648,
+        "event": 4219
+      },
+      "event_distribution": {
+        "UNCLASSIFIED": 4091,
+        "SONANT": 52,
+        "ENS": 51,
+        "LAUGH": 17,
+        "SYSTEM": 5,
+        "DTMF": 3
+      },
+      "asr_flag_distribution": {
+        "empty_after_mask": 285,
+        "short_unclassified_digit_masked": 33,
+        "account_long_run_masked": 6,
+        "phone_split_merged": 6,
+        "phone_embedded_long_run": 2,
+        "yen_token": 1
+      },
+      "redaction_flag_distribution": {
+        "ACCOUNT": 39,
+        "PHONE": 35,
+        "NAME": 30,
+        "ADDRESS": 17
+      },
+      "previous_channel_distribution": {
+        "1": 27402,
+        "2": 4415,
+        "3": 35,
+        "4": 9
+      },
+      "next_channel_distribution": {
+        "1": 26869,
+        "2": 4415,
+        "3": 42,
+        "4": 8
+      },
+      "position_quantiles": {
+        "p10": 0.2982,
+        "p50": 0.6594,
+        "p90": 0.9428
+      },
+      "start_ms_quantiles": {
+        "p10": 28192,
+        "p50": 64388,
+        "p90": 117673
+      },
+      "text_length": {
+        "min": 1,
+        "median": 4,
+        "max": 63
+      },
+      "structural_homogeneity": "mixed_speech_and_event",
+      "human_review_required": false,
+      "approved_mapping": "none"
+    },
+    {
+      "channel_id": 3,
+      "role": "other",
+      "semantics_status": "unknown_pending_human_review",
+      "records": 314,
+      "record_pct": 0.2289,
+      "units_containing": 84,
+      "units_with_speech": 70,
+      "units_with_event": 40,
+      "speech_records": 225,
+      "event_records": 89,
+      "non_empty_text_records": 224,
+      "empty_text_records": 1,
+      "truncated_records": 8,
+      "records_overlapping_previous": 0,
+      "first_record_in_unit": 2,
+      "last_record_in_unit": 9,
+      "record_type_distribution": {
+        "speech": 225,
+        "event": 89
+      },
+      "event_distribution": {
+        "UNCLASSIFIED": 84,
+        "ENS": 4,
+        "LAUGH": 1
+      },
+      "asr_flag_distribution": {
+        "short_unclassified_digit_masked": 1,
+        "empty_after_mask": 1
+      },
+      "redaction_flag_distribution": {
+        "PHONE": 9,
+        "ACCOUNT": 1
+      },
+      "previous_channel_distribution": {
+        "1": 161,
+        "3": 91,
+        "2": 42,
+        "4": 17,
+        "5": 1
+      },
+      "next_channel_distribution": {
+        "1": 160,
+        "3": 91,
+        "2": 35,
+        "4": 18,
+        "5": 1
+      },
+      "position_quantiles": {
+        "p10": 0.064,
+        "p50": 0.5204,
+        "p90": 0.9241
+      },
+      "start_ms_quantiles": {
+        "p10": 5431,
+        "p50": 50882,
+        "p90": 114938
+      },
+      "text_length": {
+        "min": 1,
+        "median": 8,
+        "max": 55
+      },
+      "structural_homogeneity": "mixed_speech_and_event",
+      "human_review_required": true,
+      "approved_mapping": "none"
+    },
+    {
+      "channel_id": 4,
+      "role": "other",
+      "semantics_status": "unknown_pending_human_review",
+      "records": 205,
+      "record_pct": 0.1494,
+      "units_containing": 42,
+      "units_with_speech": 33,
+      "units_with_event": 21,
+      "speech_records": 168,
+      "event_records": 37,
+      "non_empty_text_records": 168,
+      "empty_text_records": 0,
+      "truncated_records": 14,
+      "records_overlapping_previous": 0,
+      "first_record_in_unit": 0,
+      "last_record_in_unit": 6,
+      "record_type_distribution": {
+        "speech": 168,
+        "event": 37
+      },
+      "event_distribution": {
+        "UNCLASSIFIED": 35,
+        "ENS": 1,
+        "SONANT": 1
+      },
+      "asr_flag_distribution": {
+        "short_unclassified_digit_masked": 1
+      },
+      "redaction_flag_distribution": {
+        "ACCOUNT": 1
+      },
+      "previous_channel_distribution": {
+        "1": 151,
+        "4": 27,
+        "3": 18,
+        "2": 8,
+        "5": 1
+      },
+      "next_channel_distribution": {
+        "1": 145,
+        "4": 27,
+        "3": 17,
+        "2": 9,
+        "5": 1
+      },
+      "position_quantiles": {
+        "p10": 0.451,
+        "p50": 0.7529,
+        "p90": 0.956
+      },
+      "start_ms_quantiles": {
+        "p10": 45539,
+        "p50": 92788,
+        "p90": 145895
+      },
+      "text_length": {
+        "min": 1,
+        "median": 5,
+        "max": 41
+      },
+      "structural_homogeneity": "mixed_speech_and_event",
+      "human_review_required": true,
+      "approved_mapping": "none"
+    },
+    {
+      "channel_id": 5,
+      "role": "other",
+      "semantics_status": "unknown_pending_human_review",
+      "records": 2,
+      "record_pct": 0.0015,
+      "units_containing": 1,
+      "units_with_speech": 0,
+      "units_with_event": 1,
+      "speech_records": 0,
+      "event_records": 2,
+      "non_empty_text_records": 0,
+      "empty_text_records": 0,
+      "truncated_records": 0,
+      "records_overlapping_previous": 0,
+      "first_record_in_unit": 0,
+      "last_record_in_unit": 0,
+      "record_type_distribution": {
+        "event": 2
+      },
+      "event_distribution": {
+        "UNCLASSIFIED": 2
+      },
+      "asr_flag_distribution": {},
+      "redaction_flag_distribution": {},
+      "previous_channel_distribution": {
+        "4": 1,
+        "3": 1
+      },
+      "next_channel_distribution": {
+        "4": 1,
+        "3": 1
+      },
+      "position_quantiles": {
+        "p10": 0.8419,
+        "p50": 0.8419,
+        "p90": 0.869
+      },
+      "start_ms_quantiles": {
+        "p10": 126358,
+        "p50": 126358,
+        "p90": 130431
+      },
+      "text_length": {
+        "min": null,
+        "median": null,
+        "max": null
+      },
+      "structural_homogeneity": "event_only",
+      "human_review_required": true,
+      "approved_mapping": "none"
+    }
+  ],
+  "unit_channel_combinations": {
+    "1+2": 4328,
+    "1": 83,
+    "1+2+3": 73,
+    "1+2+4": 31,
+    "1+2+3+4": 10,
+    "2": 1,
+    "1+2+3+4+5": 1
+  },
+  "units_with_unknown_channel": 115,
+  "units_with_unknown_channel_speech": 93,
+  "units_with_no_confirmed_agent_speech": 11,
+  "registry": {
+    "production_mapping": {
+      "1": "historical_agent",
+      "2": "customer"
+    },
+    "mapping_semantics": {
+      "unit": "transcript_unit_id (one delivered unit; inferred conversation)",
+      "determined_by": "research protocol, not by the corpus",
+      "corpus_role_field": "UNKNOWN for every record"
+    },
+    "unknown_channels": [
+      3,
+      4,
+      5
+    ],
+    "unknown_channel_role": "other",
+    "human_approval_required": true,
+    "registry": [
+      {
+        "channel_id": 1,
+        "role": "historical_agent",
+        "confirmation_status": "confirmed_by_research_protocol",
+        "confirmed_by_protocol": true,
+        "automatic_assignment_allowed": true,
+        "note": "Channel meaning is fixed by the research protocol. The corpus itself stores role=UNKNOWN, so this is a protocol decision, not a corpus label."
+      },
+      {
+        "channel_id": 2,
+        "role": "customer",
+        "confirmation_status": "confirmed_by_research_protocol",
+        "confirmed_by_protocol": true,
+        "automatic_assignment_allowed": true,
+        "note": "Channel meaning is fixed by the research protocol. The corpus itself stores role=UNKNOWN, so this is a protocol decision, not a corpus label."
+      },
+      {
+        "channel_id": 3,
+        "role": "other",
+        "confirmation_status": "unknown_pending_human_review",
+        "confirmed_by_protocol": false,
+        "automatic_assignment_allowed": false,
+        "note": "Meaning investigated in Milestone 1.1 and presented for human review. No speaker meaning is assigned and the 'other' role is preserved."
+      },
+      {
+        "channel_id": 4,
+        "role": "other",
+        "confirmation_status": "unknown_pending_human_review",
+        "confirmed_by_protocol": false,
+        "automatic_assignment_allowed": false,
+        "note": "Meaning investigated in Milestone 1.1 and presented for human review. No speaker meaning is assigned and the 'other' role is preserved."
+      },
+      {
+        "channel_id": 5,
+        "role": "other",
+        "confirmation_status": "unknown_pending_human_review",
+        "confirmed_by_protocol": false,
+        "automatic_assignment_allowed": false,
+        "note": "Meaning investigated in Milestone 1.1 and presented for human review. No speaker meaning is assigned and the 'other' role is preserved."
+      }
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesis_id": "H1_distinct_speaker",
+      "channel_ids": [
+        3,
+        4,
+        5
+      ],
+      "statement": "A channel beyond 1 and 2 identifies an additional distinct human speaker in the recorded audio, most often a third party who takes over or joins the call.",
+      "evidence_level": "strongly_supported_by_evidence",
+      "supporting_evidence": [
+        "Channel 3 and channel 4 both carry conversational turns that interleave with channel 1 and channel 2 in source order and are answered by the channel 1 speaker.",
+        "Several units contain an explicit hand-over: the channel 1 speaker asks whether the person talking is the line owner or 'the lady before', which only makes sense with at least three participants.",
+        "Channels 3 and 4 each carry their own non-speech event records (UNCLASSIFIED / SONANT / LAUGH), i.e. the vendor tracked them like any other speaker, not like a system stream.",
+        "Record timestamps never overlap channel 1 or channel 2 records, the same non-overlapping rule that holds between channels 1 and 2."
+      ],
+      "counter_evidence": [
+        "The corpus carries no speaker attribute, so 'distinct speaker' is a structural inference from turn-taking, not a verified label.",
+        "Channel 5 carries only two event records and no speech at all, so it cannot be a speaker under this hypothesis in the observed data."
+      ],
+      "supports_mapping": false,
+      "benchmark_implications": [
+        "Third-party turns may contain business-relevant information (who is the owner, what the owner wants).",
+        "Treating the third party as 'customer' would silently merge two different people into one speaker role.",
+        "Treating the third party as 'historical_agent' is worse: it would put customer-side words into the agent's mouth."
+      ]
+    },
+    {
+      "hypothesis_id": "H2_channel_number_is_not_a_fixed_role",
+      "channel_ids": [
+        3,
+        4,
+        5
+      ],
+      "statement": "The channel number is a per-unit speaker slot assigned by the transcription vendor, so channel 1 is not *guaranteed* to be the agent and channel 2 is not *guaranteed* to be the customer in every unit; the 1=agent, 2=customer mapping is a corpus-level regularity.",
+      "evidence_level": "strongly_supported_by_evidence",
+      "supporting_evidence": [
+        "At least three valid units have no channel 1 speech at all while the channel 3 speaker delivers the agent's opening script and product pitch, and the channel 2 speaker answers as the customer.",
+        "In those units the channel 1 records are SYSTEM / DTMF / ENS events plus pre-call room audio, which is exactly the role channel 1 plays elsewhere when the agent speaks on channel 1.",
+        "Across units the same channel can act as agent-side or customer-side, which a fixed physical-leg interpretation does not predict."
+      ],
+      "counter_evidence": [
+        "The effect is rare: only 3 of 4,527 units lack channel 1 speech, and 99.8% of units start on channel 1.",
+        "No external call record exists to confirm which speaker is the agent, so this rests on content reading, not on ground truth."
+      ],
+      "supports_mapping": false,
+      "benchmark_implications": [
+        "The current task builder rejects any cutoff whose visible prefix contains an 'other' channel, which is the conservative response and needs no change before human review.",
+        "A future approved change that maps an unknown channel to a role must be applied per context, not as a global constant, and must be validated unit by unit."
+      ]
+    },
+    {
+      "hypothesis_id": "H3_system_or_ivr_announcement",
+      "channel_ids": [
+        3,
+        4,
+        5
+      ],
+      "statement": "An unknown channel carries IVR prompts, ring-back or recorded system announcements rather than a live speaker.",
+      "evidence_level": "plausible_but_unverified",
+      "supporting_evidence": [
+        "The corpus already models non-speech audio as explicit events (SYSTEM / MUSIC / DTMF) and those events are attached to channels 1 and 2, so a channel is not intrinsically a speech-only stream.",
+        "Channel 5 carries only two UNCLASSIFIED events and no speech."
+      ],
+      "counter_evidence": [
+        "Channels 3 and 4 carry ordinary conversational Chinese that is answered by the channel 1 speaker, which a recorded announcement would not produce.",
+        "The corpus has no channel value whose records are exclusively system events except channel 5, and even there the sample is 2 records."
+      ],
+      "supports_mapping": false,
+      "benchmark_implications": [
+        "Even if true for channel 5, the effect on the benchmark is zero: event records are already excluded from visible context."
+      ]
+    },
+    {
+      "hypothesis_id": "H4_recording_artifact",
+      "channel_ids": [
+        3,
+        4,
+        5
+      ],
+      "statement": "Unknown-channel records are a recording or transcription artifact (echo, duplicate capture, overlapping-speech split) rather than new content.",
+      "evidence_level": "unknown",
+      "supporting_evidence": [
+        "Some channel 4 records duplicate the immediately preceding channel 1 or channel 2 wording, which is consistent with an ASR boundary artifact."
+      ],
+      "counter_evidence": [
+        "The corpus contains zero overlapping records, so an unknown channel never coincides in time with channel 1 or 2.",
+        "Most channel 3 and channel 4 speech contains content that does not appear on any other channel.",
+        "Unknown-channel records carry their own event records and their own truncation markers, which a pure duplication artifact would not."
+      ],
+      "supports_mapping": false,
+      "benchmark_implications": [
+        "If duplication were confirmed, deduplicating would change turn counts but not the visible prefix semantics."
+      ]
+    },
+    {
+      "hypothesis_id": "H5_supervisor_or_consultation_leg",
+      "channel_ids": [
+        3,
+        4
+      ],
+      "statement": "An unknown channel is a second agent-side leg, such as a supervisor monitoring or a colleague consulted during the call.",
+      "evidence_level": "plausible_but_unverified",
+      "supporting_evidence": [
+        "One unit opens with two alternating speakers complaining about calling customers before the called party answers, which reads as two colleagues in the same room.",
+        "One unit has a channel 3 speaker delivering the agent script while channel 1 holds only events."
+      ],
+      "counter_evidence": [
+        "In most units the unknown-channel speaker answers the agent's questions in the customer's role, not the agent's.",
+        "No supervisor or consultation event marker exists in the corpus."
+      ],
+      "supports_mapping": false,
+      "benchmark_implications": [
+        "A second agent leg would break the assumption that exactly one historical agent turn follows a customer turn."
+      ]
+    }
+  ],
+  "benchmark_impact": [
+    {
+      "interpretation_id": "I0_preserve_unknown",
+      "description": "Keep channels 3/4/5 as 'other' (current production behaviour).",
+      "tasks": 10116,
+      "units_with_tasks": 4253,
+      "delta_tasks_vs_current": 0,
+      "delta_units_vs_current": 0,
+      "affected_units": 115,
+      "changes_production_mapping": false,
+      "approved": false,
+      "note": "Measurement only. The production mapping is unchanged and no interpretation is applied."
+    },
+    {
+      "interpretation_id": "I1_unknown_as_customer",
+      "description": "Treat channels 3/4/5 as additional customer-side respondents.",
+      "tasks": 10256,
+      "units_with_tasks": 4297,
+      "delta_tasks_vs_current": 140,
+      "delta_units_vs_current": 44,
+      "affected_units": 115,
+      "changes_production_mapping": true,
+      "approved": false,
+      "note": "Measurement only. The production mapping is unchanged and no interpretation is applied."
+    },
+    {
+      "interpretation_id": "I2_unknown_as_historical_agent",
+      "description": "Treat channels 3/4/5 as additional historical-agent speakers.",
+      "tasks": 10224,
+      "units_with_tasks": 4296,
+      "delta_tasks_vs_current": 108,
+      "delta_units_vs_current": 43,
+      "affected_units": 115,
+      "changes_production_mapping": true,
+      "approved": false,
+      "note": "Measurement only. The production mapping is unchanged and no interpretation is applied."
+    },
+    {
+      "interpretation_id": "I3_channel_3_as_agent_only",
+      "description": "Treat channel 3 as an additional historical-agent speaker, leave 4/5.",
+      "tasks": 10218,
+      "units_with_tasks": 4295,
+      "delta_tasks_vs_current": 102,
+      "delta_units_vs_current": 42,
+      "affected_units": 115,
+      "changes_production_mapping": true,
+      "approved": false,
+      "note": "Measurement only. The production mapping is unchanged and no interpretation is applied."
+    },
+    {
+      "interpretation_id": "I4_exclude_affected_units",
+      "description": "Exclude every unit that contains an unknown channel.",
+      "tasks": 10002,
+      "units_with_tasks": 4188,
+      "delta_tasks_vs_current": -114,
+      "delta_units_vs_current": -65,
+      "affected_units": 115,
+      "changes_production_mapping": false,
+      "approved": false,
+      "note": "Measurement only. The production mapping is unchanged and no interpretation is applied."
+    }
+  ],
+  "tasks_total": 10116,
+  "tasks_in_units_with_unknown_channel": 71,
+  "tasks_by_split_in_affected_units": {
+    "dev": 14,
+    "test": 15,
+    "train_f": 26,
+    "train_r": 16
+  },
+  "builder_rejection_counts": {
+    "duplicate_visible_prefix": 266,
+    "invalid_call": 3,
+    "no_agent_turn": 8,
+    "no_customer_turn": 124,
+    "no_eligible_cutoff": 107,
+    "other_speaker_in_prefix": 173,
+    "prefix_too_short": 1472
+  },
+  "samples_exported": {
+    "3": 12,
+    "4": 12,
+    "5": 2
+  },
+  "limitations": [
+    "The corpus carries no speaker attribute (role=UNKNOWN everywhere), so no channel meaning can be confirmed from the data alone.",
+    "The de-identified corpus drops the source gender/language attribute, so per-channel voice profile cannot be measured here.",
+    "Channel 5 has two records, both events: two records cannot support a statistical characterisation.",
+    "Timestamps are offsets from the start of the recording, not wall-clock times, so absolute placement in the call flow is unavailable.",
+    "No external call record or vendor channel specification is available in the workspace to confirm any hypothesis."
+  ]
+}

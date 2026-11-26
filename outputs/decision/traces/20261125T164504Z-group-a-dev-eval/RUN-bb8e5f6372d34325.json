@@ -1,0 +1,87 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-bb8e5f6372d34325",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_afd1cf7a537d13fed73e",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:49:29+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "33ebb508fd5368c84849671dc81ee37091ca485a11d536c70e4e5f23e9b2c5d9",
+  "input_bytes": 3449,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您说的流量活动已经取消了，那您现在的月消费情况我需要再帮您核实一下，您方便稍等吗？",
+    "next_action": "核实客户当前套餐及流量活动状态，确认月消费情况后再决定是否继续推荐套餐变更",
+    "required_information": [
+      "客户当前实际月消费金额",
+      "客户流量活动是否已退订及退订时间",
+      "客户当前套餐是否仍为超级网聊13套餐"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户表示13套餐以后是否还有，客服称13套餐已停办；客户表示暂时不用，明年再说；客服称客户月消费在一百左右，客户否认；客户提到流量活动五十块钱的已结束，客服确认已取消。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_afd1cf7a537d13fed73e",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1824,
+      "token_usage": {
+        "prompt_tokens": 838,
+        "completion_tokens": 183,
+        "total_tokens": 1021
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 34,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1824,
+  "token_usage": {
+    "prompt_tokens": 838,
+    "completion_tokens": 183,
+    "total_tokens": 1021
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

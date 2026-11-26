@@ -1,0 +1,27 @@
+{
+  "ground_truth_version": "cm-outbound-llm-gold-v1",
+  "ground_truth_source": "deepseek_v4_pro",
+  "ground_truth_type": "llm_generated_gold",
+  "annotation_prompt_version": "v1",
+  "adjudication_prompt_version": "v1",
+  "dataset_version": "cm_outbound_v2",
+  "model": "deepseek-v4-pro",
+  "train_r": {
+    "pilot_tasks": 100,
+    "feedback_tasks": 300,
+    "path": "outputs\\decision\\annotations\\train_r\\final_references.jsonl",
+    "tasks": 400,
+    "scored": 393,
+    "unscored": 7,
+    "sha256": "03d2e23bed2e8d771284d3b2a79b88d1f792e5d6fbecff642360f0112c4c4bdd"
+  },
+  "dev": {
+    "path": "outputs\\decision\\annotations\\dev\\final_references.jsonl",
+    "tasks": 400,
+    "scored": 391,
+    "unscored": 9,
+    "sha256": "a7d12662af0745b4800161a1b93bbd0ada988d7a0bc671e3710c482446ba44b6"
+  },
+  "test_annotated": false,
+  "frozen_at": "2026-11-26T15:53:15+00:00"
+}

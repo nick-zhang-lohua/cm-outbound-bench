@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-9fa65fff27144e53",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_be424ae441e4eebab477",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:49:55+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "987aed04145f85727941e5fc3c3b86739818a515e78248ef51f7e625fe623ac9",
+  "input_bytes": 2735,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "是的，到期会自动取消，您不用操心。既然完全免费，您就放心备用着，好吗？",
+    "next_action": "确认客户对自动取消的理解，并再次尝试促成客户接受免费流量赠送",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍新飞享58套餐可免费获赠两个月每月5G省内夜间流量，三个月后继续用套餐可再免费获赠半年每月2G省内流量宝，均到期自动取消；客户表示不要，客服强调免费且自动取消，客户询问“它会自自动”。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_be424ae441e4eebab477",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1635,
+      "token_usage": {
+        "prompt_tokens": 629,
+        "completion_tokens": 145,
+        "total_tokens": 774
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0741,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 15,
+        "hidden_speech_turn_count": 5,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1635,
+  "token_usage": {
+    "prompt_tokens": 629,
+    "completion_tokens": 145,
+    "total_tokens": 774
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

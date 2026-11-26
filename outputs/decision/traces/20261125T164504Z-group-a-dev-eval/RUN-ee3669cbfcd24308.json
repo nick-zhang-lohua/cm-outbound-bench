@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ee3669cbfcd24308",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_73bdea6454122861d491",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:47:49+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "064d181acd7b593217900aa6db2a0b41ec3dfd078df46c86d46c5f7b6f6c8700",
+  "input_bytes": 4205,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您先和家里人商量一下，看宽带是否继续使用以及选择哪个活动，商量好了再联系我们，再见。",
+    "next_action": "结束本次外呼，记录客户需与家人商量后决定，待客户后续联系",
+    "required_information": [
+      "客户与家人商量后是否继续使用铁通宽带",
+      "客户最终选择参与哪项宽带优惠活动"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户表示宽带要继续用，但对客服介绍的保底38元享12兆宽带包年240元活动与昨日另一通电话所述保底58元再扣11元（合计69元）宽带免费的说法存在疑问；客户称自己上班不在家、宽带自己没怎么用，需回去问老公后再决定是否继续用。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_73bdea6454122861d491",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2101,
+      "token_usage": {
+        "prompt_tokens": 1003,
+        "completion_tokens": 190,
+        "total_tokens": 1193
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0139,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 40,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2101,
+  "token_usage": {
+    "prompt_tokens": 1003,
+    "completion_tokens": 190,
+    "total_tokens": 1193
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-b24f167e934e486d",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_ede5d9c415d2fc13f5f0",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:54:50+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "4917efed1d60db6ad37a48ed13f02d74808cdc7cda24e99ef79e63d0d3a575ce",
+  "input_bytes": 2471,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您说得对，这个套餐和您现在的网聊38元套餐月费一样，都是38元。升级后套餐内包含500兆全国流量、100分钟本地打全国的通话，活动期间一年内每月再多送100分钟本地通话，相当于每月有200分钟免费通话，还有来电显示，全国接听免费。您看需要帮您升级吗？",
+    "next_action": "确认客户是否同意升级为新版分享38元套餐",
+    "required_information": [
+      "客户是否同意办理升级"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已向客户介绍新版分享38元套餐内容及一年内每月多送100分钟本地通话的优惠，客户表示“也差不多啊，我一直”，尚未明确同意办理升级。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_ede5d9c415d2fc13f5f0",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1521,
+      "token_usage": {
+        "prompt_tokens": 559,
+        "completion_tokens": 184,
+        "total_tokens": 743
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0147,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 10,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1521,
+  "token_usage": {
+    "prompt_tokens": 559,
+    "completion_tokens": 184,
+    "total_tokens": 743
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

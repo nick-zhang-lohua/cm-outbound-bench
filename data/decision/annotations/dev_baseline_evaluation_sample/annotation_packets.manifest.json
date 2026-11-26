@@ -1,0 +1,17 @@
+{
+  "packets": 400,
+  "guideline_version": "annotation-guidelines-v1",
+  "sample_purpose": "dev_baseline_evaluation_sample",
+  "split": "dev",
+  "sampling_plan_id": "SAMPLE-76037752d53b162d",
+  "sampling_plan_sha256": "5cff8aa7c12580c30a4b655376c3d0493be9d55850d005f40a278ed93725442d",
+  "packet_sha256": "45b522f0778c1982e0c263b19821eec5588d4df70c73764ebe5d8ff50c76a75d",
+  "generated_at": "2026-11-25T16:44:16+00:00",
+  "forbidden_key_check": true,
+  "hidden_continuation_exported": false,
+  "reference_material_status": "no_approved_authoritative_material",
+  "notes": [
+    "Every packet contains only the agent-visible prefix, the task instruction and blank annotation fields.",
+    "No historical continuation, hidden segment id, call id or label is present in any packet."
+  ]
+}

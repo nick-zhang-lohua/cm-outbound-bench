@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-bc3308bc7dbe46b5",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_19c7b6e7287e4713d975",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:42+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "f107895a3f536271cb32f6a61605bf11e4bd809689f6a2125b4a1c26d14028da",
+  "input_bytes": 3312,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，先生，我理解您的顾虑，那就不打扰您了，祝您生活愉快，再见。",
+    "next_action": "结束通话，礼貌道别",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服多次介绍免费赠送夜间流量及后续省内流量包，强调免费且到期自动取消；客户连续三次明确表示不用了，并担心自动取消未落实，最后一次仍回答不用了。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_19c7b6e7287e4713d975",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1864,
+      "token_usage": {
+        "prompt_tokens": 756,
+        "completion_tokens": 101,
+        "total_tokens": 857
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.1212,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 21,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1864,
+  "token_usage": {
+    "prompt_tokens": 756,
+    "completion_tokens": 101,
+    "total_tokens": 857
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

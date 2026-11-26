@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-2b35716a78ed48d6",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_e318510069d9e9fbf96b",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:56+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "3ff7cc1c6113409b401394e4faccae0b878027a1eed695ce39b9709ed9cd84a5",
+  "input_bytes": 3295,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，感谢您的确认。这边为您办理三十元流量包活动，办理成功后会下发短信通知，请您留意查收，祝您生活愉快，再见。",
+    "next_action": "结束通话并提交办理三十元流量包活动",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已完整介绍活动内容、资费、取消方式及限制条件，客户多次回答“好”“对”确认参与，并核对号码无误，客服已告知办理成功后将下发短信通知。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_e318510069d9e9fbf96b",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1601,
+      "token_usage": {
+        "prompt_tokens": 760,
+        "completion_tokens": 133,
+        "total_tokens": 893
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0571,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 19,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1601,
+  "token_usage": {
+    "prompt_tokens": 760,
+    "completion_tokens": 133,
+    "total_tokens": 893
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

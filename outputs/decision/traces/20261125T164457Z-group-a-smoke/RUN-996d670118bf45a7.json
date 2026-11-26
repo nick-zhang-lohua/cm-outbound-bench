@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-996d670118bf45a7",
+  "run_set_id": "20261125T164457Z-group-a-smoke",
+  "task_id": "TASK_007e2987fb58b4756e53",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:44:59+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "8b06d49df02616eb2bfa4a095d48aea2b63fd585cf21579d7df292f72bf9ba59",
+  "input_bytes": 3025,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "理解您的顾虑，138元确实比您现在费用高。您刚才提到88元都嫌多，那我先不急着推荐这个套餐。请问您目前每月大概能接受多少通信费用？我帮您看看有没有更合适的方案。",
+    "next_action": "询问客户可接受的月费预算，暂停推荐138元套餐",
+    "required_information": [
+      "客户每月可接受的通信费用预算"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服推荐138元任我用套餐，客户表示费用太高，称88元都嫌多；客服提及客户原套餐分钟数和流量有超，客户表示常用WiFi。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_007e2987fb58b4756e53",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1997,
+      "token_usage": {
+        "prompt_tokens": 718,
+        "completion_tokens": 154,
+        "total_tokens": 872
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 20,
+        "hidden_speech_turn_count": 13,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1997,
+  "token_usage": {
+    "prompt_tokens": 718,
+    "completion_tokens": 154,
+    "total_tokens": 872
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

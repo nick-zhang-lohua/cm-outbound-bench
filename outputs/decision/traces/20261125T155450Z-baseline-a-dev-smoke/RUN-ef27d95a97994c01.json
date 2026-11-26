@@ -1,0 +1,78 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ef27d95a97994c01",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "task_id": "TASK_01211693bc0c878530b1",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:55:02+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "0f6adc26c79e441bd3fae6e8a7376945e76d5baa7ac9a006290662f9c7b647ee",
+  "input_bytes": 2636,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，我明白了，您这张卡主要是用来接打电话的。那就不打扰您了，感谢您的接听，祝您生活愉快，再见。",
+    "next_action": "结束本次外呼通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户确认号码为本人使用，号码卡在龙门营业厅购买；客户表示不知道自己的套餐，并明确表示什么套餐都不要，这张卡只是用来接打电话。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_01211693bc0c878530b1",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1428,
+      "token_usage": {
+        "prompt_tokens": 623,
+        "completion_tokens": 119,
+        "total_tokens": 742
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 16,
+        "hidden_speech_turn_count": 11
+      }
+    }
+  },
+  "latency_ms": 1428,
+  "token_usage": {
+    "prompt_tokens": 623,
+    "completion_tokens": 119,
+    "total_tokens": 742
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

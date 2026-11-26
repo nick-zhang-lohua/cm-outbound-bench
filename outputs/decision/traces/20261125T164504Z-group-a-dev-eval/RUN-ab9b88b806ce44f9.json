@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ab9b88b806ce44f9",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_27c233dacd582c32a269",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:02+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "e1b2cb7b8c32d8fc6a4e0512805b62c3d0301a20f308643b5dc230fe27a60301",
+  "input_bytes": 3248,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您先忙，等您回去方便的时候我们再联系您，您看可以吗？",
+    "next_action": "尊重客户暂缓决定，约定后续再联系，结束本次外呼",
+    "required_information": [
+      "客户方便再次联系的时间"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服推荐升级58元新飞享套餐，客户询问通话收费和流量情况后表示流量有剩余，客服说明套餐月费58元并建议试用，客户表示等回去再说、现在在龙岩。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_27c233dacd582c32a269",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1690,
+      "token_usage": {
+        "prompt_tokens": 765,
+        "completion_tokens": 134,
+        "total_tokens": 899
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 26,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1690,
+  "token_usage": {
+    "prompt_tokens": 765,
+    "completion_tokens": 134,
+    "total_tokens": 899
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

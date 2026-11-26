@@ -1,0 +1,52 @@
+{
+  "artifact_version": "1.0",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "generated_at": "2026-11-25T15:54:21+00:00",
+  "builder": {
+    "builder_version": "1.0",
+    "calls_scanned": 4524,
+    "calls_with_tasks": 4253,
+    "calls_skipped": 271,
+    "tasks_built": 10116,
+    "eligible_cutoffs_seen": 21601,
+    "rejection_counts": {
+      "prefix_too_short": 1472,
+      "no_customer_turn": 124,
+      "duplicate_visible_prefix": 266,
+      "no_eligible_cutoff": 107,
+      "other_speaker_in_prefix": 173,
+      "no_agent_turn": 8
+    },
+    "tasks_per_call_counts": {
+      "3": 2259,
+      "2": 1345,
+      "1": 649
+    }
+  },
+  "builder_config": {
+    "max_tasks_per_call": 3,
+    "min_visible_turns": 2,
+    "min_cutoff_gap": 4,
+    "selection": "even_spread"
+  },
+  "split_manifest_sha256": "c74e00ed9f9d8c3639a0b4b18fbfeb73140b0fc7b9d4300ddac3b5aa43795de6",
+  "tasks": 10116,
+  "tasks_by_split": {
+    "dev": 1314,
+    "test": 3381,
+    "train_f": 2726,
+    "train_r": 2695
+  },
+  "public_sha256": "f65d9468d6089e21f83b620cd03f010353ea5820c6f7f49808e437d664145f96",
+  "private_sha256": "48f54cd15a50e3b8a7c84d99638c65518a03b332f16942f6758290a7dc7a2356",
+  "public_filename": "tasks.jsonl",
+  "private_filename": "references.jsonl",
+  "scoring_status_default": "unscored",
+  "annotation_status_default": "pending",
+  "notes": [
+    "Every task is a CANDIDATE built from a real conversation prefix.",
+    "The historical agent's next response is stored as an observed reference only and is never a gold label.",
+    "No verified business rule or human annotation exists yet, so every task is unscored."
+  ]
+}

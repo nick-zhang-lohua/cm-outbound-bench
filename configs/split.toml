@@ -1,0 +1,21 @@
+# Call-level split configuration.
+#
+# The unit of splitting is a complete call. Duplicate and highly similar calls are
+# grouped first and assigned together, so no group crosses a split boundary.
+#
+# Overall allocation:
+#   Test  = 33.33% of valid calls (isolated final evaluation)
+#   Pool  = 66.67% of valid calls (development)
+# Within the development pool:
+#   Train-F = 40%   Train-R = 40%   Dev = 20%
+#
+# No business-domain label exists in the corpus, so the split is not
+# domain-stratified. The manifest records that limitation explicitly.
+
+seed = 20261125
+
+[targets]
+test_ratio = 0.3333333333333333
+train_f_share_of_pool = 0.4
+train_r_share_of_pool = 0.4
+dev_share_of_pool = 0.2

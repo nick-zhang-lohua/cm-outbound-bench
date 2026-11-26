@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-f71a0f2856134b47",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_1a76e1f2acfdd715d915",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:45+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "9d79879d85b15caa6819f4fbdb8d3660cc979b2f6b1336c3ad326cecbfcd4b21",
+  "input_bytes": 3454,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，刚才为您介绍的是神州行本地套餐到期后，下个月起免费更换为每月18元套餐，包含100兆流量、100分钟免费通话，来电显示包含在内，另赠送半年多100分钟通话；原套餐停办无法转回，活动期间不能取消，话费不累计积分，详情请留意短信。请问您是否确认办理？",
+    "next_action": "确认客户是否同意办理套餐更换，并提示客户留意短信通知",
+    "required_information": [
+      "客户是否确认办理该套餐更换"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已告知客户神州行本地套餐到期，下月起免费更换为每月18元套餐，含100兆流量、100分钟免费通话及来电显示，另赠送半年多100分钟；并说明原套餐停办无法转回、活动期间不能取消、话费不累计积分，客户仅回应“嗯”，未明确确认办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_1a76e1f2acfdd715d915",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1873,
+      "token_usage": {
+        "prompt_tokens": 829,
+        "completion_tokens": 203,
+        "total_tokens": 1032
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 30,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1873,
+  "token_usage": {
+    "prompt_tokens": 829,
+    "completion_tokens": 203,
+    "total_tokens": 1032
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

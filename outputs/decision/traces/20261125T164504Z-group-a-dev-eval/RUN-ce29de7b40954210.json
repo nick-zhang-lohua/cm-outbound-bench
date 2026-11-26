@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ce29de7b40954210",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_13ca386ef7b9d3522cb7",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:31+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "247ba461267ce80f4d33222b14d5a689464f9b53257e434db44e3aebaebb52ce",
+  "input_bytes": 3630,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "先生，您反映身份证被他人冒用办了多张卡的情况我理解了。建议您尽快到移动营业厅查询您身份证名下登记的所有号码，并办理销户，以免影响您的信用。",
+    "next_action": "引导客户前往营业厅查询名下号码并办理销户",
+    "required_information": [
+      "客户身份证名下具体有多少个移动号码",
+      "这些号码的欠费及状态详情"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服通知客户身份证名下号码欠费需销户，客户反映身份证曾被他人捡走冒办多张卡，并称上半年已销过一张卡。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_13ca386ef7b9d3522cb7",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1446,
+      "token_usage": {
+        "prompt_tokens": 847,
+        "completion_tokens": 154,
+        "total_tokens": 1001
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 27,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1446,
+  "token_usage": {
+    "prompt_tokens": 847,
+    "completion_tokens": 154,
+    "total_tokens": 1001
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

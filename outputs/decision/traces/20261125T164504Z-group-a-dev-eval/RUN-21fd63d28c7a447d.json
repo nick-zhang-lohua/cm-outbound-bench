@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-21fd63d28c7a447d",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_04da84fd8063cdcae7ce",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:24+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "5571409007a5ecd9fb6ab0dd1a9a787f7bdc4fd3b0dac8b3ca1f411f00f097b8",
+  "input_bytes": 2542,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，理解您流量够用。那就不打扰您了，感谢您的接听，祝您生活愉快，再见。",
+    "next_action": "礼貌结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服向客户介绍免费赠送两个月每月20元5G省内夜间流量活动，客户表示自己58元套餐已有2G加赠送1G共3G，流量够用，明确拒绝。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_04da84fd8063cdcae7ce",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1318,
+      "token_usage": {
+        "prompt_tokens": 592,
+        "completion_tokens": 102,
+        "total_tokens": 694
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 11,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1318,
+  "token_usage": {
+    "prompt_tokens": 592,
+    "completion_tokens": 102,
+    "total_tokens": 694
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

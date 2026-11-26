@@ -1,0 +1,78 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-bed7254113f74e48",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "task_id": "TASK_007e2987fb58b4756e53",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:54:52+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "8b06d49df02616eb2bfa4a095d48aea2b63fd585cf21579d7df292f72bf9ba59",
+  "input_bytes": 3025,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "理解您的顾虑，这个138元套餐确实比您现在用的贵一些。您平时主要用WiFi，流量和分钟数超得不多的话，原套餐也够用。那我就不帮您改套餐了，您看可以吗？",
+    "next_action": "尊重客户拒绝意向，停止推销138元套餐，确认客户是否维持原套餐并礼貌结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服推介138元任我用套餐，客户表示价格太高（“那不要我老命”“八十八都还要多”），并说明平时多用WiFi；客服提及客户原套餐分钟数和流量有超。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_007e2987fb58b4756e53",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1904,
+      "token_usage": {
+        "prompt_tokens": 718,
+        "completion_tokens": 163,
+        "total_tokens": 881
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0215,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 20,
+        "hidden_speech_turn_count": 13
+      }
+    }
+  },
+  "latency_ms": 1904,
+  "token_usage": {
+    "prompt_tokens": 718,
+    "completion_tokens": 163,
+    "total_tokens": 881
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

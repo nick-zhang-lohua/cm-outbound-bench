@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-f550dee543c34612",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_4b468fe68141c1dff58c",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:53+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "1d3b0cfaf96702b7e6f8a938d75f7dd2b926f5e0b7218a87ebb0174d51453494",
+  "input_bytes": 2377,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "先生，您说得对，接听确实是免费的。这个八八套餐主要是针对您目前五八套餐每月100分钟不够用、经常超出的情况，升级后每月有1200分钟免费通话和5G流量，能更好满足您的使用需求。您看需要为您升级吗？",
+    "next_action": "解释套餐升级与接听免费不冲突，并确认客户是否有升级意愿",
+    "required_information": [
+      "客户是否确认办理新飞享八八套餐"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍五八套餐100分钟每月超出不够用，推荐新飞享八八套餐含1200分钟和5G流量，并说明第四个月起未取消送2G省内流量宝最多六个月；客户质疑既然接听都免费为何还要办八八套餐。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_4b468fe68141c1dff58c",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1687,
+      "token_usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 197,
+        "total_tokens": 734
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0316,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 8,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1687,
+  "token_usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 197,
+    "total_tokens": 734
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

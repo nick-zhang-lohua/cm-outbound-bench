@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ca55e757902d4f16",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_9c6fc1850c25f0a3f266",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:55+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "ec2cdf3b7ca09834c05618f555a09122f4c4462ff18b556e7588ee4d64fe019b",
+  "input_bytes": 3032,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "非常抱歉给您带来困扰，我理解您已经很忙也很烦。您反映的是单位集团套餐，个人这边不能自行变更，我这边不再打扰您，也会记录您的意见，后续注意减少打扰。祝您生活愉快，再见。",
+    "next_action": "结束外呼并记录客户投诉与减少骚扰的诉求",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户明确表示自己是单位集团套餐用户，不需要更换套餐，并多次表达对频繁外呼的反感，提出要投诉、告客服骚扰。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_9c6fc1850c25f0a3f266",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2126,
+      "token_usage": {
+        "prompt_tokens": 714,
+        "completion_tokens": 125,
+        "total_tokens": 839
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 21,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2126,
+  "token_usage": {
+    "prompt_tokens": 714,
+    "completion_tokens": 125,
+    "total_tokens": 839
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

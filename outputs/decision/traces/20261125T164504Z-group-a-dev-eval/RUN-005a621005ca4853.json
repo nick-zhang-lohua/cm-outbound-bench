@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-005a621005ca4853",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_66241a3e8ef8c2ee8fc4",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:47:24+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "3e69a46cfa1f211207bcf518e7819bbf3b7b72895541d7567a659acd409e3890",
+  "input_bytes": 2910,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那就不打扰您了，祝您生活愉快，再见！",
+    "next_action": "礼貌结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服推介学生客户购机优惠活动，客户以刚买手机为由表示不需要，客服再次说明活动后客户回应“嗯好”，未表达办理意向。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_66241a3e8ef8c2ee8fc4",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1268,
+      "token_usage": {
+        "prompt_tokens": 696,
+        "completion_tokens": 99,
+        "total_tokens": 795
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.2727,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 21,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1268,
+  "token_usage": {
+    "prompt_tokens": 696,
+    "completion_tokens": 99,
+    "total_tokens": 795
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

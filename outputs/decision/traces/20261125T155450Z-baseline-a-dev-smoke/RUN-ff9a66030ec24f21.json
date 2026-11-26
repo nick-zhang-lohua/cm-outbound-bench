@@ -1,0 +1,80 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ff9a66030ec24f21",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "task_id": "TASK_00a29ac04513715c5a15",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:54:56+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "702db32cd4344398f9118107d9a3dfa11f78ea4ca6329fab86cd1f37262751bc",
+  "input_bytes": 1937,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，感谢您确认身份。今天联系您是想向您介绍一项移动彩铃相关活动，请问您现在方便接听吗？",
+    "next_action": "确认客户当前是否方便接听，并简要说明外呼目的",
+    "required_information": [
+      "客户当前是否方便接听"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已确认客户为机主本人，客户回答“对”；通话记录中尚未说明具体业务内容或客户是否方便接听。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_00a29ac04513715c5a15",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1736,
+      "token_usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 110,
+        "total_tokens": 548
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 3,
+        "hidden_speech_turn_count": 5
+      }
+    }
+  },
+  "latency_ms": 1736,
+  "token_usage": {
+    "prompt_tokens": 438,
+    "completion_tokens": 110,
+    "total_tokens": 548
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

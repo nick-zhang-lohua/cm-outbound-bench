@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-434dad829cc74e1e",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_7d0daeb850dc88a70caf",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:01+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "b35fa6e9d7806582fcdbdbdf05e7ab236906217900eec06db7ccf4dd59970e00",
+  "input_bytes": 4145,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那我稍后给您下发一条短信，您带着身份证到漳平县城移动自营厅办理销户就可以了。您抓紧时间去办理，避免影响个人信用。",
+    "next_action": "确认客户已知晓销户要求，下发销户提醒短信并结束通话",
+    "required_information": [
+      "客户是否确认将前往漳平县城移动自营厅办理销户"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户身份证登记的移动号码已欠费未用，需到移动自营厅办理销户，否则影响个人信用；客户询问万城附近营业厅能否办理，客服确认县城自营厅可办，客户表示知道。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_7d0daeb850dc88a70caf",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1715,
+      "token_usage": {
+        "prompt_tokens": 1002,
+        "completion_tokens": 151,
+        "total_tokens": 1153
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 40,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1715,
+  "token_usage": {
+    "prompt_tokens": 1002,
+    "completion_tokens": 151,
+    "total_tokens": 1153
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

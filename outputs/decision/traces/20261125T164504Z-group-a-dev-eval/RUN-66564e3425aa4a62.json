@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-66564e3425aa4a62",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_e88a705b9589833939ef",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:06+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "b2a0c14136b1a35f623f6bb8d197b0a7b0e36b37970f4ff382cd047b4ff9eadb",
+  "input_bytes": 2447,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您看等您回到新罗街或者方便的时候，我们再给您安排上门换卡，可以吗？",
+    "next_action": "确认客户方便的上门换卡时间或地址，若客户暂不方便则约定后续联系",
+    "required_information": [
+      "客户方便接受上门换卡的时间和具体地址"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服核实客户为机主后，告知手机卡版本陈旧，可免费上门更换4G卡并赠送6G省内流量分三个月每月2G，询问是否送到新罗街；客户表示没在新罗街、人在外地，客服追问具体地点，客户仅重复在外地。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_e88a705b9589833939ef",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1943,
+      "token_usage": {
+        "prompt_tokens": 572,
+        "completion_tokens": 162,
+        "total_tokens": 734
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 14,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1943,
+  "token_usage": {
+    "prompt_tokens": 572,
+    "completion_tokens": 162,
+    "total_tokens": 734
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

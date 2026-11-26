@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-94514675247d4663",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_7adaff693c9219cf66d1",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:47:56+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "e07a0430fb904e24a24f6128f4446e74a253667a2caea08fb67740f1249a8f0f",
+  "input_bytes": 3128,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您看是否需要我这边帮您登记办理这个八十八元套餐呢？",
+    "next_action": "确认客户是否同意办理八十八元套餐，并引导客户明确表态",
+    "required_information": [
+      "客户是否确认办理八十八元套餐"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍了客户现用老套餐流量和通话不足，并推荐八十八元套餐含5G流量和1200分钟通话；客户回应“哦好好，这样这样啊”，未明确表示办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_7adaff693c9219cf66d1",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1662,
+      "token_usage": {
+        "prompt_tokens": 716,
+        "completion_tokens": 137,
+        "total_tokens": 853
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0278,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 17,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1662,
+  "token_usage": {
+    "prompt_tokens": 716,
+    "completion_tokens": 137,
+    "total_tokens": 853
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

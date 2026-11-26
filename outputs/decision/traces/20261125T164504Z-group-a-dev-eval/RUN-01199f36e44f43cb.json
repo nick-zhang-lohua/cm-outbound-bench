@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-01199f36e44f43cb",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_984e0d10dd6f2bcfdf9a",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:48+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "42e07cf77b087f93827066db2d82bf6e0bb7df1084dafe5df1de00cd13f1f8b4",
+  "input_bytes": 2978,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，感谢您确认是信号方面的原因。那您这个号码目前是您本人在使用，对吗？",
+    "next_action": "确认号码使用人并继续完成问卷剩余信息采集",
+    "required_information": [
+      "号码当前实际使用人是否为机主本人",
+      "号码卡具体套餐类型（客户表示忘记，需进一步确认或记录为不详）"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户确认<PHONE>号码是自己在用，购买地点在龙岩但具体名称不清楚，套餐类型客户表示忘记，选择该号码的原因是信号可以。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_984e0d10dd6f2bcfdf9a",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1943,
+      "token_usage": {
+        "prompt_tokens": 703,
+        "completion_tokens": 129,
+        "total_tokens": 832
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 21,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1943,
+  "token_usage": {
+    "prompt_tokens": 703,
+    "completion_tokens": 129,
+    "total_tokens": 832
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

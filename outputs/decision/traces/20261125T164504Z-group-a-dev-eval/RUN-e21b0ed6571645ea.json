@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-e21b0ed6571645ea",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_07aeac97dc428b983e95",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:26+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "c8f31e0ea1c76360e8aa5dbd536fb5555c9c11435c30379ad323776932a9370e",
+  "input_bytes": 2870,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您看这个赠送活动给您登记上，可以吗？",
+    "next_action": "征询客户对赠送活动的办理意愿，确认是否同意登记",
+    "required_information": [
+      "客户是否同意办理该赠送活动"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已介绍新飞享58套餐赠送8个月流量的活动内容，包括前两个月每月20元话费抵扣5G省内夜间流量、第四个月起半年每月2G省内流量包由25000积分自动兑换、活动期间话费不累计积分、到期自动取消，客户仅回应“啊”，尚未明确表态。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_07aeac97dc428b983e95",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1748,
+      "token_usage": {
+        "prompt_tokens": 669,
+        "completion_tokens": 154,
+        "total_tokens": 823
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 11,
+        "hidden_speech_turn_count": 5,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1748,
+  "token_usage": {
+    "prompt_tokens": 669,
+    "completion_tokens": 154,
+    "total_tokens": 823
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

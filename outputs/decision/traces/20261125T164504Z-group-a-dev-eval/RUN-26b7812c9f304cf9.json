@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-26b7812c9f304cf9",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_346c391848869a172453",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:36+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "00b5559df6a66a3d26f2830f3a57bd5dcf124f63b3b9090bddbb7d21921bf9b3",
+  "input_bytes": 2411,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "理解您，您平时在店里和家里都有WiFi，流量用得少，觉得五十元这个流量包有点浪费，想取消是吧？我先帮您核实一下这个流量包的具体情况，再告诉您怎么处理，您看可以吗？",
+    "next_action": "核实客户当前五十元流量包的具体名称、状态及取消可行性，再向客户说明处理方式",
+    "required_information": [
+      "客户当前五十元流量包的具体名称和状态",
+      "该流量包是否支持取消及取消后的生效规则"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服确认客户为号码<PHONE>的机主，并提到客户当前使用五十元含1G流量的业务；客户表示自己多在店里和家里用WiFi，流量用得少，觉得三十元都太多，想取消。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_346c391848869a172453",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2070,
+      "token_usage": {
+        "prompt_tokens": 557,
+        "completion_tokens": 200,
+        "total_tokens": 757
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0268,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 10,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2070,
+  "token_usage": {
+    "prompt_tokens": 557,
+    "completion_tokens": 200,
+    "total_tokens": 757
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

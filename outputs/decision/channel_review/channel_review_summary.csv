@@ -1,0 +1,6 @@
+channel,role_in_production_mapping,semantics_status,records,record_pct_of_corpus,units_containing,units_with_speech,units_with_event,speech_records,event_records,non_empty_text_records,empty_text_records,truncated_records,records_overlapping_previous,record_type_values,event_values,position_p10,position_p50,position_p90,text_length_min,text_length_median,text_length_max,structural_homogeneity,samples_exported,human_review_required,approved_mapping
+1,historical_agent,confirmed_by_research_protocol,104790,76.3898,4526,0,0,66387,38403,63345,3042,9344,0,speech|event,SYSTEM|ENS|DTMF|UNCLASSIFIED|MUSIC|SONANT|LAUGH,0.0544,0.5139,0.9285,1,19,85,mixed_speech_and_event,0,False,none
+2,customer,confirmed_by_research_protocol,31867,23.2304,4444,0,0,27648,4219,27363,285,2363,0,speech|event,UNCLASSIFIED|SONANT|ENS|LAUGH|SYSTEM|DTMF,0.2982,0.6594,0.9428,1,4,63,mixed_speech_and_event,0,False,none
+3,other,unknown_pending_human_review,314,0.2289,84,70,40,225,89,224,1,8,0,speech|event,UNCLASSIFIED|ENS|LAUGH,0.064,0.5204,0.9241,1,8,55,mixed_speech_and_event,12,True,none
+4,other,unknown_pending_human_review,205,0.1494,42,33,21,168,37,168,0,14,0,speech|event,UNCLASSIFIED|ENS|SONANT,0.451,0.7529,0.956,1,5,41,mixed_speech_and_event,12,True,none
+5,other,unknown_pending_human_review,2,0.0015,1,0,1,0,2,0,0,0,0,event,UNCLASSIFIED,0.8419,0.8419,0.869,,,,event_only,2,True,none

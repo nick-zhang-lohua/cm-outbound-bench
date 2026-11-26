@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-87028b3fc3d44326",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_8c54b72b93e8343ae1b7",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:52:04+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "a2e354f46b18a3074df4ae651d46bbe4c93a87d70f24ddc11ca7ab60e1a0168f",
+  "input_bytes": 1904,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，理解您现在正在上班、顾客比较多，那我先不打扰您。请问您方便稍后再接听，还是我改天再联系您？",
+    "next_action": "确认客户当前是否方便继续通话，并根据客户意愿约定后续联系时间或结束本次外呼",
+    "required_information": [
+      "客户当前是否方便继续通话",
+      "客户方便接听的具体时间（如客户表示稍后或改天再联系）"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服确认机主身份后，客户确认是机主，并表示自己正在上班、顾客很多，当前不便通话。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_8c54b72b93e8343ae1b7",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1773,
+      "token_usage": {
+        "prompt_tokens": 419,
+        "completion_tokens": 135,
+        "total_tokens": 554
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 2,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1773,
+  "token_usage": {
+    "prompt_tokens": 419,
+    "completion_tokens": 135,
+    "total_tokens": 554
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

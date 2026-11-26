@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-d8929f7e4cc545d7",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_ba134ca00b6dd92d6a77",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:49:50+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "3143891b4524da5820805e3581d32d0784ad2b30db10dcf71886190c58a442fa",
+  "input_bytes": 3315,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您看这样可以吗？先试用一两个月，觉得划算就长期保留，不想用随时可以取消，也能转回原来的套餐。",
+    "next_action": "针对客户对消费金额的疑问，说明试用和取消的灵活性，并确认客户是否愿意办理。",
+    "required_information": [
+      "客户是否愿意先试用该套餐",
+      "客户是否确认办理"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍88元套餐含5G流量和1200分钟通话，客户质疑费用及用量，客服称客户月均消费近90元并建议先试用，客户仅回应“啊”。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_ba134ca00b6dd92d6a77",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1910,
+      "token_usage": {
+        "prompt_tokens": 779,
+        "completion_tokens": 157,
+        "total_tokens": 936
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 25,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1910,
+  "token_usage": {
+    "prompt_tokens": 779,
+    "completion_tokens": 157,
+    "total_tokens": 936
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

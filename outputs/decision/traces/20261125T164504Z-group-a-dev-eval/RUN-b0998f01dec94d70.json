@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-b0998f01dec94d70",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_ff43a2a3c4327e3bd49f",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:37+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "777132b3246e8e5f4d949e042bba94ec53db14636fc056ccfc8cf5c6eb449e66",
+  "input_bytes": 3083,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那我这边就为您登记办理这个免费送一年的省内流量包，每个月1个G，到期自动取消，办理成功后会下发10086短信到您手机上，您到时候留意看一下短信就可以了。",
+    "next_action": "为客户登记办理免费一年省内流量包（每月1G，到期自动取消），并告知办理成功后将下发10086短信通知",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍移动免费赠送一年省内流量包，每月1G，本月可用，到期自动取消，费用先送后扣等于完全免费；客户确认机主身份并询问含义，客服解释为年底回馈老用户，客户问是否真的，客服说明办理成功会有10086短信；客户确认每月赠送后表示“好，可以的”。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_ff43a2a3c4327e3bd49f",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1691,
+      "token_usage": {
+        "prompt_tokens": 724,
+        "completion_tokens": 175,
+        "total_tokens": 899
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 22,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1691,
+  "token_usage": {
+    "prompt_tokens": 724,
+    "completion_tokens": 175,
+    "total_tokens": 899
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,65 @@
+{
+  "pilot_analysis_version": "1.0",
+  "stage": "pilot",
+  "prompt_versions": {
+    "pass_a": "decision_annotation_pass_a_v1",
+    "pass_b": "decision_annotation_pass_b_v1",
+    "adjudication": "decision_annotation_adjudication_v1"
+  },
+  "prompt_freeze_decision": "frozen_as_v1_no_changes_needed",
+  "prompt_freeze_rationale": "Pass-level decision-family agreement is high (92/100 pairs share the same category), answerability agreement is 91/100, and the adjudicator resolved every disagreement from visible evidence. The one recurring issue was in the comparison rubric, not the prompts: char-3-gram similarity misclassified same-family wording differences as major disagreements and generic prohibited-step wording differences as conflicts. The rubric was refined (longest-common-prefix+Jaccard similarity, conflict-only prohibited-step check) and comparisons re-derived from the unchanged cached pass records; no annotation was regenerated and no prompt changed.",
+  "summary": {
+    "split": "train_r",
+    "stage": "pilot",
+    "tasks_expected": 100,
+    "tasks_finalized": 100,
+    "tasks_missing": [],
+    "scored": 98,
+    "unscored": 2,
+    "unscored_rate": 0.02,
+    "answerability_distribution": {
+      "clarification_required": 15,
+      "insufficient_context": 2,
+      "sufficient_for_action": 83
+    },
+    "primary_category_distribution": {
+      "acknowledge": 26,
+      "answer": 4,
+      "clarify": 17,
+      "close_conversation": 28,
+      "confirm": 18,
+      "explain": 2,
+      "handle_objection": 2,
+      "verify_information": 1
+    },
+    "confidence_distribution": {
+      "high": 93,
+      "low": 2,
+      "medium": 5
+    },
+    "pass_comparison_distribution": {
+      "acceptable_alternatives": 5,
+      "agreement": 2,
+      "both_unscored": 2,
+      "major_disagreement": 18,
+      "minor_disagreement": 73
+    },
+    "adjudication_outcome_distribution": {
+      "accept_both": 83,
+      "accept_pass_a": 7,
+      "accept_pass_b": 1
+    },
+    "adjudication_rate": 0.91,
+    "external_policy_dependency_tasks": 1,
+    "policy_verified_tasks": 0,
+    "api_records_with_usage": 291,
+    "total_tokens": 661877,
+    "total_annotation_calls": 200
+  },
+  "recurring_issues": [
+    "the two passes frequently choose the same decision family with different specific wording (73/100 minor disagreements); the adjudicator accepts both in most cases, so the frozen gold labels carry richer acceptable-alternative sets",
+    "9/100 tasks had answerability disagreements and 4/100 had scoreability splits; all were adjudicated",
+    "no policy_verified=true labels were produced and no fabricated policy entered any label",
+    "2/100 tasks are unscored (insufficient_context) and are excluded from business denominators"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-b1bd17a451444f11",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_93f0bff6477fa3fd4b53",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:38+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "09cc336539387646f309b30573f1d2a6b491662657265d8ff7ca6d064c349d9e",
+  "input_bytes": 3080,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您尽快到正规移动营业厅办理销户，稍后我会把欠费号码短信发到您手机上，您凭短信去办理。再见！",
+    "next_action": "结束通话，并按承诺向客户手机发送欠费号码短信",
+    "required_information": [
+      "客户接收短信的手机号码"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已告知客户欠费号码需到正规移动营业厅销户，客户询问号码后客服表示稍后短信发送，客户表示可以并说再见。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_93f0bff6477fa3fd4b53",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1758,
+      "token_usage": {
+        "prompt_tokens": 720,
+        "completion_tokens": 135,
+        "total_tokens": 855
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 22,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1758,
+  "token_usage": {
+    "prompt_tokens": 720,
+    "completion_tokens": 135,
+    "total_tokens": 855
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

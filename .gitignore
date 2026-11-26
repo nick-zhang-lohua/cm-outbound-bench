@@ -1,53 +1,148 @@
+# .gitignore -- cm-outbound-bench
+#
+# Two data classes live in this repository and they are treated differently:
+#
+#   * APPROVED PROCESSED RESEARCH DATA is tracked. The private research
+#     repository for supervisor review contains the processed decision-point
+#     Task datasets, the split artifacts, the frozen LLM-Gold references and the
+#     Group A evaluation records. Those paths are therefore NOT ignored -- see
+#     "Tracked by design" below, which spells out the boundary so that no broad
+#     pattern silently swallows them again.
+#
+#   * RAW AND UNPUBLISHABLE DATA is never tracked: the original TXT transcript
+#     export, the de-identified corpus that is stored outside this repository,
+#     raw audio, confidential databases, credentials and local tool caches.
+#
+# Rule of thumb for editors: add narrow, path-specific ignores. Never add
+# `data/`, `outputs/`, `*.jsonl`, `*.json` or `*.sqlite` style blanket rules.
+
+# ---------------------------------------------------------------------------
 # Python environments
+# ---------------------------------------------------------------------------
 .venv/
+.venv*/
+venv/
+env/
+
+# ---------------------------------------------------------------------------
+# Python build, cache and coverage artifacts
+# ---------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
-
-# Python tooling
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
-
-# Build artifacts
+# pytest creates its tmp_path base in the working directory on some Windows
+# setups; those directories contain generated scratch data only.
+pytest-of-*/
 build/
 dist/
 *.egg-info/
 
+# ---------------------------------------------------------------------------
 # Local secrets -- never commit
+# ---------------------------------------------------------------------------
 .env
 .env.*
 !.env.example
 providers.toml
-*.key
 *.pem
+*.key
+*.p12
+*.pfx
+*.enc
 
-# Sensitive corpus data -- never commit
+# ---------------------------------------------------------------------------
+# Raw and unapproved corpus data -- never commit
+#
+# The raw TXT export and the `cm_outbound_v2` de-identified corpus are stored
+# OUTSIDE this repository under <project-parent>/data/. These rules are the
+# in-repository belt-and-braces guard: if such a directory is ever copied into
+# the working tree it must not be committed by accident. Benchmark code must
+# never open the raw export (docs/data_privacy.md section 2).
+# ---------------------------------------------------------------------------
+data/TXT/
 data/raw/
+data/raw_txt/
 data/interim/
 data/private/
-data/entity_maps/
 data/secure/
-*.enc
+data/entity_maps/
+data/deidentified/
+data/rejected/
+data/corpus_db/
+data/audio/
+
+# Raw audio recordings.
+*.wav
+*.mp3
+*.m4a
+*.amr
+*.silk
+
+# Confidential corpus databases. `data/decision/` ships only JSON/JSONL, so no
+# legitimate publication artifact is a SQLite file; the corpus database and any
+# journal/write-ahead file stay local.
 *.sqlite
+*.sqlite3
 *.sqlite-journal
 *.sqlite-wal
+*.sqlite-shm
 cm_outbound_corpus.sqlite
 
-# Local runtime scratch. The release evidence under outputs/ IS tracked,
-# so only per-machine working directories are ignored here.
+# ---------------------------------------------------------------------------
+# Local runtime scratch (not research evidence)
+#
+# The release evidence under outputs/ IS tracked, including the Milestone 1.2
+# Group A artifacts under outputs/decision/. Only per-machine working
+# directories and local debugging output are ignored here.
+# ---------------------------------------------------------------------------
 logs/
 /*.log
 outputs/tmp/
 outputs/local/
 outputs/review/
+outputs/corpus/
+outputs/debug/
 
+# ---------------------------------------------------------------------------
 # OS and editor metadata
+# ---------------------------------------------------------------------------
 .DS_Store
 Thumbs.db
 desktop.ini
 .idea/
 .vscode/
 *.swp
+*.swo
 *.tmp
+
+# ---------------------------------------------------------------------------
+# Tracked by design -- do not add ignore rules for these paths
+#
+#   src/                      benchmark, corpus, transcripts, decisions, gold
+#   tests/                    unit, integration and isolation tests
+#   configs/                  dataset, split, baseline agent, judge config
+#   prompts/                  frozen annotation and scoring prompts
+#   data/tasks/               legacy synthetic Tasks  (Agent-visible, synthetic)
+#   data/policy/              legacy synthetic policy documents
+#   data/synthetic/           legacy synthetic runtime database and states
+#   data/decision/tasks/      Agent-visible decision-point Tasks + private refs
+#   data/decision/calls/      reconstructed de-identified conversations
+#   data/decision/splits/     call-level split manifest (seed, duplicate groups)
+#   data/decision/samples/    fixed annotation/evaluation sample plans
+#   data/decision/annotations/annotation packets + manifests
+#   data/decision/business_sources/  business reference inventory
+#   outputs/decision/annotations/    frozen Gold Labels, passes, adjudications
+#   outputs/decision/evaluation/     blind Group A scoring records
+#   outputs/decision/traces/         Group A execution traces
+#   outputs/decision/reports/        aggregate Group A reports
+#   outputs/live_llm_*/, outputs/runs/  legacy synthetic validation evidence
+#
+# Every one of those paths is an approved Class 1 / Class 2 research artifact;
+# see docs/reports/github_dataset_upload_manifest.md for the per-file decision.
+# ---------------------------------------------------------------------------

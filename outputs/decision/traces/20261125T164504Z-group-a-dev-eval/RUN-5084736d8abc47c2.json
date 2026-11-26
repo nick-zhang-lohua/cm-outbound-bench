@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-5084736d8abc47c2",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_56fd18bc78db036537f6",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:47:09+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "ce112ab429162ad28001a841b78571640ca07f79d5963a78681867304eb534e5",
+  "input_bytes": 3379,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "叶先生，我理解您的心情。这个号码您已经不用了，现在主要是通知您，这个号码是用您的身份证实名登记的，欠费一直挂着会影响您以后办理跟身份证挂钩的业务，费用也会越积越多。建议您尽快带上身份证到正规移动营业厅办理销户，把欠费结清、把户头消掉。具体欠费金额和办理要求，您可以凭短信到营业厅查询确认。",
+    "next_action": "安抚客户情绪，说明欠费号码与身份证实名登记的关系及不销户的潜在影响，引导客户尽快到正规营业厅办理销户，并提示以营业厅查询的欠费信息为准。",
+    "required_information": [
+      "客户是否愿意前往营业厅办理销户",
+      "欠费号码的具体欠费金额（需客户到营业厅或通过官方渠道查询确认）"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证名下另有一个移动号码已欠费停用，需到营业厅办理销户以消除身份证户头，否则可能影响身份证挂钩业务且欠费会累积；客户表示号码不能用、不想办理。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_56fd18bc78db036537f6",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2600,
+      "token_usage": {
+        "prompt_tokens": 773,
+        "completion_tokens": 267,
+        "total_tokens": 1040
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0133,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 23,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2600,
+  "token_usage": {
+    "prompt_tokens": 773,
+    "completion_tokens": 267,
+    "total_tokens": 1040
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

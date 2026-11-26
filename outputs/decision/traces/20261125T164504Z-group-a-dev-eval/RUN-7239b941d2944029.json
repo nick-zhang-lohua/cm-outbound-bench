@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-7239b941d2944029",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_8b3d6ac97efc2b520f3c",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:23+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "438192ee37d778d0c1130d9908db7fc4d8334bf05779ed18f7d82827417a4c7a",
+  "input_bytes": 2374,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，理解您现在忙，那我就不多打扰了。您先考虑一下，后续有需要可以随时联系我们，祝您生活愉快，再见。",
+    "next_action": "礼貌结束通话，记录客户表示需要考虑且当前无空的情况，后续可择机跟进",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服向客户介绍全球通飞享18元套餐及半年内每月多送100分钟通话的优惠，询问是否可以办理；客户回复谢谢、先考虑一下、现在没有空。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_8b3d6ac97efc2b520f3c",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1530,
+      "token_usage": {
+        "prompt_tokens": 548,
+        "completion_tokens": 128,
+        "total_tokens": 676
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0185,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 11,
+        "hidden_speech_turn_count": 6,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1530,
+  "token_usage": {
+    "prompt_tokens": 548,
+    "completion_tokens": 128,
+    "total_tokens": 676
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

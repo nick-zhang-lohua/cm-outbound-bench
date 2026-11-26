@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-1344a29463ef4fec",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_d5657eddcc4a7495fcae",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:37+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "c4ac8bbf823952d9bfc2bea3d2adf82700d39ec7552ed1ce0d2e3feda4f1977d",
+  "input_bytes": 4077,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您回三明后尽快去移动自营厅办理销户，记得保留好我们发的短信，到时要给营业员看。祝您生活愉快，再见！",
+    "next_action": "结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客户确认身份证登记号码欠费需销户，本人在江西，计划过完春节回三明本地自行办理，客服已告知需到移动自营厅并保留短信，客户表示自己会去办。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_d5657eddcc4a7495fcae",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1584,
+      "token_usage": {
+        "prompt_tokens": 979,
+        "completion_tokens": 134,
+        "total_tokens": 1113
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 41,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1584,
+  "token_usage": {
+    "prompt_tokens": 979,
+    "completion_tokens": 134,
+    "total_tokens": 1113
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

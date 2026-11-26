@@ -1,0 +1,19 @@
+{
+  "artifact_version": "1.0",
+  "generated_at": "2026-11-25T15:54:03+00:00",
+  "calls": 4527,
+  "calls_valid": 4524,
+  "calls_suspect": 0,
+  "calls_invalid": 3,
+  "sha256": "4e77cf80b85b8e497da36438e72a912d1872b48a92672ec87ddd406d794f5764",
+  "path": "calls.jsonl",
+  "dataset_version": "cm_outbound_v2",
+  "reconstruction": {
+    "channel_mapping": {
+      "1": "historical_agent",
+      "2": "customer"
+    },
+    "unit_equals_call": true,
+    "unit_equals_call_evidence": "Format audit 3.6: monotonic timestamps, no overlap, no clock reset, max 191.8 s, distinct content hashes; no call_id exists in the source."
+  }
+}

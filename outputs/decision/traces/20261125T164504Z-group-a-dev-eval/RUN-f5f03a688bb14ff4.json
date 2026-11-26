@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-f5f03a688bb14ff4",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_d6eded31084370d3d328",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:39+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "26b201293531b558dd9b2a7abfd7edc0809fca2fe0b774b84d5f90e8b3020826",
+  "input_bytes": 3699,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您方便的时候尽快到营业厅把欠费补清并办理销户，避免违约金继续累积影响信用。如果本人不方便，也可以让家人朋友带号码去代办。",
+    "next_action": "确认客户已知晓欠费销户事项并结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户名下另一移动号码欠费207.72元且有违约金，需到营业厅补清欠费并销户，否则影响信用；客户表示在厂里，之后再看看，并确认销户。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_d6eded31084370d3d328",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1852,
+      "token_usage": {
+        "prompt_tokens": 911,
+        "completion_tokens": 145,
+        "total_tokens": 1056
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.029,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 37,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1852,
+  "token_usage": {
+    "prompt_tokens": 911,
+    "completion_tokens": 145,
+    "total_tokens": 1056
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

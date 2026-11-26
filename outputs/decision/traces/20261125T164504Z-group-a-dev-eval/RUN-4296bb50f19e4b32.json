@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-4296bb50f19e4b32",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_10932d60b0b8c0c5e16f",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:26+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "817830b9fe1e39cbf2307eaa4d5637112b75d7db07f8010e20c18efc56c4dbbb",
+  "input_bytes": 4351,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "纪先生，我理解您现在可能觉得麻烦，但这个号码是用您身份证实名登记的，欠费不销户会一直累积违约金，而且会影响您以后办理银行、通讯等跟信用挂钩的业务。建议您尽快抽空去三明移动营业厅把欠费补清并办理销户，避免后续影响扩大。",
+    "next_action": "再次提醒客户尽快到营业厅补清欠费并办理销户，说明不处理的信用和费用影响，结束本次外呼",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证名下另有一个尾数3752的移动号码已欠费停用，需到营业厅补清欠费并销户，否则违约金累积且影响征信相关业务；客户询问是否有欠费后表示不想处理，客服再次强调信用影响，客户称知道。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_10932d60b0b8c0c5e16f",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2087,
+      "token_usage": {
+        "prompt_tokens": 1042,
+        "completion_tokens": 190,
+        "total_tokens": 1232
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 38,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2087,
+  "token_usage": {
+    "prompt_tokens": 1042,
+    "completion_tokens": 190,
+    "total_tokens": 1232
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

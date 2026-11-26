@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-a9d083a0a9664531",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_e34e0eb27f056ebf8502",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:58+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "4f0824ac2e5fc16bf0b29bd419d67bb1dc0ee8e4001fadca08c46328fb5a248b",
+  "input_bytes": 4306,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "不是缴四十块，是四十块五毛九，您到营业厅把欠费补清后办理销户，号码报给营业厅工作人员就行。",
+    "next_action": "纠正客户对欠费金额的理解，并再次引导客户前往营业厅补清欠费后办理销户",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "通话中客服已告知客户欠费为四十块五毛九，并说明需到营业厅补清欠费后办理销户，不能在外自行缴费；客户最后说“那就是缴四十块钱”，对金额理解有误。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_e34e0eb27f056ebf8502",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1696,
+      "token_usage": {
+        "prompt_tokens": 1142,
+        "completion_tokens": 154,
+        "total_tokens": 1296
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 65,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1696,
+  "token_usage": {
+    "prompt_tokens": 1142,
+    "completion_tokens": 154,
+    "total_tokens": 1296
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,78 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-bab1d25ffc9b4733",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "task_id": "TASK_00da8bad11ded1a26319",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:54:59+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "fc24b20e1c71fe07f2de8e5ae4bfdbcb520d8b48631a700a61764241d4424889",
+  "input_bytes": 3216,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，打扰您了，祝您生活愉快，再见。",
+    "next_action": "礼貌结束通话并记录客户拒绝办理套餐升级",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服向客户推荐全球通飞享18元套餐升级活动，客户先后表示考虑一下、不要了现在不要，并在客服继续劝说后明确说再见、不要了，客户已多次拒绝。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_00da8bad11ded1a26319",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1633,
+      "token_usage": {
+        "prompt_tokens": 741,
+        "completion_tokens": 112,
+        "total_tokens": 853
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 21,
+        "hidden_speech_turn_count": 1
+      }
+    }
+  },
+  "latency_ms": 1633,
+  "token_usage": {
+    "prompt_tokens": 741,
+    "completion_tokens": 112,
+    "total_tokens": 853
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-6fcfee439d7f455e",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_dd257212b3bfb11d583a",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:55:29+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "1d01cfee170ef1732a00a8ffd40695045ebd3380b760e5b85a19912065a6f555",
+  "input_bytes": 2044,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，感谢您确认。为了保障您的权益，本次通话可能会被录音。请问您现在方便吗？我想向您介绍一下我们近期针对老客户推出的优惠活动。",
+    "next_action": "确认客户身份后，简要说明来电目的并征询客户是否方便继续通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服多次确认号码是否本人使用，客户回答“是啊”，身份确认完成，尚未说明外呼目的。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_dd257212b3bfb11d583a",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2348,
+      "token_usage": {
+        "prompt_tokens": 475,
+        "completion_tokens": 122,
+        "total_tokens": 597
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 9,
+        "hidden_speech_turn_count": 10,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2348,
+  "token_usage": {
+    "prompt_tokens": 475,
+    "completion_tokens": 122,
+    "total_tokens": 597
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

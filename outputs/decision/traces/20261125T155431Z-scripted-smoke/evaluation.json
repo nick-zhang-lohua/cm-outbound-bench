@@ -1,0 +1,48 @@
+{
+  "run_set": "20261125T155431Z-scripted-smoke",
+  "traces": 6,
+  "aggregate": {
+    "tasks_total": 6,
+    "execution_status_counts": {
+      "success": 6
+    },
+    "technical": {
+      "request_success_rate": 1.0,
+      "valid_output_rate": 1.0,
+      "timeout_rate": 0.0,
+      "latency_ms_p50": 0.0,
+      "latency_ms_p90": 0.0,
+      "tasks_with_token_usage": 0.0,
+      "total_tokens": 0.0
+    },
+    "scoring_status_counts": {
+      "unscored": 6
+    },
+    "scored_tasks": 0,
+    "unscored_tasks": 6,
+    "candidate_tasks": 0,
+    "invalid_tasks": 0,
+    "scored_fraction": 0.0,
+    "business_metrics": {
+      "decision_success": null,
+      "branch_decision_accuracy": null,
+      "required_step_recall": null,
+      "required_step_precision": null
+    },
+    "business_metric_denominators": {
+      "decision_success": 0,
+      "branch_decision_accuracy": 0,
+      "required_step_recall": 0,
+      "required_step_precision": 0
+    },
+    "unavailable_metrics": {
+      "policy_compliance": "unavailable_no_verified_policy_reference",
+      "tool_intent_accuracy": "unavailable_no_business_tool_definitions",
+      "response_quality": "unavailable_no_reviewed_quality_rubric"
+    },
+    "notes": [
+      "decision_success_rate is not available: zero tasks have a verified reference. Unscored tasks are excluded from every business denominator, and the historical agent response is not treated as ground truth.",
+      "No business backend is executed in this milestone, so business task completion and real tool execution success are out of scope."
+    ]
+  }
+}

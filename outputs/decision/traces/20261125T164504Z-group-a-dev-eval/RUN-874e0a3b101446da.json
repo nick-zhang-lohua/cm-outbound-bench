@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-874e0a3b101446da",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_6d263cb379a10d9f85d8",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:49+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "5aaf5e451ba7a6d429b67552808de3f9aa5676d361664f9bd3a21d4fb30308cf",
+  "input_bytes": 1924,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的先生，您正在开车，那我先不打扰您，请注意安全，方便时再联系。祝您生活愉快，再见。",
+    "next_action": "礼貌结束通话，记录客户当前不便接听，后续择时再联系",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服自报为龙岩移动客服代表并核实机主身份，客户表示正在开车、没空，明确当前不便继续沟通。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_6d263cb379a10d9f85d8",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1455,
+      "token_usage": {
+        "prompt_tokens": 433,
+        "completion_tokens": 105,
+        "total_tokens": 538
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 4,
+        "hidden_speech_turn_count": 6,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1455,
+  "token_usage": {
+    "prompt_tokens": 433,
+    "completion_tokens": 105,
+    "total_tokens": 538
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

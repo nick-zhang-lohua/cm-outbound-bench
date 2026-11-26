@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-11-26T15:53:31+00:00",
+  "pilot": {
+    "tasks": 100,
+    "unique_tasks": 100,
+    "conversations": 100,
+    "unique_conversations": 100,
+    "plan_id": "SAMPLE-43a7c204de7dbc6d",
+    "selection_sha256": "43a7c204de7dbc6d83b59646eb82d9b8aca23f7b452037725c11acaec253989f"
+  },
+  "feedback": {
+    "tasks": 300,
+    "unique_tasks": 300,
+    "conversations": 300,
+    "unique_conversations": 300,
+    "plan_id": "SAMPLE-a5fe689664aea85d",
+    "selection_sha256": "a5fe689664aea85d19740f5e98f312d286f2bd3fa33eb5659b08db5141b87d76",
+    "excluded_conversations": 100
+  },
+  "dev": {
+    "tasks": 400,
+    "unique_tasks": 400,
+    "conversations": 400,
+    "unique_conversations": 400,
+    "plan_id": "SAMPLE-76037752d53b162d",
+    "selection_sha256": "76037752d53b162d02d262fcbd8cac19edeff5c344ad49fbced42f4905f0171d"
+  },
+  "pilot_feedback_overlap": {
+    "task_ids": 0,
+    "conversation_ids": 0
+  },
+  "pilot_dev_overlap": {
+    "task_ids": 0,
+    "conversation_ids": 0
+  },
+  "feedback_dev_overlap": {
+    "task_ids": 0,
+    "conversation_ids": 0
+  },
+  "duplicate_task_ids_across_manifests": [],
+  "duplicate_conversation_units_across_manifests": [],
+  "dev_sample_matches_group_a_traces": true,
+  "group_a_traces": 400,
+  "trace_issues": [],
+  "split_errors": [],
+  "conclusion": "The three samples are mutually disjoint in task ids and conversation units, so the 100 pilot tasks and the 300 feedback tasks are counted separately and every Dev annotation maps to exactly one Group A trace."
+}

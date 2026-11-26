@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-1ae87a1afe3744a6",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_7006c96c9c97243f22e0",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:57+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "d3624ddab5c0f9f73f8d13c0641564da5f24a070f7af06aa0e283e9a33ff493d",
+  "input_bytes": 2135,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那就不打扰您了，祝您生活愉快，再见。",
+    "next_action": "结束通话",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服向客户推荐下个月可享受的58元套餐，客户两次明确表示不需要，客服已确认客户拒绝。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_7006c96c9c97243f22e0",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1116,
+      "token_usage": {
+        "prompt_tokens": 495,
+        "completion_tokens": 81,
+        "total_tokens": 576
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.05,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 10,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1116,
+  "token_usage": {
+    "prompt_tokens": 495,
+    "completion_tokens": 81,
+    "total_tokens": 576
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-1b04059648a24dc6",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_1edbb354985c8d97a518",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:55+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "cdc273dd01024745000e664e5225baccfd4b6e86fc379333e830dd042930d527",
+  "input_bytes": 1844,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，这边是龙岩移动公司的，请问您是郑玉良本人吗？",
+    "next_action": "确认客户身份",
+    "required_information": [
+      "确认对方是否为郑玉良本人"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已自报为龙岩移动公司并询问对方是否为郑玉良，客户仅回应“啊”，身份尚未确认。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_1edbb354985c8d97a518",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1371,
+      "token_usage": {
+        "prompt_tokens": 409,
+        "completion_tokens": 87,
+        "total_tokens": 496
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 3,
+        "hidden_speech_turn_count": 6,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1371,
+  "token_usage": {
+    "prompt_tokens": 409,
+    "completion_tokens": 87,
+    "total_tokens": 496
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

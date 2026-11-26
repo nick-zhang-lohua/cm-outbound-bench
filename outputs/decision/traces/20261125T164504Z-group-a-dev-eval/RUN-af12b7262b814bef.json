@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-af12b7262b814bef",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_dc6368165f6218a67747",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:53:16+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "863432dcb10b5b64d49d4f1b78b250d81bfc64a0738427b857bde8d930acc817",
+  "input_bytes": 1907,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，我是移动客服代表。想跟您确认一下，您方便现在接听电话吗？大概占用您一两分钟时间。",
+    "next_action": "确认客户当前是否方便接听，并说明来电身份与目的，征得客户同意后继续沟通",
+    "required_information": [
+      "客户当前是否方便接听电话"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已自报为移动客服代表并询问对方是否为指定号码机主，客户回答“嗯”并反问“怎么？”，尚未确认是否方便继续接听。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_dc6368165f6218a67747",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1602,
+      "token_usage": {
+        "prompt_tokens": 430,
+        "completion_tokens": 126,
+        "total_tokens": 556
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 5,
+        "hidden_speech_turn_count": 5,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1602,
+  "token_usage": {
+    "prompt_tokens": 430,
+    "completion_tokens": 126,
+    "total_tokens": 556
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

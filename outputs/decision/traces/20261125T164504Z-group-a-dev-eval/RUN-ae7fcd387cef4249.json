@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ae7fcd387cef4249",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_483475331a2426602af3",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:52:59+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "58bd086f59bd36fb85cf1797442823ec078237bd01eb2113bac62a6a4a53df16",
+  "input_bytes": 2197,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您是说现在这个号码不想用了，对吗？那之前用您身份证登记的那个欠费号码，需要到营业厅办理销户，把身份证资料注销掉，否则可能会影响您后续办理业务。",
+    "next_action": "向客户确认当前号码使用意愿，并说明欠费号码需到营业厅办理销户的必要性",
+    "required_information": [
+      "客户当前使用的移动号码是否仍需保留",
+      "客户是否愿意前往营业厅办理欠费号码销户"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服核实客户为张疏影，告知其身份证名下另一移动号码已欠费停用且为实名登记，需到营业厅销户注销身份证资料；客户表示现在这个电话号码不用了。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_483475331a2426602af3",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1691,
+      "token_usage": {
+        "prompt_tokens": 491,
+        "completion_tokens": 183,
+        "total_tokens": 674
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0244,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 7,
+        "hidden_speech_turn_count": 12,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1691,
+  "token_usage": {
+    "prompt_tokens": 491,
+    "completion_tokens": 183,
+    "total_tokens": 674
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

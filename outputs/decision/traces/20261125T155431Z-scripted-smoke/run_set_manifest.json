@@ -1,0 +1,133 @@
+{
+  "manifest_schema_version": "1.0",
+  "run_set_id": "20261125T155431Z-scripted-smoke",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "created_at": "2026-11-25T15:54:31+00:00",
+  "completed_at": "2026-11-25T15:54:31+00:00",
+  "agent_label": "scripted",
+  "model_name": "none",
+  "base_url_host": "",
+  "model_parameters": {},
+  "config_hash": "",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "agent_version": "0.1.0",
+  "split_manifest_sha256": "c74e00ed9f9d8c3639a0b4b18fbfeb73140b0fc7b9d4300ddac3b5aa43795de6",
+  "tasks_artifact_sha256": "e0d40ef6825904a56fc8be7a2d733cf227fb95eb4c3587146da7ebb793ee9fdf",
+  "tasks_requested": 6,
+  "tasks_executed": 6,
+  "tasks_failed": 0,
+  "aggregate": {
+    "tasks_total": 6,
+    "execution_status_counts": {
+      "success": 6
+    },
+    "technical": {
+      "request_success_rate": 1.0,
+      "valid_output_rate": 1.0,
+      "timeout_rate": 0.0,
+      "latency_ms_p50": 0.0,
+      "latency_ms_p90": 0.0,
+      "tasks_with_token_usage": 0.0,
+      "total_tokens": 0.0
+    },
+    "scoring_status_counts": {
+      "unscored": 6
+    },
+    "scored_tasks": 0,
+    "unscored_tasks": 6,
+    "candidate_tasks": 0,
+    "invalid_tasks": 0,
+    "scored_fraction": 0.0,
+    "business_metrics": {
+      "decision_success": null,
+      "branch_decision_accuracy": null,
+      "required_step_recall": null,
+      "required_step_precision": null
+    },
+    "business_metric_denominators": {
+      "decision_success": 0,
+      "branch_decision_accuracy": 0,
+      "required_step_recall": 0,
+      "required_step_precision": 0
+    },
+    "unavailable_metrics": {
+      "policy_compliance": "unavailable_no_verified_policy_reference",
+      "tool_intent_accuracy": "unavailable_no_business_tool_definitions",
+      "response_quality": "unavailable_no_reviewed_quality_rubric"
+    },
+    "notes": [
+      "decision_success_rate is not available: zero tasks have a verified reference. Unscored tasks are excluded from every business denominator, and the historical agent response is not treated as ground truth.",
+      "No business backend is executed in this milestone, so business task completion and real tool execution success are out of scope."
+    ]
+  },
+  "entries": [
+    {
+      "run_id": "RUN-510002a46a8f4085",
+      "task_id": "TASK_007e2987fb58b4756e53",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 0,
+      "total_tokens": null,
+      "trace_file": "RUN-510002a46a8f4085.json"
+    },
+    {
+      "run_id": "RUN-a421f0871354408b",
+      "task_id": "TASK_00823e3f297087b7e882",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 0,
+      "total_tokens": null,
+      "trace_file": "RUN-a421f0871354408b.json"
+    },
+    {
+      "run_id": "RUN-8f63d0ee5cd54fde",
+      "task_id": "TASK_00a29ac04513715c5a15",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 0,
+      "total_tokens": null,
+      "trace_file": "RUN-8f63d0ee5cd54fde.json"
+    },
+    {
+      "run_id": "RUN-99891be08f414879",
+      "task_id": "TASK_00d4656a51de4ad102f0",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 0,
+      "total_tokens": null,
+      "trace_file": "RUN-99891be08f414879.json"
+    },
+    {
+      "run_id": "RUN-e2b33b243d2649ee",
+      "task_id": "TASK_00da8bad11ded1a26319",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 0,
+      "total_tokens": null,
+      "trace_file": "RUN-e2b33b243d2649ee.json"
+    },
+    {
+      "run_id": "RUN-8d9f4cd4b7564214",
+      "task_id": "TASK_01118ef3ded499665a02",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 0,
+      "total_tokens": null,
+      "trace_file": "RUN-8d9f4cd4b7564214.json"
+    }
+  ],
+  "notes": [
+    "decision_success_rate is not available: zero tasks have a verified reference. Unscored tasks are excluded from every business denominator, and the historical agent response is not treated as ground truth.",
+    "No business backend is executed in this milestone, so business task completion and real tool execution success are out of scope."
+  ]
+}

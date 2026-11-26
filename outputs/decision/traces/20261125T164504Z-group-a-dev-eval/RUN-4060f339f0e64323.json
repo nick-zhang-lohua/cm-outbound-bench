@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-4060f339f0e64323",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_c1c1f6e199726b035019",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:58+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "5a844ce0344fa0a50de65986982593c38c0f015e2303ca894ceba737a4e3e4bf",
+  "input_bytes": 1858,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，我是中国移动客服代表，请问是机主本人吗？",
+    "next_action": "核实客户身份并确认是否机主本人，再说明来电目的",
+    "required_information": [
+      "是否为机主本人"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "通话记录显示客服已问候并提及彩铃得流量活动，客户仅回应“喂”，尚未确认身份及是否本人接听。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_c1c1f6e199726b035019",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1173,
+      "token_usage": {
+        "prompt_tokens": 418,
+        "completion_tokens": 95,
+        "total_tokens": 513
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.1081,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 3,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1173,
+  "token_usage": {
+    "prompt_tokens": 418,
+    "completion_tokens": 95,
+    "total_tokens": 513
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

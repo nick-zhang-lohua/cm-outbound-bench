@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-36b08e5604c341e8",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_1347a417807a66c243b9",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:45:28+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "77d5b546bd769bde3e331d367cff35e40a694272182125cd3ba5f8e310cb1d5b",
+  "input_bytes": 3177,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，已为您登记下个月生效的三十元五百兆流量包，活动期间不能取消，到期和办理成功都会有短信通知，请您留意查看。感谢您的接听，祝您生活愉快，再见！",
+    "next_action": "确认客户同意后结束通话，并记录本次外呼办理结果",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已向客户说明下月起连续三个月赠送10元话费开通30元500兆流量包、活动期间客户每月仍花20元、到期可取消、活动期间不能取消、原20元流量包下月自动失效等规则，客户回复“嗯好的好的”表示同意。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_1347a417807a66c243b9",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1694,
+      "token_usage": {
+        "prompt_tokens": 737,
+        "completion_tokens": 168,
+        "total_tokens": 905
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.1176,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 20,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1694,
+  "token_usage": {
+    "prompt_tokens": 737,
+    "completion_tokens": 168,
+    "total_tokens": 905
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-48d04ae84a154cdf",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_f0cd51ce988e26cdb0e6",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:20+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "a04f9820ded9b48ec08a6221059c5a3d5183ead084d6bb3a5369b69f1638c381",
+  "input_bytes": 2903,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，我理解您暂时不想改，也明白您还有电信号码、用量不多。那我就不多打扰您了，后续如果有需要可以再联系我们，祝您生活愉快，再见。",
+    "next_action": "礼貌结束通话，不再继续推销套餐变更",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服推荐下月更换88元套餐，称含1200分钟通话、5G流量和免费来电显示；客户表示暂时不想改，并说明还有电信手机号、用量不多。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_f0cd51ce988e26cdb0e6",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1716,
+      "token_usage": {
+        "prompt_tokens": 688,
+        "completion_tokens": 136,
+        "total_tokens": 824
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0317,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 23,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1716,
+  "token_usage": {
+    "prompt_tokens": 688,
+    "completion_tokens": 136,
+    "total_tokens": 824
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

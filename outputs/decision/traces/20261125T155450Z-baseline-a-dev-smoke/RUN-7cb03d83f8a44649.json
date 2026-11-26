@@ -1,0 +1,78 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-7cb03d83f8a44649",
+  "run_set_id": "20261125T155450Z-baseline-a-dev-smoke",
+  "task_id": "TASK_01118ef3ded499665a02",
+  "condition": "A",
+  "benchmark_version": "0.1.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T15:55:01+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.1.0",
+  "input_hash": "045169449c149b841be24df9b759325d16c4522f4c9f493243f1a020e7caef70",
+  "input_bytes": 2897,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "先生，我理解您身份证丢失后被他人冒用的情况。但当前这个登记在您身份证下的号码已经欠费，需要办理销户。建议您携带本人有效身份证件到移动营业厅核实并处理该号码的销户事宜，避免影响您后续办理与信用相关的业务。",
+    "next_action": "引导客户携带本人有效身份证件前往移动营业厅核实并办理该欠费号码的销户",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证名下登记有欠费未使用的移动号码，需到营业厅销户；客户表示身份证曾丢失、号码非本人办理，客服说明实名制下未销户可能影响贷款等信用相关业务。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_01118ef3ded499665a02",
+    "evaluator_version": "0.1.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1837,
+      "token_usage": {
+        "prompt_tokens": 662,
+        "completion_tokens": 179,
+        "total_tokens": 841
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "no_verified_expected_decisions",
+      "denominator_included": false,
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0087,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 16,
+        "hidden_speech_turn_count": 13
+      }
+    }
+  },
+  "latency_ms": 1837,
+  "token_usage": {
+    "prompt_tokens": 662,
+    "completion_tokens": 179,
+    "total_tokens": 841
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

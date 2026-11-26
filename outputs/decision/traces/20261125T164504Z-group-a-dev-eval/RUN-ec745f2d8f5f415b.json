@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-ec745f2d8f5f415b",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_bec19667745fa7db7e43",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:52:53+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "409ad12ad2a793dec4a31f789c3854a5e96f8e61a87db63a207dd834e6d2829d",
+  "input_bytes": 2155,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，明白您的意思，那就不打扰您了，感谢您的接听，祝您生活愉快，再见。",
+    "next_action": "礼貌结束通话，不再推介该流量套餐活动",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍下月起连续三个月每月赠送10元话费用于抵扣30元500兆流量套餐费，客户明确表示不用了。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_bec19667745fa7db7e43",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1416,
+      "token_usage": {
+        "prompt_tokens": 489,
+        "completion_tokens": 94,
+        "total_tokens": 583
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 7,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1416,
+  "token_usage": {
+    "prompt_tokens": 489,
+    "completion_tokens": 94,
+    "total_tokens": 583
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

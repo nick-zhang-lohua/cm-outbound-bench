@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-7ad37ac5b680405e",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_45173bbf98596e061632",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:47+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "d12b25ce151fc954ddd377147331199e8dac7d90d24ffc1a9596ea664977ea27",
+  "input_bytes": 2554,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您这个号码已经欠费两年多没有使用了，具体欠费金额我这边需要帮您查询确认。建议您尽快到移动营业厅办理销户，销户时工作人员会告知您具体需要结清的欠费金额。",
+    "next_action": "告知客户需查询具体欠费金额，并引导客户前往营业厅办理销户",
+    "required_information": [
+      "客户名下欠费号码的具体欠费金额"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证名下登记的另一移动号码已欠费两年多未使用，需到营业厅销户，否则影响实名制及信用相关业务；客户询问会欠多少钱。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_45173bbf98596e061632",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1790,
+      "token_usage": {
+        "prompt_tokens": 591,
+        "completion_tokens": 168,
+        "total_tokens": 759
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 14,
+        "hidden_speech_turn_count": 8,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1790,
+  "token_usage": {
+    "prompt_tokens": 591,
+    "completion_tokens": 168,
+    "total_tokens": 759
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

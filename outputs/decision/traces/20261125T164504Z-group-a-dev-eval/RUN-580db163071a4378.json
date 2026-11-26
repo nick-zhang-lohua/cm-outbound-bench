@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-580db163071a4378",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_f0ddfc5c667b6e49aad6",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:52:25+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "a7fc968fce3d5459571bccdc85082b804c2bc630a850da8ca62ee8a17f2d66dd",
+  "input_bytes": 1859,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，我是龙岩移动客服代表，想和您确认一下这个号码的使用情况，方便耽误您一分钟吗？",
+    "next_action": "说明外呼目的并确认客户是否方便继续沟通",
+    "required_information": [
+      "客户是否为该号码机主",
+      "客户当前是否方便接听"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服自报为龙岩移动客服代表并询问客户是否为指定号码机主，客户反问来电目的，尚未确认身份及是否方便沟通。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_f0ddfc5c667b6e49aad6",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1127,
+      "token_usage": {
+        "prompt_tokens": 410,
+        "completion_tokens": 113,
+        "total_tokens": 523
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 2,
+        "hidden_speech_turn_count": 4,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1127,
+  "token_usage": {
+    "prompt_tokens": 410,
+    "completion_tokens": 113,
+    "total_tokens": 523
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

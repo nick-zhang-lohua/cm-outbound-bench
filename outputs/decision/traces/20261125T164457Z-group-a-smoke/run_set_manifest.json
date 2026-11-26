@@ -1,0 +1,135 @@
+{
+  "manifest_schema_version": "1.0",
+  "run_set_id": "20261125T164457Z-group-a-smoke",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "created_at": "2026-11-25T16:44:57+00:00",
+  "completed_at": "2026-11-25T16:45:02+00:00",
+  "agent_label": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "base_url_host": "api.deepseek.com",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "agent_version": "0.1.0",
+  "split_manifest_sha256": "c74e00ed9f9d8c3639a0b4b18fbfeb73140b0fc7b9d4300ddac3b5aa43795de6",
+  "tasks_artifact_sha256": "e0d40ef6825904a56fc8be7a2d733cf227fb95eb4c3587146da7ebb793ee9fdf",
+  "tasks_requested": 3,
+  "tasks_executed": 3,
+  "tasks_failed": 0,
+  "aggregate": {
+    "tasks_total": 3,
+    "execution_status_counts": {
+      "success": 3
+    },
+    "technical": {
+      "request_success_rate": 1.0,
+      "valid_output_rate": 1.0,
+      "timeout_rate": 0.0,
+      "latency_ms_p50": 1471.0,
+      "latency_ms_p90": 1997.0,
+      "tasks_with_token_usage": 3.0,
+      "total_tokens": 2095.0
+    },
+    "scoring_status_counts": {
+      "unscored": 3
+    },
+    "unscored_reason_counts": {
+      "annotation_not_reviewed": 3
+    },
+    "scored_tasks": 0,
+    "unscored_tasks": 3,
+    "candidate_tasks": 0,
+    "invalid_tasks": 0,
+    "scored_fraction": 0.0,
+    "expert_tier_tasks": 0,
+    "policy_tier_tasks": 0,
+    "both_tier_tasks": 0,
+    "business_metrics": {
+      "decision_success": null,
+      "expert_adjudicated_decision_success_rate": null,
+      "policy_verified_decision_success_rate": null,
+      "branch_decision_accuracy": null,
+      "required_step_recall": null,
+      "required_step_precision": null,
+      "policy_compliance": null,
+      "appropriate_clarification_rate": null,
+      "response_quality": null,
+      "tool_intent_accuracy": null,
+      "business_task_completion_rate": null
+    },
+    "business_metric_denominators": {
+      "decision_success": 0,
+      "expert_adjudicated_decision_success_rate": 0,
+      "policy_verified_decision_success_rate": 0,
+      "branch_decision_accuracy": 0,
+      "required_step_recall": 0,
+      "required_step_precision": 0,
+      "policy_compliance": 0,
+      "appropriate_clarification_rate": 0,
+      "response_quality": 0,
+      "tool_intent_accuracy": 0,
+      "business_task_completion_rate": 0
+    },
+    "unavailable_metrics": {
+      "decision_success": "no_reference_provided_by_this_run",
+      "expert_adjudicated_decision_success_rate": "no_reference_provided_by_this_run",
+      "policy_verified_decision_success_rate": "no_policy_verified_reference_in_this_run",
+      "branch_decision_accuracy": "no_reference_provided_by_this_run",
+      "required_step_recall": "no_reference_provided_by_this_run",
+      "required_step_precision": "no_reference_provided_by_this_run",
+      "policy_compliance": "no_policy_verified_reference_in_this_run",
+      "appropriate_clarification_rate": "no_clarification_reference_in_this_run",
+      "response_quality": "no_reviewed_quality_rubric_applied_yet",
+      "tool_intent_accuracy": "unavailable_no_business_tool_definitions",
+      "business_task_completion_rate": "unavailable_no_business_backend"
+    },
+    "independent_sampling_unit": "task",
+    "notes": [
+      "decision_success_rate is not available: zero tasks have a verified reference. Unscored tasks are excluded from every business denominator, and the historical agent response is not treated as ground truth.",
+      "No business backend is executed in this milestone, so business task completion and real tool execution success are out of scope."
+    ]
+  },
+  "entries": [
+    {
+      "run_id": "RUN-996d670118bf45a7",
+      "task_id": "TASK_007e2987fb58b4756e53",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1997,
+      "total_tokens": 872,
+      "trace_file": "RUN-996d670118bf45a7.json"
+    },
+    {
+      "run_id": "RUN-4e2fcbe257a64bcd",
+      "task_id": "TASK_00823e3f297087b7e882",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1367,
+      "total_tokens": 669,
+      "trace_file": "RUN-4e2fcbe257a64bcd.json"
+    },
+    {
+      "run_id": "RUN-ea7a70de1b454440",
+      "task_id": "TASK_00a29ac04513715c5a15",
+      "split": "dev",
+      "execution_status": "success",
+      "scoring_status": "unscored",
+      "latency_ms": 1471,
+      "total_tokens": 554,
+      "trace_file": "RUN-ea7a70de1b454440.json"
+    }
+  ],
+  "notes": [
+    "decision_success_rate is not available: zero tasks have a verified reference. Unscored tasks are excluded from every business denominator, and the historical agent response is not treated as ground truth.",
+    "No business backend is executed in this milestone, so business task completion and real tool execution success are out of scope."
+  ]
+}

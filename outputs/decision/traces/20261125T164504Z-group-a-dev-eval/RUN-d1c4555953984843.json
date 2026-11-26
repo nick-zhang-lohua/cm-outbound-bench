@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-d1c4555953984843",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_21404650d4eeca883505",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:51:53+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "f755d3304acf12175ccde3811474dff2ebd6dcec4d4e04db62beba606ea1e4c6",
+  "input_bytes": 1799,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，请问您是想咨询账户相关的什么业务呢？",
+    "next_action": "确认客户具体诉求",
+    "required_information": [
+      "客户具体想咨询或办理的业务内容"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "通话记录中客户仅提到账户，未说明具体业务诉求，客服需进一步确认客户意图。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_21404650d4eeca883505",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 890,
+      "token_usage": {
+        "prompt_tokens": 401,
+        "completion_tokens": 78,
+        "total_tokens": 479
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 3,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 890,
+  "token_usage": {
+    "prompt_tokens": 401,
+    "completion_tokens": 78,
+    "total_tokens": 479
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

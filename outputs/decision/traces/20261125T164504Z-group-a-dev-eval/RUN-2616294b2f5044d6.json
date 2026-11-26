@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-2616294b2f5044d6",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_be59e8bbff40d77c6bf8",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:49:57+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "072a4470c9b9084b477473fc3cf47466bda98ee03b598d87501239d869b1c564",
+  "input_bytes": 2501,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，您刚才问的是“地的话能用吗”，请问您具体是指哪个方面能不能用呢？",
+    "next_action": "澄清客户问题所指的具体内容，再根据客户确认的信息继续介绍套餐",
+    "required_information": [
+      "客户所问“地的话能用吗”具体指套餐的哪项内容（如流量使用范围、通话分钟数使用范围等）"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已介绍新飞享58/88套餐包含通话分钟数、5G流量、来电显示、全国接听免费及赠送省内流量宝等内容，客户询问“地的话能用吗”，语义不明确，需澄清。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_be59e8bbff40d77c6bf8",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1873,
+      "token_usage": {
+        "prompt_tokens": 596,
+        "completion_tokens": 166,
+        "total_tokens": 762
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 15,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1873,
+  "token_usage": {
+    "prompt_tokens": 596,
+    "completion_tokens": 166,
+    "total_tokens": 762
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

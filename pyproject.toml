@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "cm-outbound-bench"
 version = "1.0.0"
-description = "Standalone synthetic China Mobile outbound calling benchmark"
+description = "Standalone China Mobile outbound agent benchmark: synthetic runtime + real-transcript decision tasks"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 dependencies = [

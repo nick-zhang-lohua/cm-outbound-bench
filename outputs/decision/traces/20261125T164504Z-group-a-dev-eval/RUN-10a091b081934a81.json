@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-10a091b081934a81",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_807fd9b762cf5f89e6d5",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:13+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "4fd2df44fe5b8951cc89551498461e9e49876a5b724b48a82c2948fc2d9c78c9",
+  "input_bytes": 3565,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那您尽快凭短信到正规移动前台办理销户，避免影响后续业务。",
+    "next_action": "结束通话并发送欠费号码短信",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已告知客户名下移动号码欠费未销户，需到营业厅办理销户，否则影响身份证挂钩业务；客户确认会去办理，客服已说明稍后发送欠费号码短信。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_807fd9b762cf5f89e6d5",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1564,
+      "token_usage": {
+        "prompt_tokens": 837,
+        "completion_tokens": 119,
+        "total_tokens": 956
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 28,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1564,
+  "token_usage": {
+    "prompt_tokens": 837,
+    "completion_tokens": 119,
+    "total_tokens": 956
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

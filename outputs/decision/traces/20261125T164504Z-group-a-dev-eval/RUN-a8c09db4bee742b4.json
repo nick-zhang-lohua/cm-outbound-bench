@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-a8c09db4bee742b4",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_88061c2866b9d52a4b87",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:48:22+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "547a5c53beca73b7bd932f63dffb9f974a6132eb405445c639b23c7dcc3b3b66",
+  "input_bytes": 4600,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，那我这边给您下发一条短信，您注意查收，上面有这个号码的信息，您方便的时候可以去移动营业厅查询核实一下。",
+    "next_action": "向客户下发包含待核实号码信息的短信，并提醒客户前往移动营业厅查询核实",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服告知客户其身份证名下另有一个已欠费未用的移动号码需销户，客户否认使用过该号码；客服核对身份证号后客户确认身份证无误但仍质疑；客户询问该号码，客服表示稍后下发短信，客户表示明天过来，客服确认下发短信让客户自行查询，客户应答“哦”。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_88061c2866b9d52a4b87",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2073,
+      "token_usage": {
+        "prompt_tokens": 1130,
+        "completion_tokens": 165,
+        "total_tokens": 1295
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0119,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 57,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2073,
+  "token_usage": {
+    "prompt_tokens": 1130,
+    "completion_tokens": 165,
+    "total_tokens": 1295
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

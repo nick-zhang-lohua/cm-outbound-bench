@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-23aca9916ef74332",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_c8917e3f6e4d5593f281",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:13+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "df66e247309b76ded1451f301a80edf3140de4641a74c734d6063f63d6bf6d01",
+  "input_bytes": 3278,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您不用担心不会用，这个套餐办理后打电话和用流量的方式和现在一样，不会增加操作。办理成功后会由10086给您下发短信通知，不需要您自己发短信。您看我现在帮您登记办理可以吗？",
+    "next_action": "解释办理后使用方式不变且由10086下发短信通知，并再次确认客户是否同意登记办理",
+    "required_information": [
+      "客户是否明确同意登记办理38元套餐"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已介绍38元套餐含300分钟通话和1.5G流量，说明由系统登记办理且10086下发短信通知；客户询问到哪里办、表示不会发10086短信，并说不会用。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_c8917e3f6e4d5593f281",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2201,
+      "token_usage": {
+        "prompt_tokens": 744,
+        "completion_tokens": 178,
+        "total_tokens": 922
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 19,
+        "hidden_speech_turn_count": 1,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2201,
+  "token_usage": {
+    "prompt_tokens": 744,
+    "completion_tokens": 178,
+    "total_tokens": 922
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

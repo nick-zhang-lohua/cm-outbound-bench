@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-5b276d4228d04f34",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_c51322154ad1c7d66415",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:50:07+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "bd4e127adbbff3a58e83f01387d6b58d0c0c242d0b8b5d10cb9af7a61dedddf0",
+  "input_bytes": 3457,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，理解您流量已经够用，那就不打扰您了，感谢您的接听，祝您生活愉快，再见。",
+    "next_action": "结束通话，礼貌道别",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服介绍连续三个月每月赠送30元抵扣500兆流量套餐费，客户表示流量够用、担心忘记取消被扣钱，多次明确拒绝，并说明平时在WiFi下使用。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_c51322154ad1c7d66415",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1099,
+      "token_usage": {
+        "prompt_tokens": 797,
+        "completion_tokens": 106,
+        "total_tokens": 903
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.1277,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 25,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1099,
+  "token_usage": {
+    "prompt_tokens": 797,
+    "completion_tokens": 106,
+    "total_tokens": 903
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

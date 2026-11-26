@@ -1,0 +1,31 @@
+# Group A baseline agent configuration.
+#
+# This file contains NO credential. `api_key_env` names the environment variable
+# that holds the key. Overrides, in order of precedence:
+#
+#   CM_BASELINE_API_BASE, CM_BASELINE_API_KEY, CM_BASELINE_MODEL,
+#   CM_BASELINE_TIMEOUT, CM_BASELINE_MAX_RETRIES, CM_BASELINE_TEMPERATURE,
+#   CM_BASELINE_MAX_OUTPUT_TOKENS, CM_BASELINE_HEADER_ENVS (JSON:
+#   {"Header-Name": "ENV_VAR_NAME"})
+#
+# `extra_params` is forwarded verbatim into the chat-completions request body, so
+# provider-specific switches (for example a reasoning-mode toggle) can be set
+# without changing code.
+
+[provider]
+# Arbitrary label recorded as `model_provider` in every trace.
+label = "configured-openai-compatible"
+base_url = "https://api.deepseek.com/v1"
+# Environment variable that holds the API key.
+api_key_env = "DEEPSEEK_API_KEY"
+model = "deepseek-flash"
+timeout = 60.0
+max_retries = 2
+extra_params = { thinking = { type = "disabled" } }
+
+[provider.headers_env]
+# "X-Example-Header" = "EXAMPLE_HEADER_VALUE"
+
+[generation]
+temperature = 0.2
+max_output_tokens = 900

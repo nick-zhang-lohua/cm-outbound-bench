@@ -1,0 +1,83 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-99515d721dde4e37",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_71368ccad53c2cd0ea47",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:47:45+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "2be9b266d6c16289e1e37e757211404f7bad824fb0f99f3b9aadae50f5af743a",
+  "input_bytes": 2988,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "好的，理解您的顾虑，那这次就不打扰您了，后续如果有需要可以随时联系我们，祝您生活愉快，再见。",
+    "next_action": "结束本次外呼，礼貌道别并记录客户暂不办理",
+    "required_information": [],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服推介138任我用限量版套餐，客户以单位统一支付话费、需使用原套餐两年（送手机活动）为由拒绝，客服解释升档不受影响后客户仍表示暂时不用。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_71368ccad53c2cd0ea47",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1342,
+      "token_usage": {
+        "prompt_tokens": 695,
+        "completion_tokens": 116,
+        "total_tokens": 811
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0513,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 19,
+        "hidden_speech_turn_count": 2,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1342,
+  "token_usage": {
+    "prompt_tokens": 695,
+    "completion_tokens": 116,
+    "total_tokens": 811
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

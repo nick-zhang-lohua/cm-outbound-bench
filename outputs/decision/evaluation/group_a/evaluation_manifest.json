@@ -1,0 +1,16 @@
+{
+  "evaluation_version": "1.0",
+  "generated_at": "2026-11-26T16:22:33+00:00",
+  "ground_truth_version": "cm-outbound-llm-gold-v1",
+  "ground_truth_source": "deepseek_v4_pro",
+  "judge_model": "deepseek-v4-pro",
+  "judge_provider": "deepseek-v4-pro-judge",
+  "evaluation_prompt_version": "v1",
+  "evaluation_config_hash": "c1da02e897207aa1a6a90f106d6065d3712cba4c448a97a38ee559bf63197abb",
+  "temperature": 0.0,
+  "max_output_tokens": 6000,
+  "run_set": "20261125T164504Z-group-a-dev-eval",
+  "tasks": 400,
+  "problems": [],
+  "frozen_manifest_path": "outputs\\decision\\annotations\\manifests\\frozen_annotation_manifest.json"
+}

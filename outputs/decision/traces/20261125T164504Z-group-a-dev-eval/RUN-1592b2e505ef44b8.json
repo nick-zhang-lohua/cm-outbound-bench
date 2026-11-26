@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-1592b2e505ef44b8",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_efbc393ae04a81a1421c",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:52:12+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "2a51893ffe0bf959c5e668d03c815b2f4863413cc22baa9ecea4c4f6982e851b",
+  "input_bytes": 1850,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，我这边是龙岩移动公司的，想跟您确认一下，请问您是郑鸿盛先生吗？",
+    "next_action": "核实客户身份",
+    "required_information": [
+      "确认客户是否为郑鸿盛本人"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已自报为龙岩移动公司并询问对方是否为郑鸿盛，客户仅回应“呃”，身份尚未确认。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_efbc393ae04a81a1421c",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 893,
+      "token_usage": {
+        "prompt_tokens": 410,
+        "completion_tokens": 94,
+        "total_tokens": 504
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 3,
+        "hidden_speech_turn_count": 14,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 893,
+  "token_usage": {
+    "prompt_tokens": 410,
+    "completion_tokens": 94,
+    "total_tokens": 504
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

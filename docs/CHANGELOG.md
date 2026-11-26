@@ -1,5 +1,346 @@
 # Changelog
 
+## Private-repository publication preparation for `research/milestone-1.2-clean` (2026-11-27)
+
+Repository preparation only. **No research methodology, prompt, Gold Label, frozen
+reference, dataset Split assignment or Group A output was changed, regenerated or
+re-scored.** No DeepSeek API call was made during this pass.
+
+### Changed — processed research data is now part of the repository
+
+* Earlier policy kept `data/decision/` and `outputs/decision/` out of Git because they
+  contain conversation-derived text. The publication decision for this private
+  repository is to **include** the approved processed artifacts so that the
+  supervisor can audit and reproduce the research: Train-F / Train-R / Dev / Test
+  decision-point Tasks, the reconstructed conversations, the split artifacts, the
+  frozen `cm-outbound-llm-gold-v1` Gold Labels, annotation/adjudication records, the
+  Group A scoring records and the 400 Group A traces.
+* Unchanged exclusions: the original raw `data/TXT/` export, the wider
+  `cm_outbound_v2` corpus, raw audio, confidential databases, credentials and local
+  caches. Benchmark code still never opens the raw TXT export.
+* This is an owner decision for a private, supervisor-only repository. No written
+  institutional data-use authorisation is on file; the item is recorded as
+  **owner confirmation required before push** in
+  `docs/reports/github_release_readiness.md` and `docs/data_privacy.md` §6.
+
+### Changed — `.gitignore` redesigned instead of blanket-excluding data
+
+* Removed the blanket `data/decision/` and `outputs/decision/` ignores.
+* Added narrow, path-specific guards for raw/unapproved material (`data/TXT/`,
+  `data/raw/`, `data/deidentified/`, `data/corpus_db/`, `data/rejected/`, raw audio,
+  SQLite/journal files, `*.enc`, `*.pfx`) and kept the Python, coverage, editor and
+  secret rules.
+* Added an in-file "Tracked by design" section listing the approved dataset paths, so
+  a future broad pattern cannot silently swallow them again.
+* Verified in both directions with `git check-ignore -v`; see
+  `docs/reports/gitignore_audit.md`.
+
+### Added — publication review documents
+
+`docs/reports/repository_inventory.md`, `github_security_audit.md`,
+`gitignore_audit.md`, `github_dataset_upload_manifest.md`,
+`github_publishable_manifest.txt`, `github_release_readiness.md`.
+
+### Verified — frozen research state is unchanged
+
+| Check | Result |
+|---|---|
+| Train-R Gold Label SHA-256 | `03d2e23b…c4bdd` — matches the frozen value |
+| Dev Gold Label SHA-256 | `a7d12662…44b6` — matches the frozen value |
+| Task catalogue | 10,116 Tasks (Train-F 2,726 / Train-R 2,695 / Dev 1,314 / Test 3,381) |
+| Split assignments | Unchanged; seed `20261125`, 4,506 groups, 30 calls in duplicate groups |
+| `policy_verified` | `false` on all 800 frozen references |
+| Ground Truth provenance | `deepseek_v4_pro` / `deepseek-v4-pro`, `llm_generated_gold` |
+| Group A traces vs Dev Tasks | 400 trace files, 400 distinct Task IDs, all inside Dev |
+| Agent-visible Task fields | 0 private-field leaks across 10,116 Tasks |
+| Offline suite | 1,520 passed, 8 failed, 25 subtests — reproduced, unchanged |
+
+### Changed — documentation accuracy
+
+* `docs/decision_benchmark.md`: replaced "no customer simulator anywhere in this
+  package" with the accurate statement that **the Real-Transcript Decision Benchmark
+  does not invoke the Legacy Simulator**, and that the legacy simulator stays.
+* `README.md`: added Architectural Separation, Dataset Structure, Data Privacy and
+  Research Status sections; corrected the failure analysis of the 8 offline failures
+  (five are POSIX permission/symlink guards on Windows, two are the pipeline's
+  CPython 3.12.16 pin meeting 3.12.14, one is the `time.monotonic()` resolution test);
+  added a Testing and Reproduction section.
+* `docs/data_privacy.md`: data-class table now states per-path inclusion in this
+  private repository, §4.1 was rewritten for the included-but-restricted model, and
+  §6 records the data-governance status honestly.
+
+### Unchanged
+
+* `src/`, `tests/`, `configs/` and `prompts/` logic; no behavioural source change was
+  required for this pass.
+* All Milestone 1 / 1.1 / 1.2 frozen artifacts, prompts and split assignments.
+* The Legacy Synthetic Benchmark, its simulator and its synthetic Task catalogue.
+
+## Repository preparation for publication on `research/milestone-1.2-clean` (2026-11-27)
+
+Maintenance only: no research methodology, Ground Truth, frozen reference, dataset
+split, prompt or Group A output was changed.
+
+### Corrected — scoring aggregation honours the frozen Gold Label gate
+
+* A task whose frozen reference is not scoreable can never enter LLM scoring, even
+  if both scorers would return a verdict. An earlier evaluation run scored 9 such
+  Dev tasks before the gate existed; 4 of them came back `fully_correct`.
+* Added `aggregate_saved_scores()` and `cm-outbound decision evaluate-group-a
+  --reaggregate`, which re-derive finals from saved scorer passes and saved
+  adjudications with no API call and rewrite the finals artifact.
+* Final Group A numbers after the correction: 400 executed, 391 scored, 9
+  unscorable, DSR 0.83376, DAR 0.976982, PDR 0.143223, IDR 0.023018, coverage
+  0.9775, 9 critical errors. Frozen references are unchanged
+  (Train-R `03d2e23b…`, Dev `a7d12662…`).
+* Added 5 regression tests pinning the gate, and `scripts/audit_gold_integrity.py`,
+  which re-hashes all 1,600 saved annotation passes from the frozen tasks and
+  prompts without an API call.
+
+### Fixed — secondary metric definitions
+
+* `required_step_precision` is no longer reported: the frozen Gold Label records
+  steps as actions while the agent output exposes requested information, so no
+  valid denominator exists. The lexical surrogate remains available as
+  `required_step_precision_lexical_diagnostic`.
+* Clarification, step-recall and branch accuracy are labelled lexical
+  lower-bound proxies rather than semantic accuracy.
+
+### Changed — repository hygiene
+
+* `.gitignore` now covers `.venv*/`, `pytest-of-*/`, `coverage.xml` and
+  `.coverage.*`; all previously sensitive paths were already ignored. (Superseded by
+  the entry above: the blanket `data/decision/` and `outputs/decision/` ignores were
+  removed when the processed datasets were approved for this private repository.)
+* Removed generated pytest scratch directories, `__pycache__` and local tool
+  caches from the working tree. No tracked file, data directory or output was
+  deleted.
+* README, `docs/decision_benchmark.md` and `docs/data_privacy.md` updated to
+  describe the Milestone 1.2 methodology, the Group A baseline and the
+  decision-benchmark data boundaries instead of the pre-1.2 "no ground truth"
+  state.
+
+## Real-transcript decision benchmark, Milestone 1.2 — DeepSeek V4 Pro Gold Labels and the first Group A business number (2026-11-26)
+
+Additive milestone. The research decision is explicit: DeepSeek V4 Pro
+(`deepseek-v4-pro`, verified against the endpoint's model list) is the official
+Ground Truth Generator and Adjudicator; its final frozen annotations are the
+Benchmark Gold Labels, and human annotation is not a prerequisite for scoring.
+Provenance is recorded on every reference; the labels are never presented as
+verified China Mobile policy (`policy_verified = false` for all tasks).
+
+### Added — dedicated V4 Pro judge configuration
+
+* `configs/decision_annotation.toml` with provider, actual model identifier,
+  endpoint, credential env indirection, custom headers, generation parameters,
+  retry policy, concurrency, batch size and per-stage prompt versions.
+* `decisions/gold/config.py`: verified-model enforcement (no silent fallback, no
+  substitution), per-stage deterministic configuration hashes.
+
+### Added — two-pass gold annotation pipeline (`decisions/gold/`)
+
+* `prompts/decision_annotation_pass_{a,b}_v1.md` (independently worded, same
+  rubric) and `prompts/decision_annotation_adjudication_v1.md`, all frozen files
+  with per-call prompt hashes.
+* `decisions/gold/` implements pass execution with stateless sessions, semantic
+  pass comparison (`agreement` / `acceptable_alternatives` / `minor_disagreement`
+  / `major_disagreement` / `both_unscored`), disagreement adjudication, and
+  checkpointed, resumable, idempotent storage with deterministic cache keys.
+* `decisions/gold/validation.py`: per-task validation (evidence turns must be in
+  range, no future turns, scoreability consistency), gold application to
+  `PrivateTaskReference`, and hash-pinned freezing that refuses silent overwrite.
+* Schema extension (additive): LLM-gold answerability vocabulary, the
+  `accepted_as_benchmark_gold` status, the `llm_generated_gold` authority,
+  `ground_truth_type/source/status`, `external_policy_dependency`,
+  `policy_verified`, `annotation_confidence`, `required_information`. A plain
+  `llm_proposed` pre-annotation remains non-scorable; only the gold gate scores.
+
+### Added — blind Group A output evaluation (`decisions/scoring/`)
+
+* `prompts/group_a_output_scoring_pass_{a,b}_v1.md` and
+  `prompts/group_a_output_adjudication_v1.md` implement the fixed
+  full/partial/incorrect/unscorable rubric plus independently flagged critical
+  errors; the scorer never sees the agent model identity.
+* Two independent stateless scoring passes against the frozen Dev Gold Labels,
+  scorer-disagreement adjudication, and metrics: LLM-Gold Decision Success Rate
+  (DSR), Decision Acceptance Rate, Partial/Incorrect rates, Scored Task Coverage,
+  critical error rate, clarification rate and step/branch metrics only where the
+  gold provides them.
+* Conversation-unit-level bootstrap confidence intervals (seed-fixed,
+  percentile); sampling uncertainty is reported separately from the systematic
+  uncertainty of LLM-generated Ground Truth.
+
+### Added — CLI
+
+* `decision annotation inspect|pilot|train-r|dev|validate|freeze` (with
+  `--model`, `--prompt-version`, `--resume`, `--limit`, `--dry-run`, `--seed`).
+* `decision evaluate-group-a` and `decision report-group-a`.
+* Test is structurally locked: no command exposes Test annotation or evaluation.
+
+### Added — documentation
+
+* `docs/annotation/llm_gold_ground_truth_protocol_v1.md`,
+  `llm_business_decision_guidelines_v1.md`, `llm_output_scoring_rubric_v1.md`.
+
+## Real-transcript decision benchmark, Milestone 1.1 — business evaluation, annotation infrastructure and channel audit (2026-11-26)
+
+Additive milestone. The synthetic benchmark runtime is untouched, and every
+Milestone 1 capability keeps working. One Milestone 1 test assertion was updated
+because the evaluator version intentionally moved from `0.1.0` to `0.2.0` when the
+business-evaluation semantics changed.
+
+### Added — channel semantics (`decisions/channels.py`, `decisions/channel_audit.py`)
+
+* A channel registry that keeps channels 3/4/5 **unknown**
+  (`unknown_pending_human_review`), with `assert_production_mapping_unchanged()`
+  turning "do not assign a meaning without approval" into a checked invariant.
+* An evidence-backed hypothesis catalogue (five hypotheses, each with supporting
+  evidence, counter-evidence, a confidence level and benchmark implications). No
+  entry is a mapping.
+* `audit_channel_semantics()` measures every channel (records, units, speech vs
+  event, empty text, metadata distributions, timestamp position, overlap,
+  neighbour channels, structural homogeneity), extracts representative
+  de-identified records with real context, and quantifies the benchmark impact of
+  five candidate interpretations in one corpus pass.
+* `decision audit-channels` writes the human-review package
+  (`channel_{3,4,5}_samples.jsonl`, `channel_review_summary.csv`, JSON summary)
+  into `outputs/decision/channel_review/`.
+
+### Added — conversation identity and dataset verification
+
+* `decisions/identity_audit.py` re-derives every corpus, split and task count,
+  compares it with the recorded Milestone 1 baseline, and documents how
+  `transcript_id` is derived (`HMAC-SHA256(key, source_file_name)[:24]`).
+* Research terminology standardised: `conversation_id` / `transcript_unit_id` are
+  the public terms; `call_id` is retained as the internal field name and documented
+  as an **inferred conversation unit**, never a verified telephone call identifier.
+* `decision audit-identity` writes
+  `outputs/decision/reports/conversation_identity_audit.md` and exits non-zero if
+  the corpus manifest no longer verifies.
+
+### Added — business ground-truth system (`decisions/annotation.py`)
+
+* Two distinct evaluation claims: `expert_adjudicated` and `policy_verified`,
+  reported as `expert_adjudicated_decision_success_rate` and
+  `policy_verified_decision_success_rate` and never averaged.
+* Task answerability (`sufficient_information`, `more_information_required`,
+  `ambiguous`, `unscorable`, `unknown`) where an appropriate clarification request
+  is a scoreable correct answer.
+* Multiple acceptable decisions, conditional branches, required/optional/prohibited
+  steps (a prohibition requires a real rule), structured rule citations and
+  per-field provenance with an explicit `llm_proposed` authority.
+* `PrivateTaskReference` extended **additively** (schema `1.0` → `2.0`): old
+  artifacts still parse, new fields default to "not annotated", and `is_scored`
+  refuses a pending, ambiguous or model-only annotation.
+* Decision matching uses annotator-supplied `match_keywords` (falling back to the
+  label), so exact-text reproduction is never the correctness criterion.
+
+### Added — annotation infrastructure (`annotation_io.py`, `sampling.py`, `agreement.py`)
+
+* Deterministic sampling: one task per conversation unit, proportional allocation
+  across observable strata, fixed seed, selection hash, `--exclude-plan` for
+  independent pilot vs feedback samples.
+* Review-ready packet export that provably contains no historical continuation, no
+  hidden segment id, no call id and no label.
+* Submission import with duplicate detection, guideline-version handling, structural
+  validation, a possible-continuation-overlap warning and an import history.
+* Adjudication worklist, human-adjudication import that refuses an adjudicator who
+  is also an annotator, and annotation application that only scores human work.
+* Inter-annotator agreement (raw agreement, Cohen's kappa, Krippendorff's nominal
+  alpha, set precision/recall/Jaccard) computed **before** adjudication.
+* Blind agent-output review packets plus a fixed response-quality rubric.
+
+### Added — evaluation and reporting
+
+* `decisions/evaluator.py` upgraded: per-tier metrics with per-tier denominators,
+  clarification scoring, documented policy compliance, honest `unavailable_metrics`
+  with reasons, and `unscored_reason_counts`. A reference marked `scored` that fails
+  an annotation gate is no longer reported as `scored`.
+* `decisions/business_report.py` builds the Group A business baseline report with a
+  cluster bootstrap over conversation units, structural failure classification and
+  observable-stratum results.
+* `decisions/business_sources.py` inventories business reference material by
+  authority level. Result: **zero authoritative sources**, so the policy-verified
+  tier is unavailable and no business rule was invented.
+
+### Added — CLI
+
+`audit-identity`, `audit-channels`, `audit-business-sources`, `sample`,
+`export-annotations`, `import-annotations`, `adjudication-worklist`,
+`import-adjudications`, `agreement`, `apply-annotations`, `export-output-review`,
+`import-output-review`, `business-baseline`, plus `decision run --sample-plan`.
+
+### Fixed
+
+* The runner now redacts a provider error message **before** evaluation, so the raw
+  message can no longer reach the trace through `technical.error_message`.
+* `evaluate_invocation` reports the evaluation status instead of echoing a
+  reference's declared `scoring_status`, so an unscorable task can never enter a
+  denominator.
+
+### Documentation
+
+`docs/reports/channel_semantics_audit.md`,
+`docs/annotation/business_decision_annotation_protocol_v1.md`,
+`docs/annotation/annotation_guidelines_v1.md`,
+`docs/annotation/annotation_schema.md`,
+`docs/reports/milestone_1_1_research_readiness_report.md`,
+`docs/reports/group_a_business_baseline_report.md`, plus updates to
+`docs/decision_benchmark.md` and `README.md`.
+
+---
+
+## Real-transcript decision benchmark, Milestone 1 — Group A baseline (2026-11-26)
+
+Additive milestone. The synthetic benchmark runtime, its tasks, policies,
+evaluator, traces and release evidence are unchanged; the full offline suite
+(1,266 tests + 25 subtests) still passes, now alongside 76 new tests.
+
+### Added — data layer (`src/cm_outbound_bench/transcripts/`)
+
+* `ingestion.py` reads the real `cm_outbound_v2` JSONL corpus strictly. Raw TXT is
+  not opened (privacy policy §2.1).
+* `reconstruction.py` rebuilds complete calls: channel 1 = historical agent,
+  channel 2 = customer, ordering by `(start_ms, seq)`, original timing and
+  evidence ids preserved, overlapping speech flagged rather than flattened,
+  events kept on the timeline.
+* `validation.py` reports aggregate quality (4,527 units, 137,178 records,
+  4,524 valid, 3 invalid) and groups exact/near-duplicate calls.
+* `splitting.py` implements grouped call-level allocation with a reproducible
+  manifest: Train-F 1,207 (26.68%), Train-R 1,206 (26.66%), Dev 603 (13.33%),
+  Test 1,508 (33.33%), seed 20261125, all verification checks green.
+
+### Added — decision-point benchmark (`src/cm_outbound_bench/decisions/`)
+
+* `schema.py` separates the agent-visible task from the private evaluator
+  reference; `store.py` enforces the boundary and refuses forbidden fields.
+* `builder.py` constructs 10,116 decision-point candidates from 4,253 real calls,
+  capped per call, gap-separated and globally prefix-deduplicated.
+* `agent.py` is a provider-independent OpenAI-compatible agent with environment
+  configuration, retries, timeouts, redacted errors and a strict output contract.
+* `runner.py`, `evaluator.py`, `trace.py` execute one independent session per task,
+  evaluate technical metrics always and business metrics only with a verified
+  reference, and persist a secret-free trace.
+* `audit.py` proves every public task equals its real conversation prefix;
+  `verification.py` recomputes each trace's prompt hash from the guarded payload.
+* CLI: `cm-outbound decision {validate-data,build-calls,split,build-tasks,check,
+  run,evaluate,report}`.
+
+### Configuration and docs
+
+* `configs/dataset.toml`, `configs/split.toml`, `configs/baseline_agent.toml`.
+* `docs/decision_benchmark.md` and `docs/reports/decision_milestone_1_report.md`.
+* `.env.example` documents the `CM_BASELINE_*` overrides; `.gitignore` excludes
+  `data/decision/` and `outputs/decision/`.
+
+### Validation
+
+* Offline suite: 1,342 tests + 25 subtests pass; `ruff` clean.
+* Prefix audit: 10,116 / 10,116 tasks pass with zero leaks.
+* Live Group A run on the Dev split (12 tasks): 12/12 success, 100% valid output,
+  latency p50 1,530 ms, 8,479 tokens, zero credential leaks, zero prompt-hash
+  mismatches. Every task is `unscored`; no business success rate is claimed.
+
 ## Final documentation consistency and evidence audit (2026-11-22)
 
 Documentation-only close-out of the Engineering MVP delivery. No benchmark

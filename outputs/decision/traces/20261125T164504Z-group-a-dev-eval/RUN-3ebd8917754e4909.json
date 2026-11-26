@@ -1,0 +1,86 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-3ebd8917754e4909",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_819481d29aa64e43cc39",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:54:04+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "c77db9f8ebaa087f07c5ecd783daae5520d118f77814e13feca877095dd5175d",
+  "input_bytes": 2379,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您好，请问您方便转告安播本人吗？他身份证名下有一个移动号码已经欠费停用了，需要他本人带身份证到移动营业厅办理销户。",
+    "next_action": "确认接听人能否转告机主本人，并说明需机主本人携带身份证到营业厅办理销户",
+    "required_information": [
+      "接听人与机主安播的关系及能否转告",
+      "机主本人是否知晓该欠费号码情况"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服核实接听人非机主本人，告知机主身份证名下另一移动号码已欠费停用，需机主本人到营业厅销户，并请接听人转告；客户回应含糊，客服请其继续说明。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_819481d29aa64e43cc39",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 2041,
+      "token_usage": {
+        "prompt_tokens": 548,
+        "completion_tokens": 170,
+        "total_tokens": 718
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 12,
+        "hidden_speech_turn_count": 8,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 2041,
+  "token_usage": {
+    "prompt_tokens": 548,
+    "completion_tokens": 170,
+    "total_tokens": 718
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}

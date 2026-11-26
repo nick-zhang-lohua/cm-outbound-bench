@@ -1,0 +1,85 @@
+{
+  "trace_schema_version": "1.0",
+  "run_id": "RUN-7945e697ba6c41c4",
+  "run_set_id": "20261125T164504Z-group-a-dev-eval",
+  "task_id": "TASK_46c4aa2cce39de247669",
+  "condition": "A",
+  "benchmark_version": "0.2.0",
+  "dataset_version": "cm_outbound_v2",
+  "split": "dev",
+  "executed_at": "2026-11-25T16:46:40+00:00",
+  "model_provider": "configured-openai-compatible",
+  "model_name": "deepseek-flash",
+  "model_parameters": {
+    "temperature": 0.2,
+    "max_output_tokens": 900
+  },
+  "agent_version": "0.1.0",
+  "prompt_version": "baseline-a-v1",
+  "evaluator_version": "0.2.0",
+  "input_hash": "72c3372f333bd453c8eb2910b9ce336b894d784cae5a98afa5461b45b7ca5533",
+  "input_bytes": 2824,
+  "config_hash": "0baa38201da38b73e0f3aae5c960bab21e913f69ffc4aad11c55bf7589e243bc",
+  "agent_output": {
+    "customer_response": "您先别急，我帮您看一下您现在开通的流量包具体是多少钱的，稍等一下好吗？",
+    "next_action": "查询客户当前已开通的流量包及资费信息，以便向客户说明并继续介绍活动",
+    "required_information": [
+      "客户当前已开通的流量包名称及月费"
+    ],
+    "tool_intent": null,
+    "uncertainty": null,
+    "evidence_summary": "客服已介绍10元享70元2G全国流量、优惠期6个月及每月额外1G省内夜间流量的活动；客户询问没有身份是否影响，客服回复没有影响后询问客户当前流量包资费，客户表示记不清具体金额。"
+  },
+  "raw_output_text": null,
+  "evaluation": {
+    "task_id": "TASK_46c4aa2cce39de247669",
+    "evaluator_version": "0.2.0",
+    "technical": {
+      "request_succeeded": true,
+      "output_parsed": true,
+      "output_valid": true,
+      "missing_required_fields": [],
+      "error_code": null,
+      "error_message": null,
+      "timed_out": false,
+      "http_status": null,
+      "latency_ms": 1835,
+      "token_usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 157,
+        "total_tokens": 810
+      },
+      "attempts": 1,
+      "execution_status": "success"
+    },
+    "business": {
+      "scoring_status": "unscored",
+      "reason": "annotation_not_reviewed",
+      "denominator_included": false,
+      "verification_tier": "none",
+      "metrics": {},
+      "reference_authority": "observed_reference_only",
+      "diagnostics": {
+        "reference_authority": "observed_reference_only",
+        "historical_reference_available": true,
+        "historical_reference_similarity": 0.0,
+        "historical_reference_is_ground_truth": false,
+        "visible_turn_count": 18,
+        "hidden_speech_turn_count": 3,
+        "task_answerability": "unknown",
+        "verification_tier": "none",
+        "expected_clarification": [],
+        "prohibited_steps": []
+      }
+    }
+  },
+  "latency_ms": 1835,
+  "token_usage": {
+    "prompt_tokens": 653,
+    "completion_tokens": 157,
+    "total_tokens": 810
+  },
+  "attempts": 1,
+  "execution_status": "success",
+  "error": null
+}
